@@ -1,0 +1,46 @@
+{
+  "manifest_version": "qpath_model_run_manifest_v1.0",
+  "model_run_id": "MRUN-grouped_sparse_e64-20260415T192312Z-v1repair",
+  "created_at_utc": "2026-04-15T19:23:12Z",
+  "repo_root": "C:\\v1.0-qpathformer_enterprise",
+  "model": {
+    "variant": "grouped_sparse_e64",
+    "role": "enterprise_target",
+    "source_file": "shared/models/qpathformer/enterprise/qpathformer_v0_9_grouped_sparse_e64.py",
+    "parameter_profile": "e64"
+  },
+  "run": {
+    "kind": "benchmark",
+    "device": "cpu",
+    "dtype": "float32",
+    "seed": 42,
+    "dataset_ref": "reduced_forward_validation",
+    "notes": "live v1.0 validation manifest after benchmark runner repair"
+  },
+  "configuration": {
+    "seq_len": 64,
+    "batch_size": 2,
+    "micro_batch_size": null,
+    "epochs": null,
+    "steps": 5,
+    "lr": null,
+    "weight_decay": null,
+    "top_k": 2,
+    "num_experts": 64
+  },
+  "output_paths": {
+    "manifest_path": "shared/models/evaluation/model_runs/MRUN-grouped_sparse_e64-20260415T192312Z-v1repair/model_run_manifest.json",
+    "run_root": "shared/models/evaluation/model_runs/MRUN-grouped_sparse_e64-20260415T192312Z-v1repair"
+  },
+  "strategy_alignment": {
+    "reference_baseline_variant": "reference_sparse_e08",
+    "enterprise_target_variant": "grouped_sparse_e64",
+    "strategic_target_variant": "fused_sparse_e144"
+  },
+  "environment": {
+    "python_executable": "C:\\Users\\Alnotrea\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "hostname": "Alnotrea-Labs",
+    "device_resolution": "explicit"
+  }
+}

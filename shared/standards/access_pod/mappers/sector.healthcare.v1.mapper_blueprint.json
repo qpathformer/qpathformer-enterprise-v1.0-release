@@ -1,0 +1,122 @@
+{
+  "mapper_version": "access_pod_profile_mapper_blueprint_v1",
+  "profile_id": "sector.healthcare.v1",
+  "purpose": "Healthcare-sector scoring with emphasis on patient safety, privacy, human review, and harm reduction.",
+  "artifact_families": [
+    "path2_runtime_signal",
+    "shared_run_registry",
+    "path2_governance_review",
+    "path2_training_package",
+    "model_evaluation_summary"
+  ],
+  "metric_mapping": [
+    {
+      "metric_id": "SEC_OUTPUT_SAFETY_VIOL_RATE",
+      "priority": "core",
+      "preferred_sources": [
+        "path2_runtime_signal"
+      ],
+      "extraction_hint": "Count post-filter safety violations across governed runtime outputs."
+    },
+    {
+      "metric_id": "SEC_EVIDENCE_INTEGRITY_PASS",
+      "priority": "core",
+      "preferred_sources": [
+        "shared_run_registry",
+        "path2_governance_review"
+      ],
+      "extraction_hint": "Verify that healthcare review evidence remains intact and digest-matched."
+    },
+    {
+      "metric_id": "HARD_PRIVACY_TEST_PASS_RATE",
+      "priority": "core",
+      "preferred_sources": [
+        "model_evaluation_summary",
+        "path2_training_package"
+      ],
+      "extraction_hint": "Map privacy-oriented benchmark or release checks into a pass-rate metric."
+    },
+    {
+      "metric_id": "HARD_TELEMETRY_COMPLETENESS",
+      "priority": "core",
+      "preferred_sources": [
+        "path2_runtime_signal",
+        "shared_run_registry"
+      ],
+      "extraction_hint": "Check that runtime signal, routing, registry, and run-reference records stay complete across the healthcare review chain."
+    },
+    {
+      "metric_id": "COMP_POLICY_TRACE_COVERAGE",
+      "priority": "secondary",
+      "preferred_sources": [
+        "path2_governance_review",
+        "shared_run_registry"
+      ],
+      "extraction_hint": "Use review, promotion, handoff, and freeze artifacts to estimate how completely policy-linked decisions remain traceable."
+    },
+    {
+      "metric_id": "COMP_MODEL_LINEAGE_COVERAGE",
+      "priority": "secondary",
+      "preferred_sources": [
+        "path2_training_package",
+        "shared_run_registry"
+      ],
+      "extraction_hint": "Use governed package, freeze, and run lineage to estimate model lineage completeness."
+    },
+    {
+      "metric_id": "GOV_HIL_REVIEW_COVERAGE",
+      "priority": "core",
+      "preferred_sources": [
+        "path2_governance_review"
+      ],
+      "extraction_hint": "Measure how often high-risk actions remain under explicit human review coverage."
+    },
+    {
+      "metric_id": "GOV_AUDIT_EVIDENCE_COVERAGE",
+      "priority": "core",
+      "preferred_sources": [
+        "path2_governance_review",
+        "shared_run_registry"
+      ],
+      "extraction_hint": "Use review, promotion, handoff, and freeze artifacts to quantify audit evidence completeness."
+    },
+    {
+      "metric_id": "TRN_EXPLAIN_COMPLETE",
+      "priority": "secondary",
+      "preferred_sources": [
+        "path2_runtime_signal",
+        "path2_training_package"
+      ],
+      "extraction_hint": "Estimate explanation completeness from structured runtime and package metadata."
+    },
+    {
+      "metric_id": "TRN_HARM_EVENT_RATE",
+      "priority": "core",
+      "preferred_sources": [
+        "path2_runtime_signal",
+        "shared_run_registry"
+      ],
+      "extraction_hint": "Track validated harmful or unsafe runtime events relative to governed volume."
+    },
+    {
+      "metric_id": "SECTOR_POLICY_PASS_RATE",
+      "priority": "core",
+      "preferred_sources": [
+        "path2_governance_review",
+        "shared_run_registry",
+        "path2_training_package"
+      ],
+      "extraction_hint": "Map healthcare governance approval, use constraints, and controlled deployment posture into a first sector-policy pass signal."
+    },
+    {
+      "metric_id": "SECTOR_AUDIT_INTEROP_SCORE",
+      "priority": "core",
+      "preferred_sources": [
+        "shared_run_registry",
+        "path2_governance_review",
+        "path2_training_package"
+      ],
+      "extraction_hint": "Estimate healthcare audit interoperability from structured registry, review, freeze, and training package evidence."
+    }
+  ]
+}

@@ -1,0 +1,203 @@
+{
+  "evidence_input_version": "access_pod_enterprise_evidence_input_v1.0",
+  "csc_id": "csc_qpathformer_enterprise_access_mode_finance_demo_20260413",
+  "status": "active",
+  "issued_at": "2026-04-13T11:20:00Z",
+  "expires_in_days": 180,
+  "profile_id": "sector.finance.v1",
+  "issuer": {
+    "org_id": "policyofdevelopments.qpathformer",
+    "name": "Policy of Developments - Q-Pathformer Enterprise",
+    "key_id": "kid-qpathformer-enterprise-demo-001",
+    "contact": {
+      "email": "registry@policyofdevelopments.org",
+      "web": "https://policyofdevelopments.org"
+    },
+    "jurisdiction": "AU"
+  },
+  "subject": {
+    "subject_id": "qpathformer_enterprise_access_mode_finance_controls",
+    "name": "Q-Pathformer Enterprise Access-Mode Finance Controls",
+    "type": "platform",
+    "owner": {
+      "org_id": "policyofdevelopments",
+      "name": "Policy of Developments"
+    },
+    "version": "v1.0"
+  },
+  "scope": {
+    "ai_types": [
+      "LLM",
+      "agentic"
+    ],
+    "deployment": "hybrid",
+    "jurisdictions": [
+      "AU"
+    ],
+    "sectors": [
+      "finance"
+    ],
+    "risk_tier_declared": "high",
+    "use_constraints": [
+      "No credit, fraud, or transaction-impacting action without human approval.",
+      "Runtime-generated finance signals remain advisory until governed review and promoted package control."
+    ]
+  },
+  "telemetry_window": {
+    "start": "2026-04-12T09:00:00Z",
+    "end": "2026-04-13T09:52:08Z"
+  },
+  "sapp": {
+    "maturity_level": 4,
+    "run_id": "RTRUN-llm-runtime-registration-check-20260413T095208Z-77a538bc",
+    "run_at": "2026-04-13T09:52:08Z",
+    "environment": "preprod"
+  },
+  "evidence": {
+    "bundle_id": "bundle_qpathformer_enterprise_access_mode_finance_20260413",
+    "items": [
+      {
+        "type": "telemetry_export",
+        "path": "path_2_access_mode_canonical/02_signals/runtime_generated/signal_runtime_20260413T095208Z_77a538bc.json"
+      },
+      {
+        "type": "attestation",
+        "path": "shared/registry/run_references/RTRUN-llm-runtime-registration-check-20260413T095208Z-77a538bc.runtime_signal_run_reference.json"
+      },
+      {
+        "type": "policy_bundle",
+        "path": "shared/registry/run_registry.json"
+      },
+      {
+        "type": "human_review_log",
+        "path": "path_2_access_mode_canonical/03_dataset/candidates/session-run-id2-20260411-1400-qpath-tr008-run/QPDS-PACKAGE-ID2_PREP/id2-20260411-1400-qpath-tr008-run__v10-1-path2-source-bridge__20260412T104656Z/state2_review.json"
+      },
+      {
+        "type": "attestation",
+        "path": "path_2_access_mode_canonical/03_dataset/candidates/session-run-id2-20260411-1400-qpath-tr008-run/QPDS-PACKAGE-ID2_PREP/id2-20260411-1400-qpath-tr008-run__v10-1-path2-source-bridge__20260412T104656Z/state2_promotion_decision.json"
+      },
+      {
+        "type": "dataset_card",
+        "path": "path_2_access_mode_canonical/03_dataset/training_packages/id2-20260411-1400-qpath-tr008-run__v10-1-path2-source-bridge__20260412T104656Z/state1_training_manifest.json"
+      },
+      {
+        "type": "simulation_report",
+        "path": "shared/models/evaluation/model_runs/MRUN-grouped_sparse_e64-20260327T110302Z-cb039d3b/benchmark_summary.json"
+      },
+      {
+        "type": "model_card",
+        "path": "shared/models/evaluation/model_runs/MRUN-grouped_sparse_e64-20260327T110302Z-cb039d3b/model_run_manifest.json"
+      },
+      {
+        "type": "other",
+        "path": "path_2_access_mode_canonical/05_runs/FTRUN-path2_state1_run-local_lora-20260412T110045Z-def4af09/finetune_run_manifest.json"
+      }
+    ]
+  },
+  "metric_observations": [
+    {
+      "metric_id": "SEC_POLICY_ENFORCE_SUCCESS",
+      "value": 0.997,
+      "confidence": 0.89
+    },
+    {
+      "metric_id": "SEC_EVIDENCE_INTEGRITY_PASS",
+      "value": 0.996,
+      "confidence": 0.9
+    },
+    {
+      "metric_id": "HARD_SUPPLYCHAIN_ATTEST_COVERAGE",
+      "value": 0.96,
+      "confidence": 0.84
+    },
+    {
+      "metric_id": "HARD_KEY_MGMT_HEALTH",
+      "value": 94,
+      "confidence": 0.86
+    },
+    {
+      "metric_id": "COMP_POLICY_TRACE_COVERAGE",
+      "value": 0.995,
+      "confidence": 0.9
+    },
+    {
+      "metric_id": "COMP_CHANGE_APPROVAL_TRACE",
+      "value": 0.98,
+      "confidence": 0.88
+    },
+    {
+      "metric_id": "GOV_AUDIT_EVIDENCE_COVERAGE",
+      "value": 0.985,
+      "confidence": 0.9
+    },
+    {
+      "metric_id": "GOV_MODEL_APPROVAL_TRACE",
+      "value": 0.99,
+      "confidence": 0.88
+    },
+    {
+      "metric_id": "TRN_DECISION_TRACE_RATE",
+      "value": 0.97,
+      "confidence": 0.83
+    },
+    {
+      "metric_id": "TRN_MODEL_LIMITS_DISCLOSED",
+      "value": 0.95,
+      "confidence": 0.82
+    },
+    {
+      "metric_id": "SECTOR_MARKET_INTEGRITY_SIGNAL",
+      "value": 88,
+      "confidence": 0.8
+    },
+    {
+      "metric_id": "SECTOR_AUDIT_INTEROP_SCORE",
+      "value": 91,
+      "confidence": 0.82
+    }
+  ],
+  "iso_alignment": {
+    "iso_iec_42001": {
+      "status": "partial",
+      "notes": "Finance-oriented governance controls and approval traces exist in the enterprise platform, but external certification is still pending.",
+      "controls_mapped": [
+        "AIMS-governance",
+        "AIMS-assurance",
+        "AIMS-improvement-loop"
+      ]
+    },
+    "iso_iec_23894": {
+      "status": "aligned",
+      "notes": "Risk identification, escalation, promotion, and freeze evidence are present in the governed finance review flow.",
+      "controls_mapped": [
+        "risk-identify",
+        "risk-analyze",
+        "risk-treat",
+        "risk-monitor"
+      ]
+    },
+    "iso_iec_22989": {
+      "status": "aligned",
+      "notes": "Terminology for model, dataset, runtime signal, and governance package is held consistently across the platform and Access-PoD bridge artifacts.",
+      "controls_mapped": [
+        "ai-system",
+        "ai-model",
+        "training",
+        "inference"
+      ]
+    }
+  },
+  "scoring_policy": {
+    "top_metrics_per_factor": 3,
+    "min_overall_metric_coverage_ratio": 0.2,
+    "min_metrics_per_factor": 2,
+    "min_factor_score": 60.0,
+    "level_thresholds": {
+      "2": 60.0,
+      "3": 70.0,
+      "4": 80.0,
+      "5": 90.0,
+      "6": 97.0
+    }
+  }
+}

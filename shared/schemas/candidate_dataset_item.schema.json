@@ -1,0 +1,109 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Candidate Dataset Item",
+  "type": "object",
+  "required": [
+    "candidate_id",
+    "source_signal_id",
+    "source_state",
+    "target_model",
+    "transformation_type",
+    "content",
+    "authorization",
+    "review",
+    "lineage",
+    "timestamp"
+  ],
+  "properties": {
+    "candidate_id": {
+      "type": "string"
+    },
+    "source_signal_id": {
+      "type": "string"
+    },
+    "source_state": {
+      "type": "string",
+      "enum": ["STATE_2", "STATE_1"]
+    },
+    "target_model": {
+      "type": "object",
+      "required": ["parameter_class", "role"],
+      "properties": {
+        "parameter_class": {
+          "type": "string",
+          "enum": ["12B-14B", "24B-30B"]
+        },
+        "role": {
+          "type": "string",
+          "enum": ["enterprise", "strategic"]
+        }
+      },
+      "additionalProperties": false
+    },
+    "transformation_type": {
+      "type": "string"
+    },
+    "content": {
+      "type": "object",
+      "required": ["input", "output"],
+      "properties": {
+        "input": {
+          "type": "string"
+        },
+        "output": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "authorization": {
+      "type": "object",
+      "required": ["status", "fine_tuning_allowed"],
+      "properties": {
+        "status": {
+          "type": "string",
+          "enum": [
+            "approved_for_candidate_use",
+            "restricted",
+            "denied"
+          ]
+        },
+        "fine_tuning_allowed": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    },
+    "review": {
+      "type": "object",
+      "required": ["status", "review_required"],
+      "properties": {
+        "status": {
+          "type": "string",
+          "enum": ["reviewed", "pending", "rejected"]
+        },
+        "review_required": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    },
+    "lineage": {
+      "type": "object",
+      "required": ["source_signal_ref", "transformation_id"],
+      "properties": {
+        "source_signal_ref": {
+          "type": "string"
+        },
+        "transformation_id": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "timestamp": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": false
+}

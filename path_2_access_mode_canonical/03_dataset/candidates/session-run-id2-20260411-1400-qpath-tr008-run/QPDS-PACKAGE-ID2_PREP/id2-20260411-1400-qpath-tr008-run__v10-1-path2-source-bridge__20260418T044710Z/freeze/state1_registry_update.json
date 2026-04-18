@@ -1,0 +1,87 @@
+{
+  "registry_update_id": "e8b4723b-606d-402d-880f-e7f6aaf76d01",
+  "registry_update_timestamp": "2026-04-18T04:48:13Z",
+  "registry_scope": "STATE_1",
+  "package_dir": "C:\\v1.0-qpathformer_enterprise\\path_2_access_mode_canonical\\03_dataset\\candidates\\session-run-id2-20260411-1400-qpath-tr008-run\\QPDS-PACKAGE-ID2_PREP\\id2-20260411-1400-qpath-tr008-run__v10-1-path2-source-bridge__20260418T044710Z",
+  "freeze_dir": "C:\\v1.0-qpathformer_enterprise\\path_2_access_mode_canonical\\03_dataset\\candidates\\session-run-id2-20260411-1400-qpath-tr008-run\\QPDS-PACKAGE-ID2_PREP\\id2-20260411-1400-qpath-tr008-run__v10-1-path2-source-bridge__20260418T044710Z\\freeze",
+  "freeze_artifact_path": "C:\\v1.0-qpathformer_enterprise\\path_2_access_mode_canonical\\03_dataset\\candidates\\session-run-id2-20260411-1400-qpath-tr008-run\\QPDS-PACKAGE-ID2_PREP\\id2-20260411-1400-qpath-tr008-run__v10-1-path2-source-bridge__20260418T044710Z\\freeze\\state1_freeze.json",
+  "frozen_manifest_path": "C:\\v1.0-qpathformer_enterprise\\path_2_access_mode_canonical\\03_dataset\\candidates\\session-run-id2-20260411-1400-qpath-tr008-run\\QPDS-PACKAGE-ID2_PREP\\id2-20260411-1400-qpath-tr008-run__v10-1-path2-source-bridge__20260418T044710Z\\freeze\\frozen_manifest.json",
+  "posture": {
+    "access_mode": "ID_2",
+    "non_authoritative": true,
+    "governance_first": true,
+    "explicit_registry_mutation": true
+  },
+  "freeze_summary": {
+    "freeze_id": "a49fab29-29a1-4b64-8650-0759113428b0",
+    "freeze_decision": "FREEZE_STATE1_PACKAGE",
+    "freeze_approved": true,
+    "freeze_ready": true
+  },
+  "frozen_package_summary": {
+    "dataset_version": "id2-20260411-1400-qpath-tr008-run__v10-1-path2-source-bridge__20260418T044710Z",
+    "state": "STATE_1",
+    "candidate_count": 4,
+    "source_record_count": 16,
+    "target_model": {
+      "parameter_class": "12B-14B",
+      "role": "enterprise"
+    }
+  },
+  "thresholds": {
+    "require_approved_freeze": true,
+    "require_state1": true
+  },
+  "decision": {
+    "approved": true,
+    "decision": "REGISTER_STATE1_PACKAGE",
+    "reasons": [
+      "all_state1_registry_thresholds_passed"
+    ]
+  },
+  "registry_entry_preview": {
+    "registry_entry_id": "137cd382-103f-414b-b578-d8424abf4cc7",
+    "registered_at": "2026-04-18T04:48:13Z",
+    "state": "STATE_1",
+    "dataset_version": "id2-20260411-1400-qpath-tr008-run__v10-1-path2-source-bridge__20260418T044710Z",
+    "package_dir": "C:\\v1.0-qpathformer_enterprise\\path_2_access_mode_canonical\\03_dataset\\candidates\\session-run-id2-20260411-1400-qpath-tr008-run\\QPDS-PACKAGE-ID2_PREP\\id2-20260411-1400-qpath-tr008-run__v10-1-path2-source-bridge__20260418T044710Z",
+    "freeze_dir": "C:\\v1.0-qpathformer_enterprise\\path_2_access_mode_canonical\\03_dataset\\candidates\\session-run-id2-20260411-1400-qpath-tr008-run\\QPDS-PACKAGE-ID2_PREP\\id2-20260411-1400-qpath-tr008-run__v10-1-path2-source-bridge__20260418T044710Z\\freeze",
+    "frozen_manifest_path": "C:\\v1.0-qpathformer_enterprise\\path_2_access_mode_canonical\\03_dataset\\candidates\\session-run-id2-20260411-1400-qpath-tr008-run\\QPDS-PACKAGE-ID2_PREP\\id2-20260411-1400-qpath-tr008-run__v10-1-path2-source-bridge__20260418T044710Z\\freeze\\frozen_manifest.json",
+    "freeze_artifact_path": "C:\\v1.0-qpathformer_enterprise\\path_2_access_mode_canonical\\03_dataset\\candidates\\session-run-id2-20260411-1400-qpath-tr008-run\\QPDS-PACKAGE-ID2_PREP\\id2-20260411-1400-qpath-tr008-run__v10-1-path2-source-bridge__20260418T044710Z\\freeze\\state1_freeze.json",
+    "freeze_id": "a49fab29-29a1-4b64-8650-0759113428b0",
+    "candidate_count": 4,
+    "source_record_count": 16,
+    "target_model": {
+      "parameter_class": "12B-14B",
+      "role": "enterprise"
+    },
+    "authorization_summary": {
+      "all_items_candidate_authorized": true,
+      "fine_tuning_allowed_count": 0,
+      "fine_tuning_globally_allowed": false
+    },
+    "routing_profile": {
+      "routing_decisions": [
+        "SEND_TO_STATE_2_REVIEW"
+      ],
+      "target_states": [
+        "STATE_2"
+      ],
+      "all_candidates_state2_review_ready": true
+    },
+    "registry_posture": {
+      "non_authoritative": true,
+      "governance_first": true,
+      "explicit_update": true
+    }
+  },
+  "notes": "Path 2 registry update from the three-path root",
+  "written": true,
+  "attempted_packages": [
+    {
+      "package_dir": "C:\\v1.0-qpathformer_enterprise\\path_2_access_mode_canonical\\03_dataset\\candidates\\session-run-id2-20260411-1400-qpath-tr008-run\\QPDS-PACKAGE-ID2_PREP\\id2-20260411-1400-qpath-tr008-run__v10-1-path2-source-bridge__20260418T044710Z",
+      "status": "selected",
+      "reason": "first_registry_candidate"
+    }
+  ]
+}

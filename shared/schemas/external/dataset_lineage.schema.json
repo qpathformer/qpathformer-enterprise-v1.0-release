@@ -1,0 +1,332 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://policyofdevelopments.org/schemas/dataset_lineage.schema.json",
+  "title": "Dataset Lineage Record",
+  "description": "Informative lineage record preserving traceable continuity between source artifacts, dataset passports, routing decisions, and promotion events.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "lineage_version",
+    "lineage_id",
+    "lineage_type",
+    "subject_dataset_passport_id",
+    "source_artifacts",
+    "transformation_history",
+    "lineage_assertions",
+    "recorded_at_utc"
+  ],
+  "properties": {
+    "lineage_version": {
+      "type": "string",
+      "const": "qpds_lineage_v1.0"
+    },
+    "lineage_id": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9._:-]{8,128}$"
+    },
+    "lineage_type": {
+      "type": "string",
+      "enum": [
+        "dataset_lineage",
+        "policy_dataset_lineage",
+        "promotion_lineage",
+        "mixed_lineage"
+      ]
+    },
+    "subject_dataset_passport_id": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9._:-]{8,128}$"
+    },
+    "previous_dataset_passport_id": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9._:-]{8,128}$"
+    },
+    "source_artifacts": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/sourceArtifact"
+      }
+    },
+    "source_sessions": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/sessionRef"
+      },
+      "uniqueItems": true
+    },
+    "policy_references": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/policyRef"
+      },
+      "uniqueItems": true
+    },
+    "transformation_history": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/transformationEvent"
+      }
+    },
+    "routing_refs": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/routingRef"
+      },
+      "uniqueItems": true
+    },
+    "promotion_refs": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/promotionRef"
+      },
+      "uniqueItems": true
+    },
+    "lineage_assertions": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "informative_only",
+        "non_certifying",
+        "non_compliance_claim",
+        "non_trust_claim"
+      ],
+      "properties": {
+        "informative_only": {
+          "type": "boolean"
+        },
+        "non_certifying": {
+          "type": "boolean"
+        },
+        "non_compliance_claim": {
+          "type": "boolean"
+        },
+        "non_trust_claim": {
+          "type": "boolean"
+        },
+        "traceability_intended": {
+          "type": "boolean",
+          "default": true
+        }
+      }
+    },
+    "recorded_at_utc": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "updated_at_utc": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "notes": {
+      "type": "string",
+      "maxLength": 4000
+    }
+  },
+  "$defs": {
+    "sha256": {
+      "type": "string",
+      "pattern": "^[a-fA-F0-9]{64}$"
+    },
+    "sourceArtifact": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "artifact_name",
+        "artifact_role",
+        "sha256"
+      ],
+      "properties": {
+        "artifact_name": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 256
+        },
+        "artifact_role": {
+          "type": "string",
+          "enum": [
+            "session_baseline",
+            "session_variant",
+            "module_baseline",
+            "module_variant",
+            "hash_manifest",
+            "freeze_note",
+            "derived_dataset_artifact",
+            "supporting_artifact"
+          ]
+        },
+        "sha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "inspection_status": {
+          "type": "string",
+          "enum": [
+            "frozen_under_ID_3",
+            "derived",
+            "unknown"
+          ]
+        },
+        "frozen_at_utc": {
+          "type": "string",
+          "format": "date-time"
+        }
+      }
+    },
+    "sessionRef": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "session_id"
+      ],
+      "properties": {
+        "session_id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128
+        },
+        "session_role": {
+          "type": "string",
+          "enum": [
+            "baseline",
+            "variant",
+            "parent",
+            "supporting"
+          ]
+        }
+      }
+    },
+    "policyRef": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "document_id",
+        "title"
+      ],
+      "properties": {
+        "document_id": {
+          "type": "string",
+          "pattern": "^APOD-TR-[0-9]{3}$"
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 512
+        },
+        "edition": {
+          "type": "string",
+          "maxLength": 128
+        },
+        "section_ref": {
+          "type": "string",
+          "maxLength": 128
+        }
+      }
+    },
+    "transformationEvent": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "event_id",
+        "event_type",
+        "event_timestamp_utc",
+        "event_summary"
+      ],
+      "properties": {
+        "event_id": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9._:-]{6,128}$"
+        },
+        "event_type": {
+          "type": "string",
+          "enum": [
+            "artifact_ingestion",
+            "dataset_conversion",
+            "passport_generation",
+            "routing_assignment",
+            "authorization_filtering",
+            "promotion_to_state2",
+            "promotion_to_state1",
+            "manual_review",
+            "version_reissue"
+          ]
+        },
+        "event_timestamp_utc": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "event_summary": {
+          "type": "string",
+          "minLength": 3,
+          "maxLength": 2000
+        },
+        "input_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "maxLength": 256
+          },
+          "uniqueItems": true
+        },
+        "output_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "maxLength": 256
+          },
+          "uniqueItems": true
+        }
+      }
+    },
+    "routingRef": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "routing_id",
+        "state"
+      ],
+      "properties": {
+        "routing_id": {
+          "type": "string",
+          "maxLength": 128
+        },
+        "state": {
+          "type": "string",
+          "enum": [
+            "STATE_1",
+            "STATE_2",
+            "STATE_3",
+            "HOLD",
+            "EXCLUDED"
+          ]
+        }
+      }
+    },
+    "promotionRef": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "promotion_id",
+        "promotion_type"
+      ],
+      "properties": {
+        "promotion_id": {
+          "type": "string",
+          "maxLength": 128
+        },
+        "promotion_type": {
+          "type": "string",
+          "enum": [
+            "state3_to_state2",
+            "state2_to_state1",
+            "state3_to_state1_exception",
+            "version_reissue"
+          ]
+        },
+        "approved": {
+          "type": "boolean"
+        }
+      }
+    }
+  }
+}

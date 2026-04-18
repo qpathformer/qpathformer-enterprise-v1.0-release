@@ -1,0 +1,53 @@
+{
+  "frozen_manifest_id": "4c69f9c4-f477-410d-a4e6-c83fd5c60cb4",
+  "freeze_id": "42252b6b-f78c-4982-943a-ccd3e9e0203c",
+  "frozen_timestamp": "2026-04-18T02:58:44Z",
+  "state": "STATE_1",
+  "dataset_version": "checkpoint_v4_strict",
+  "package_dir": "C:\\v1.0-qpathformer_enterprise\\path_1_tr_corpus_reference\\04_state1_package\\QPDS-TR-STRICT-ID3-001",
+  "freeze_dir": "C:\\v1.0-qpathformer_enterprise\\path_1_tr_corpus_reference\\04_state1_package\\QPDS-TR-STRICT-ID3-001\\freeze",
+  "source_dataset_path": "C:\\v1.0-qpathformer_enterprise\\path_1_tr_corpus_reference\\04_state1_package\\QPDS-TR-STRICT-ID3-001\\dataset.jsonl",
+  "frozen_dataset_path": "C:\\v1.0-qpathformer_enterprise\\path_1_tr_corpus_reference\\04_state1_package\\QPDS-TR-STRICT-ID3-001\\freeze\\frozen_dataset.jsonl",
+  "source_manifest_path": "C:\\v1.0-qpathformer_enterprise\\path_1_tr_corpus_reference\\04_state1_package\\QPDS-TR-STRICT-ID3-001\\manifest.json",
+  "review_path": "C:\\v1.0-qpathformer_enterprise\\path_1_tr_corpus_reference\\04_state1_package\\QPDS-TR-STRICT-ID3-001\\state2_review.json",
+  "promotion_path": "C:\\v1.0-qpathformer_enterprise\\path_1_tr_corpus_reference\\04_state1_package\\QPDS-TR-STRICT-ID3-001\\state2_promotion_decision.json",
+  "handoff_path": "C:\\v1.0-qpathformer_enterprise\\path_1_tr_corpus_reference\\04_state1_package\\QPDS-TR-STRICT-ID3-001\\state1_handoff.json",
+  "freeze_ready_manifest_path": "C:\\v1.0-qpathformer_enterprise\\path_1_tr_corpus_reference\\04_state1_package\\QPDS-TR-STRICT-ID3-001\\freeze_ready_manifest.json",
+  "target_model": {
+    "training_mode": "local_lora",
+    "model_family": "llama",
+    "model_base": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+    "backend_profile_id": "local_lora_reference",
+    "execution_mode": "configured"
+  },
+  "candidate_count": 1117,
+  "source_record_count": 1241,
+  "authorization_summary": {
+    "reference_match_required": true,
+    "reference_id_count": 296,
+    "reference_reasoning_posture_counts": {
+      "inspection": 1237,
+      "operational": 4
+    },
+    "non_authoritative": true,
+    "governance_first": true,
+    "training_preparation_only": true,
+    "registry_state": "STATE_1",
+    "dataset_passport_id": "QPDS-TR-STRICT-ID3-001"
+  },
+  "routing_profile": {
+    "profile_type": "tr_wrapper_flow",
+    "path_id": "path_1_tr_corpus_reference",
+    "source_stage": "tr_signals",
+    "dataset_stage": "tr_finetune",
+    "package_stage": "state1_wrapper",
+    "reference_match_required": true
+  },
+  "freeze_decision": {
+    "approved": true,
+    "decision": "FREEZE_STATE1_PACKAGE",
+    "reasons": [
+      "all_state1_freeze_thresholds_passed"
+    ]
+  }
+}

@@ -1,0 +1,326 @@
+{
+  "schema_version": "1.0.0",
+  "csc_id": "csc_qpathformer_enterprise_access_mode_runtime_demo_20260413",
+  "issued_at": "2026-04-13T10:05:00Z",
+  "expires_at": "2026-10-10T10:05:00Z",
+  "status": "active",
+  "issuer": {
+    "org_id": "policyofdevelopments.qpathformer",
+    "name": "Policy of Developments - Q-Pathformer Enterprise",
+    "key_id": "kid-qpathformer-enterprise-demo-001",
+    "contact": {
+      "email": "registry@policyofdevelopments.org",
+      "web": "https://policyofdevelopments.org"
+    },
+    "jurisdiction": "AU"
+  },
+  "subject": {
+    "subject_id": "qpathformer_enterprise_access_mode_runtime",
+    "name": "Q-Pathformer Enterprise Access-Mode Runtime",
+    "type": "platform",
+    "owner": {
+      "org_id": "policyofdevelopments",
+      "name": "Policy of Developments"
+    },
+    "version": "v1.0"
+  },
+  "scope": {
+    "ai_types": [
+      "LLM",
+      "agentic"
+    ],
+    "deployment": "hybrid",
+    "jurisdictions": [
+      "AU"
+    ],
+    "sectors": [
+      "public"
+    ],
+    "risk_tier_declared": "medium",
+    "use_constraints": [
+      "No autonomous high-impact decisions without human review.",
+      "Runtime-generated signals remain non-authoritative until governed review."
+    ]
+  },
+  "assessment": {
+    "sapp": {
+      "maturity_level": 4,
+      "run_id": "RTRUN-llm-runtime-registration-check-20260413T095208Z-77a538bc",
+      "run_at": "2026-04-13T09:52:08Z",
+      "environment": "preprod"
+    },
+    "factor_scores": {
+      "f6_1": {
+        "score": 89.7,
+        "confidence": 0.57,
+        "telemetry_window": {
+          "start": "2026-04-12T09:00:00Z",
+          "end": "2026-04-13T09:52:08Z"
+        },
+        "top_metrics": [
+          {
+            "metric_id": "SEC_FALSE_NEG_RATE",
+            "value": 0.005,
+            "unit": "ratio",
+            "weight": 0.5,
+            "normalized": 0.9,
+            "direction": "lower_is_better"
+          },
+          {
+            "metric_id": "SEC_ATTACK_DETECT_RATE",
+            "value": 0.985,
+            "unit": "ratio",
+            "weight": 0.5,
+            "normalized": 0.8947,
+            "direction": "higher_is_better"
+          }
+        ]
+      },
+      "f6_2": {
+        "score": 93.5,
+        "confidence": 0.54,
+        "telemetry_window": {
+          "start": "2026-04-12T09:00:00Z",
+          "end": "2026-04-13T09:52:08Z"
+        },
+        "top_metrics": [
+          {
+            "metric_id": "HARD_PATCH_LATENCY",
+            "value": 36.0,
+            "unit": "hours",
+            "weight": 0.5,
+            "normalized": 0.9468,
+            "direction": "lower_is_better"
+          },
+          {
+            "metric_id": "HARD_REDTEAM_PASS_RATE",
+            "value": 0.97,
+            "unit": "ratio",
+            "weight": 0.5,
+            "normalized": 0.9231,
+            "direction": "higher_is_better"
+          }
+        ]
+      },
+      "f6_3": {
+        "score": 90.8,
+        "confidence": 0.57,
+        "telemetry_window": {
+          "start": "2026-04-12T09:00:00Z",
+          "end": "2026-04-13T09:52:08Z"
+        },
+        "top_metrics": [
+          {
+            "metric_id": "COMP_TIME_TO_ADAPT",
+            "value": 24.0,
+            "unit": "hours",
+            "weight": 0.5,
+            "normalized": 0.9168,
+            "direction": "lower_is_better"
+          },
+          {
+            "metric_id": "COMP_POLICY_TRACE_COVERAGE",
+            "value": 0.99,
+            "unit": "ratio",
+            "weight": 0.5,
+            "normalized": 0.9,
+            "direction": "higher_is_better"
+          }
+        ]
+      },
+      "f6_4": {
+        "score": 95.0,
+        "confidence": 0.55,
+        "telemetry_window": {
+          "start": "2026-04-12T09:00:00Z",
+          "end": "2026-04-13T09:52:08Z"
+        },
+        "top_metrics": [
+          {
+            "metric_id": "GOV_HUMAN_LOAD_INDEX",
+            "value": 0.6,
+            "unit": "score",
+            "weight": 0.5,
+            "normalized": 1.0,
+            "direction": "target_is_best"
+          },
+          {
+            "metric_id": "GOV_HIL_REVIEW_COVERAGE",
+            "value": 0.99,
+            "unit": "ratio",
+            "weight": 0.5,
+            "normalized": 0.9,
+            "direction": "higher_is_better"
+          }
+        ]
+      },
+      "f6_5": {
+        "score": 95.0,
+        "confidence": 0.53,
+        "telemetry_window": {
+          "start": "2026-04-12T09:00:00Z",
+          "end": "2026-04-13T09:52:08Z"
+        },
+        "top_metrics": [
+          {
+            "metric_id": "TRN_EXPLAIN_COMPLETE",
+            "value": 0.94,
+            "unit": "score",
+            "weight": 0.5,
+            "normalized": 0.95,
+            "direction": "higher_is_better"
+          },
+          {
+            "metric_id": "TRN_USER_COMPREHENSION",
+            "value": 0.89,
+            "unit": "score",
+            "weight": 0.5,
+            "normalized": 0.95,
+            "direction": "higher_is_better"
+          }
+        ]
+      },
+      "f6_6": {
+        "score": 93.7,
+        "confidence": 0.52,
+        "telemetry_window": {
+          "start": "2026-04-12T09:00:00Z",
+          "end": "2026-04-13T09:52:08Z"
+        },
+        "top_metrics": [
+          {
+            "metric_id": "SECTOR_REPUTATION_STABILITY",
+            "value": 0.71,
+            "unit": "score",
+            "weight": 0.5,
+            "normalized": 0.95,
+            "direction": "target_is_best"
+          },
+          {
+            "metric_id": "SECTOR_POLICY_PASS_RATE",
+            "value": 0.97,
+            "unit": "ratio",
+            "weight": 0.5,
+            "normalized": 0.9231,
+            "direction": "higher_is_better"
+          }
+        ]
+      }
+    },
+    "weights": {
+      "profile_id": "sector.public.v1",
+      "f6_1": 0.18,
+      "f6_2": 0.12,
+      "f6_3": 0.16,
+      "f6_4": 0.26,
+      "f6_5": 0.16,
+      "f6_6": 0.12
+    },
+    "composite_score": 93.0,
+    "csc_level": 5,
+    "risk_tier": "medium",
+    "gates": {
+      "no_critical_failures": true,
+      "telemetry_minimum_met": true,
+      "f6_1_min_met": true,
+      "f6_4_min_met": true,
+      "all_factors_min_met": true,
+      "sector_validation_met": true
+    },
+    "iso_alignment": {
+      "iso_iec_42001": {
+        "status": "partial",
+        "notes": "Governance controls are present in the enterprise platform but external audit is not yet complete.",
+        "controls_mapped": [
+          "AIMS-roles",
+          "AIMS-improvement-loop"
+        ]
+      },
+      "iso_iec_23894": {
+        "status": "aligned",
+        "notes": "Risk and treatment traces are present in the governed lifecycle and runtime review path.",
+        "controls_mapped": [
+          "risk-identify",
+          "risk-treat",
+          "risk-monitor"
+        ]
+      },
+      "iso_iec_22989": {
+        "status": "aligned",
+        "notes": "Vocabulary alignment is maintained across the platform and Access-PoD standards artifacts.",
+        "controls_mapped": [
+          "ai-system",
+          "ai-model",
+          "inference",
+          "training"
+        ]
+      }
+    }
+  },
+  "evidence": {
+    "bundle_id": "bundle_qpathformer_enterprise_access_mode_runtime_20260413",
+    "digest_alg": "sha256",
+    "digest": "92bb99dfbf969f44e3d1ab941b0b2bb712057175549f9402d265dfd84ca30db3",
+    "items": [
+      {
+        "type": "telemetry_export",
+        "uri": "file:///C:/v1.0-qpathformer_enterprise/path_2_access_mode_canonical/02_signals/runtime_generated/signal_runtime_20260413T095208Z_77a538bc.json",
+        "digest_alg": "sha256",
+        "digest": "becf24024037d079897a9e7a26ad266230ec88ad7000112645126389d552825f",
+        "content_type": "application/json",
+        "created_at": "2026-04-13T09:52:08Z"
+      },
+      {
+        "type": "attestation",
+        "uri": "file:///C:/v1.0-qpathformer_enterprise/shared/registry/run_references/RTRUN-llm-runtime-registration-check-20260413T095208Z-77a538bc.runtime_signal_run_reference.json",
+        "digest_alg": "sha256",
+        "digest": "8673eadde39ff02dc0000b1d7718765f1df02575f59921cbcc2f448876aaa18d",
+        "content_type": "application/json",
+        "created_at": "2026-04-13T09:52:08Z"
+      },
+      {
+        "type": "policy_bundle",
+        "uri": "file:///C:/v1.0-qpathformer_enterprise/shared/registry/run_registry.json",
+        "digest_alg": "sha256",
+        "digest": "74912a0991f069cb9e63d011cd281560ceb818a4f7043cf3e046184b5bd8813f",
+        "content_type": "application/json",
+        "created_at": "2026-04-13T09:52:08Z"
+      },
+      {
+        "type": "simulation_report",
+        "uri": "file:///C:/v1.0-qpathformer_enterprise/shared/models/evaluation/model_runs/MRUN-grouped_sparse_e64-20260327T110302Z-cb039d3b/benchmark_summary.json",
+        "digest_alg": "sha256",
+        "digest": "cc1d42de2c79ef704f497def6afa3e6989b0ff361e6f1d8747e4d5e03fa80ef6",
+        "content_type": "application/json",
+        "created_at": "2026-03-27T20:22:22Z"
+      },
+      {
+        "type": "model_card",
+        "uri": "file:///C:/v1.0-qpathformer_enterprise/shared/models/evaluation/model_runs/MRUN-grouped_sparse_e64-20260327T110302Z-cb039d3b/model_run_manifest.json",
+        "digest_alg": "sha256",
+        "digest": "af5ef9451e9829c087c3d7cbc4071232a3070898b15113fb35503b4dce4cbb00",
+        "content_type": "application/json",
+        "created_at": "2026-03-27T12:03:02Z"
+      },
+      {
+        "type": "dataset_card",
+        "uri": "file:///C:/v1.0-qpathformer_enterprise/path_2_access_mode_canonical/03_dataset/training_packages/id2-20260411-1400-qpath-tr008-run__v10-1-path2-source-bridge__20260412T104656Z/state1_training_manifest.json",
+        "digest_alg": "sha256",
+        "digest": "bfd5d423e7bc45690272edc2deda4f82d3ecea5cf7d0fb1d4eac2abd602ad701",
+        "content_type": "application/json",
+        "created_at": "2026-04-12T11:00:45Z"
+      }
+    ]
+  },
+  "signature": {
+    "alg": "EdDSA",
+    "kid": "kid-qpathformer-enterprise-demo-001",
+    "canonicalization": "JCS",
+    "signed_payload_digest": {
+      "digest_alg": "sha256",
+      "digest": "cc1183a4057ac20c6e16ed27be838a6e53c4be03f70fdae3cb6561fc3e94c8dd"
+    },
+    "signature": "UNSIGNED_PENDING_ENTERPRISE_REVIEW",
+    "signed_at": "2026-04-13T10:05:00Z"
+  }
+}

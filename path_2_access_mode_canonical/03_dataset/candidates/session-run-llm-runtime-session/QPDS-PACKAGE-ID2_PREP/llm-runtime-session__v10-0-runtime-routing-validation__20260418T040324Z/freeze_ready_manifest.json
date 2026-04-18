@@ -1,0 +1,39 @@
+{
+  "freeze_ready_manifest_id": "5a7d0fb6-0607-4ab2-937c-363e4f454417",
+  "freeze_ready_timestamp": "2026-04-18T04:05:30Z",
+  "handoff_id": "783ea5e1-29d5-4aa4-89a9-42b38784793e",
+  "dataset_version": "llm-runtime-session__v10-0-runtime-routing-validation__20260418T040324Z",
+  "package_dir": "C:\\v1.0-qpathformer_enterprise\\path_2_access_mode_canonical\\03_dataset\\candidates\\session-run-llm-runtime-session\\QPDS-PACKAGE-ID2_PREP\\llm-runtime-session__v10-0-runtime-routing-validation__20260418T040324Z",
+  "dataset_path": "C:\\v1.0-qpathformer_enterprise\\path_2_access_mode_canonical\\03_dataset\\candidates\\session-run-llm-runtime-session\\QPDS-PACKAGE-ID2_PREP\\llm-runtime-session__v10-0-runtime-routing-validation__20260418T040324Z\\dataset.jsonl",
+  "manifest_path": "C:\\v1.0-qpathformer_enterprise\\path_2_access_mode_canonical\\03_dataset\\candidates\\session-run-llm-runtime-session\\QPDS-PACKAGE-ID2_PREP\\llm-runtime-session__v10-0-runtime-routing-validation__20260418T040324Z\\manifest.json",
+  "review_path": "C:\\v1.0-qpathformer_enterprise\\path_2_access_mode_canonical\\03_dataset\\candidates\\session-run-llm-runtime-session\\QPDS-PACKAGE-ID2_PREP\\llm-runtime-session__v10-0-runtime-routing-validation__20260418T040324Z\\state2_review.json",
+  "promotion_path": "C:\\v1.0-qpathformer_enterprise\\path_2_access_mode_canonical\\03_dataset\\candidates\\session-run-llm-runtime-session\\QPDS-PACKAGE-ID2_PREP\\llm-runtime-session__v10-0-runtime-routing-validation__20260418T040324Z\\state2_promotion_decision.json",
+  "freeze_posture": {
+    "state_target": "STATE_1",
+    "freeze_ready": false,
+    "requires_explicit_freeze_step": true,
+    "registry_update_pending": false
+  },
+  "authorization_summary": {
+    "all_items_candidate_authorized": true,
+    "fine_tuning_allowed_count": 0,
+    "fine_tuning_globally_allowed": false
+  },
+  "routing_profile": {
+    "routing_decisions": [
+      "SEND_TO_STATE_2_REVIEW"
+    ],
+    "target_states": [
+      "STATE_2"
+    ],
+    "all_candidates_state2_review_ready": true
+  },
+  "handoff_decision": {
+    "approved": false,
+    "decision": "HOLD_STATE2_PACKAGE_FOR_HANDOFF",
+    "reasons": [
+      "candidate_count_below_threshold:2<4",
+      "state2_promotion_not_approved"
+    ]
+  }
+}

@@ -1,0 +1,105 @@
+{
+  "onboarding_log_version": "v13.2",
+  "generated_at": "2026-04-18T05:12:48Z",
+  "status": "ok",
+  "dry_run": false,
+  "package_id": "QPDS-PACKAGE-001",
+  "template_family": "id3_freeze_bundle",
+  "profile_id": "id3_freeze_bundle.default",
+  "profile_version": "v13.2",
+  "input_locator": "C:\\v1.0-qpathformer_enterprise\\path_3_external_custom_adapter\\01_source\\inbound\\QPDS-PACKAGE-001",
+  "output_dir": "C:\\v1.0-qpathformer_enterprise\\path_3_external_custom_adapter\\03_dataset\\normalized\\QPDS-PACKAGE-001",
+  "source_file_count": 6,
+  "normalized_record_count": 6,
+  "hash_verification_status": "ok",
+  "classification": {
+    "classification_version": "v13.2",
+    "package_id": "QPDS-PACKAGE-001",
+    "artifact_type": "id3_freeze_bundle",
+    "record_family": "bundle",
+    "source_mode_detected": "ID_2_frozen_under_ID_3",
+    "structural_completeness": "complete",
+    "template_family": "id3_freeze_bundle",
+    "normalization_strategy": "bundle_to_onboarding_rows",
+    "source_inventory": {
+      "file_count": 6,
+      "files": [
+        {
+          "inventory_order": 1,
+          "file_name": "hashes.txt",
+          "file_type": "text",
+          "path": "C:\\v1.0-qpathformer_enterprise\\path_3_external_custom_adapter\\01_source\\inbound\\QPDS-PACKAGE-001\\hashes.txt",
+          "sha256": "b7a1e5b46c02112eb782d49289ac6ad695114b2e9945a838105b248b1044aef3"
+        },
+        {
+          "inventory_order": 2,
+          "file_name": "ID3_FREEZE_NOTE.md",
+          "file_type": "markdown",
+          "path": "C:\\v1.0-qpathformer_enterprise\\path_3_external_custom_adapter\\01_source\\inbound\\QPDS-PACKAGE-001\\ID3_FREEZE_NOTE.md",
+          "sha256": "3e2cc7f6a1194a579b65054a0ca111cbd66c679002144fb04dc7f015423ce978"
+        },
+        {
+          "inventory_order": 3,
+          "file_name": "module_03_baseline.canonical.json",
+          "file_type": "json",
+          "path": "C:\\v1.0-qpathformer_enterprise\\path_3_external_custom_adapter\\01_source\\inbound\\QPDS-PACKAGE-001\\module_03_baseline.canonical.json",
+          "sha256": "bc1c3511440e0aaa38b64bd17670455deb37f829e7ae99f7516f780938fd3aad"
+        },
+        {
+          "inventory_order": 4,
+          "file_name": "module_03_variant.canonical.json",
+          "file_type": "json",
+          "path": "C:\\v1.0-qpathformer_enterprise\\path_3_external_custom_adapter\\01_source\\inbound\\QPDS-PACKAGE-001\\module_03_variant.canonical.json",
+          "sha256": "20981b7f7cc065283991342ef675d352a20c0348a30204c2781bd1c8900e24d1"
+        },
+        {
+          "inventory_order": 5,
+          "file_name": "session_baseline.canonical.json",
+          "file_type": "json",
+          "path": "C:\\v1.0-qpathformer_enterprise\\path_3_external_custom_adapter\\01_source\\inbound\\QPDS-PACKAGE-001\\session_baseline.canonical.json",
+          "sha256": "77c977621571467e41df44d2c8e06c0b7476567c8d76d22cb315e49a47a5a503"
+        },
+        {
+          "inventory_order": 6,
+          "file_name": "session_variant.canonical.json",
+          "file_type": "json",
+          "path": "C:\\v1.0-qpathformer_enterprise\\path_3_external_custom_adapter\\01_source\\inbound\\QPDS-PACKAGE-001\\session_variant.canonical.json",
+          "sha256": "7ad84b44e8b44df807f64a480f4ca8dcf699abb65828916feb6419994ffe7315"
+        }
+      ]
+    },
+    "classification_notes": [
+      "Bundle contains canonical ID_2 records frozen under ID_3.",
+      "Freeze bundle remains non-authoritative and lifecycle-contained on intake."
+    ],
+    "classification_timestamp": "2026-04-18T05:12:48Z"
+  },
+  "authorization_posture": {
+    "fine_tuning_allowed_default": false,
+    "external_training_allowed_default": false,
+    "human_review_required_default": true,
+    "authorization_not_modified": true,
+    "authorization_source": "default_restricted_posture"
+  },
+  "lifecycle_initialization": {
+    "state": "STATE_3",
+    "eligible_for_state_2": false,
+    "routing_decision": "HOLD_IN_STATE_3"
+  },
+  "bundle_summary": {
+    "module_record_count": 2,
+    "session_record_count": 2,
+    "freeze_note_count": 1,
+    "hash_manifest_count": 1,
+    "client_governance_record_count": 0,
+    "hash_verification_status": "ok"
+  },
+  "files": {
+    "onboarding_manifest": "C:\\v1.0-qpathformer_enterprise\\path_3_external_custom_adapter\\03_dataset\\normalized\\QPDS-PACKAGE-001\\onboarding_manifest.json",
+    "normalized_onboarding": "C:\\v1.0-qpathformer_enterprise\\path_3_external_custom_adapter\\03_dataset\\normalized\\QPDS-PACKAGE-001\\normalized_onboarding.jsonl",
+    "source_inventory": "C:\\v1.0-qpathformer_enterprise\\path_3_external_custom_adapter\\03_dataset\\normalized\\QPDS-PACKAGE-001\\source_inventory.json",
+    "normalization_report": "C:\\v1.0-qpathformer_enterprise\\path_3_external_custom_adapter\\03_dataset\\normalized\\QPDS-PACKAGE-001\\normalization_report.json",
+    "onboarding_log": "C:\\v1.0-qpathformer_enterprise\\path_3_external_custom_adapter\\07_logs\\onboarding_logs\\QPDS-PACKAGE-001\\onboarding_run_20260418T051248090203Z.json",
+    "hash_verification_report": "C:\\v1.0-qpathformer_enterprise\\path_3_external_custom_adapter\\03_dataset\\normalized\\QPDS-PACKAGE-001\\hash_verification_report.json"
+  }
+}

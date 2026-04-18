@@ -1,0 +1,267 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://policyofdevelopments.org/schemas/execution_profile.schema.json",
+  "title": "Execution Profile",
+  "description": "Optional execution metadata for environments such as Q-Pathformer. This profile is additive and does not alter governance authority or lifecycle state.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "execution_profile_version",
+    "enabled",
+    "environment",
+    "non_authoritative_execution_metadata"
+  ],
+  "properties": {
+    "execution_profile_version": {
+      "type": "string",
+      "const": "qpds_execution_profile_v1.0"
+    },
+    "enabled": {
+      "type": "boolean"
+    },
+    "environment": {
+      "type": "string",
+      "enum": [
+        "none",
+        "q_pathformer",
+        "custom",
+        "third_party"
+      ]
+    },
+    "environment_version": {
+      "type": "string",
+      "maxLength": 128
+    },
+    "non_authoritative_execution_metadata": {
+      "type": "boolean",
+      "const": true
+    },
+    "state_orchestration": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "state1_role": {
+          "type": "string",
+          "enum": [
+            "durable_fine_tuning",
+            "curated_training_corpus",
+            "none"
+          ]
+        },
+        "state2_role": {
+          "type": "string",
+          "enum": [
+            "validation_convergence",
+            "transition_review_layer",
+            "none"
+          ]
+        },
+        "state3_role": {
+          "type": "string",
+          "enum": [
+            "runtime_memory_signals",
+            "synthetic_generation",
+            "contextual_runtime_support",
+            "none"
+          ]
+        },
+        "orchestration_note": {
+          "type": "string",
+          "maxLength": 2000
+        }
+      }
+    },
+    "ugccmt": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "enabled": {
+          "type": "boolean"
+        },
+        "unit_ref": {
+          "type": "string",
+          "maxLength": 128
+        },
+        "group_id": {
+          "type": "string",
+          "maxLength": 128
+        },
+        "colour_code": {
+          "type": "string",
+          "enum": [
+            "red",
+            "orange",
+            "yellow",
+            "green",
+            "blue",
+            "purple"
+          ]
+        },
+        "code_salt_profile": {
+          "type": "string",
+          "maxLength": 128
+        },
+        "measure_profile": {
+          "type": "string",
+          "maxLength": 128
+        },
+        "train_profile": {
+          "type": "string",
+          "maxLength": 128
+        },
+        "policy_anchor_ref": {
+          "type": "string",
+          "maxLength": 256
+        }
+      }
+    },
+    "capsule_pipeline": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "enabled": {
+          "type": "boolean"
+        },
+        "capsule_id": {
+          "type": "string",
+          "maxLength": 128
+        },
+        "capsule_stage": {
+          "type": "string",
+          "enum": [
+            "ingest",
+            "pre_finetune",
+            "runtime_support",
+            "synthetic_prep",
+            "archival",
+            "custom"
+          ]
+        },
+        "capsule_version": {
+          "type": "string",
+          "maxLength": 128
+        },
+        "capsule_note": {
+          "type": "string",
+          "maxLength": 2000
+        }
+      }
+    },
+    "teacher_student_profile": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "teacher_signal_mode": {
+          "type": "string",
+          "enum": [
+            "structured_artifact_signals",
+            "curated_prompt_signals",
+            "mixed",
+            "none"
+          ]
+        },
+        "student_signal_mode": {
+          "type": "string",
+          "enum": [
+            "runtime_interpretation",
+            "fine_tuning_pattern_learning",
+            "mixed",
+            "none"
+          ]
+        },
+        "state2_convergence_enabled": {
+          "type": "boolean"
+        }
+      }
+    },
+    "context_window_profile": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "per_state_window_strategy": {
+          "type": "string",
+          "enum": [
+            "bounded_per_state",
+            "shared_context_pool",
+            "hybrid",
+            "none"
+          ]
+        },
+        "sector_context_aggregation": {
+          "type": "boolean"
+        },
+        "context_note": {
+          "type": "string",
+          "maxLength": 2000
+        }
+      }
+    },
+    "template_provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "source_template_family": {
+          "type": "string",
+          "maxLength": 128
+        },
+        "source_template_version": {
+          "type": "string",
+          "enum": [
+            "2019",
+            "2020",
+            "2026",
+            "unknown",
+            "custom"
+          ]
+        },
+        "template_validation_status": {
+          "type": "string",
+          "enum": [
+            "valid",
+            "legacy_accepted",
+            "invalid",
+            "unknown"
+          ]
+        }
+      }
+    },
+    "execution_note": {
+      "type": "string",
+      "maxLength": 4000
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "environment": {
+            "const": "none"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "enabled": {
+            "const": false
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "environment": {
+            "const": "q_pathformer"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "enabled": {
+            "const": true
+          }
+        }
+      }
+    }
+  ]
+}

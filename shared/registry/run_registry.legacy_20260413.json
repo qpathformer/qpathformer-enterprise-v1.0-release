@@ -1,0 +1,120 @@
+{
+  "registry_version": "qpds_run_registry_v1.0",
+  "workflow_id": "session-run-family-001",
+  "registry_note": "Global index of lifecycle runs for orchestration and audit.",
+  "runs": [
+    {
+      "run_id": "session-run-001",
+      "run_number": 1,
+      "status": "success",
+      "lifecycle_state": "STATE_3",
+      "dataset_passport_id": "QPDS-EXAMPLE-001",
+      "run_reference_path": "C:\\qpathformer_enterprise\\artifacts\\runs\\session-run-001\\run_reference.json",
+      "recorded_at_utc": "2026-03-23T20:42:40Z",
+      "inspection_ready": true,
+      "frozen_output_queryable": true,
+      "notes": "Initial registry-backed orchestration run.",
+      "routing_ids": [
+        "QPDS-ROUTE-001"
+      ]
+    },
+    {
+      "run_id": "session-run-003",
+      "run_number": 3,
+      "status": "success_with_findings",
+      "lifecycle_state": "STATE_3",
+      "dataset_passport_id": "QPDS-EXAMPLE-001",
+      "run_reference_path": "C:\\qpathformer_enterprise\\artifacts\\runs\\session-run-003\\run_reference.json",
+      "recorded_at_utc": "2026-03-23T21:18:56Z",
+      "inspection_ready": true,
+      "frozen_output_queryable": true,
+      "promotion_ids": [
+        "PROMOTE-QPDS-EXAMPLE-001-20260323T211857Z"
+      ],
+      "notes": "Run with promotion simulation | promotion_blockers=state3_direct_promotion_not_enabled; fine_tuning_not_allowed; routing_blocker:Fine-tuning not yet authorized; routing_blocker:Authorization filtering required before durable training use; routing_blocker:Human review required before promotion; manual_review_status:pending; authorization_report_marks_not_state1_eligible",
+      "previous_run_id": "session-run-001",
+      "routing_ids": [
+        "QPDS-ROUTE-001"
+      ]
+    },
+    {
+      "run_id": "session-run-004",
+      "run_number": 4,
+      "status": "success_with_findings",
+      "lifecycle_state": "STATE_3",
+      "dataset_passport_id": "QPDS-EXAMPLE-001",
+      "run_reference_path": "C:\\qpathformer_enterprise\\artifacts\\runs\\session-run-004\\run_reference.json",
+      "recorded_at_utc": "2026-03-23T21:35:42Z",
+      "inspection_ready": true,
+      "frozen_output_queryable": true,
+      "promotion_ids": [
+        "PROMOTE-QPDS-EXAMPLE-001-20260323T213542Z"
+      ],
+      "notes": "Run with promotion simulation | promotion_blockers=state3_direct_promotion_not_enabled; fine_tuning_not_allowed; routing_blocker:Fine-tuning not yet authorized; routing_blocker:Authorization filtering required before durable training use; routing_blocker:Human review required before promotion; manual_review_status:pending; authorization_report_marks_not_state1_eligible",
+      "previous_run_id": "session-run-003",
+      "routing_ids": [
+        "QPDS-ROUTE-001"
+      ]
+    },
+    {
+      "run_id": "session-run-005",
+      "run_number": 5,
+      "status": "success_with_findings",
+      "lifecycle_state": "STATE_3",
+      "dataset_passport_id": "QPDS-EXAMPLE-001",
+      "run_reference_path": "C:\\qpathformer_enterprise\\artifacts\\runs\\session-run-005\\run_reference.json",
+      "recorded_at_utc": "2026-03-23T21:49:03Z",
+      "inspection_ready": true,
+      "frozen_output_queryable": true,
+      "promotion_ids": [
+        "PROMOTE-QPDS-EXAMPLE-001-20260323T214903Z"
+      ],
+      "notes": "Run with promotion simulation | promotion_blockers=state3_direct_promotion_not_enabled; fine_tuning_not_allowed; routing_blocker:Fine-tuning not yet authorized; routing_blocker:Authorization filtering required before durable training use; routing_blocker:Human review required before promotion; manual_review_status:pending; authorization_report_marks_not_state1_eligible",
+      "previous_run_id": "session-run-004",
+      "routing_ids": [
+        "QPDS-ROUTE-001"
+      ]
+    },
+    {
+      "run_id": "session-run-008",
+      "package_id": "QPDS-PACKAGE-007",
+      "engine_version": "qpath_lifecycle_engine_v1.2",
+      "requested_mode": "auto",
+      "resolved_mode": "finalize_only",
+      "status": "completed",
+      "generated_at_utc": "2026-03-27T10:19:54Z",
+      "completed_at_utc": "2026-03-27T10:19:54Z",
+      "failure_step": null,
+      "failure_reason": null,
+      "summary_path": "artifacts/runs/session-run-008/lifecycle_engine_summary.json",
+      "package_root": "datasets/packages/QPDS-PACKAGE-007",
+      "manifest_path": "datasets/packages/QPDS-PACKAGE-007/manifest.json",
+      "finalize_report_path": "datasets/packages/QPDS-PACKAGE-007/finalize_report.json",
+      "step_count": 1,
+      "last_completed_step": "finalize_package_cycle",
+      "step_digest": [
+        {
+          "step_name": "finalize_package_cycle",
+          "status": "completed",
+          "return_code": 0,
+          "started_at_utc": "2026-03-27T10:19:54Z",
+          "completed_at_utc": "2026-03-27T10:19:54Z"
+        }
+      ],
+      "updated_at_utc": "2026-03-27T10:19:54Z",
+      "detection": {
+        "package_root_exists": true,
+        "package_manifest_exists": true,
+        "phase1_frozen_source_exists": false,
+        "explicit_frozen_source": null
+      },
+      "notes": [
+        "This summary is generated by the subprocess-based lifecycle engine.",
+        "Existing step scripts remain the source of lifecycle action logic.",
+        "Auto mode detects whether to finalize an existing package, resume from a frozen package, or run a fresh cycle.",
+        "Run registry updates are attempted after successful or failed execution unless disabled."
+      ]
+    }
+  ],
+  "updated_at_utc": "2026-03-27T10:19:54Z"
+}

@@ -1,0 +1,291 @@
+{
+  "evidence_input_version": "access_pod_enterprise_evidence_input_v1.0",
+  "csc_id": "csc_qpathformer-enterprise-access-mode-finance-draft-sector-finance-v1-baseline_20260415T192431Z",
+  "status": "active",
+  "issued_at": "2026-04-15T19:24:31Z",
+  "expires_in_days": 180,
+  "profile_id": "sector.finance.v1",
+  "issuer": {
+    "org_id": "policyofdevelopments.qpathformer",
+    "name": "Policy of Developments - Q-Pathformer Enterprise",
+    "key_id": "kid-qpathformer-enterprise-demo-001",
+    "contact": {
+      "email": "registry@policyofdevelopments.org",
+      "web": "https://policyofdevelopments.org"
+    },
+    "jurisdiction": "AU"
+  },
+  "subject": {
+    "subject_id": "qpathformer_enterprise_access_mode_finance_draft__sector-finance-v1-baseline",
+    "name": "Q-Pathformer Enterprise Access-Mode Finance Draft (Finance Baseline)",
+    "type": "platform",
+    "owner": {
+      "org_id": "policyofdevelopments",
+      "name": "Policy of Developments"
+    },
+    "version": "v1.0"
+  },
+  "scope": {
+    "ai_types": [
+      "LLM",
+      "agentic"
+    ],
+    "deployment": "hybrid",
+    "jurisdictions": [
+      "AU"
+    ],
+    "sectors": [
+      "finance"
+    ],
+    "risk_tier_declared": "high",
+    "use_constraints": [
+      "No transaction-impacting action without human review.",
+      "Finance-sector rollout remains governed until evidence review is complete."
+    ]
+  },
+  "telemetry_window": {
+    "start": "2026-04-12T11:00:45Z",
+    "end": "2026-04-13T09:52:08Z"
+  },
+  "sapp": {
+    "maturity_level": 5,
+    "run_id": "RTRUN-llm-runtime-registration-check-20260413T095208Z-77a538bc",
+    "run_at": "2026-04-13T09:52:08Z",
+    "environment": "preprod"
+  },
+  "evidence": {
+    "bundle_id": "bundle_qpathformer-enterprise-access-mode-finance-draft-sector-finance-v1-baseline_20260415T192431Z",
+    "items": [
+      {
+        "type": "telemetry_export",
+        "path": "path_2_access_mode_canonical/02_signals/runtime_generated/signal_runtime_20260413T095208Z_77a538bc.json"
+      },
+      {
+        "type": "attestation",
+        "path": "shared/registry/run_references/RTRUN-llm-runtime-registration-check-20260413T095208Z-77a538bc.runtime_signal_run_reference.json"
+      },
+      {
+        "type": "policy_bundle",
+        "path": "shared/registry/run_registry.json"
+      },
+      {
+        "type": "human_review_log",
+        "path": "path_2_access_mode_canonical/03_dataset/candidates/session-run-id2-20260411-1400-qpath-tr008-run/QPDS-PACKAGE-ID2_PREP/id2-20260411-1400-qpath-tr008-run__v10-1-path2-source-bridge__20260412T104656Z/state2_review.json"
+      },
+      {
+        "type": "attestation",
+        "path": "path_2_access_mode_canonical/03_dataset/candidates/session-run-id2-20260411-1400-qpath-tr008-run/QPDS-PACKAGE-ID2_PREP/id2-20260411-1400-qpath-tr008-run__v10-1-path2-source-bridge__20260412T104656Z/state2_promotion_decision.json"
+      },
+      {
+        "type": "attestation",
+        "path": "path_2_access_mode_canonical/03_dataset/candidates/session-run-id2-20260411-1400-qpath-tr008-run/QPDS-PACKAGE-ID2_PREP/id2-20260411-1400-qpath-tr008-run__v10-1-path2-source-bridge__20260412T104656Z/state1_handoff.json"
+      },
+      {
+        "type": "attestation",
+        "path": "path_2_access_mode_canonical/03_dataset/candidates/session-run-id2-20260411-1400-qpath-tr008-run/QPDS-PACKAGE-ID2_PREP/id2-20260411-1400-qpath-tr008-run__v10-1-path2-source-bridge__20260412T104656Z/freeze/state1_freeze.json"
+      },
+      {
+        "type": "dataset_card",
+        "path": "path_2_access_mode_canonical/03_dataset/training_packages/id2-20260411-1400-qpath-tr008-run__v10-1-path2-source-bridge__20260412T104656Z/state1_training_manifest.json"
+      },
+      {
+        "type": "simulation_report",
+        "path": "shared/models/evaluation/model_runs/MRUN-grouped_sparse_e64-20260415T192312Z-v1repair/benchmark_summary.json"
+      },
+      {
+        "type": "model_card",
+        "path": "shared/models/evaluation/model_runs/MRUN-grouped_sparse_e64-20260415T192312Z-v1repair/model_run_manifest.json"
+      }
+    ]
+  },
+  "metric_observations": [
+    {
+      "metric_id": "SEC_POLICY_ENFORCE_SUCCESS",
+      "value": 1.0,
+      "confidence": 0.74,
+      "weight": 1.2,
+      "telemetry_start": "2026-04-12T11:00:45Z",
+      "telemetry_end": "2026-04-13T09:52:08Z",
+      "notes": "Draft proxy from successful runtime signal execution, state routing, and low ambiguity in the live Path 2 signal."
+    },
+    {
+      "metric_id": "SEC_EVIDENCE_INTEGRITY_PASS",
+      "value": 1.0,
+      "confidence": 0.9,
+      "weight": 1.2,
+      "telemetry_start": "2026-04-12T11:00:45Z",
+      "telemetry_end": "2026-04-13T09:52:08Z",
+      "notes": "Derived from the presence of core governed artifacts and matching registry references for the live runtime signal chain."
+    },
+    {
+      "metric_id": "HARD_SUPPLYCHAIN_ATTEST_COVERAGE",
+      "value": 0.92,
+      "confidence": 0.58,
+      "weight": 1.0,
+      "telemetry_start": "2026-04-12T11:00:45Z",
+      "telemetry_end": "2026-04-13T09:52:08Z",
+      "notes": "Proxy from the presence of benchmark, model, backend profile, and governed package artifacts, with a small quality uplift when the linked benchmark path is clean, wrapper-backed, and metadata-complete."
+    },
+    {
+      "metric_id": "HARD_KEY_MGMT_HEALTH",
+      "value": 95.0,
+      "confidence": 0.52,
+      "weight": 1.0,
+      "telemetry_start": "2026-04-12T11:00:45Z",
+      "telemetry_end": "2026-04-13T09:52:08Z",
+      "notes": "Proxy score from local endpoint posture, inspection readiness, and evidence integrity. This should be replaced by explicit key-management telemetry later."
+    },
+    {
+      "metric_id": "HARD_TELEMETRY_COMPLETENESS",
+      "value": 1.0,
+      "confidence": 0.74,
+      "weight": 1.2,
+      "telemetry_start": "2026-04-12T11:00:45Z",
+      "telemetry_end": "2026-04-13T09:52:08Z",
+      "notes": "Derived from runtime, routing, review, freeze, and training telemetry continuity, with a small uplift when the linked benchmark path is clean and metadata-rich, but still penalized when outputs remain non-queryable."
+    },
+    {
+      "metric_id": "HARD_PRIVACY_TEST_PASS_RATE",
+      "value": 0.97,
+      "confidence": 0.42,
+      "weight": 1.2,
+      "telemetry_start": "2026-04-12T11:00:45Z",
+      "telemetry_end": "2026-04-13T09:52:08Z",
+      "notes": "Policy proxy from controlled training posture and human-review requirements, with a modest uplift when the linked benchmark path is clean and metadata-rich, but still reduced when outputs remain non-queryable. Replace with explicit privacy benchmark telemetry when available."
+    },
+    {
+      "metric_id": "COMP_CHANGE_APPROVAL_TRACE",
+      "value": 1.0,
+      "confidence": 0.88,
+      "weight": 1.2,
+      "telemetry_start": "2026-04-12T11:00:45Z",
+      "telemetry_end": "2026-04-13T09:52:08Z",
+      "notes": "Derived from the governed Path 2 approval chain across review, promotion, handoff, and freeze artifacts."
+    },
+    {
+      "metric_id": "COMP_MODEL_LINEAGE_COVERAGE",
+      "value": 0.975,
+      "confidence": 0.78,
+      "weight": 1.2,
+      "telemetry_start": "2026-04-12T11:00:45Z",
+      "telemetry_end": "2026-04-13T09:52:08Z",
+      "notes": "Derived from lineage, approval, freeze, and registry links across the Path 2 package chain, then bounded so proxy-only lineage evidence does not score as fully complete while runtime outputs remain non-queryable or linked benchmark evidence is still degraded."
+    },
+    {
+      "metric_id": "GOV_MODEL_APPROVAL_TRACE",
+      "value": 1.0,
+      "confidence": 0.86,
+      "weight": 1.2,
+      "telemetry_start": "2026-04-12T11:00:45Z",
+      "telemetry_end": "2026-04-13T09:52:08Z",
+      "notes": "Derived from approval-chain continuity into the STATE_1 training package and registry state."
+    },
+    {
+      "metric_id": "GOV_AUDIT_EVIDENCE_COVERAGE",
+      "value": 0.98,
+      "confidence": 0.8,
+      "weight": 1.2,
+      "telemetry_start": "2026-04-12T11:00:45Z",
+      "telemetry_end": "2026-04-13T09:52:08Z",
+      "notes": "Derived from the presence of review, promotion, handoff, freeze, registry, runtime, and training artifacts, then bounded by cross-artifact evidence quality so audit coverage does not saturate from artifact presence alone."
+    },
+    {
+      "metric_id": "TRN_DECISION_TRACE_RATE",
+      "value": 1.0,
+      "confidence": 0.72,
+      "weight": 1.0,
+      "telemetry_start": "2026-04-12T11:00:45Z",
+      "telemetry_end": "2026-04-13T09:52:08Z",
+      "notes": "Derived from structured runtime summaries and the traceable training package outputs present in the live Path 2 export."
+    },
+    {
+      "metric_id": "TRN_EXPLAIN_COMPLETE",
+      "value": 1.0,
+      "confidence": 0.63,
+      "weight": 1.0,
+      "telemetry_start": "2026-04-12T11:00:45Z",
+      "telemetry_end": "2026-04-13T09:52:08Z",
+      "notes": "Proxy from structured runtime summaries plus the metadata-rich training export package."
+    },
+    {
+      "metric_id": "SECTOR_MARKET_INTEGRITY_SIGNAL",
+      "value": 91.3,
+      "confidence": 0.62,
+      "weight": 1.0,
+      "telemetry_start": "2026-04-12T11:00:45Z",
+      "telemetry_end": "2026-04-13T09:52:08Z",
+      "notes": "Proxy score from configurable sector-signal weighting. Current blend: market-integrity telemetry 100%."
+    },
+    {
+      "metric_id": "SECTOR_POLICY_PASS_RATE",
+      "value": 0.97,
+      "confidence": 0.7,
+      "weight": 1.2,
+      "telemetry_start": "2026-04-12T11:00:45Z",
+      "telemetry_end": "2026-04-13T09:52:08Z",
+      "notes": "Draft sector policy pass proxy from configurable sector evidence weighting, bounded so execution-independent approval signals do not overstate live operational readiness. Current blend: sector policy pass evidence 100%."
+    },
+    {
+      "metric_id": "SECTOR_PARTNER_ATTEST_RATE",
+      "value": 0.98,
+      "confidence": 0.76,
+      "weight": 1.2,
+      "telemetry_start": "2026-04-12T11:00:45Z",
+      "telemetry_end": "2026-04-13T09:52:08Z",
+      "notes": "Draft partner-attestation proxy from configurable sector evidence weighting. Current blend: partner attestations 100%."
+    },
+    {
+      "metric_id": "SECTOR_AUDIT_INTEROP_SCORE",
+      "value": 93.5,
+      "confidence": 0.66,
+      "weight": 1.0,
+      "telemetry_start": "2026-04-12T11:00:45Z",
+      "telemetry_end": "2026-04-13T09:52:08Z",
+      "notes": "Draft audit interoperability score from configurable sector evidence weighting, with readiness penalties when queryable outputs and clean linked benchmark evidence are still missing. Current blend: audit interoperability evidence 100%."
+    }
+  ],
+  "iso_alignment": {
+    "iso_iec_42001": {
+      "status": "partial",
+      "notes": "Finance-oriented governance and approval traces are present, but external certification is still pending.",
+      "controls_mapped": [
+        "AIMS-governance",
+        "AIMS-assurance",
+        "AIMS-improvement-loop"
+      ]
+    },
+    "iso_iec_23894": {
+      "status": "aligned",
+      "notes": "Risk identification, escalation, review, and freeze traces are present in the governed Path 2 flow.",
+      "controls_mapped": [
+        "risk-identify",
+        "risk-analyze",
+        "risk-treat",
+        "risk-monitor"
+      ]
+    },
+    "iso_iec_22989": {
+      "status": "aligned",
+      "notes": "Platform vocabulary for model, runtime signal, dataset, and governance package remains consistent across the standards bridge.",
+      "controls_mapped": [
+        "ai-system",
+        "ai-model",
+        "training",
+        "inference"
+      ]
+    }
+  },
+  "scoring_policy": {
+    "top_metrics_per_factor": 3,
+    "min_overall_metric_coverage_ratio": 0.2,
+    "min_metrics_per_factor": 2,
+    "min_factor_score": 60.0,
+    "level_thresholds": {
+      "2": 60.0,
+      "3": 70.0,
+      "4": 80.0,
+      "5": 90.0,
+      "6": 97.0
+    }
+  }
+}

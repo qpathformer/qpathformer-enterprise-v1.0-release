@@ -1,0 +1,315 @@
+{
+  "registry_id": "60f99982-1584-4968-b455-fbae794c1673",
+  "created_at": "2026-03-28T07:33:28Z",
+  "updated_at": "2026-04-18T04:48:13Z",
+  "entries": [
+    {
+      "registry_entry_id": "c2acdcec-efcd-4529-84b3-620f557e7e4c",
+      "registered_at": "2026-03-28T07:33:28Z",
+      "state": "STATE_1",
+      "dataset_version": "llm-runtime-session__v10-0-runtime-routing-validation__20260328T053123Z",
+      "package_dir": "C:\\v1.0-qpathformer_enterprise\\datasets\\candidates\\session-run-llm-runtime-session\\QPDS-PACKAGE-ID2_PREP\\llm-runtime-session__v10-0-runtime-routing-validation__20260328T053123Z",
+      "freeze_dir": "C:\\v1.0-qpathformer_enterprise\\datasets\\candidates\\session-run-llm-runtime-session\\QPDS-PACKAGE-ID2_PREP\\llm-runtime-session__v10-0-runtime-routing-validation__20260328T053123Z\\freeze",
+      "frozen_manifest_path": "C:\\v1.0-qpathformer_enterprise\\datasets\\candidates\\session-run-llm-runtime-session\\QPDS-PACKAGE-ID2_PREP\\llm-runtime-session__v10-0-runtime-routing-validation__20260328T053123Z\\freeze\\frozen_manifest.json",
+      "freeze_artifact_path": "C:\\v1.0-qpathformer_enterprise\\datasets\\candidates\\session-run-llm-runtime-session\\QPDS-PACKAGE-ID2_PREP\\llm-runtime-session__v10-0-runtime-routing-validation__20260328T053123Z\\freeze\\state1_freeze.json",
+      "freeze_id": "e7931a54-2e1a-4f4b-9f63-1fd3aad06279",
+      "candidate_count": 4,
+      "source_record_count": 4,
+      "target_model": {
+        "parameter_class": "20B",
+        "role": "enterprise"
+      },
+      "authorization_summary": {
+        "all_items_candidate_authorized": true,
+        "fine_tuning_allowed_count": 0,
+        "fine_tuning_globally_allowed": false
+      },
+      "routing_profile": {
+        "routing_decisions": [
+          "SEND_TO_STATE_2_REVIEW"
+        ],
+        "target_states": [
+          "STATE_2"
+        ],
+        "all_candidates_state2_review_ready": true
+      },
+      "registry_posture": {
+        "non_authoritative": true,
+        "governance_first": true,
+        "explicit_update": true
+      }
+    },
+    {
+      "registry_entry_id": "03b54ea4-3a5a-436d-954e-c453433460a3",
+      "registered_at": "2026-04-11T00:16:06Z",
+      "state": "STATE_1",
+      "dataset_version": "checkpoint_v3_strict",
+      "package_dir": "C:\\v1.0-qpathformer_enterprise\\datasets\\packages\\QPDS-TR-STRICT-ID3-001",
+      "freeze_dir": "C:\\v1.0-qpathformer_enterprise\\datasets\\packages\\QPDS-TR-STRICT-ID3-001\\freeze",
+      "frozen_manifest_path": "C:\\v1.0-qpathformer_enterprise\\datasets\\packages\\QPDS-TR-STRICT-ID3-001\\freeze\\frozen_manifest.json",
+      "freeze_artifact_path": "C:\\v1.0-qpathformer_enterprise\\datasets\\packages\\QPDS-TR-STRICT-ID3-001\\freeze\\state1_freeze.json",
+      "freeze_id": "7702b910-eec3-454c-89ed-74d14dd413b1",
+      "candidate_count": 1234,
+      "source_record_count": 1371,
+      "target_model": {
+        "training_mode": "local_lora",
+        "model_family": "llama",
+        "model_base": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+        "backend_profile_id": "local_lora_reference",
+        "execution_mode": "configured"
+      },
+      "authorization_summary": {
+        "reference_match_required": true,
+        "reference_id_count": 323,
+        "reference_reasoning_posture_counts": {
+          "inspection": 1371
+        },
+        "non_authoritative": true,
+        "governance_first": true,
+        "training_preparation_only": true,
+        "registry_state": "STATE_1",
+        "registry_entry_id": "13fab0d9-b700-4d28-8114-f2ed195db961",
+        "dataset_passport_id": "QPDS-TR-STRICT-ID3-001"
+      },
+      "routing_profile": {
+        "profile_type": "tr_wrapper_flow",
+        "path_id": "path_1_tr_corpus_reference",
+        "source_stage": "tr_signals",
+        "dataset_stage": "tr_finetune",
+        "package_stage": "state1_wrapper",
+        "reference_match_required": true
+      },
+      "registry_posture": {
+        "non_authoritative": true,
+        "governance_first": true,
+        "explicit_update": true
+      }
+    },
+    {
+      "registry_entry_id": "56d593b9-24a5-4278-9c46-2a433b98f021",
+      "registered_at": "2026-04-11T12:00:21Z",
+      "state": "STATE_1",
+      "dataset_version": "id2-20260411-1400-qpath-tr008-run__v10-0-runtime-routing-validation__20260411T115337Z",
+      "package_dir": "C:\\v1.0-qpathformer_enterprise\\path_2_access_mode_canonical\\03_dataset\\candidates\\session-run-id2-20260411-1400-qpath-tr008-run\\QPDS-PACKAGE-ID2_PREP\\id2-20260411-1400-qpath-tr008-run__v10-0-runtime-routing-validation__20260411T115337Z",
+      "freeze_dir": "C:\\v1.0-qpathformer_enterprise\\path_2_access_mode_canonical\\03_dataset\\candidates\\session-run-id2-20260411-1400-qpath-tr008-run\\QPDS-PACKAGE-ID2_PREP\\id2-20260411-1400-qpath-tr008-run__v10-0-runtime-routing-validation__20260411T115337Z\\freeze",
+      "frozen_manifest_path": "C:\\v1.0-qpathformer_enterprise\\path_2_access_mode_canonical\\03_dataset\\candidates\\session-run-id2-20260411-1400-qpath-tr008-run\\QPDS-PACKAGE-ID2_PREP\\id2-20260411-1400-qpath-tr008-run__v10-0-runtime-routing-validation__20260411T115337Z\\freeze\\frozen_manifest.json",
+      "freeze_artifact_path": "C:\\v1.0-qpathformer_enterprise\\path_2_access_mode_canonical\\03_dataset\\candidates\\session-run-id2-20260411-1400-qpath-tr008-run\\QPDS-PACKAGE-ID2_PREP\\id2-20260411-1400-qpath-tr008-run__v10-0-runtime-routing-validation__20260411T115337Z\\freeze\\state1_freeze.json",
+      "freeze_id": "b7c875d1-f150-4d5d-bb6a-551e026ebcd4",
+      "candidate_count": 4,
+      "source_record_count": 4,
+      "target_model": {
+        "parameter_class": "20B",
+        "role": "enterprise"
+      },
+      "authorization_summary": {
+        "all_items_candidate_authorized": true,
+        "fine_tuning_allowed_count": 0,
+        "fine_tuning_globally_allowed": false
+      },
+      "routing_profile": {
+        "routing_decisions": [
+          "SEND_TO_STATE_2_REVIEW"
+        ],
+        "target_states": [
+          "STATE_2"
+        ],
+        "all_candidates_state2_review_ready": true
+      },
+      "registry_posture": {
+        "non_authoritative": true,
+        "governance_first": true,
+        "explicit_update": true
+      }
+    },
+    {
+      "registry_entry_id": "0d172a22-b69e-4734-bf14-d48ddab04e0e",
+      "registered_at": "2026-04-12T01:13:17Z",
+      "state": "STATE_1",
+      "dataset_version": "id2-20260411-1400-qpath-tr008-run__v10-1-path2-source-bridge__20260412T010520Z",
+      "package_dir": "C:\\v1.0-qpathformer_enterprise\\path_2_access_mode_canonical\\03_dataset\\candidates\\session-run-id2-20260411-1400-qpath-tr008-run\\QPDS-PACKAGE-ID2_PREP\\id2-20260411-1400-qpath-tr008-run__v10-1-path2-source-bridge__20260412T010520Z",
+      "freeze_dir": "C:\\v1.0-qpathformer_enterprise\\path_2_access_mode_canonical\\03_dataset\\candidates\\session-run-id2-20260411-1400-qpath-tr008-run\\QPDS-PACKAGE-ID2_PREP\\id2-20260411-1400-qpath-tr008-run__v10-1-path2-source-bridge__20260412T010520Z\\freeze",
+      "frozen_manifest_path": "C:\\v1.0-qpathformer_enterprise\\path_2_access_mode_canonical\\03_dataset\\candidates\\session-run-id2-20260411-1400-qpath-tr008-run\\QPDS-PACKAGE-ID2_PREP\\id2-20260411-1400-qpath-tr008-run__v10-1-path2-source-bridge__20260412T010520Z\\freeze\\frozen_manifest.json",
+      "freeze_artifact_path": "C:\\v1.0-qpathformer_enterprise\\path_2_access_mode_canonical\\03_dataset\\candidates\\session-run-id2-20260411-1400-qpath-tr008-run\\QPDS-PACKAGE-ID2_PREP\\id2-20260411-1400-qpath-tr008-run__v10-1-path2-source-bridge__20260412T010520Z\\freeze\\state1_freeze.json",
+      "freeze_id": "f9f2e8e4-c7c0-42fd-8dbb-faf405044ee2",
+      "candidate_count": 4,
+      "source_record_count": 4,
+      "target_model": {
+        "parameter_class": "12B-14B",
+        "role": "enterprise"
+      },
+      "authorization_summary": {
+        "all_items_candidate_authorized": true,
+        "fine_tuning_allowed_count": 0,
+        "fine_tuning_globally_allowed": false
+      },
+      "routing_profile": {
+        "routing_decisions": [
+          "SEND_TO_STATE_2_REVIEW"
+        ],
+        "target_states": [
+          "STATE_2"
+        ],
+        "all_candidates_state2_review_ready": true
+      },
+      "registry_posture": {
+        "non_authoritative": true,
+        "governance_first": true,
+        "explicit_update": true
+      }
+    },
+    {
+      "registry_entry_id": "d0e6eb2c-ca4a-41e6-b37f-bce51c142864",
+      "registered_at": "2026-04-12T11:00:45Z",
+      "state": "STATE_1",
+      "dataset_version": "id2-20260411-1400-qpath-tr008-run__v10-1-path2-source-bridge__20260412T104656Z",
+      "package_dir": "C:\\v1.0-qpathformer_enterprise\\path_2_access_mode_canonical\\03_dataset\\candidates\\session-run-id2-20260411-1400-qpath-tr008-run\\QPDS-PACKAGE-ID2_PREP\\id2-20260411-1400-qpath-tr008-run__v10-1-path2-source-bridge__20260412T104656Z",
+      "freeze_dir": "C:\\v1.0-qpathformer_enterprise\\path_2_access_mode_canonical\\03_dataset\\candidates\\session-run-id2-20260411-1400-qpath-tr008-run\\QPDS-PACKAGE-ID2_PREP\\id2-20260411-1400-qpath-tr008-run__v10-1-path2-source-bridge__20260412T104656Z\\freeze",
+      "frozen_manifest_path": "C:\\v1.0-qpathformer_enterprise\\path_2_access_mode_canonical\\03_dataset\\candidates\\session-run-id2-20260411-1400-qpath-tr008-run\\QPDS-PACKAGE-ID2_PREP\\id2-20260411-1400-qpath-tr008-run__v10-1-path2-source-bridge__20260412T104656Z\\freeze\\frozen_manifest.json",
+      "freeze_artifact_path": "C:\\v1.0-qpathformer_enterprise\\path_2_access_mode_canonical\\03_dataset\\candidates\\session-run-id2-20260411-1400-qpath-tr008-run\\QPDS-PACKAGE-ID2_PREP\\id2-20260411-1400-qpath-tr008-run__v10-1-path2-source-bridge__20260412T104656Z\\freeze\\state1_freeze.json",
+      "freeze_id": "7919bde1-e936-4a14-aaaa-2925d1b6cc5a",
+      "candidate_count": 4,
+      "source_record_count": 4,
+      "target_model": {
+        "parameter_class": "12B-14B",
+        "role": "enterprise"
+      },
+      "authorization_summary": {
+        "all_items_candidate_authorized": true,
+        "fine_tuning_allowed_count": 0,
+        "fine_tuning_globally_allowed": false
+      },
+      "routing_profile": {
+        "routing_decisions": [
+          "SEND_TO_STATE_2_REVIEW"
+        ],
+        "target_states": [
+          "STATE_2"
+        ],
+        "all_candidates_state2_review_ready": true
+      },
+      "registry_posture": {
+        "non_authoritative": true,
+        "governance_first": true,
+        "explicit_update": true
+      }
+    },
+    {
+      "registry_entry_id": "7e101342-086c-4581-8e76-d4452f394682",
+      "registered_at": "2026-04-17T20:33:22Z",
+      "state": "STATE_1",
+      "dataset_version": "id2-20260411-1400-qpath-tr008-run__v10-1-path2-source-bridge__20260417T203159Z",
+      "package_dir": "C:\\v1.0-qpathformer_enterprise\\path_2_access_mode_canonical\\03_dataset\\candidates\\session-run-id2-20260411-1400-qpath-tr008-run\\QPDS-PACKAGE-ID2_PREP\\id2-20260411-1400-qpath-tr008-run__v10-1-path2-source-bridge__20260417T203159Z",
+      "freeze_dir": "C:\\v1.0-qpathformer_enterprise\\path_2_access_mode_canonical\\03_dataset\\candidates\\session-run-id2-20260411-1400-qpath-tr008-run\\QPDS-PACKAGE-ID2_PREP\\id2-20260411-1400-qpath-tr008-run__v10-1-path2-source-bridge__20260417T203159Z\\freeze",
+      "frozen_manifest_path": "C:\\v1.0-qpathformer_enterprise\\path_2_access_mode_canonical\\03_dataset\\candidates\\session-run-id2-20260411-1400-qpath-tr008-run\\QPDS-PACKAGE-ID2_PREP\\id2-20260411-1400-qpath-tr008-run__v10-1-path2-source-bridge__20260417T203159Z\\freeze\\frozen_manifest.json",
+      "freeze_artifact_path": "C:\\v1.0-qpathformer_enterprise\\path_2_access_mode_canonical\\03_dataset\\candidates\\session-run-id2-20260411-1400-qpath-tr008-run\\QPDS-PACKAGE-ID2_PREP\\id2-20260411-1400-qpath-tr008-run__v10-1-path2-source-bridge__20260417T203159Z\\freeze\\state1_freeze.json",
+      "freeze_id": "521ec56d-48fb-4e3a-b596-7713e724cb89",
+      "candidate_count": 4,
+      "source_record_count": 8,
+      "target_model": {
+        "parameter_class": "12B-14B",
+        "role": "enterprise"
+      },
+      "authorization_summary": {
+        "all_items_candidate_authorized": true,
+        "fine_tuning_allowed_count": 0,
+        "fine_tuning_globally_allowed": false
+      },
+      "routing_profile": {
+        "routing_decisions": [
+          "SEND_TO_STATE_2_REVIEW"
+        ],
+        "target_states": [
+          "STATE_2"
+        ],
+        "all_candidates_state2_review_ready": true
+      },
+      "registry_posture": {
+        "non_authoritative": true,
+        "governance_first": true,
+        "explicit_update": true
+      }
+    },
+    {
+      "registry_entry_id": "7538563d-9dcf-4e2d-9610-c1c92b3d40c2",
+      "registered_at": "2026-04-18T02:58:44Z",
+      "state": "STATE_1",
+      "dataset_version": "checkpoint_v4_strict",
+      "package_dir": "C:\\v1.0-qpathformer_enterprise\\path_1_tr_corpus_reference\\04_state1_package\\QPDS-TR-STRICT-ID3-001",
+      "freeze_dir": "C:\\v1.0-qpathformer_enterprise\\path_1_tr_corpus_reference\\04_state1_package\\QPDS-TR-STRICT-ID3-001\\freeze",
+      "frozen_manifest_path": "C:\\v1.0-qpathformer_enterprise\\path_1_tr_corpus_reference\\04_state1_package\\QPDS-TR-STRICT-ID3-001\\freeze\\frozen_manifest.json",
+      "freeze_artifact_path": "C:\\v1.0-qpathformer_enterprise\\path_1_tr_corpus_reference\\04_state1_package\\QPDS-TR-STRICT-ID3-001\\freeze\\state1_freeze.json",
+      "freeze_id": "42252b6b-f78c-4982-943a-ccd3e9e0203c",
+      "candidate_count": 1117,
+      "source_record_count": 1241,
+      "target_model": {
+        "training_mode": "local_lora",
+        "model_family": "llama",
+        "model_base": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+        "backend_profile_id": "local_lora_reference",
+        "execution_mode": "configured"
+      },
+      "authorization_summary": {
+        "reference_match_required": true,
+        "reference_id_count": 296,
+        "reference_reasoning_posture_counts": {
+          "inspection": 1237,
+          "operational": 4
+        },
+        "non_authoritative": true,
+        "governance_first": true,
+        "training_preparation_only": true,
+        "registry_state": "STATE_1",
+        "dataset_passport_id": "QPDS-TR-STRICT-ID3-001"
+      },
+      "routing_profile": {
+        "profile_type": "tr_wrapper_flow",
+        "path_id": "path_1_tr_corpus_reference",
+        "source_stage": "tr_signals",
+        "dataset_stage": "tr_finetune",
+        "package_stage": "state1_wrapper",
+        "reference_match_required": true
+      },
+      "registry_posture": {
+        "non_authoritative": true,
+        "governance_first": true,
+        "explicit_update": true
+      }
+    },
+    {
+      "registry_entry_id": "137cd382-103f-414b-b578-d8424abf4cc7",
+      "registered_at": "2026-04-18T04:48:13Z",
+      "state": "STATE_1",
+      "dataset_version": "id2-20260411-1400-qpath-tr008-run__v10-1-path2-source-bridge__20260418T044710Z",
+      "package_dir": "C:\\v1.0-qpathformer_enterprise\\path_2_access_mode_canonical\\03_dataset\\candidates\\session-run-id2-20260411-1400-qpath-tr008-run\\QPDS-PACKAGE-ID2_PREP\\id2-20260411-1400-qpath-tr008-run__v10-1-path2-source-bridge__20260418T044710Z",
+      "freeze_dir": "C:\\v1.0-qpathformer_enterprise\\path_2_access_mode_canonical\\03_dataset\\candidates\\session-run-id2-20260411-1400-qpath-tr008-run\\QPDS-PACKAGE-ID2_PREP\\id2-20260411-1400-qpath-tr008-run__v10-1-path2-source-bridge__20260418T044710Z\\freeze",
+      "frozen_manifest_path": "C:\\v1.0-qpathformer_enterprise\\path_2_access_mode_canonical\\03_dataset\\candidates\\session-run-id2-20260411-1400-qpath-tr008-run\\QPDS-PACKAGE-ID2_PREP\\id2-20260411-1400-qpath-tr008-run__v10-1-path2-source-bridge__20260418T044710Z\\freeze\\frozen_manifest.json",
+      "freeze_artifact_path": "C:\\v1.0-qpathformer_enterprise\\path_2_access_mode_canonical\\03_dataset\\candidates\\session-run-id2-20260411-1400-qpath-tr008-run\\QPDS-PACKAGE-ID2_PREP\\id2-20260411-1400-qpath-tr008-run__v10-1-path2-source-bridge__20260418T044710Z\\freeze\\state1_freeze.json",
+      "freeze_id": "a49fab29-29a1-4b64-8650-0759113428b0",
+      "candidate_count": 4,
+      "source_record_count": 16,
+      "target_model": {
+        "parameter_class": "12B-14B",
+        "role": "enterprise"
+      },
+      "authorization_summary": {
+        "all_items_candidate_authorized": true,
+        "fine_tuning_allowed_count": 0,
+        "fine_tuning_globally_allowed": false
+      },
+      "routing_profile": {
+        "routing_decisions": [
+          "SEND_TO_STATE_2_REVIEW"
+        ],
+        "target_states": [
+          "STATE_2"
+        ],
+        "all_candidates_state2_review_ready": true
+      },
+      "registry_posture": {
+        "non_authoritative": true,
+        "governance_first": true,
+        "explicit_update": true
+      }
+    }
+  ]
+}

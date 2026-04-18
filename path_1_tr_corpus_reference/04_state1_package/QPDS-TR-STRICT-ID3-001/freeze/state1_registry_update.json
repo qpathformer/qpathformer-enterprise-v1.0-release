@@ -1,0 +1,100 @@
+{
+  "registry_update_id": "dfb2be27-5b0a-43fb-824e-772301f8dd13",
+  "registry_update_timestamp": "2026-04-18T02:58:44Z",
+  "registry_scope": "STATE_1",
+  "package_dir": "C:\\v1.0-qpathformer_enterprise\\path_1_tr_corpus_reference\\04_state1_package\\QPDS-TR-STRICT-ID3-001",
+  "freeze_dir": "C:\\v1.0-qpathformer_enterprise\\path_1_tr_corpus_reference\\04_state1_package\\QPDS-TR-STRICT-ID3-001\\freeze",
+  "freeze_artifact_path": "C:\\v1.0-qpathformer_enterprise\\path_1_tr_corpus_reference\\04_state1_package\\QPDS-TR-STRICT-ID3-001\\freeze\\state1_freeze.json",
+  "frozen_manifest_path": "C:\\v1.0-qpathformer_enterprise\\path_1_tr_corpus_reference\\04_state1_package\\QPDS-TR-STRICT-ID3-001\\freeze\\frozen_manifest.json",
+  "posture": {
+    "access_mode": "ID_2",
+    "non_authoritative": true,
+    "governance_first": true,
+    "explicit_registry_mutation": true
+  },
+  "freeze_summary": {
+    "freeze_id": "42252b6b-f78c-4982-943a-ccd3e9e0203c",
+    "freeze_decision": "FREEZE_STATE1_PACKAGE",
+    "freeze_approved": true,
+    "freeze_ready": true
+  },
+  "frozen_package_summary": {
+    "dataset_version": "checkpoint_v4_strict",
+    "state": "STATE_1",
+    "candidate_count": 1117,
+    "source_record_count": 1241,
+    "target_model": {
+      "training_mode": "local_lora",
+      "model_family": "llama",
+      "model_base": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+      "backend_profile_id": "local_lora_reference",
+      "execution_mode": "configured"
+    }
+  },
+  "thresholds": {
+    "require_approved_freeze": true,
+    "require_state1": true
+  },
+  "decision": {
+    "approved": true,
+    "decision": "REGISTER_STATE1_PACKAGE",
+    "reasons": [
+      "all_state1_registry_thresholds_passed"
+    ]
+  },
+  "registry_entry_preview": {
+    "registry_entry_id": "7538563d-9dcf-4e2d-9610-c1c92b3d40c2",
+    "registered_at": "2026-04-18T02:58:44Z",
+    "state": "STATE_1",
+    "dataset_version": "checkpoint_v4_strict",
+    "package_dir": "C:\\v1.0-qpathformer_enterprise\\path_1_tr_corpus_reference\\04_state1_package\\QPDS-TR-STRICT-ID3-001",
+    "freeze_dir": "C:\\v1.0-qpathformer_enterprise\\path_1_tr_corpus_reference\\04_state1_package\\QPDS-TR-STRICT-ID3-001\\freeze",
+    "frozen_manifest_path": "C:\\v1.0-qpathformer_enterprise\\path_1_tr_corpus_reference\\04_state1_package\\QPDS-TR-STRICT-ID3-001\\freeze\\frozen_manifest.json",
+    "freeze_artifact_path": "C:\\v1.0-qpathformer_enterprise\\path_1_tr_corpus_reference\\04_state1_package\\QPDS-TR-STRICT-ID3-001\\freeze\\state1_freeze.json",
+    "freeze_id": "42252b6b-f78c-4982-943a-ccd3e9e0203c",
+    "candidate_count": 1117,
+    "source_record_count": 1241,
+    "target_model": {
+      "training_mode": "local_lora",
+      "model_family": "llama",
+      "model_base": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+      "backend_profile_id": "local_lora_reference",
+      "execution_mode": "configured"
+    },
+    "authorization_summary": {
+      "reference_match_required": true,
+      "reference_id_count": 296,
+      "reference_reasoning_posture_counts": {
+        "inspection": 1237,
+        "operational": 4
+      },
+      "non_authoritative": true,
+      "governance_first": true,
+      "training_preparation_only": true,
+      "registry_state": "STATE_1",
+      "dataset_passport_id": "QPDS-TR-STRICT-ID3-001"
+    },
+    "routing_profile": {
+      "profile_type": "tr_wrapper_flow",
+      "path_id": "path_1_tr_corpus_reference",
+      "source_stage": "tr_signals",
+      "dataset_stage": "tr_finetune",
+      "package_stage": "state1_wrapper",
+      "reference_match_required": true
+    },
+    "registry_posture": {
+      "non_authoritative": true,
+      "governance_first": true,
+      "explicit_update": true
+    }
+  },
+  "notes": "Path 1 TR strict wrapper run from the three-path root",
+  "written": true,
+  "attempted_packages": [
+    {
+      "package_dir": "C:\\v1.0-qpathformer_enterprise\\path_1_tr_corpus_reference\\04_state1_package\\QPDS-TR-STRICT-ID3-001",
+      "status": "selected",
+      "reason": "first_registry_candidate"
+    }
+  ]
+}

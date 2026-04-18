@@ -1,0 +1,48 @@
+{
+  "manifest_id": "6c6d9405-30c4-40bf-a026-47a92c484e5b",
+  "dataset_version": "id2-20260411-1400-qpath-tr008-run__v10-1-path2-source-bridge__20260418T043359Z",
+  "dataset_path": "C:\\v1.0-qpathformer_enterprise\\path_2_access_mode_canonical\\03_dataset\\candidates\\session-run-id2-20260411-1400-qpath-tr008-run\\QPDS-PACKAGE-ID2_PREP\\id2-20260411-1400-qpath-tr008-run__v10-1-path2-source-bridge__20260418T043359Z\\dataset.jsonl",
+  "package_dir": "C:\\v1.0-qpathformer_enterprise\\path_2_access_mode_canonical\\03_dataset\\candidates\\session-run-id2-20260411-1400-qpath-tr008-run\\QPDS-PACKAGE-ID2_PREP\\id2-20260411-1400-qpath-tr008-run__v10-1-path2-source-bridge__20260418T043359Z",
+  "package_manifest_path": "C:\\v1.0-qpathformer_enterprise\\path_2_access_mode_canonical\\03_dataset\\candidates\\session-run-id2-20260411-1400-qpath-tr008-run\\QPDS-PACKAGE-ID2_PREP\\id2-20260411-1400-qpath-tr008-run__v10-1-path2-source-bridge__20260418T043359Z\\manifest.json",
+  "lineage_path": "C:\\v1.0-qpathformer_enterprise\\path_2_access_mode_canonical\\03_dataset\\candidates\\session-run-id2-20260411-1400-qpath-tr008-run\\QPDS-PACKAGE-ID2_PREP\\id2-20260411-1400-qpath-tr008-run__v10-1-path2-source-bridge__20260418T043359Z\\lineage.json",
+  "target_model": {
+    "parameter_class": "12B-14B",
+    "role": "enterprise"
+  },
+  "candidate_count": 4,
+  "source_record_count": 12,
+  "extracted_candidate_count": 4,
+  "source_states": [
+    "STATE_3"
+  ],
+  "source_signal_ids": [
+    "5fcadefe-dc69-4ff7-8584-844670a7d4e9",
+    "8ff6bdc3-b94e-4d81-91d6-347bed93afb8",
+    "97bbd7ff-25d1-4df7-9458-cc3ae8844619",
+    "b36908c6-e5b3-40dc-a58f-edef9da530a9"
+  ],
+  "source_record_profile": {
+    "llm_normalized_count": 0,
+    "native_signal_count": 12
+  },
+  "routing_profile": {
+    "routing_decisions": [
+      "SEND_TO_STATE_2_REVIEW"
+    ],
+    "target_states": [
+      "STATE_2"
+    ],
+    "all_candidates_state2_review_ready": true
+  },
+  "transformations_applied": [
+    "enterprise_structuring",
+    "dedup:content",
+    "id2_candidate_export"
+  ],
+  "authorization_summary": {
+    "all_items_candidate_authorized": true,
+    "fine_tuning_allowed_count": 0,
+    "fine_tuning_globally_allowed": false
+  },
+  "created_at": "2026-04-18T04:33:59Z"
+}

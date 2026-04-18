@@ -1,0 +1,16 @@
+{
+  "hash_verification_version": "v13.2",
+  "overall_status": "ok",
+  "verification_mode": "single_file_integrity",
+  "file_count": 1,
+  "results": [
+    {
+      "file_name": "client_governance.json",
+      "status": "match",
+      "expected_sha256": "dc369f96cc4e4d5b33ff744e25a9937f7547db3b71e7be59690aff7378420a65",
+      "actual_sha256": "dc369f96cc4e4d5b33ff744e25a9937f7547db3b71e7be59690aff7378420a65",
+      "verification_basis": "computed_at_ingestion"
+    }
+  ],
+  "verified_at": "2026-04-18T05:04:49Z"
+}

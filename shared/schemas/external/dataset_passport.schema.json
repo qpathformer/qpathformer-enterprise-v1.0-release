@@ -1,0 +1,605 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://policyofdevelopments.org/schemas/dataset_passport.schema.json",
+  "title": "Dataset Passport",
+  "description": "Machine-readable governance record describing dataset identity, provenance, lifecycle state, authorization scope, lineage references, and optional execution metadata.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "passport_version",
+    "dataset_passport_id",
+    "dataset_title",
+    "dataset_kind",
+    "dataset_origin",
+    "provenance",
+    "lifecycle",
+    "authorization_scope",
+    "governance_flags",
+    "lineage"
+  ],
+  "properties": {
+    "passport_version": {
+      "type": "string",
+      "const": "qpds_passport_v1.0"
+    },
+    "dataset_passport_id": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9._:-]{8,128}$"
+    },
+    "dataset_title": {
+      "type": "string",
+      "minLength": 3,
+      "maxLength": 256
+    },
+    "dataset_description": {
+      "type": "string",
+      "maxLength": 4000
+    },
+    "dataset_kind": {
+      "type": "string",
+      "enum": [
+        "governed_training_input",
+        "runtime_signal_dataset",
+        "synthetic_candidate_dataset",
+        "durable_training_dataset",
+        "lineage_only_record",
+        "policy_bound_dataset"
+      ]
+    },
+    "dataset_origin": {
+      "type": "string",
+      "enum": [
+        "access_pod_id3_freeze",
+        "access_pod_session_record",
+        "access_pod_module_record",
+        "client_supplied_dataset",
+        "synthetic_derivation",
+        "third_party_dataset",
+        "mixed_source"
+      ]
+    },
+    "dataset_owner": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "owner_type",
+        "owner_name"
+      ],
+      "properties": {
+        "owner_type": {
+          "type": "string",
+          "enum": [
+            "individual",
+            "organization",
+            "project",
+            "mixed"
+          ]
+        },
+        "owner_name": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 256
+        },
+        "jurisdiction": {
+          "type": "string",
+          "maxLength": 128
+        }
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "source_system",
+        "source_access_mode",
+        "inspection_status",
+        "frozen_at_utc",
+        "hash_manifest_algorithm",
+        "canonical_artifacts",
+        "freeze_hash_verified"
+      ],
+      "properties": {
+        "source_system": {
+          "type": "string",
+          "enum": [
+            "Access-PoD",
+            "Q-Pathformer",
+            "External",
+            "Mixed"
+          ]
+        },
+        "source_access_mode": {
+          "type": "string",
+          "enum": [
+            "ID_1",
+            "ID_2",
+            "ID_3",
+            "N/A"
+          ]
+        },
+        "source_record_class": {
+          "type": "string",
+          "enum": [
+            "non_inspection_session_record",
+            "non_inspection_module_record",
+            "dataset_record",
+            "mixed_record",
+            "unknown"
+          ]
+        },
+        "source_session_id": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9._:-]{1,128}$"
+        },
+        "source_module_id": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9._:-]{1,64}$"
+        },
+        "source_freeze_id": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9._:/\\\\-]{1,512}$"
+        },
+        "inspection_status": {
+          "type": "string",
+          "enum": [
+            "frozen_under_ID_3",
+            "unfrozen",
+            "derived",
+            "unknown"
+          ]
+        },
+        "frozen_at_utc": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "hash_manifest_algorithm": {
+          "type": "string",
+          "enum": [
+            "SHA-256"
+          ]
+        },
+        "freeze_hash_verified": {
+          "type": "boolean"
+        },
+        "canonical_artifacts": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 64,
+          "items": {
+            "$ref": "#/$defs/canonicalArtifact"
+          }
+        },
+        "evidence_note": {
+          "type": "string",
+          "maxLength": 4000
+        }
+      }
+    },
+    "lifecycle": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "state",
+        "state_reason",
+        "state2_review_required",
+        "promotion_to_state1_allowed"
+      ],
+      "properties": {
+        "state": {
+          "type": "string",
+          "enum": [
+            "STATE_1",
+            "STATE_2",
+            "STATE_3",
+            "HOLD",
+            "EXCLUDED"
+          ]
+        },
+        "state_reason": {
+          "type": "string",
+          "minLength": 3,
+          "maxLength": 2000
+        },
+        "state2_review_required": {
+          "type": "boolean"
+        },
+        "promotion_to_state1_allowed": {
+          "type": "boolean"
+        },
+        "promotion_blockers": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "maxLength": 512
+          },
+          "uniqueItems": true
+        }
+      }
+    },
+    "authorization_scope": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "runtime_reasoning",
+        "synthetic_generation",
+        "fine_tuning",
+        "external_training",
+        "human_review_required"
+      ],
+      "properties": {
+        "runtime_reasoning": {
+          "type": "boolean"
+        },
+        "synthetic_generation": {
+          "type": "boolean"
+        },
+        "fine_tuning": {
+          "type": "boolean"
+        },
+        "external_training": {
+          "type": "boolean"
+        },
+        "research_experimentation": {
+          "type": "boolean",
+          "default": false
+        },
+        "third_party_model_use": {
+          "type": "boolean",
+          "default": false
+        },
+        "human_review_required": {
+          "type": "boolean"
+        },
+        "authorization_basis": {
+          "type": "string",
+          "enum": [
+            "organizational_policy",
+            "explicit_client_authorization",
+            "internal_governance_review",
+            "research_only",
+            "unknown"
+          ]
+        },
+        "authorization_note": {
+          "type": "string",
+          "maxLength": 4000
+        },
+        "effective_from_utc": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "effective_to_utc": {
+          "type": "string",
+          "format": "date-time"
+        }
+      }
+    },
+    "governance_flags": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "human_decision_required",
+        "signals_not_decisions",
+        "non_certifying",
+        "non_compliance_claim",
+        "non_trust_claim"
+      ],
+      "properties": {
+        "human_decision_required": {
+          "type": "boolean"
+        },
+        "signals_not_decisions": {
+          "type": "boolean"
+        },
+        "non_certifying": {
+          "type": "boolean"
+        },
+        "non_compliance_claim": {
+          "type": "boolean"
+        },
+        "non_trust_claim": {
+          "type": "boolean"
+        },
+        "contains_sensitive_data": {
+          "type": "boolean",
+          "default": false
+        },
+        "contains_synthetic_content": {
+          "type": "boolean",
+          "default": false
+        },
+        "dataset_containment_principle_applies": {
+          "type": "boolean",
+          "default": true
+        }
+      }
+    },
+    "lineage": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "lineage_record_type",
+        "parent_refs"
+      ],
+      "properties": {
+        "lineage_record_type": {
+          "type": "string",
+          "enum": [
+            "dataset_lineage",
+            "policy_dataset_lineage",
+            "mixed_lineage"
+          ]
+        },
+        "parent_refs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/lineageRef"
+          },
+          "uniqueItems": true
+        },
+        "policy_refs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/policyRef"
+          },
+          "uniqueItems": true
+        },
+        "previous_passport_id": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9._:-]{8,128}$"
+        }
+      }
+    },
+    "signal_profile": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "teacher_signals": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "maxLength": 128
+          },
+          "uniqueItems": true
+        },
+        "student_interpretation_mode": {
+          "type": "string",
+          "maxLength": 256
+        },
+        "signal_note": {
+          "type": "string",
+          "maxLength": 4000
+        }
+      }
+    },
+    "execution_profile": {
+      "$ref": "#/$defs/executionProfile"
+    },
+    "created_at_utc": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "updated_at_utc": {
+      "type": "string",
+      "format": "date-time"
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "lifecycle": {
+            "properties": {
+              "state": {
+                "const": "STATE_1"
+              }
+            },
+            "required": [
+              "state"
+            ]
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "authorization_scope": {
+            "properties": {
+              "fine_tuning": {
+                "const": true
+              }
+            },
+            "required": [
+              "fine_tuning"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "dataset_origin": {
+            "const": "access_pod_id3_freeze"
+          }
+        },
+        "required": [
+          "dataset_origin"
+        ]
+      },
+      "then": {
+        "properties": {
+          "provenance": {
+            "properties": {
+              "source_system": {
+                "const": "Access-PoD"
+              }
+            },
+            "required": [
+              "source_system",
+              "canonical_artifacts"
+            ]
+          }
+        }
+      }
+    }
+  ],
+  "$defs": {
+    "sha256": {
+      "type": "string",
+      "pattern": "^[a-fA-F0-9]{64}$"
+    },
+    "canonicalArtifact": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "artifact_name",
+        "artifact_role",
+        "sha256"
+      ],
+      "properties": {
+        "artifact_name": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 256
+        },
+        "artifact_role": {
+          "type": "string",
+          "enum": [
+            "primary_module_record",
+            "parent_session_record",
+            "variant_module_record",
+            "variant_session_record",
+            "supporting_artifact",
+            "freeze_note",
+            "hash_manifest"
+          ]
+        },
+        "sha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "path_hint": {
+          "type": "string",
+          "maxLength": 512
+        }
+      }
+    },
+    "lineageRef": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "ref_type",
+        "ref_id"
+      ],
+      "properties": {
+        "ref_type": {
+          "type": "string",
+          "enum": [
+            "dataset_passport",
+            "dataset_lineage",
+            "artifact",
+            "session",
+            "module",
+            "promotion_event"
+          ]
+        },
+        "ref_id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 256
+        },
+        "note": {
+          "type": "string",
+          "maxLength": 1000
+        }
+      }
+    },
+    "policyRef": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "document_id",
+        "title"
+      ],
+      "properties": {
+        "document_id": {
+          "type": "string",
+          "pattern": "^APOD-TR-[0-9]{3}$"
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 512
+        },
+        "edition": {
+          "type": "string",
+          "maxLength": 128
+        },
+        "section_ref": {
+          "type": "string",
+          "maxLength": 128
+        }
+      }
+    },
+    "executionProfile": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "enabled",
+        "environment"
+      ],
+      "properties": {
+        "enabled": {
+          "type": "boolean"
+        },
+        "environment": {
+          "type": "string",
+          "enum": [
+            "none",
+            "q_pathformer",
+            "custom",
+            "third_party"
+          ]
+        },
+        "ugccmt": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "group_id": {
+              "type": "string",
+              "maxLength": 128
+            },
+            "colour_code": {
+              "type": "string",
+              "enum": [
+                "red",
+                "orange",
+                "yellow",
+                "green",
+                "blue",
+                "purple"
+              ]
+            },
+            "measure_profile": {
+              "type": "string",
+              "maxLength": 128
+            }
+          }
+        },
+        "capsule_pipeline": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "capsule_id": {
+              "type": "string",
+              "maxLength": 128
+            },
+            "stage": {
+              "type": "string",
+              "maxLength": 128
+            }
+          }
+        }
+      }
+    }
+  }
+}

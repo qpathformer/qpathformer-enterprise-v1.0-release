@@ -1,0 +1,18 @@
+{
+  "scenario_id": "sector.healthcare.v1.baseline",
+  "scenario_label": "Healthcare Baseline",
+  "profile_id": "sector.healthcare.v1",
+  "description": "Canonical healthcare baseline. Sector-facing metrics use their primary source without blended weighting.",
+  "metric_overrides": {
+    "SECTOR_POLICY_PASS_RATE": {
+      "source_mix": {
+        "policy_pass": 1.0
+      }
+    },
+    "SECTOR_AUDIT_INTEROP_SCORE": {
+      "source_mix": {
+        "audit_interop": 1.0
+      }
+    }
+  }
+}

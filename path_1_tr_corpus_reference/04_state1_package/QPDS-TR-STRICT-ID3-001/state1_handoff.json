@@ -1,0 +1,80 @@
+{
+  "handoff_id": "4d325390-42e2-40ae-9dc8-3d79ad7ef174",
+  "handoff_timestamp": "2026-04-18T02:58:44Z",
+  "handoff_scope": "STATE_1",
+  "package_dir": "C:\\v1.0-qpathformer_enterprise\\path_1_tr_corpus_reference\\04_state1_package\\QPDS-TR-STRICT-ID3-001",
+  "dataset_path": "C:\\v1.0-qpathformer_enterprise\\path_1_tr_corpus_reference\\04_state1_package\\QPDS-TR-STRICT-ID3-001\\dataset.jsonl",
+  "manifest_path": "C:\\v1.0-qpathformer_enterprise\\path_1_tr_corpus_reference\\04_state1_package\\QPDS-TR-STRICT-ID3-001\\manifest.json",
+  "review_path": "C:\\v1.0-qpathformer_enterprise\\path_1_tr_corpus_reference\\04_state1_package\\QPDS-TR-STRICT-ID3-001\\state2_review.json",
+  "promotion_path": "C:\\v1.0-qpathformer_enterprise\\path_1_tr_corpus_reference\\04_state1_package\\QPDS-TR-STRICT-ID3-001\\state2_promotion_decision.json",
+  "posture": {
+    "access_mode": "ID_2",
+    "non_authoritative": true,
+    "governance_first": true,
+    "automatic_state1_freeze": false,
+    "automatic_registry_mutation": false
+  },
+  "package_summary": {
+    "dataset_version": "checkpoint_v4_strict",
+    "candidate_count": 1117,
+    "source_record_count": 1241,
+    "target_model": {
+      "training_mode": "local_lora",
+      "model_family": "llama",
+      "model_base": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+      "backend_profile_id": "local_lora_reference",
+      "execution_mode": "configured"
+    },
+    "routing_profile": {
+      "profile_type": "tr_wrapper_flow",
+      "path_id": "path_1_tr_corpus_reference",
+      "source_stage": "tr_signals",
+      "dataset_stage": "tr_finetune",
+      "package_stage": "state1_wrapper",
+      "reference_match_required": true
+    }
+  },
+  "review_summary": {
+    "review_id": "REVIEW-6a57afba-1148-4be9-9551-e226aaf9c3bb",
+    "review_decision": "APPROVE_STATE2_REVIEW",
+    "review_approved": true
+  },
+  "promotion_summary": {
+    "promotion_id": "PROMO-3d5a811d-4c40-4ac3-b763-a4926b7ecb15",
+    "promotion_decision": "APPROVE_STATE_1",
+    "promotion_approved": true
+  },
+  "thresholds": {
+    "min_candidates": 4,
+    "require_approved_review": true,
+    "require_approved_promotion": true,
+    "max_routing_mismatches": 0,
+    "max_missing_content": 0
+  },
+  "handoff_metrics": {
+    "candidate_count": 1117,
+    "review_ready_ratio": 1.0,
+    "routing_mismatch_count": 0,
+    "missing_content_count": 0
+  },
+  "decision": {
+    "approved": true,
+    "decision": "APPROVE_STATE1_HANDOFF_PACKAGE",
+    "reasons": [
+      "all_state1_handoff_thresholds_passed"
+    ]
+  },
+  "exceptions": {
+    "routing_mismatches": [],
+    "missing_content_candidate_ids": []
+  },
+  "notes": "Path 1 TR strict wrapper run from the three-path root",
+  "written": true,
+  "attempted_packages": [
+    {
+      "package_dir": "C:\\v1.0-qpathformer_enterprise\\path_1_tr_corpus_reference\\04_state1_package\\QPDS-TR-STRICT-ID3-001",
+      "status": "selected",
+      "reason": "first_handoff_candidate"
+    }
+  ]
+}

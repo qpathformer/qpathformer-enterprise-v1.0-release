@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "capsule_profile.schema.json",
+  "title": "Capsule Profile",
+  "description": "Optional capsule packaging metadata for Q-Pathformer execution workflows.",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "capsule_id": {
+      "type": "string"
+    },
+    "capsule_version": {
+      "type": "string"
+    },
+    "input_dataset_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "semantic_profile": {
+      "type": "string"
+    },
+    "deterministic_labeling": {
+      "type": "boolean"
+    },
+    "capsule_notes": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "capsule_id",
+    "capsule_version"
+  ]
+}

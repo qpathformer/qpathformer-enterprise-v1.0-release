@@ -1,0 +1,94 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://qpathformer.dev/schemas/adapter/template_client_governance_json.schema.json",
+  "title": "Client Governance JSON Template",
+  "description": "Validation contract for onboarding a structured client-origin governance dataset supplied as JSON.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "dataset_id",
+    "dataset_version",
+    "source_type",
+    "records"
+  ],
+  "properties": {
+    "dataset_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "dataset_version": {
+      "type": "string",
+      "minLength": 1
+    },
+    "source_type": {
+      "type": "string",
+      "const": "client_governance_json"
+    },
+    "source_organization": {
+      "type": "string"
+    },
+    "policy_context": {
+      "type": "string"
+    },
+    "authorization_hint": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "fine_tuning_allowed": {
+          "type": "boolean"
+        },
+        "human_review_required": {
+          "type": "boolean"
+        },
+        "notes": {
+          "type": "string"
+        }
+      }
+    },
+    "records": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "record_id",
+          "input",
+          "output"
+        ],
+        "properties": {
+          "record_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "input": {
+            "type": "string",
+            "minLength": 1
+          },
+          "output": {
+            "type": "string",
+            "minLength": 1
+          },
+          "metadata": {
+            "type": "object"
+          },
+          "source": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "document_id": {
+                "type": "string"
+              },
+              "section": {
+                "type": "string"
+              },
+              "uri": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

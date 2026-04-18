@@ -1,0 +1,25 @@
+{
+  "dataset_version": "checkpoint_v4_strict",
+  "lifecycle_state": "STATE_1",
+  "record_count": 1117,
+  "train_file": "train.sft.jsonl",
+  "registry_state": "STATE_1",
+  "dataset_passport_id": "QPDS-TR-STRICT-ID3-001",
+  "target_model": {
+    "training_mode": "local_lora",
+    "model_family": "llama",
+    "model_base": "TinyLlama/TinyLlama-1.1B-Chat-v1.0"
+  },
+  "authorization_posture": {
+    "non_authoritative": true,
+    "governance_first": true,
+    "reference_match_required": true,
+    "reference_id_count": 296,
+    "reference_reasoning_posture_counts": {
+      "inspection": 1237,
+      "operational": 4
+    }
+  },
+  "registry_entry_id": "7538563d-9dcf-4e2d-9610-c1c92b3d40c2",
+  "registered_at": "2026-04-18T02:58:44Z"
+}

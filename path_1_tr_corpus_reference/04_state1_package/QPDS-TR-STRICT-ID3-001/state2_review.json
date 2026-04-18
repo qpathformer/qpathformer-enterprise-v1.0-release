@@ -1,0 +1,32 @@
+{
+  "review_id": "REVIEW-6a57afba-1148-4be9-9551-e226aaf9c3bb",
+  "review_timestamp": "2026-04-18T02:58:44Z",
+  "review_scope": "STATE_2",
+  "package_id": "QPDS-TR-STRICT-ID3-001",
+  "dataset_version": "checkpoint_v4_strict",
+  "decision": {
+    "approved": true,
+    "decision": "APPROVE_STATE2_REVIEW",
+    "reasons": [
+      "tr_dataset_wrapper_review",
+      "strict_reference_match_confirmed",
+      "inspection_dominant_governed_dataset"
+    ]
+  },
+  "review_metrics": {
+    "candidate_count": 1117,
+    "review_ready_ratio": 1.0,
+    "routing_mismatch_count": 0,
+    "missing_content_count": 0
+  },
+  "exceptions": {
+    "routing_mismatches": [],
+    "missing_content_candidate_ids": []
+  },
+  "package_summary": {
+    "source_record_count": 1241,
+    "dataset_version": "checkpoint_v4_strict"
+  },
+  "notes": "Path 1 TR strict wrapper run from the three-path root",
+  "written": true
+}

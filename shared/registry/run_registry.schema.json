@@ -1,0 +1,129 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://qpathformer.dev/schemas/run_registry.schema.json",
+  "title": "Q-Pathformer Shared Run Registry",
+  "description": "Active index of live runtime-signal and lifecycle runs for the three-path enterprise root.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "registry_version",
+    "workflow_id",
+    "runs",
+    "updated_at_utc"
+  ],
+  "properties": {
+    "registry_version": {
+      "type": "string",
+      "const": "qpds_run_registry_v1.1"
+    },
+    "workflow_id": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9._:-]{6,128}$"
+    },
+    "registry_scope": {
+      "type": "string"
+    },
+    "registry_note": {
+      "type": "string"
+    },
+    "legacy_snapshot_path": {
+      "type": "string"
+    },
+    "runs": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/runRecord"
+      }
+    },
+    "updated_at_utc": {
+      "type": "string",
+      "format": "date-time"
+    }
+  },
+  "$defs": {
+    "runRecord": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": [
+        "registry_record_version",
+        "run_id",
+        "run_number",
+        "run_type",
+        "status",
+        "recorded_at_utc",
+        "updated_at_utc"
+      ],
+      "properties": {
+        "registry_record_version": {
+          "type": "string",
+          "const": "qpds_run_registry_record_v1.0"
+        },
+        "run_id": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9._:-]{6,128}$"
+        },
+        "run_number": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "run_type": {
+          "type": "string",
+          "enum": [
+            "runtime_signal_emitter",
+            "lifecycle_engine"
+          ]
+        },
+        "workflow_id": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9._:-]{3,128}$"
+        },
+        "path_id": {
+          "type": "string"
+        },
+        "status": {
+          "type": "string",
+          "enum": [
+            "success",
+            "success_with_findings",
+            "failed",
+            "completed"
+          ]
+        },
+        "lifecycle_state": {
+          "type": "string",
+          "enum": [
+            "STATE_1",
+            "STATE_2",
+            "STATE_3",
+            "HOLD",
+            "EXCLUDED"
+          ]
+        },
+        "target_state": {
+          "type": "string",
+          "enum": [
+            "STATE_1",
+            "STATE_2",
+            "STATE_3",
+            "HOLD",
+            "EXCLUDED"
+          ]
+        },
+        "dataset_passport_id": {
+          "type": "string"
+        },
+        "run_reference_path": {
+          "type": "string"
+        },
+        "recorded_at_utc": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "updated_at_utc": {
+          "type": "string",
+          "format": "date-time"
+        }
+      }
+    }
+  }
+}

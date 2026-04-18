@@ -1,0 +1,44 @@
+SPDX-License-Identifier: QPATHFORMER-PLATFORM-1.0
+Copyright (c) 2026 Anthony Siljeg
+
+QPATHFORMER PLATFORM LICENSE 1.0
+
+Permission is granted to any person obtaining a copy of the Q-Pathformer
+Platform source code to use, modify, and evaluate the software for research,
+educational, and internal development purposes subject to the following terms.
+
+1. GRANT OF RIGHTS
+You may:
+• Use the platform for research, testing, and evaluation.
+• Modify the source code for internal experimentation.
+• Publish academic analysis or benchmarking results.
+
+2. ATTRIBUTION
+Any use or derivative work must include attribution to:
+
+Q-Pathformer Platform
+Copyright (c) Anthony Siljeg
+
+3. RESTRICTIONS
+You may not:
+• Redistribute the platform as a commercial product.
+• Sublicense the platform.
+• Remove license notices or attribution.
+• Present modified versions as the original Q-Pathformer platform.
+
+Distribution of derivative builds requires written authorization from
+Q-Pathformer HQ.
+
+4. ENTERPRISE AND STRATEGIC USE
+Production deployment or commercial integration requires a separate
+Enterprise or Strategic License Agreement.
+
+5. SAFETY AND GOVERNANCE
+Users must not remove or bypass governance safeguards including
+audit logging, traceability controls, or policy enforcement mechanisms.
+
+6. NO WARRANTY
+The platform is provided "as is", without warranty of any kind.
+
+7. TERMINATION
+Violation of these terms terminates the license immediately.

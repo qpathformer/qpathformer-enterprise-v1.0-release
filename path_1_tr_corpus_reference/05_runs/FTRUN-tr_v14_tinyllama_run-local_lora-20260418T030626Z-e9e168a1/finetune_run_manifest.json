@@ -1,0 +1,57 @@
+{
+  "finetune_run_manifest_version": "v14.3",
+  "run_id": "FTRUN-tr_v14_tinyllama_run-local_lora-20260418T030626Z-e9e168a1",
+  "run_label": "tr_v14_tinyllama_run",
+  "run_suffix": null,
+  "dataset_version": "checkpoint_v4_strict",
+  "training_package_path": "C:\\v1.0-qpathformer_enterprise\\path_1_tr_corpus_reference\\04_state1_package\\QPDS-TR-STRICT-ID3-001",
+  "backend_profile_id": "local_lora_reference",
+  "backend": "local_lora",
+  "model_base": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+  "model_family": "llama",
+  "status": "completed",
+  "dry_run": false,
+  "execution_mode": "local_lora",
+  "record_count": 1117,
+  "hyperparameters": {
+    "max_steps": 100,
+    "learning_rate": 5e-05,
+    "batch_size": 1
+  },
+  "inputs": {
+    "train_file": "C:\\v1.0-qpathformer_enterprise\\path_1_tr_corpus_reference\\04_state1_package\\QPDS-TR-STRICT-ID3-001\\train.sft.jsonl",
+    "manifest_file": "C:\\v1.0-qpathformer_enterprise\\path_1_tr_corpus_reference\\04_state1_package\\QPDS-TR-STRICT-ID3-001\\state1_training_manifest.json",
+    "backend_profile_file": "C:\\v1.0-qpathformer_enterprise\\path_1_tr_corpus_reference\\04_state1_package\\QPDS-TR-STRICT-ID3-001\\training_backend_profile.json"
+  },
+  "outputs": {
+    "run_dir": "C:\\v1.0-qpathformer_enterprise\\path_1_tr_corpus_reference\\05_runs\\FTRUN-tr_v14_tinyllama_run-local_lora-20260418T030626Z-e9e168a1",
+    "training_log": "C:\\v1.0-qpathformer_enterprise\\path_1_tr_corpus_reference\\05_runs\\FTRUN-tr_v14_tinyllama_run-local_lora-20260418T030626Z-e9e168a1\\training_log.json",
+    "finetune_run_manifest": "C:\\v1.0-qpathformer_enterprise\\path_1_tr_corpus_reference\\05_runs\\FTRUN-tr_v14_tinyllama_run-local_lora-20260418T030626Z-e9e168a1\\finetune_run_manifest.json",
+    "top_level_run_log": "C:\\v1.0-qpathformer_enterprise\\path_1_tr_corpus_reference\\07_logs\\run_logs\\FTRUN-tr_v14_tinyllama_run-local_lora-20260418T030626Z-e9e168a1\\path1_finetune_run_20260418T030626479654Z.json",
+    "path1_run_log": "C:\\v1.0-qpathformer_enterprise\\path_1_tr_corpus_reference\\07_logs\\run_logs\\FTRUN-tr_v14_tinyllama_run-local_lora-20260418T030626Z-e9e168a1\\path1_finetune_run_20260418T030626479654Z.json",
+    "model_output_path": "C:\\v1.0-qpathformer_enterprise\\path_1_tr_corpus_reference\\05_runs\\FTRUN-tr_v14_tinyllama_run-local_lora-20260418T030626Z-e9e168a1\\model"
+  },
+  "governance_boundary": {
+    "dataset_modified": false,
+    "registry_updated": false,
+    "authorization_overridden": false,
+    "raw_dataset_inputs_accepted": false,
+    "latest_package_autoselection_used": false,
+    "lineage_recorded": true,
+    "execution_only": true
+  },
+  "lineage": {
+    "source_dataset_version": "checkpoint_v4_strict",
+    "source_training_manifest": "C:\\v1.0-qpathformer_enterprise\\path_1_tr_corpus_reference\\04_state1_package\\QPDS-TR-STRICT-ID3-001\\state1_training_manifest.json",
+    "source_backend_profile": "C:\\v1.0-qpathformer_enterprise\\path_1_tr_corpus_reference\\04_state1_package\\QPDS-TR-STRICT-ID3-001\\training_backend_profile.json",
+    "source_registry_entry_id": "7538563d-9dcf-4e2d-9610-c1c92b3d40c2"
+  },
+  "timestamps": {
+    "recorded_at_utc": "2026-04-18T03:07:08Z"
+  },
+  "trainer_family": "transformers_peft",
+  "trainer_type": "local_lora",
+  "trainable_strategy": "lora",
+  "checkpoints_dir": "C:\\v1.0-qpathformer_enterprise\\path_1_tr_corpus_reference\\05_runs\\FTRUN-tr_v14_tinyllama_run-local_lora-20260418T030626Z-e9e168a1\\checkpoints",
+  "trainer_summary_path": "C:\\v1.0-qpathformer_enterprise\\path_1_tr_corpus_reference\\05_runs\\FTRUN-tr_v14_tinyllama_run-local_lora-20260418T030626Z-e9e168a1\\trainer_summary.json"
+}

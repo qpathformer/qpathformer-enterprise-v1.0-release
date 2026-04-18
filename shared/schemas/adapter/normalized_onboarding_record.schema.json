@@ -1,0 +1,285 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://qpathformer.dev/schemas/adapter/normalized_onboarding_record.schema.json",
+  "title": "Normalized Onboarding Record",
+  "description": "Canonical lifecycle-contained onboarding record emitted by v13.1 adapter ingestion.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "onboarding_record_version",
+    "onboarding_record_id",
+    "package_id",
+    "artifact_type",
+    "bundle_role",
+    "source_mode_detected",
+    "normalization_status",
+    "source_artifact",
+    "provenance",
+    "authorization_context",
+    "governance_flags",
+    "lifecycle",
+    "normalized_payload",
+    "normalization_notes",
+    "created_at"
+  ],
+  "properties": {
+    "onboarding_record_version": {
+      "type": "string",
+      "const": "v13.1"
+    },
+    "onboarding_record_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "package_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "artifact_type": {
+      "type": "string",
+      "enum": [
+        "module_record",
+        "session_record",
+        "freeze_note",
+        "hash_manifest"
+      ]
+    },
+    "bundle_role": {
+      "type": "string",
+      "enum": [
+        "canonical_record",
+        "evidence",
+        "fixity_record",
+        "unknown"
+      ]
+    },
+    "source_mode_detected": {
+      "type": "string",
+      "enum": [
+        "ID_1",
+        "ID_2",
+        "ID_3",
+        "ID_2_frozen_under_ID_3",
+        "client_external",
+        "execution_derived",
+        "mixed",
+        "unknown"
+      ]
+    },
+    "normalization_status": {
+      "type": "string",
+      "enum": [
+        "normalized",
+        "partially_normalized",
+        "rejected"
+      ]
+    },
+    "source_artifact": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "file_name",
+        "file_role",
+        "source_path"
+      ],
+      "properties": {
+        "file_name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "file_role": {
+          "type": "string",
+          "enum": [
+            "module_baseline",
+            "module_variant",
+            "session_baseline",
+            "session_variant",
+            "freeze_note",
+            "hash_manifest",
+            "unknown"
+          ]
+        },
+        "source_path": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "source_package_id",
+        "source_paths",
+        "hash_present",
+        "hash_sha256",
+        "source_hash_status",
+        "freeze_note_present",
+        "freeze_timestamp",
+        "project_local_bundle"
+      ],
+      "properties": {
+        "source_package_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "source_paths": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string"
+          }
+        },
+        "hash_present": {
+          "type": "boolean"
+        },
+        "hash_sha256": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "source_hash_status": {
+          "type": "string",
+          "enum": [
+            "match",
+            "missing",
+            "mismatch",
+            "not_applicable"
+          ]
+        },
+        "freeze_note_present": {
+          "type": "boolean"
+        },
+        "freeze_timestamp": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date-time"
+        },
+        "project_local_bundle": {
+          "type": "boolean"
+        }
+      }
+    },
+    "authorization_context": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "fine_tuning_allowed",
+        "external_training_allowed",
+        "human_review_required",
+        "authorization_inherited",
+        "authorization_source"
+      ],
+      "properties": {
+        "fine_tuning_allowed": {
+          "type": "boolean"
+        },
+        "external_training_allowed": {
+          "type": "boolean"
+        },
+        "human_review_required": {
+          "type": "boolean"
+        },
+        "authorization_inherited": {
+          "type": "boolean"
+        },
+        "authorization_source": {
+          "type": "string",
+          "enum": [
+            "default_restricted_posture",
+            "inherited_from_source",
+            "provided_by_client_metadata",
+            "registry_derived"
+          ]
+        }
+      }
+    },
+    "governance_flags": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "signals_not_decisions",
+        "non_certifying",
+        "context_bound",
+        "containment_required",
+        "human_decision_required"
+      ],
+      "properties": {
+        "signals_not_decisions": {
+          "type": "boolean"
+        },
+        "non_certifying": {
+          "type": "boolean"
+        },
+        "context_bound": {
+          "type": "boolean"
+        },
+        "containment_required": {
+          "type": "boolean"
+        },
+        "human_decision_required": {
+          "type": "boolean"
+        }
+      }
+    },
+    "lifecycle": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "state",
+        "eligible_for_state_2",
+        "routing_decision"
+      ],
+      "properties": {
+        "state": {
+          "type": "string",
+          "const": "STATE_3"
+        },
+        "eligible_for_state_2": {
+          "type": "boolean",
+          "const": false
+        },
+        "routing_decision": {
+          "type": "string",
+          "const": "HOLD_IN_STATE_3"
+        }
+      }
+    },
+    "normalized_payload": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "record_class",
+        "payload"
+      ],
+      "properties": {
+        "record_class": {
+          "type": "string",
+          "enum": [
+            "non_inspection_module_record",
+            "non_inspection_session_record",
+            "freeze_note_record",
+            "hash_manifest_record"
+          ]
+        },
+        "payload": {
+          "type": "object"
+        }
+      }
+    },
+    "normalization_notes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    }
+  }
+}

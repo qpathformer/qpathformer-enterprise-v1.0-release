@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Routing Log",
+  "type": "object",
+  "required": [
+    "signal_id",
+    "source_state",
+    "target_state",
+    "decision",
+    "reason",
+    "timestamp"
+  ],
+  "properties": {
+    "signal_id": { "type": "string" },
+    "source_state": { "type": "string" },
+    "target_state": { "type": "string" },
+    "decision": { "type": "string" },
+    "reason": { "type": "string" },
+    "timestamp": { "type": "string" },
+    "interaction_type": { "type": "string" },
+    "escalation_used": { "type": "boolean" },
+    "model": {
+      "type": "object",
+      "properties": {
+        "parameter_class": { "type": "string" }
+      },
+      "additionalProperties": true
+    }
+  },
+  "additionalProperties": false
+}

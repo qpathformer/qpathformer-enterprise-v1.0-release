@@ -1,0 +1,59 @@
+{
+  "dataset_manifest_version": "v15.x-checkpoint_v4_strict",
+  "generated_at_utc": "2026-04-18T02:57:34Z",
+  "input_sources": {
+    "signals_jsonl": "path_1_tr_corpus_reference\\02_signals\\tr_signals.jsonl",
+    "docs_root": "path_1_tr_corpus_reference\\01_source\\readme_refs",
+    "reference_layer": "shared\\schemas\\access-mode\\access_mode_training_governance_reference.jsonl"
+  },
+  "record_counts": {
+    "source_signal_rows": 1241,
+    "readme_rows": 0,
+    "command_rows": 0,
+    "train_rows": 1117,
+    "validation_rows": 124,
+    "skipped_rows": 1046
+  },
+  "mix_policy": {
+    "tr_signal_ratio": 0.7,
+    "readme_runbook_ratio": 0.25,
+    "command_profile_ratio": 0.05
+  },
+  "filters": {
+    "excluded_toc_noise": true,
+    "excluded_duplicate_rows": true,
+    "excluded_sparse_chunks": true,
+    "exclude_source_path_pattern": [],
+    "allowed_tr": [],
+    "dedupe_mode": "semantic",
+    "max_examples_per_source": 200,
+    "require_reference_match": true,
+    "allowed_reference_postures": [
+      "inspection",
+      "learning",
+      "mixed_controlled",
+      "operational"
+    ],
+    "reference_min_weight": "low"
+  },
+  "authority_posture": {
+    "non_authoritative": true,
+    "training_preparation_only": true
+  },
+  "task_type_counts": {
+    "boundary_explanation": 221,
+    "command_generation": 2,
+    "constraint_explanation": 223,
+    "definition_extraction": 53,
+    "governance_summary": 262,
+    "lifecycle_reasoning": 174,
+    "naming_convention": 91,
+    "rule_explanation": 213,
+    "script_selection": 2
+  },
+  "reference_id_count": 296,
+  "reference_reasoning_posture_counts": {
+    "inspection": 1237,
+    "operational": 4
+  }
+}

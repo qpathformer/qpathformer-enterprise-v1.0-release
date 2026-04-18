@@ -1,0 +1,55 @@
+{
+  "inventory_version": "v13.2",
+  "root_path": "C:\\v1.0-qpathformer_enterprise\\path_3_external_custom_adapter\\01_source\\inbound\\QPDS-PACKAGE-001",
+  "file_count": 6,
+  "files": [
+    {
+      "inventory_order": 1,
+      "file_name": "hashes.txt",
+      "file_type": "text",
+      "path": "C:\\v1.0-qpathformer_enterprise\\path_3_external_custom_adapter\\01_source\\inbound\\QPDS-PACKAGE-001\\hashes.txt",
+      "size_bytes": 398,
+      "sha256": "b7a1e5b46c02112eb782d49289ac6ad695114b2e9945a838105b248b1044aef3"
+    },
+    {
+      "inventory_order": 2,
+      "file_name": "ID3_FREEZE_NOTE.md",
+      "file_type": "markdown",
+      "path": "C:\\v1.0-qpathformer_enterprise\\path_3_external_custom_adapter\\01_source\\inbound\\QPDS-PACKAGE-001\\ID3_FREEZE_NOTE.md",
+      "size_bytes": 1867,
+      "sha256": "3e2cc7f6a1194a579b65054a0ca111cbd66c679002144fb04dc7f015423ce978"
+    },
+    {
+      "inventory_order": 3,
+      "file_name": "module_03_baseline.canonical.json",
+      "file_type": "json",
+      "path": "C:\\v1.0-qpathformer_enterprise\\path_3_external_custom_adapter\\01_source\\inbound\\QPDS-PACKAGE-001\\module_03_baseline.canonical.json",
+      "size_bytes": 5227,
+      "sha256": "bc1c3511440e0aaa38b64bd17670455deb37f829e7ae99f7516f780938fd3aad"
+    },
+    {
+      "inventory_order": 4,
+      "file_name": "module_03_variant.canonical.json",
+      "file_type": "json",
+      "path": "C:\\v1.0-qpathformer_enterprise\\path_3_external_custom_adapter\\01_source\\inbound\\QPDS-PACKAGE-001\\module_03_variant.canonical.json",
+      "size_bytes": 4877,
+      "sha256": "20981b7f7cc065283991342ef675d352a20c0348a30204c2781bd1c8900e24d1"
+    },
+    {
+      "inventory_order": 5,
+      "file_name": "session_baseline.canonical.json",
+      "file_type": "json",
+      "path": "C:\\v1.0-qpathformer_enterprise\\path_3_external_custom_adapter\\01_source\\inbound\\QPDS-PACKAGE-001\\session_baseline.canonical.json",
+      "size_bytes": 2759,
+      "sha256": "77c977621571467e41df44d2c8e06c0b7476567c8d76d22cb315e49a47a5a503"
+    },
+    {
+      "inventory_order": 6,
+      "file_name": "session_variant.canonical.json",
+      "file_type": "json",
+      "path": "C:\\v1.0-qpathformer_enterprise\\path_3_external_custom_adapter\\01_source\\inbound\\QPDS-PACKAGE-001\\session_variant.canonical.json",
+      "size_bytes": 2856,
+      "sha256": "7ad84b44e8b44df807f64a480f4ca8dcf699abb65828916feb6419994ffe7315"
+    }
+  ]
+}

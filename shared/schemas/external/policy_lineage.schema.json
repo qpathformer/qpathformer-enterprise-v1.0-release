@@ -1,0 +1,247 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://policyofdevelopments.org/schemas/policy_lineage.schema.json",
+  "title": "Policy Lineage Record",
+  "description": "Informative lineage record describing the governance and policy references that influenced dataset creation, routing, review, or promotion.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "policy_lineage_version",
+    "policy_lineage_id",
+    "subject_type",
+    "subject_ref_id",
+    "policy_context",
+    "policy_assertions",
+    "recorded_at_utc"
+  ],
+  "properties": {
+    "policy_lineage_version": {
+      "type": "string",
+      "const": "qpds_policy_lineage_v1.0"
+    },
+    "policy_lineage_id": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9._:-]{8,128}$"
+    },
+    "subject_type": {
+      "type": "string",
+      "enum": [
+        "dataset_passport",
+        "dataset_lineage",
+        "routing_record",
+        "promotion_event",
+        "artifact_package",
+        "mixed_subject"
+      ]
+    },
+    "subject_ref_id": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 256
+    },
+    "policy_context": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "policy_documents",
+        "governance_posture"
+      ],
+      "properties": {
+        "policy_documents": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/policyDocument"
+          },
+          "uniqueItems": true
+        },
+        "governance_posture": {
+          "type": "string",
+          "enum": [
+            "informative_only",
+            "contained_onboarding",
+            "provisional_runtime_use",
+            "promotion_review_required",
+            "durable_training_authorized",
+            "mixed"
+          ]
+        },
+        "sector_profile": {
+          "type": "string",
+          "maxLength": 256
+        },
+        "jurisdictional_context": {
+          "type": "string",
+          "maxLength": 256
+        },
+        "policy_note": {
+          "type": "string",
+          "maxLength": 4000
+        }
+      }
+    },
+    "policy_bindings": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/policyBinding"
+      },
+      "uniqueItems": true
+    },
+    "template_provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "source_template_family": {
+          "type": "string",
+          "maxLength": 128
+        },
+        "source_template_version": {
+          "type": "string",
+          "enum": [
+            "2019",
+            "2020",
+            "2026",
+            "unknown",
+            "custom"
+          ]
+        },
+        "template_validation_status": {
+          "type": "string",
+          "enum": [
+            "valid",
+            "legacy_accepted",
+            "invalid",
+            "unknown"
+          ]
+        },
+        "template_note": {
+          "type": "string",
+          "maxLength": 2000
+        }
+      }
+    },
+    "policy_assertions": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "informative_only",
+        "non_certifying",
+        "non_compliance_claim",
+        "non_trust_claim",
+        "does_not_grant_authority"
+      ],
+      "properties": {
+        "informative_only": {
+          "type": "boolean"
+        },
+        "non_certifying": {
+          "type": "boolean"
+        },
+        "non_compliance_claim": {
+          "type": "boolean"
+        },
+        "non_trust_claim": {
+          "type": "boolean"
+        },
+        "does_not_grant_authority": {
+          "type": "boolean"
+        }
+      }
+    },
+    "review_trace": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "review_required": {
+          "type": "boolean"
+        },
+        "review_status": {
+          "type": "string",
+          "enum": [
+            "not_started",
+            "pending",
+            "completed",
+            "rejected",
+            "not_required"
+          ]
+        },
+        "review_note": {
+          "type": "string",
+          "maxLength": 2000
+        }
+      }
+    },
+    "recorded_at_utc": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "updated_at_utc": {
+      "type": "string",
+      "format": "date-time"
+    }
+  },
+  "$defs": {
+    "policyDocument": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "document_id",
+        "title"
+      ],
+      "properties": {
+        "document_id": {
+          "type": "string",
+          "pattern": "^APOD-TR-[0-9]{3}$"
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 512
+        },
+        "edition": {
+          "type": "string",
+          "maxLength": 128
+        },
+        "version": {
+          "type": "string",
+          "maxLength": 128
+        },
+        "section_ref": {
+          "type": "string",
+          "maxLength": 128
+        }
+      }
+    },
+    "policyBinding": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "binding_type",
+        "binding_ref"
+      ],
+      "properties": {
+        "binding_type": {
+          "type": "string",
+          "enum": [
+            "containment",
+            "authorization",
+            "routing",
+            "promotion",
+            "lineage",
+            "non_claims",
+            "template_validation"
+          ]
+        },
+        "binding_ref": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 256
+        },
+        "binding_note": {
+          "type": "string",
+          "maxLength": 1000
+        }
+      }
+    }
+  }
+}

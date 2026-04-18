@@ -1,0 +1,87 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Candidate Dataset Manifest",
+  "type": "object",
+  "required": [
+    "manifest_id",
+    "dataset_version",
+    "target_model",
+    "candidate_count",
+    "source_states",
+    "source_signal_ids",
+    "transformations_applied",
+    "authorization_summary",
+    "created_at"
+  ],
+  "properties": {
+    "manifest_id": {
+      "type": "string"
+    },
+    "dataset_version": {
+      "type": "string"
+    },
+    "target_model": {
+      "type": "object",
+      "required": ["parameter_class", "role"],
+      "properties": {
+        "parameter_class": {
+          "type": "string",
+          "enum": ["12B-14B", "24B-30B"]
+        },
+        "role": {
+          "type": "string",
+          "enum": ["enterprise", "strategic"]
+        }
+      },
+      "additionalProperties": false
+    },
+    "candidate_count": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "source_states": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": ["STATE_2", "STATE_1"]
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "source_signal_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "transformations_applied": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "authorization_summary": {
+      "type": "object",
+      "required": ["all_items_authorized", "fine_tuning_allowed_count"],
+      "properties": {
+        "all_items_authorized": {
+          "type": "boolean"
+        },
+        "fine_tuning_allowed_count": {
+          "type": "integer",
+          "minimum": 0
+        }
+      },
+      "additionalProperties": false
+    },
+    "created_at": {
+      "type": "string"
+    },
+    "notes": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": false
+}

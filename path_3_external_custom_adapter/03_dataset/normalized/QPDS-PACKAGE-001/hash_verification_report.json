@@ -1,0 +1,35 @@
+{
+  "hash_verification_version": "v13.2",
+  "overall_status": "ok",
+  "verification_mode": "manifest_hash_match",
+  "canonical_file_count": 4,
+  "missing_hash_entries": [],
+  "hash_mismatches": [],
+  "results": [
+    {
+      "file_name": "module_03_baseline.canonical.json",
+      "status": "match",
+      "expected_sha256": "bc1c3511440e0aaa38b64bd17670455deb37f829e7ae99f7516f780938fd3aad",
+      "actual_sha256": "bc1c3511440e0aaa38b64bd17670455deb37f829e7ae99f7516f780938fd3aad"
+    },
+    {
+      "file_name": "module_03_variant.canonical.json",
+      "status": "match",
+      "expected_sha256": "20981b7f7cc065283991342ef675d352a20c0348a30204c2781bd1c8900e24d1",
+      "actual_sha256": "20981b7f7cc065283991342ef675d352a20c0348a30204c2781bd1c8900e24d1"
+    },
+    {
+      "file_name": "session_baseline.canonical.json",
+      "status": "match",
+      "expected_sha256": "77c977621571467e41df44d2c8e06c0b7476567c8d76d22cb315e49a47a5a503",
+      "actual_sha256": "77c977621571467e41df44d2c8e06c0b7476567c8d76d22cb315e49a47a5a503"
+    },
+    {
+      "file_name": "session_variant.canonical.json",
+      "status": "match",
+      "expected_sha256": "7ad84b44e8b44df807f64a480f4ca8dcf699abb65828916feb6419994ffe7315",
+      "actual_sha256": "7ad84b44e8b44df807f64a480f4ca8dcf699abb65828916feb6419994ffe7315"
+    }
+  ],
+  "verified_at": "2026-04-18T05:12:48Z"
+}

@@ -1,0 +1,43 @@
+{
+  "frozen_manifest_id": "c8307361-7801-4f8e-a3d4-8fd74b92ad49",
+  "freeze_id": "a49fab29-29a1-4b64-8650-0759113428b0",
+  "frozen_timestamp": "2026-04-18T04:48:02Z",
+  "state": "STATE_1",
+  "dataset_version": "id2-20260411-1400-qpath-tr008-run__v10-1-path2-source-bridge__20260418T044710Z",
+  "package_dir": "C:\\v1.0-qpathformer_enterprise\\path_2_access_mode_canonical\\03_dataset\\candidates\\session-run-id2-20260411-1400-qpath-tr008-run\\QPDS-PACKAGE-ID2_PREP\\id2-20260411-1400-qpath-tr008-run__v10-1-path2-source-bridge__20260418T044710Z",
+  "freeze_dir": "C:\\v1.0-qpathformer_enterprise\\path_2_access_mode_canonical\\03_dataset\\candidates\\session-run-id2-20260411-1400-qpath-tr008-run\\QPDS-PACKAGE-ID2_PREP\\id2-20260411-1400-qpath-tr008-run__v10-1-path2-source-bridge__20260418T044710Z\\freeze",
+  "source_dataset_path": "C:\\v1.0-qpathformer_enterprise\\path_2_access_mode_canonical\\03_dataset\\candidates\\session-run-id2-20260411-1400-qpath-tr008-run\\QPDS-PACKAGE-ID2_PREP\\id2-20260411-1400-qpath-tr008-run__v10-1-path2-source-bridge__20260418T044710Z\\dataset.jsonl",
+  "frozen_dataset_path": "C:\\v1.0-qpathformer_enterprise\\path_2_access_mode_canonical\\03_dataset\\candidates\\session-run-id2-20260411-1400-qpath-tr008-run\\QPDS-PACKAGE-ID2_PREP\\id2-20260411-1400-qpath-tr008-run__v10-1-path2-source-bridge__20260418T044710Z\\freeze\\frozen_dataset.jsonl",
+  "source_manifest_path": "C:\\v1.0-qpathformer_enterprise\\path_2_access_mode_canonical\\03_dataset\\candidates\\session-run-id2-20260411-1400-qpath-tr008-run\\QPDS-PACKAGE-ID2_PREP\\id2-20260411-1400-qpath-tr008-run__v10-1-path2-source-bridge__20260418T044710Z\\manifest.json",
+  "review_path": "C:\\v1.0-qpathformer_enterprise\\path_2_access_mode_canonical\\03_dataset\\candidates\\session-run-id2-20260411-1400-qpath-tr008-run\\QPDS-PACKAGE-ID2_PREP\\id2-20260411-1400-qpath-tr008-run__v10-1-path2-source-bridge__20260418T044710Z\\state2_review.json",
+  "promotion_path": "C:\\v1.0-qpathformer_enterprise\\path_2_access_mode_canonical\\03_dataset\\candidates\\session-run-id2-20260411-1400-qpath-tr008-run\\QPDS-PACKAGE-ID2_PREP\\id2-20260411-1400-qpath-tr008-run__v10-1-path2-source-bridge__20260418T044710Z\\state2_promotion_decision.json",
+  "handoff_path": "C:\\v1.0-qpathformer_enterprise\\path_2_access_mode_canonical\\03_dataset\\candidates\\session-run-id2-20260411-1400-qpath-tr008-run\\QPDS-PACKAGE-ID2_PREP\\id2-20260411-1400-qpath-tr008-run__v10-1-path2-source-bridge__20260418T044710Z\\state1_handoff.json",
+  "freeze_ready_manifest_path": "C:\\v1.0-qpathformer_enterprise\\path_2_access_mode_canonical\\03_dataset\\candidates\\session-run-id2-20260411-1400-qpath-tr008-run\\QPDS-PACKAGE-ID2_PREP\\id2-20260411-1400-qpath-tr008-run__v10-1-path2-source-bridge__20260418T044710Z\\freeze_ready_manifest.json",
+  "target_model": {
+    "parameter_class": "12B-14B",
+    "role": "enterprise"
+  },
+  "candidate_count": 4,
+  "source_record_count": 16,
+  "authorization_summary": {
+    "all_items_candidate_authorized": true,
+    "fine_tuning_allowed_count": 0,
+    "fine_tuning_globally_allowed": false
+  },
+  "routing_profile": {
+    "routing_decisions": [
+      "SEND_TO_STATE_2_REVIEW"
+    ],
+    "target_states": [
+      "STATE_2"
+    ],
+    "all_candidates_state2_review_ready": true
+  },
+  "freeze_decision": {
+    "approved": true,
+    "decision": "FREEZE_STATE1_PACKAGE",
+    "reasons": [
+      "all_state1_freeze_thresholds_passed"
+    ]
+  }
+}

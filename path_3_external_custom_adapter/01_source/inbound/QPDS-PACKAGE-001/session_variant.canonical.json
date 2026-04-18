@@ -1,0 +1,85 @@
+{
+  "schema_version": "id2_records_v0.1",
+  "record_class": "non_inspection_session_record",
+  "access_mode_primary": "ID_2",
+  "inspection_status": "frozen_under_ID_3",
+  "intended_use": "Operational reasoning capture; signals not decisions; non-inspection.",
+  "human_decision_required": true,
+  "session": {
+    "session_id": "QPDS-20260322-freeze-variant-session",
+    "timezone": "Australia/Sydney",
+    "facilitator": {
+      "name": "Anthony Siljeg",
+      "role": "Founder and package maintainer"
+    },
+    "participants": [
+      {
+        "name": "Anthony Siljeg",
+        "role": "Operator"
+      }
+    ],
+    "project_context": {
+      "project_name": "Q-Pathformer DEV — Tiered Model Signal Exchange",
+      "audience": [
+        "internal",
+        "standards_preparation"
+      ],
+      "purpose_statement": "Capture the variant freeze-preparation posture where normalized governance files are treated as the explicit freeze surface.",
+      "in_scope": [
+        "Prepared freeze manifest review",
+        "Normalized governance verification",
+        "Canonical hash preparation"
+      ],
+      "out_of_scope": [
+        "Legal advice",
+        "Formal compliance determination",
+        "Certification or approval decisions",
+        "External regulatory engagement"
+      ]
+    },
+    "primary_materials": {
+      "modules_folder": "docs/modules-v2/",
+      "exemplar_modules_folder": "docs/modules-v2/",
+      "organizer_mode_file": "README_v2_id_2.md"
+    },
+    "mode_controls": {
+      "primary_mode_locked": true,
+      "secondary_modes_allowed": [],
+      "mode_switching_mid_session_prohibited": true
+    },
+    "created_utc": "2026-03-22T06:10:00Z"
+  },
+  "run_plan": {
+    "modules_intended": ["03","04","05","06"],
+    "module_order": ["05","06","04","03"],
+    "notes": "Variant session emphasizing normalized governance as the definitive freeze input surface."
+  },
+  "validation": {
+    "misalignment_testing_required_for_high_impact_outputs": true,
+    "question_driven_verification_required": true,
+    "human_review_required_before_external_use": true,
+    "validation_events": []
+  },
+  "session_events": [],
+  "outputs_index": {
+    "module_records": [
+      "module_03_baseline.canonical.json",
+      "module_03_variant.canonical.json"
+    ],
+    "artifacts_folder": "datasets/freeze_inputs/QPDS-PACKAGE-001/",
+    "artifacts": []
+  },
+  "signoff": {
+    "non_inspection_acknowledged": true,
+    "no_adequacy_or_compliance_claims_acknowledged": true,
+    "human_accountability_acknowledged": true,
+    "signed_by": "Anthony Siljeg",
+    "signed_at_utc": "2026-03-22T06:30:00Z"
+  },
+  "session_status": {
+    "intended_reuse": "freeze_preparation_variant",
+    "state": "active",
+    "notes": "Variant session for normalized-governance freeze surface verification."
+  },
+  "frozen_at_utc": "2026-03-22T06:30:00Z"
+}

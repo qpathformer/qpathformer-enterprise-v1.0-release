@@ -1,0 +1,28 @@
+{
+  "scenario_id": "sector.finance.v1.baseline",
+  "scenario_label": "Finance Baseline",
+  "profile_id": "sector.finance.v1",
+  "description": "Canonical finance baseline. Sector-facing metrics use their primary source without blended weighting.",
+  "metric_overrides": {
+    "SECTOR_MARKET_INTEGRITY_SIGNAL": {
+      "source_mix": {
+        "market_integrity": 1.0
+      }
+    },
+    "SECTOR_POLICY_PASS_RATE": {
+      "source_mix": {
+        "policy_pass": 1.0
+      }
+    },
+    "SECTOR_PARTNER_ATTEST_RATE": {
+      "source_mix": {
+        "partner_attestations": 1.0
+      }
+    },
+    "SECTOR_AUDIT_INTEROP_SCORE": {
+      "source_mix": {
+        "audit_interop": 1.0
+      }
+    }
+  }
+}

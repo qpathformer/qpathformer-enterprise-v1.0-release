@@ -1,0 +1,84 @@
+{
+  "mapper_version": "access_pod_profile_mapper_blueprint_v1",
+  "profile_id": "ai.and.emerging_tech.v1",
+  "purpose": "Enterprise rollout scoring for newly introduced AI and emerging technologies, emphasizing staged adoption, policy adaptation, and regulatory readiness.",
+  "artifact_families": [
+    "path2_runtime_signal",
+    "shared_run_registry",
+    "path2_governance_review",
+    "path2_training_package",
+    "model_evaluation_summary"
+  ],
+  "metric_mapping": [
+    {
+      "metric_id": "SEC_POLICY_ENFORCE_SUCCESS",
+      "priority": "core",
+      "preferred_sources": [
+        "path2_runtime_signal",
+        "shared_run_registry"
+      ],
+      "extraction_hint": "Measure whether rollout guardrails are consistently enforced during staged introduction."
+    },
+    {
+      "metric_id": "HARD_PATCH_LATENCY",
+      "priority": "secondary",
+      "preferred_sources": [
+        "shared_run_registry",
+        "path2_governance_review"
+      ],
+      "extraction_hint": "Track how quickly critical rollout issues can be corrected after discovery."
+    },
+    {
+      "metric_id": "COMP_TIME_TO_ADAPT",
+      "priority": "core",
+      "preferred_sources": [
+        "path2_governance_review",
+        "path2_training_package"
+      ],
+      "extraction_hint": "Measure how quickly policy or control changes propagate into governed rollout artifacts."
+    },
+    {
+      "metric_id": "COMP_CHANGE_APPROVAL_TRACE",
+      "priority": "core",
+      "preferred_sources": [
+        "path2_governance_review"
+      ],
+      "extraction_hint": "Use review, promotion, and freeze lineage to quantify change approval traceability."
+    },
+    {
+      "metric_id": "GOV_HIL_REVIEW_COVERAGE",
+      "priority": "core",
+      "preferred_sources": [
+        "path2_governance_review"
+      ],
+      "extraction_hint": "Keep high-impact rollout decisions under explicit human review and measure that coverage."
+    },
+    {
+      "metric_id": "GOV_MODEL_APPROVAL_TRACE",
+      "priority": "core",
+      "preferred_sources": [
+        "path2_training_package",
+        "shared_run_registry"
+      ],
+      "extraction_hint": "Track whether each experimental capability version has a governed approval chain."
+    },
+    {
+      "metric_id": "TRN_MODEL_LIMITS_DISCLOSED",
+      "priority": "secondary",
+      "preferred_sources": [
+        "model_evaluation_summary",
+        "path2_training_package"
+      ],
+      "extraction_hint": "Measure whether new-technology limits and operating bounds are disclosed to reviewers."
+    },
+    {
+      "metric_id": "SECTOR_AUDIT_INTEROP_SCORE",
+      "priority": "secondary",
+      "preferred_sources": [
+        "shared_run_registry",
+        "path2_governance_review"
+      ],
+      "extraction_hint": "Use exportability and audit-readiness of rollout artifacts as a regulatory interoperability proxy."
+    }
+  ]
+}

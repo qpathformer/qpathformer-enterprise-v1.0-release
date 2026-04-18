@@ -1,0 +1,219 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://qpathformer.dev/schemas/adapter/onboarding_manifest.schema.json",
+  "title": "Onboarding Manifest",
+  "description": "Manifest describing a normalized external onboarding package emitted by v13.1.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "onboarding_manifest_version",
+    "generated_at",
+    "package_id",
+    "template_family",
+    "profile_id",
+    "profile_version",
+    "profile_path",
+    "input",
+    "classification",
+    "authorization_posture",
+    "lifecycle_initialization",
+    "bundle_summary",
+    "output",
+    "record_counts"
+  ],
+  "properties": {
+    "onboarding_manifest_version": {
+      "type": "string",
+      "const": "v13.1"
+    },
+    "generated_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "package_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "template_family": {
+      "type": "string",
+      "const": "id3_freeze_bundle"
+    },
+    "profile_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "profile_version": {
+      "type": "string",
+      "minLength": 1
+    },
+    "profile_path": {
+      "type": "string",
+      "minLength": 1
+    },
+    "input": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "input_root",
+        "source_inventory_file"
+      ],
+      "properties": {
+        "input_root": {
+          "type": "string",
+          "minLength": 1
+        },
+        "source_inventory_file": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "classification": {
+      "$ref": "source_classification.schema.json"
+    },
+    "authorization_posture": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "fine_tuning_allowed_default",
+        "external_training_allowed_default",
+        "human_review_required_default",
+        "authorization_not_modified",
+        "authorization_source"
+      ],
+      "properties": {
+        "fine_tuning_allowed_default": {
+          "type": "boolean",
+          "const": false
+        },
+        "external_training_allowed_default": {
+          "type": "boolean",
+          "const": false
+        },
+        "human_review_required_default": {
+          "type": "boolean",
+          "const": true
+        },
+        "authorization_not_modified": {
+          "type": "boolean",
+          "const": true
+        },
+        "authorization_source": {
+          "type": "string",
+          "const": "default_restricted_posture"
+        }
+      }
+    },
+    "lifecycle_initialization": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "state",
+        "eligible_for_state_2",
+        "routing_decision"
+      ],
+      "properties": {
+        "state": {
+          "type": "string",
+          "const": "STATE_3"
+        },
+        "eligible_for_state_2": {
+          "type": "boolean",
+          "const": false
+        },
+        "routing_decision": {
+          "type": "string",
+          "const": "HOLD_IN_STATE_3"
+        }
+      }
+    },
+    "bundle_summary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "module_record_count",
+        "session_record_count",
+        "freeze_note_count",
+        "hash_manifest_count",
+        "hash_verification_status"
+      ],
+      "properties": {
+        "module_record_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "session_record_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "freeze_note_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "hash_manifest_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "hash_verification_status": {
+          "type": "string",
+          "enum": [
+            "ok",
+            "warning",
+            "error"
+          ]
+        }
+      }
+    },
+    "output": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "output_dir",
+        "onboarding_manifest_file",
+        "normalized_onboarding_file",
+        "normalization_report_file",
+        "hash_verification_report_file"
+      ],
+      "properties": {
+        "output_dir": {
+          "type": "string",
+          "minLength": 1
+        },
+        "onboarding_manifest_file": {
+          "type": "string",
+          "minLength": 1
+        },
+        "normalized_onboarding_file": {
+          "type": "string",
+          "minLength": 1
+        },
+        "normalization_report_file": {
+          "type": "string",
+          "minLength": 1
+        },
+        "hash_verification_report_file": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "record_counts": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "source_file_count",
+        "normalized_record_count"
+      ],
+      "properties": {
+        "source_file_count": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "normalized_record_count": {
+          "type": "integer",
+          "minimum": 1
+        }
+      }
+    }
+  }
+}

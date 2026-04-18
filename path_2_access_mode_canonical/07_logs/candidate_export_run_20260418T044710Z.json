@@ -1,0 +1,449 @@
+{
+  "run_id": "95acf8c4-6b48-4448-8401-e3e6aa3725e8",
+  "total_written_candidates": 4,
+  "total_extracted_candidates": 4,
+  "generated_at_utc": "2026-04-18T04:47:10Z",
+  "posture": {
+    "access_mode": "ID_2",
+    "non_authoritative": true,
+    "governance_first": true,
+    "id3_logic_present": false,
+    "authority_claims": false
+  },
+  "inputs": [
+    "C:\\v1.0-qpathformer_enterprise\\path_2_access_mode_canonical\\02_signals\\source_bridge\\2026-04-11--FREEZE-20260412-000400Z"
+  ],
+  "dataset_kind": "enterprise_structuring",
+  "export_scope": "candidate_export",
+  "allow_state2_only": false,
+  "require_validation": true,
+  "require_routing_review": true,
+  "min_maturity": null,
+  "dedup_mode": "content",
+  "groups_emitted": 1,
+  "ingestion_errors": [],
+  "excluded_records": [],
+  "dedup_events": [
+    {
+      "dedup_key": "0de46a51e113e38a165e76a08c0a292eb2306ca386451f2a3fcb9db8a4a62f7b",
+      "kept_candidate_id": "9c61551e-6106-4853-ae7b-a7faa83089a9",
+      "dropped_candidate_id": "c5928ecf-23aa-4383-a817-b23848e7425f",
+      "session_id": "ID2-20260411-1400-qpath-tr008-run",
+      "model_version": "v10.1-path2-source-bridge"
+    },
+    {
+      "dedup_key": "8b52303f3bf2adecb9473cde44232ab0c6208bf71ba53dd739dedcba72d6566a",
+      "kept_candidate_id": "2401a0a5-90e7-43dd-9c78-4aef29ddd62f",
+      "dropped_candidate_id": "9870e25e-8248-4e5b-83c1-fb313cf4cd82",
+      "session_id": "ID2-20260411-1400-qpath-tr008-run",
+      "model_version": "v10.1-path2-source-bridge"
+    },
+    {
+      "dedup_key": "006980415bb3f5d8de3f6234d85f67d676efdf796521e45ad11d1510b7b2a9b1",
+      "kept_candidate_id": "420e053d-3d62-4c93-9193-64c5607af91f",
+      "dropped_candidate_id": "baf84d51-852e-4eb9-8af1-85534c49f9e7",
+      "session_id": "ID2-20260411-1400-qpath-tr008-run",
+      "model_version": "v10.1-path2-source-bridge"
+    },
+    {
+      "dedup_key": "d2e70307bfb6b7698ff99a62c99ed5a50428d1f309dc220bd00177ac29ac4460",
+      "kept_candidate_id": "ce9960cc-2176-4c8f-b2bf-4c8b8db12373",
+      "dropped_candidate_id": "1dc2bf4d-27db-4e6b-a6fb-025441aea3b2",
+      "session_id": "ID2-20260411-1400-qpath-tr008-run",
+      "model_version": "v10.1-path2-source-bridge"
+    },
+    {
+      "dedup_key": "0de46a51e113e38a165e76a08c0a292eb2306ca386451f2a3fcb9db8a4a62f7b",
+      "kept_candidate_id": "96571107-7c01-42e6-8e9b-af49448ec5a6",
+      "dropped_candidate_id": "9c61551e-6106-4853-ae7b-a7faa83089a9",
+      "session_id": "ID2-20260411-1400-qpath-tr008-run",
+      "model_version": "v10.1-path2-source-bridge"
+    },
+    {
+      "dedup_key": "8b52303f3bf2adecb9473cde44232ab0c6208bf71ba53dd739dedcba72d6566a",
+      "kept_candidate_id": "93531acd-7211-458d-a16c-6108b1e31061",
+      "dropped_candidate_id": "2401a0a5-90e7-43dd-9c78-4aef29ddd62f",
+      "session_id": "ID2-20260411-1400-qpath-tr008-run",
+      "model_version": "v10.1-path2-source-bridge"
+    },
+    {
+      "dedup_key": "006980415bb3f5d8de3f6234d85f67d676efdf796521e45ad11d1510b7b2a9b1",
+      "kept_candidate_id": "d116163f-3e01-4e71-aa2b-9fa99774e7e3",
+      "dropped_candidate_id": "420e053d-3d62-4c93-9193-64c5607af91f",
+      "session_id": "ID2-20260411-1400-qpath-tr008-run",
+      "model_version": "v10.1-path2-source-bridge"
+    },
+    {
+      "dedup_key": "d2e70307bfb6b7698ff99a62c99ed5a50428d1f309dc220bd00177ac29ac4460",
+      "kept_candidate_id": "727f0a91-6f96-4e7e-b380-0ecc81190c5c",
+      "dropped_candidate_id": "ce9960cc-2176-4c8f-b2bf-4c8b8db12373",
+      "session_id": "ID2-20260411-1400-qpath-tr008-run",
+      "model_version": "v10.1-path2-source-bridge"
+    },
+    {
+      "dedup_key": "0de46a51e113e38a165e76a08c0a292eb2306ca386451f2a3fcb9db8a4a62f7b",
+      "kept_candidate_id": "17707504-32f3-4a85-aa14-3b26be3e4db0",
+      "dropped_candidate_id": "96571107-7c01-42e6-8e9b-af49448ec5a6",
+      "session_id": "ID2-20260411-1400-qpath-tr008-run",
+      "model_version": "v10.1-path2-source-bridge"
+    },
+    {
+      "dedup_key": "8b52303f3bf2adecb9473cde44232ab0c6208bf71ba53dd739dedcba72d6566a",
+      "kept_candidate_id": "b55bfbd5-daff-41d4-90f1-3f7494dfcf62",
+      "dropped_candidate_id": "93531acd-7211-458d-a16c-6108b1e31061",
+      "session_id": "ID2-20260411-1400-qpath-tr008-run",
+      "model_version": "v10.1-path2-source-bridge"
+    },
+    {
+      "dedup_key": "006980415bb3f5d8de3f6234d85f67d676efdf796521e45ad11d1510b7b2a9b1",
+      "kept_candidate_id": "439dc716-d245-44da-97c5-bc2bfcd46aa7",
+      "dropped_candidate_id": "d116163f-3e01-4e71-aa2b-9fa99774e7e3",
+      "session_id": "ID2-20260411-1400-qpath-tr008-run",
+      "model_version": "v10.1-path2-source-bridge"
+    },
+    {
+      "dedup_key": "d2e70307bfb6b7698ff99a62c99ed5a50428d1f309dc220bd00177ac29ac4460",
+      "kept_candidate_id": "329455a5-90d8-418c-a753-99bcf1ed12e0",
+      "dropped_candidate_id": "727f0a91-6f96-4e7e-b380-0ecc81190c5c",
+      "session_id": "ID2-20260411-1400-qpath-tr008-run",
+      "model_version": "v10.1-path2-source-bridge"
+    }
+  ],
+  "log_entries": [
+    {
+      "source_path": "C:\\v1.0-qpathformer_enterprise\\path_2_access_mode_canonical\\02_signals\\source_bridge\\2026-04-11--FREEZE-20260412-000400Z\\signal_path2_source_20260412T100022Z_ambiguity_0c379203.json",
+      "signal_id": "0c379203-ecad-4824-9af3-5478070ac627",
+      "session_id": "ID2-20260411-1400-qpath-tr008-run",
+      "status": "ingested",
+      "normalized_from_llm": false,
+      "model_version": "v10.1-path2-source-bridge",
+      "timestamp": "2026-04-18T04:47:10Z"
+    },
+    {
+      "source_path": "C:\\v1.0-qpathformer_enterprise\\path_2_access_mode_canonical\\02_signals\\source_bridge\\2026-04-11--FREEZE-20260412-000400Z\\signal_path2_source_20260412T100022Z_ambiguity_0c379203.routing.json",
+      "status": "ignored_non_candidate_record",
+      "normalized_from_llm": false,
+      "timestamp": "2026-04-18T04:47:10Z"
+    },
+    {
+      "source_path": "C:\\v1.0-qpathformer_enterprise\\path_2_access_mode_canonical\\02_signals\\source_bridge\\2026-04-11--FREEZE-20260412-000400Z\\signal_path2_source_20260412T100022Z_baseline_807d9175.json",
+      "signal_id": "807d9175-cc67-498a-9da6-22abf4b6a787",
+      "session_id": "ID2-20260411-1400-qpath-tr008-run",
+      "status": "ingested",
+      "normalized_from_llm": false,
+      "model_version": "v10.1-path2-source-bridge",
+      "timestamp": "2026-04-18T04:47:10Z"
+    },
+    {
+      "source_path": "C:\\v1.0-qpathformer_enterprise\\path_2_access_mode_canonical\\02_signals\\source_bridge\\2026-04-11--FREEZE-20260412-000400Z\\signal_path2_source_20260412T100022Z_baseline_807d9175.routing.json",
+      "status": "ignored_non_candidate_record",
+      "normalized_from_llm": false,
+      "timestamp": "2026-04-18T04:47:10Z"
+    },
+    {
+      "source_path": "C:\\v1.0-qpathformer_enterprise\\path_2_access_mode_canonical\\02_signals\\source_bridge\\2026-04-11--FREEZE-20260412-000400Z\\signal_path2_source_20260412T100022Z_lifecycleboundary_c785a045.json",
+      "signal_id": "c785a045-df5f-48a0-8141-7d91af53d3d0",
+      "session_id": "ID2-20260411-1400-qpath-tr008-run",
+      "status": "ingested",
+      "normalized_from_llm": false,
+      "model_version": "v10.1-path2-source-bridge",
+      "timestamp": "2026-04-18T04:47:10Z"
+    },
+    {
+      "source_path": "C:\\v1.0-qpathformer_enterprise\\path_2_access_mode_canonical\\02_signals\\source_bridge\\2026-04-11--FREEZE-20260412-000400Z\\signal_path2_source_20260412T100022Z_lifecycleboundary_c785a045.routing.json",
+      "status": "ignored_non_candidate_record",
+      "normalized_from_llm": false,
+      "timestamp": "2026-04-18T04:47:10Z"
+    },
+    {
+      "source_path": "C:\\v1.0-qpathformer_enterprise\\path_2_access_mode_canonical\\02_signals\\source_bridge\\2026-04-11--FREEZE-20260412-000400Z\\signal_path2_source_20260412T100022Z_timepressure_455fc42b.json",
+      "signal_id": "455fc42b-9faf-4fdc-a0c8-bdd04b7d30db",
+      "session_id": "ID2-20260411-1400-qpath-tr008-run",
+      "status": "ingested",
+      "normalized_from_llm": false,
+      "model_version": "v10.1-path2-source-bridge",
+      "timestamp": "2026-04-18T04:47:10Z"
+    },
+    {
+      "source_path": "C:\\v1.0-qpathformer_enterprise\\path_2_access_mode_canonical\\02_signals\\source_bridge\\2026-04-11--FREEZE-20260412-000400Z\\signal_path2_source_20260412T100022Z_timepressure_455fc42b.routing.json",
+      "status": "ignored_non_candidate_record",
+      "normalized_from_llm": false,
+      "timestamp": "2026-04-18T04:47:10Z"
+    },
+    {
+      "source_path": "C:\\v1.0-qpathformer_enterprise\\path_2_access_mode_canonical\\02_signals\\source_bridge\\2026-04-11--FREEZE-20260412-000400Z\\signal_path2_source_20260417T203150Z_ambiguity_0af127e5.json",
+      "signal_id": "0af127e5-66b2-4206-85e6-dfe33fd14e5c",
+      "session_id": "ID2-20260411-1400-qpath-tr008-run",
+      "status": "ingested",
+      "normalized_from_llm": false,
+      "model_version": "v10.1-path2-source-bridge",
+      "timestamp": "2026-04-18T04:47:10Z"
+    },
+    {
+      "source_path": "C:\\v1.0-qpathformer_enterprise\\path_2_access_mode_canonical\\02_signals\\source_bridge\\2026-04-11--FREEZE-20260412-000400Z\\signal_path2_source_20260417T203150Z_ambiguity_0af127e5.routing.json",
+      "status": "ignored_non_candidate_record",
+      "normalized_from_llm": false,
+      "timestamp": "2026-04-18T04:47:10Z"
+    },
+    {
+      "source_path": "C:\\v1.0-qpathformer_enterprise\\path_2_access_mode_canonical\\02_signals\\source_bridge\\2026-04-11--FREEZE-20260412-000400Z\\signal_path2_source_20260417T203150Z_baseline_941491ad.json",
+      "signal_id": "941491ad-5866-4b54-a88e-10c20d1a4cab",
+      "session_id": "ID2-20260411-1400-qpath-tr008-run",
+      "status": "ingested",
+      "normalized_from_llm": false,
+      "model_version": "v10.1-path2-source-bridge",
+      "timestamp": "2026-04-18T04:47:10Z"
+    },
+    {
+      "source_path": "C:\\v1.0-qpathformer_enterprise\\path_2_access_mode_canonical\\02_signals\\source_bridge\\2026-04-11--FREEZE-20260412-000400Z\\signal_path2_source_20260417T203150Z_baseline_941491ad.routing.json",
+      "status": "ignored_non_candidate_record",
+      "normalized_from_llm": false,
+      "timestamp": "2026-04-18T04:47:10Z"
+    },
+    {
+      "source_path": "C:\\v1.0-qpathformer_enterprise\\path_2_access_mode_canonical\\02_signals\\source_bridge\\2026-04-11--FREEZE-20260412-000400Z\\signal_path2_source_20260417T203150Z_lifecycleboundary_28bf2590.json",
+      "signal_id": "28bf2590-aa3b-4c40-ac57-6acafc633b17",
+      "session_id": "ID2-20260411-1400-qpath-tr008-run",
+      "status": "ingested",
+      "normalized_from_llm": false,
+      "model_version": "v10.1-path2-source-bridge",
+      "timestamp": "2026-04-18T04:47:10Z"
+    },
+    {
+      "source_path": "C:\\v1.0-qpathformer_enterprise\\path_2_access_mode_canonical\\02_signals\\source_bridge\\2026-04-11--FREEZE-20260412-000400Z\\signal_path2_source_20260417T203150Z_lifecycleboundary_28bf2590.routing.json",
+      "status": "ignored_non_candidate_record",
+      "normalized_from_llm": false,
+      "timestamp": "2026-04-18T04:47:10Z"
+    },
+    {
+      "source_path": "C:\\v1.0-qpathformer_enterprise\\path_2_access_mode_canonical\\02_signals\\source_bridge\\2026-04-11--FREEZE-20260412-000400Z\\signal_path2_source_20260417T203150Z_timepressure_7e8174cc.json",
+      "signal_id": "7e8174cc-4228-440a-a88c-3bfc5943920f",
+      "session_id": "ID2-20260411-1400-qpath-tr008-run",
+      "status": "ingested",
+      "normalized_from_llm": false,
+      "model_version": "v10.1-path2-source-bridge",
+      "timestamp": "2026-04-18T04:47:10Z"
+    },
+    {
+      "source_path": "C:\\v1.0-qpathformer_enterprise\\path_2_access_mode_canonical\\02_signals\\source_bridge\\2026-04-11--FREEZE-20260412-000400Z\\signal_path2_source_20260417T203150Z_timepressure_7e8174cc.routing.json",
+      "status": "ignored_non_candidate_record",
+      "normalized_from_llm": false,
+      "timestamp": "2026-04-18T04:47:10Z"
+    },
+    {
+      "source_path": "C:\\v1.0-qpathformer_enterprise\\path_2_access_mode_canonical\\02_signals\\source_bridge\\2026-04-11--FREEZE-20260412-000400Z\\signal_path2_source_20260418T043328Z_ambiguity_8ff6bdc3.json",
+      "signal_id": "8ff6bdc3-b94e-4d81-91d6-347bed93afb8",
+      "session_id": "ID2-20260411-1400-qpath-tr008-run",
+      "status": "ingested",
+      "normalized_from_llm": false,
+      "model_version": "v10.1-path2-source-bridge",
+      "timestamp": "2026-04-18T04:47:10Z"
+    },
+    {
+      "source_path": "C:\\v1.0-qpathformer_enterprise\\path_2_access_mode_canonical\\02_signals\\source_bridge\\2026-04-11--FREEZE-20260412-000400Z\\signal_path2_source_20260418T043328Z_ambiguity_8ff6bdc3.routing.json",
+      "status": "ignored_non_candidate_record",
+      "normalized_from_llm": false,
+      "timestamp": "2026-04-18T04:47:10Z"
+    },
+    {
+      "source_path": "C:\\v1.0-qpathformer_enterprise\\path_2_access_mode_canonical\\02_signals\\source_bridge\\2026-04-11--FREEZE-20260412-000400Z\\signal_path2_source_20260418T043328Z_baseline_b36908c6.json",
+      "signal_id": "b36908c6-e5b3-40dc-a58f-edef9da530a9",
+      "session_id": "ID2-20260411-1400-qpath-tr008-run",
+      "status": "ingested",
+      "normalized_from_llm": false,
+      "model_version": "v10.1-path2-source-bridge",
+      "timestamp": "2026-04-18T04:47:10Z"
+    },
+    {
+      "source_path": "C:\\v1.0-qpathformer_enterprise\\path_2_access_mode_canonical\\02_signals\\source_bridge\\2026-04-11--FREEZE-20260412-000400Z\\signal_path2_source_20260418T043328Z_baseline_b36908c6.routing.json",
+      "status": "ignored_non_candidate_record",
+      "normalized_from_llm": false,
+      "timestamp": "2026-04-18T04:47:10Z"
+    },
+    {
+      "source_path": "C:\\v1.0-qpathformer_enterprise\\path_2_access_mode_canonical\\02_signals\\source_bridge\\2026-04-11--FREEZE-20260412-000400Z\\signal_path2_source_20260418T043328Z_lifecycleboundary_5fcadefe.json",
+      "signal_id": "5fcadefe-dc69-4ff7-8584-844670a7d4e9",
+      "session_id": "ID2-20260411-1400-qpath-tr008-run",
+      "status": "ingested",
+      "normalized_from_llm": false,
+      "model_version": "v10.1-path2-source-bridge",
+      "timestamp": "2026-04-18T04:47:10Z"
+    },
+    {
+      "source_path": "C:\\v1.0-qpathformer_enterprise\\path_2_access_mode_canonical\\02_signals\\source_bridge\\2026-04-11--FREEZE-20260412-000400Z\\signal_path2_source_20260418T043328Z_lifecycleboundary_5fcadefe.routing.json",
+      "status": "ignored_non_candidate_record",
+      "normalized_from_llm": false,
+      "timestamp": "2026-04-18T04:47:10Z"
+    },
+    {
+      "source_path": "C:\\v1.0-qpathformer_enterprise\\path_2_access_mode_canonical\\02_signals\\source_bridge\\2026-04-11--FREEZE-20260412-000400Z\\signal_path2_source_20260418T043328Z_timepressure_97bbd7ff.json",
+      "signal_id": "97bbd7ff-25d1-4df7-9458-cc3ae8844619",
+      "session_id": "ID2-20260411-1400-qpath-tr008-run",
+      "status": "ingested",
+      "normalized_from_llm": false,
+      "model_version": "v10.1-path2-source-bridge",
+      "timestamp": "2026-04-18T04:47:10Z"
+    },
+    {
+      "source_path": "C:\\v1.0-qpathformer_enterprise\\path_2_access_mode_canonical\\02_signals\\source_bridge\\2026-04-11--FREEZE-20260412-000400Z\\signal_path2_source_20260418T043328Z_timepressure_97bbd7ff.routing.json",
+      "status": "ignored_non_candidate_record",
+      "normalized_from_llm": false,
+      "timestamp": "2026-04-18T04:47:10Z"
+    },
+    {
+      "source_path": "C:\\v1.0-qpathformer_enterprise\\path_2_access_mode_canonical\\02_signals\\source_bridge\\2026-04-11--FREEZE-20260412-000400Z\\signal_path2_source_20260418T044701Z_ambiguity_e7cfc808.json",
+      "signal_id": "e7cfc808-3829-4e11-b803-12f2b4de4a10",
+      "session_id": "ID2-20260411-1400-qpath-tr008-run",
+      "status": "ingested",
+      "normalized_from_llm": false,
+      "model_version": "v10.1-path2-source-bridge",
+      "timestamp": "2026-04-18T04:47:10Z"
+    },
+    {
+      "source_path": "C:\\v1.0-qpathformer_enterprise\\path_2_access_mode_canonical\\02_signals\\source_bridge\\2026-04-11--FREEZE-20260412-000400Z\\signal_path2_source_20260418T044701Z_ambiguity_e7cfc808.routing.json",
+      "status": "ignored_non_candidate_record",
+      "normalized_from_llm": false,
+      "timestamp": "2026-04-18T04:47:10Z"
+    },
+    {
+      "source_path": "C:\\v1.0-qpathformer_enterprise\\path_2_access_mode_canonical\\02_signals\\source_bridge\\2026-04-11--FREEZE-20260412-000400Z\\signal_path2_source_20260418T044701Z_baseline_bf21faa5.json",
+      "signal_id": "bf21faa5-aa9b-41c4-a0e2-079c9489b09e",
+      "session_id": "ID2-20260411-1400-qpath-tr008-run",
+      "status": "ingested",
+      "normalized_from_llm": false,
+      "model_version": "v10.1-path2-source-bridge",
+      "timestamp": "2026-04-18T04:47:10Z"
+    },
+    {
+      "source_path": "C:\\v1.0-qpathformer_enterprise\\path_2_access_mode_canonical\\02_signals\\source_bridge\\2026-04-11--FREEZE-20260412-000400Z\\signal_path2_source_20260418T044701Z_baseline_bf21faa5.routing.json",
+      "status": "ignored_non_candidate_record",
+      "normalized_from_llm": false,
+      "timestamp": "2026-04-18T04:47:10Z"
+    },
+    {
+      "source_path": "C:\\v1.0-qpathformer_enterprise\\path_2_access_mode_canonical\\02_signals\\source_bridge\\2026-04-11--FREEZE-20260412-000400Z\\signal_path2_source_20260418T044701Z_lifecycleboundary_10bd14b5.json",
+      "signal_id": "10bd14b5-5b75-41a6-9cfa-7c6d7ee822c6",
+      "session_id": "ID2-20260411-1400-qpath-tr008-run",
+      "status": "ingested",
+      "normalized_from_llm": false,
+      "model_version": "v10.1-path2-source-bridge",
+      "timestamp": "2026-04-18T04:47:10Z"
+    },
+    {
+      "source_path": "C:\\v1.0-qpathformer_enterprise\\path_2_access_mode_canonical\\02_signals\\source_bridge\\2026-04-11--FREEZE-20260412-000400Z\\signal_path2_source_20260418T044701Z_lifecycleboundary_10bd14b5.routing.json",
+      "status": "ignored_non_candidate_record",
+      "normalized_from_llm": false,
+      "timestamp": "2026-04-18T04:47:10Z"
+    },
+    {
+      "source_path": "C:\\v1.0-qpathformer_enterprise\\path_2_access_mode_canonical\\02_signals\\source_bridge\\2026-04-11--FREEZE-20260412-000400Z\\signal_path2_source_20260418T044701Z_timepressure_82bed490.json",
+      "signal_id": "82bed490-6823-47de-9102-d5487fcd03f3",
+      "session_id": "ID2-20260411-1400-qpath-tr008-run",
+      "status": "ingested",
+      "normalized_from_llm": false,
+      "model_version": "v10.1-path2-source-bridge",
+      "timestamp": "2026-04-18T04:47:10Z"
+    },
+    {
+      "source_path": "C:\\v1.0-qpathformer_enterprise\\path_2_access_mode_canonical\\02_signals\\source_bridge\\2026-04-11--FREEZE-20260412-000400Z\\signal_path2_source_20260418T044701Z_timepressure_82bed490.routing.json",
+      "status": "ignored_non_candidate_record",
+      "normalized_from_llm": false,
+      "timestamp": "2026-04-18T04:47:10Z"
+    },
+    {
+      "source_path": "C:\\v1.0-qpathformer_enterprise\\path_2_access_mode_canonical\\02_signals\\source_bridge\\2026-04-11--FREEZE-20260412-000400Z\\signal_path2_source_20260412T100022Z_ambiguity_0c379203.json",
+      "signal_id": "0c379203-ecad-4824-9af3-5478070ac627",
+      "candidate_id": "c5928ecf-23aa-4383-a817-b23848e7425f",
+      "session_id": "ID2-20260411-1400-qpath-tr008-run",
+      "status": "candidate_extracted",
+      "source_state": "STATE_3",
+      "target_role": "enterprise",
+      "model_version": "v10.1-path2-source-bridge",
+      "timestamp": "2026-04-18T04:47:10Z"
+    },
+    {
+      "source_path": "C:\\v1.0-qpathformer_enterprise\\path_2_access_mode_canonical\\02_signals\\source_bridge\\2026-04-11--FREEZE-20260412-000400Z\\signal_path2_source_20260412T100022Z_baseline_807d9175.json",
+      "signal_id": "807d9175-cc67-498a-9da6-22abf4b6a787",
+      "candidate_id": "9870e25e-8248-4e5b-83c1-fb313cf4cd82",
+      "session_id": "ID2-20260411-1400-qpath-tr008-run",
+      "status": "candidate_extracted",
+      "source_state": "STATE_3",
+      "target_role": "enterprise",
+      "model_version": "v10.1-path2-source-bridge",
+      "timestamp": "2026-04-18T04:47:10Z"
+    },
+    {
+      "source_path": "C:\\v1.0-qpathformer_enterprise\\path_2_access_mode_canonical\\02_signals\\source_bridge\\2026-04-11--FREEZE-20260412-000400Z\\signal_path2_source_20260412T100022Z_lifecycleboundary_c785a045.json",
+      "signal_id": "c785a045-df5f-48a0-8141-7d91af53d3d0",
+      "candidate_id": "baf84d51-852e-4eb9-8af1-85534c49f9e7",
+      "session_id": "ID2-20260411-1400-qpath-tr008-run",
+      "status": "candidate_extracted",
+      "source_state": "STATE_3",
+      "target_role": "enterprise",
+      "model_version": "v10.1-path2-source-bridge",
+      "timestamp": "2026-04-18T04:47:10Z"
+    },
+    {
+      "source_path": "C:\\v1.0-qpathformer_enterprise\\path_2_access_mode_canonical\\02_signals\\source_bridge\\2026-04-11--FREEZE-20260412-000400Z\\signal_path2_source_20260412T100022Z_timepressure_455fc42b.json",
+      "signal_id": "455fc42b-9faf-4fdc-a0c8-bdd04b7d30db",
+      "candidate_id": "1dc2bf4d-27db-4e6b-a6fb-025441aea3b2",
+      "session_id": "ID2-20260411-1400-qpath-tr008-run",
+      "status": "candidate_extracted",
+      "source_state": "STATE_3",
+      "target_role": "enterprise",
+      "model_version": "v10.1-path2-source-bridge",
+      "timestamp": "2026-04-18T04:47:10Z"
+    }
+  ],
+  "manifests": [
+    {
+      "manifest_id": "40950c76-8641-4a19-a86d-4af54329411f",
+      "dataset_version": "id2-20260411-1400-qpath-tr008-run__v10-1-path2-source-bridge__20260418T044710Z",
+      "dataset_path": "C:\\v1.0-qpathformer_enterprise\\path_2_access_mode_canonical\\03_dataset\\candidates\\session-run-id2-20260411-1400-qpath-tr008-run\\QPDS-PACKAGE-ID2_PREP\\id2-20260411-1400-qpath-tr008-run__v10-1-path2-source-bridge__20260418T044710Z\\dataset.jsonl",
+      "package_dir": "C:\\v1.0-qpathformer_enterprise\\path_2_access_mode_canonical\\03_dataset\\candidates\\session-run-id2-20260411-1400-qpath-tr008-run\\QPDS-PACKAGE-ID2_PREP\\id2-20260411-1400-qpath-tr008-run__v10-1-path2-source-bridge__20260418T044710Z",
+      "package_manifest_path": "C:\\v1.0-qpathformer_enterprise\\path_2_access_mode_canonical\\03_dataset\\candidates\\session-run-id2-20260411-1400-qpath-tr008-run\\QPDS-PACKAGE-ID2_PREP\\id2-20260411-1400-qpath-tr008-run__v10-1-path2-source-bridge__20260418T044710Z\\manifest.json",
+      "lineage_path": "C:\\v1.0-qpathformer_enterprise\\path_2_access_mode_canonical\\03_dataset\\candidates\\session-run-id2-20260411-1400-qpath-tr008-run\\QPDS-PACKAGE-ID2_PREP\\id2-20260411-1400-qpath-tr008-run__v10-1-path2-source-bridge__20260418T044710Z\\lineage.json",
+      "target_model": {
+        "parameter_class": "12B-14B",
+        "role": "enterprise"
+      },
+      "candidate_count": 4,
+      "source_record_count": 16,
+      "extracted_candidate_count": 4,
+      "source_states": [
+        "STATE_3"
+      ],
+      "source_signal_ids": [
+        "10bd14b5-5b75-41a6-9cfa-7c6d7ee822c6",
+        "82bed490-6823-47de-9102-d5487fcd03f3",
+        "bf21faa5-aa9b-41c4-a0e2-079c9489b09e",
+        "e7cfc808-3829-4e11-b803-12f2b4de4a10"
+      ],
+      "source_record_profile": {
+        "llm_normalized_count": 0,
+        "native_signal_count": 16
+      },
+      "routing_profile": {
+        "routing_decisions": [
+          "SEND_TO_STATE_2_REVIEW"
+        ],
+        "target_states": [
+          "STATE_2"
+        ],
+        "all_candidates_state2_review_ready": true
+      },
+      "transformations_applied": [
+        "enterprise_structuring",
+        "dedup:content",
+        "id2_candidate_export"
+      ],
+      "authorization_summary": {
+        "all_items_candidate_authorized": true,
+        "fine_tuning_allowed_count": 0,
+        "fine_tuning_globally_allowed": false
+      },
+      "created_at": "2026-04-18T04:47:10Z",
+      "written": true
+    }
+  ]
+}

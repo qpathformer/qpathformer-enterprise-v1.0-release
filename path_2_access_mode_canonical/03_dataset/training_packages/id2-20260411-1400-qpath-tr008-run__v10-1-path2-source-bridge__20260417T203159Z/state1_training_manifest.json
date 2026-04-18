@@ -1,0 +1,97 @@
+{
+  "training_manifest_version": "v12.0",
+  "generated_at": "2026-04-18T04:40:01Z",
+  "dataset_version": "id2-20260411-1400-qpath-tr008-run__v10-1-path2-source-bridge__20260417T203159Z",
+  "registry_entry_id": "7e101342-086c-4581-8e76-d4452f394682",
+  "registry_state": "STATE_1",
+  "registered_at": "2026-04-17T20:33:22Z",
+  "source": {
+    "registry_path_role": "state1_dataset_registry",
+    "frozen_manifest_path": "C:\\v1.0-qpathformer_enterprise\\path_2_access_mode_canonical\\03_dataset\\candidates\\session-run-id2-20260411-1400-qpath-tr008-run\\QPDS-PACKAGE-ID2_PREP\\id2-20260411-1400-qpath-tr008-run__v10-1-path2-source-bridge__20260417T203159Z\\freeze\\frozen_manifest.json",
+    "frozen_dataset_path": "C:\\v1.0-qpathformer_enterprise\\path_2_access_mode_canonical\\03_dataset\\candidates\\session-run-id2-20260411-1400-qpath-tr008-run\\QPDS-PACKAGE-ID2_PREP\\id2-20260411-1400-qpath-tr008-run__v10-1-path2-source-bridge__20260417T203159Z\\freeze\\frozen_dataset.jsonl",
+    "ingestion_summary_path": null
+  },
+  "frozen_manifest_summary": {
+    "dataset_version": "id2-20260411-1400-qpath-tr008-run__v10-1-path2-source-bridge__20260417T203159Z",
+    "state": "STATE_1"
+  },
+  "output": {
+    "output_dir": "C:\\v1.0-qpathformer_enterprise\\path_2_access_mode_canonical\\03_dataset\\training_packages\\id2-20260411-1400-qpath-tr008-run__v10-1-path2-source-bridge__20260417T203159Z",
+    "train_file": "C:\\v1.0-qpathformer_enterprise\\path_2_access_mode_canonical\\03_dataset\\training_packages\\id2-20260411-1400-qpath-tr008-run__v10-1-path2-source-bridge__20260417T203159Z\\train.sft.jsonl",
+    "backend_profile_file": "C:\\v1.0-qpathformer_enterprise\\path_2_access_mode_canonical\\03_dataset\\training_packages\\id2-20260411-1400-qpath-tr008-run__v10-1-path2-source-bridge__20260417T203159Z\\training_backend_profile.json",
+    "preview_file": "C:\\v1.0-qpathformer_enterprise\\path_2_access_mode_canonical\\03_dataset\\training_packages\\id2-20260411-1400-qpath-tr008-run__v10-1-path2-source-bridge__20260417T203159Z\\training_preview.json"
+  },
+  "backend_profile": {
+    "backend_profile_version": "v14.3",
+    "backend_profile_id": "local_lora_reference",
+    "backend": "local_lora",
+    "supported_backends": [
+      "local_lora"
+    ],
+    "compatible_package_states": [
+      "STATE_1"
+    ],
+    "format": "sft_jsonl",
+    "prompt_field": "prompt",
+    "completion_field": "completion",
+    "include_metadata": true,
+    "execution_mode": "configured",
+    "model": {
+      "model_base": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+      "model_family": "llama"
+    },
+    "default_hyperparameters": {
+      "max_steps": 100,
+      "learning_rate": 5e-05,
+      "batch_size": 1
+    },
+    "backend_config": {
+      "device": "auto",
+      "seed": 42,
+      "max_seq_len": 512,
+      "num_train_epochs": 1.0,
+      "gradient_accumulation_steps": 4,
+      "warmup_steps": 0,
+      "logging_steps": 1,
+      "save_steps": 50,
+      "save_total_limit": 2,
+      "lora_r": 8,
+      "lora_alpha": 16,
+      "lora_dropout": 0.05,
+      "target_modules": [
+        "q_proj",
+        "v_proj"
+      ],
+      "fp16": false,
+      "bf16": false,
+      "gradient_checkpointing": false,
+      "trust_remote_code": false
+    },
+    "notes": "Reference local LoRA backend profile for v14 real execution. Update model.model_base to the locally available base model before production runs. Requires torch, transformers, datasets, peft, and accelerate.",
+    "backend_id": "local_lora_reference",
+    "max_seq_len": 512
+  },
+  "record_counts": {
+    "exported_record_count": 4,
+    "skipped_record_count": 0,
+    "fine_tuning_allowed_count": 0,
+    "fine_tuning_disallowed_count": 4
+  },
+  "export_profile": {
+    "format": "sft_jsonl",
+    "preview_count": 3,
+    "target_model_roles": {
+      "enterprise": 4
+    },
+    "target_model_parameter_classes": {
+      "12B-14B": 4
+    }
+  },
+  "authorization_posture": {
+    "training_preparation_only": true,
+    "training_not_executed": true,
+    "authorization_not_modified": true,
+    "require_fine_tuning_allowed_for_export": false
+  },
+  "skipped_records": []
+}

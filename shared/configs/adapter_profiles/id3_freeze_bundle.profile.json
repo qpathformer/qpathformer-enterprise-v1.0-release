@@ -1,0 +1,84 @@
+{
+  "profile_version": "v13.2",
+  "profile_id": "id3_freeze_bundle.default",
+  "template_family": "id3_freeze_bundle",
+  "description": "Default adapter profile for project-local ID_3 freeze bundles containing canonical ID_2 records, a freeze note, and a hash manifest.",
+  "expected_files": {
+    "required_module_records": [
+      "module_03_baseline.canonical.json",
+      "module_03_variant.canonical.json"
+    ],
+    "required_session_records": [
+      "session_baseline.canonical.json",
+      "session_variant.canonical.json"
+    ],
+    "required_freeze_note": "ID3_FREEZE_NOTE.md",
+    "required_hash_manifest": "hashes.txt"
+  },
+  "source_detection": {
+    "artifact_type": "id3_freeze_bundle",
+    "record_family": "bundle",
+    "source_mode_detected": "ID_2_frozen_under_ID_3",
+    "structural_completeness_rule": "complete_when_all_required_files_present"
+  },
+  "validation_rules": {
+    "module_record_class_required": "non_inspection_module_record",
+    "session_record_class_required": "non_inspection_session_record",
+    "inspection_status_required": "frozen_under_ID_3",
+    "freeze_note_package_id_required": true,
+    "freeze_note_state_required": "STATE_3",
+    "hash_entries_required_for_canonical_files": true,
+    "fail_closed_on_missing_required_file": true,
+    "strict_hash_check_default": true
+  },
+  "normalization_strategy": {
+    "strategy_name": "bundle_to_onboarding_rows",
+    "emit_one_row_per_source_artifact": true,
+    "artifact_roles": {
+      "module_03_baseline.canonical.json": "module_baseline",
+      "module_03_variant.canonical.json": "module_variant",
+      "session_baseline.canonical.json": "session_baseline",
+      "session_variant.canonical.json": "session_variant",
+      "ID3_FREEZE_NOTE.md": "freeze_note",
+      "hashes.txt": "hash_manifest"
+    },
+    "record_class_mapping": {
+      "module_baseline": "non_inspection_module_record",
+      "module_variant": "non_inspection_module_record",
+      "session_baseline": "non_inspection_session_record",
+      "session_variant": "non_inspection_session_record",
+      "freeze_note": "freeze_note_record",
+      "hash_manifest": "hash_manifest_record"
+    }
+  },
+  "default_authorization_context": {
+    "fine_tuning_allowed": false,
+    "external_training_allowed": false,
+    "human_review_required": true,
+    "authorization_inherited": false
+  },
+  "default_governance_flags": {
+    "signals_not_decisions": true,
+    "non_certifying": true,
+    "context_bound": true,
+    "containment_required": true,
+    "human_decision_required_default": true
+  },
+  "default_lifecycle_initialization": {
+    "state": "STATE_3",
+    "eligible_for_state_2": false,
+    "routing_decision": "HOLD_IN_STATE_3"
+  },
+  "output_contract": {
+    "emit_onboarding_manifest": true,
+    "emit_source_inventory": true,
+    "emit_normalized_onboarding_jsonl": true,
+    "emit_normalization_report": true,
+    "emit_hash_verification_report": true
+  },
+  "notes": [
+    "Freeze bundle remains non-authoritative and non-training-ready on ingestion.",
+    "Freeze semantics preserve packaging, fixity, and containment posture only.",
+    "All onboarded rows default to STATE_3 until downstream lifecycle processing occurs."
+  ]
+}

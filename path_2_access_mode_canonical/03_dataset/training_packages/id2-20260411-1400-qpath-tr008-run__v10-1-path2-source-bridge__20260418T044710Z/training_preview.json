@@ -1,0 +1,66 @@
+{
+  "preview_generated_at": "2026-04-18T04:48:24Z",
+  "preview_count": 3,
+  "records": [
+    {
+      "prompt": "Path 2 source bridge for scenario 'ambiguity'. Use frozen canonical session and SAPP Simulation & Stress Testing records as governed runtime inputs. Purpose: Variant run applying ambiguity and conflicting-signal stressor for comparison against baseline TR-008 Path 2 runtime signal capture while preserving lifecycle containment, non-authoritative signal discipline, and explicit separation between execution behavior and governance authority.",
+      "completion": "Path 2 ambiguity bridge signal packages a frozen ID_2 session and Module 03 record into a governed STATE_3 signal for later STATE_2 review. Ambiguity variant of the baseline TR-008 Path 2 scenario. The session examined how runtime signals were interpreted when lifecycle cues, candidate-oriented wording, and containment boundaries supported multiple plausible readings. The run focused on preserving uncertainty and preventing interpretive compression into readiness, approval, or governance conclusion language.",
+      "metadata": {
+        "candidate_id": "17707504-32f3-4a85-aa14-3b26be3e4db0",
+        "source_signal_id": "e7cfc808-3829-4e11-b803-12f2b4de4a10",
+        "source_state": "STATE_3",
+        "target_model_role": "enterprise",
+        "target_model_parameter_class": "12B-14B",
+        "transformation_type": "enterprise_structuring",
+        "authorization_status": "approved_for_candidate_use",
+        "fine_tuning_allowed": false,
+        "review_status": "reviewed",
+        "routing_decision": "SEND_TO_STATE_2_REVIEW",
+        "target_state": "STATE_2",
+        "validation_engine_version": "v10.0",
+        "transformation_id": "dfdc1da4-65e9-4379-afb1-051a0ce47b97",
+        "timestamp": "2026-04-18T04:47:01Z"
+      }
+    },
+    {
+      "prompt": "Path 2 source bridge for scenario 'timepressure'. Use frozen canonical session and SAPP Simulation & Stress Testing records as governed runtime inputs. Purpose: Variant run applying intensified time-pressure stressor for comparison against baseline TR-008 Path 2 runtime signal capture.",
+      "completion": "Path 2 timepressure bridge signal packages a frozen ID_2 session and Module 03 record into a governed STATE_3 signal for later STATE_2 review. Time-pressure variant of the TR-008 Path 2 baseline scenario. The session operated under compressed timelines requiring rapid interpretation of runtime signals while maintaining lifecycle containment and non-authoritative posture",
+      "metadata": {
+        "candidate_id": "329455a5-90d8-418c-a753-99bcf1ed12e0",
+        "source_signal_id": "82bed490-6823-47de-9102-d5487fcd03f3",
+        "source_state": "STATE_3",
+        "target_model_role": "enterprise",
+        "target_model_parameter_class": "12B-14B",
+        "transformation_type": "enterprise_structuring",
+        "authorization_status": "approved_for_candidate_use",
+        "fine_tuning_allowed": false,
+        "review_status": "reviewed",
+        "routing_decision": "SEND_TO_STATE_2_REVIEW",
+        "target_state": "STATE_2",
+        "validation_engine_version": "v10.0",
+        "transformation_id": "70000cb8-71cb-44f6-98f5-f1187ba4f029",
+        "timestamp": "2026-04-18T04:47:01Z"
+      }
+    },
+    {
+      "prompt": "Path 2 source bridge for scenario 'lifecycleboundary'. Use frozen canonical session and SAPP Simulation & Stress Testing records as governed runtime inputs. Purpose: Variant run applying cross-path boundary and lifecycle containment stress for comparison against baseline TR-008 Path 2 runtime signal capture while preserving non-authoritative signal discipline and explicit separation between execution behavior, candidate handling, and governance authority.",
+      "completion": "Path 2 lifecycleboundary bridge signal packages a frozen ID_2 session and Module 03 record into a governed STATE_3 signal for later STATE_2 review. Cross-path and lifecycle-boundary variant of the baseline TR-008 Path 2 scenario. The session examined how Path 2 runtime signals were described when adjacent concepts such as candidate packaging, review progression, handoff, freeze, registry update, and other execution paths were discussed nearby. The run focused on preserving default containment, preventing maturity inflation, and maintaining separation between execution flow and governance authority.",
+      "metadata": {
+        "candidate_id": "439dc716-d245-44da-97c5-bc2bfcd46aa7",
+        "source_signal_id": "10bd14b5-5b75-41a6-9cfa-7c6d7ee822c6",
+        "source_state": "STATE_3",
+        "target_model_role": "enterprise",
+        "target_model_parameter_class": "12B-14B",
+        "transformation_type": "enterprise_structuring",
+        "authorization_status": "approved_for_candidate_use",
+        "fine_tuning_allowed": false,
+        "review_status": "reviewed",
+        "routing_decision": "SEND_TO_STATE_2_REVIEW",
+        "target_state": "STATE_2",
+        "validation_engine_version": "v10.0",
+        "transformation_id": "366cf672-da69-4b54-bfb1-ebe9a7d1008e",
+        "timestamp": "2026-04-18T04:47:01Z"
+      }
+    }
+  ]
+}

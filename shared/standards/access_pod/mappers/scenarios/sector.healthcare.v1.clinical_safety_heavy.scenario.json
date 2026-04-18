@@ -1,0 +1,20 @@
+{
+  "scenario_id": "sector.healthcare.v1.clinical_safety_heavy",
+  "scenario_label": "Healthcare Clinical-Safety-Heavy",
+  "profile_id": "sector.healthcare.v1",
+  "description": "Research comparison scenario. Healthcare sector-facing metrics lean more heavily on policy and patient-safety governance evidence than on audit interoperability.",
+  "metric_overrides": {
+    "SECTOR_POLICY_PASS_RATE": {
+      "source_mix": {
+        "policy_pass": 0.75,
+        "audit_interop": 0.25
+      }
+    },
+    "SECTOR_AUDIT_INTEROP_SCORE": {
+      "source_mix": {
+        "audit_interop": 0.5,
+        "policy_pass": 0.5
+      }
+    }
+  }
+}

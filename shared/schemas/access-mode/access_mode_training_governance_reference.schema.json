@@ -1,0 +1,213 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Access Mode Training Governance Reference",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "reference_id",
+    "record_class",
+    "source_family",
+    "access_mode",
+    "training_role",
+    "signal_profile",
+    "governance_meaning",
+    "authorization_scope",
+    "governance_flags"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string"
+    },
+    "reference_id": {
+      "type": "string"
+    },
+    "record_class": {
+      "type": "string",
+      "enum": [
+        "governance_training_reference",
+        "mode_boundary_reference",
+        "operational_signal_reference",
+        "inspection_reference",
+        "dataset_preparation_guardrail"
+      ]
+    },
+
+    "source_family": {
+      "type": "string",
+      "enum": [
+        "tr_signal",
+        "readme_runbook",
+        "command_profile",
+        "external_governance",
+        "synthetic_reference"
+      ]
+    },
+
+    "source_document": {
+      "type": "object",
+      "properties": {
+        "document_id": { "type": "string" },
+        "title": { "type": "string" },
+        "relative_path": { "type": "string" },
+        "section_label": { "type": "string" },
+        "chunk_index": { "type": ["integer", "null"] }
+      }
+    },
+
+    "access_mode": {
+      "type": "object",
+      "required": ["primary_mode", "reasoning_posture"],
+      "properties": {
+        "primary_mode": {
+          "type": "string",
+          "enum": ["ID_1", "ID_2", "ID_3"]
+        },
+        "secondary_modes_allowed": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": ["ID_1", "ID_2", "ID_3"]
+          }
+        },
+        "mode_mixing_rule": {
+          "type": "string",
+          "enum": [
+            "none",
+            "secondary_assist_only",
+            "inspection_override_only"
+          ]
+        },
+        "reasoning_posture": {
+          "type": "string",
+          "enum": [
+            "learning",
+            "operational",
+            "inspection",
+            "mixed_controlled"
+          ]
+        }
+      }
+    },
+
+    "training_role": {
+      "type": "object",
+      "required": ["dataset_role"],
+      "properties": {
+        "dataset_role": {
+          "type": "string",
+          "enum": [
+            "raw_corpus",
+            "teacher_signal",
+            "constraint_signal",
+            "inspection_signal",
+            "derived_training_example",
+            "excluded_reference"
+          ]
+        },
+        "training_stage": {
+          "type": "string",
+          "enum": [
+            "preparation_only",
+            "candidate",
+            "approved",
+            "excluded"
+          ]
+        },
+        "eligible_for_finetuning": { "type": "boolean" },
+        "eligible_for_runtime_reasoning": { "type": "boolean" },
+        "eligible_for_synthetic_generation": { "type": "boolean" },
+        "eligible_for_external_training": { "type": "boolean" }
+      }
+    },
+
+    "signal_profile": {
+      "type": "object",
+      "properties": {
+        "signal_types": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "teaches_capabilities": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "anti_capabilities": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      }
+    },
+
+    "governance_meaning": {
+      "type": "object",
+      "properties": {
+        "structured_summary": { "type": "string" },
+        "definitions": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "rules": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "constraints": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "lifecycle_logic": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      }
+    },
+
+    "authorization_scope": {
+      "type": "object",
+      "properties": {
+        "runtime_reasoning": { "type": "boolean" },
+        "synthetic_generation": { "type": "boolean" },
+        "fine_tuning": { "type": "boolean" },
+        "external_training": { "type": "boolean" },
+        "human_review_required": { "type": "boolean" },
+        "authorization_basis": { "type": "string" }
+      }
+    },
+
+    "governance_flags": {
+      "type": "object",
+      "properties": {
+        "signals_not_decisions": { "type": "boolean" },
+        "non_authoritative": { "type": "boolean" },
+        "non_certifying": { "type": "boolean" },
+        "requires_validation": { "type": "boolean" },
+        "promotion_blocked": { "type": "boolean" },
+        "context_bound": { "type": "boolean" }
+      }
+    },
+
+    "training_controls": {
+      "type": "object",
+      "properties": {
+        "weight_class": {
+          "type": "string",
+          "enum": ["high", "medium", "low"]
+        },
+        "dedupe_key": { "type": "string" },
+        "repetition_risk": {
+          "type": "string",
+          "enum": ["low", "medium", "high"]
+        },
+        "prompt_template_group": { "type": "string" },
+        "max_prompt_variants": { "type": "integer" }
+      }
+    },
+
+    "lineage": {
+      "type": "object",
+      "properties": {
+        "derived_from_signal_id": { "type": ["string", "null"] },
+        "derived_from_corpus_record": { "type": ["string", "null"] }
+      }
+    }
+  }
+}

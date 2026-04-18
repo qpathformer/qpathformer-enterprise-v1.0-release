@@ -1,0 +1,38 @@
+{
+  "freeze_ready_manifest_id": "e8d71d29-a9b5-461a-a62e-af5b8e9d9ee8",
+  "freeze_ready_timestamp": "2026-04-18T04:47:53Z",
+  "handoff_id": "b92c1f25-6ae7-4843-bf8c-d6b34284774d",
+  "dataset_version": "id2-20260411-1400-qpath-tr008-run__v10-1-path2-source-bridge__20260418T044710Z",
+  "package_dir": "C:\\v1.0-qpathformer_enterprise\\path_2_access_mode_canonical\\03_dataset\\candidates\\session-run-id2-20260411-1400-qpath-tr008-run\\QPDS-PACKAGE-ID2_PREP\\id2-20260411-1400-qpath-tr008-run__v10-1-path2-source-bridge__20260418T044710Z",
+  "dataset_path": "C:\\v1.0-qpathformer_enterprise\\path_2_access_mode_canonical\\03_dataset\\candidates\\session-run-id2-20260411-1400-qpath-tr008-run\\QPDS-PACKAGE-ID2_PREP\\id2-20260411-1400-qpath-tr008-run__v10-1-path2-source-bridge__20260418T044710Z\\dataset.jsonl",
+  "manifest_path": "C:\\v1.0-qpathformer_enterprise\\path_2_access_mode_canonical\\03_dataset\\candidates\\session-run-id2-20260411-1400-qpath-tr008-run\\QPDS-PACKAGE-ID2_PREP\\id2-20260411-1400-qpath-tr008-run__v10-1-path2-source-bridge__20260418T044710Z\\manifest.json",
+  "review_path": "C:\\v1.0-qpathformer_enterprise\\path_2_access_mode_canonical\\03_dataset\\candidates\\session-run-id2-20260411-1400-qpath-tr008-run\\QPDS-PACKAGE-ID2_PREP\\id2-20260411-1400-qpath-tr008-run__v10-1-path2-source-bridge__20260418T044710Z\\state2_review.json",
+  "promotion_path": "C:\\v1.0-qpathformer_enterprise\\path_2_access_mode_canonical\\03_dataset\\candidates\\session-run-id2-20260411-1400-qpath-tr008-run\\QPDS-PACKAGE-ID2_PREP\\id2-20260411-1400-qpath-tr008-run__v10-1-path2-source-bridge__20260418T044710Z\\state2_promotion_decision.json",
+  "freeze_posture": {
+    "state_target": "STATE_1",
+    "freeze_ready": true,
+    "requires_explicit_freeze_step": true,
+    "registry_update_pending": true
+  },
+  "authorization_summary": {
+    "all_items_candidate_authorized": true,
+    "fine_tuning_allowed_count": 0,
+    "fine_tuning_globally_allowed": false
+  },
+  "routing_profile": {
+    "routing_decisions": [
+      "SEND_TO_STATE_2_REVIEW"
+    ],
+    "target_states": [
+      "STATE_2"
+    ],
+    "all_candidates_state2_review_ready": true
+  },
+  "handoff_decision": {
+    "approved": true,
+    "decision": "APPROVE_STATE1_HANDOFF_PACKAGE",
+    "reasons": [
+      "all_state1_handoff_thresholds_passed"
+    ]
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "manifest_version": "tr_state1_package_v0.1",
+  "package_id": "QPDS-TR-STRICT-ID3-001",
+  "dataset_version": "checkpoint_v4_strict",
+  "created_at_utc": "2026-04-18T02:58:44Z",
+  "source_dataset_dir": "C:\\v1.0-qpathformer_enterprise\\path_1_tr_corpus_reference\\03_dataset\\checkpoint_v4_strict",
+  "package_dir": "C:\\v1.0-qpathformer_enterprise\\path_1_tr_corpus_reference\\04_state1_package\\QPDS-TR-STRICT-ID3-001",
+  "candidate_count": 1117,
+  "source_record_count": 1241,
+  "target_model": {
+    "training_mode": "local_lora",
+    "model_family": "llama",
+    "model_base": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+    "backend_profile_id": "local_lora_reference",
+    "execution_mode": "configured"
+  },
+  "routing_profile": {
+    "profile_type": "tr_wrapper_flow",
+    "path_id": "path_1_tr_corpus_reference",
+    "source_stage": "tr_signals",
+    "dataset_stage": "tr_finetune",
+    "package_stage": "state1_wrapper",
+    "reference_match_required": true
+  },
+  "training_context": {
+    "lifecycle_state": "STATE_1",
+    "train_file": "train.sft.jsonl",
+    "record_count": 1117,
+    "dataset_passport_id": "QPDS-TR-STRICT-ID3-001",
+    "registry_state": "STATE_1",
+    "registry_entry_id": "7538563d-9dcf-4e2d-9610-c1c92b3d40c2",
+    "backend_profile": {
+      "backend_profile_id": "local_lora_reference",
+      "backend": "local_lora",
+      "execution_mode": "configured",
+      "format": "sft_jsonl"
+    }
+  },
+  "authorization_summary": {
+    "reference_match_required": true,
+    "reference_id_count": 296,
+    "reference_reasoning_posture_counts": {
+      "inspection": 1237,
+      "operational": 4
+    },
+    "non_authoritative": true,
+    "governance_first": true,
+    "training_preparation_only": true,
+    "registry_state": "STATE_1",
+    "registry_entry_id": "7538563d-9dcf-4e2d-9610-c1c92b3d40c2",
+    "dataset_passport_id": "QPDS-TR-STRICT-ID3-001"
+  },
+  "source_artifacts": [
+    "dataset.jsonl",
+    "train.sft.jsonl",
+    "manifest.json",
+    "dataset_preview.json",
+    "reference_layer_report.json",
+    "source_mix_report.json",
+    "skipped_records.json",
+    "validation.sft.jsonl",
+    "state1_training_manifest.json",
+    "training_backend_profile.json"
+  ]
+}

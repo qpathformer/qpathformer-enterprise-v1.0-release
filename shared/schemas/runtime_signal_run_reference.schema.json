@@ -1,0 +1,184 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://qpathformer.dev/schemas/runtime_signal_run_reference.schema.json",
+  "title": "Q-Pathformer Runtime Signal Run Reference",
+  "description": "Per-run registration record for live Path 2 runtime signal emission.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "run_reference_version",
+    "run_id",
+    "run_type",
+    "workflow_id",
+    "path_id",
+    "signal_id",
+    "session_id",
+    "dataset_passport_id",
+    "lifecycle_state",
+    "target_state",
+    "run_status",
+    "recorded_at_utc",
+    "model",
+    "routing",
+    "outputs"
+  ],
+  "properties": {
+    "run_reference_version": {
+      "type": "string",
+      "const": "qpds_runtime_signal_run_reference_v1.0"
+    },
+    "run_id": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9._:-]{6,128}$"
+    },
+    "run_type": {
+      "type": "string",
+      "const": "runtime_signal_emitter"
+    },
+    "workflow_id": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9._:-]{3,128}$"
+    },
+    "path_id": {
+      "type": "string",
+      "const": "path_2_access_mode_canonical"
+    },
+    "signal_id": {
+      "type": "string"
+    },
+    "session_id": {
+      "type": "string"
+    },
+    "dataset_passport_id": {
+      "type": "string"
+    },
+    "routing_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true
+    },
+    "lifecycle_state": {
+      "type": "string",
+      "const": "STATE_3"
+    },
+    "target_state": {
+      "type": "string",
+      "enum": [
+        "STATE_2",
+        "STATE_3"
+      ]
+    },
+    "run_status": {
+      "type": "string",
+      "enum": [
+        "success",
+        "success_with_findings"
+      ]
+    },
+    "recorded_at_utc": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "model": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "model_id",
+        "model_version",
+        "parameter_class",
+        "endpoint_type"
+      ],
+      "properties": {
+        "model_id": {
+          "type": "string"
+        },
+        "model_version": {
+          "type": "string"
+        },
+        "parameter_class": {
+          "type": "string"
+        },
+        "endpoint_type": {
+          "type": "string"
+        }
+      }
+    },
+    "source_context": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "dataset_passport_ref": {
+          "type": "string"
+        },
+        "routing_ref": {
+          "type": "string"
+        },
+        "authorization_ref": {
+          "type": "string"
+        }
+      }
+    },
+    "routing": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "decision",
+        "eligible_for_state_2",
+        "reasons"
+      ],
+      "properties": {
+        "decision": {
+          "type": "string"
+        },
+        "eligible_for_state_2": {
+          "type": "boolean"
+        },
+        "reasons": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "validation": {
+      "type": "object"
+    },
+    "maturity": {
+      "type": "string"
+    },
+    "metrics": {
+      "type": "object"
+    },
+    "outputs": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "signal_path",
+        "routing_log_path"
+      ],
+      "properties": {
+        "signal_path": {
+          "type": "string"
+        },
+        "routing_log_path": {
+          "type": "string"
+        }
+      }
+    },
+    "inspection_ready": {
+      "type": "boolean"
+    },
+    "frozen_output_queryable": {
+      "type": "boolean"
+    },
+    "notes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

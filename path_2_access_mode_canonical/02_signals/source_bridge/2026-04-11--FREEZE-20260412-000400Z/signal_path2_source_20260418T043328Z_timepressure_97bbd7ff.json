@@ -1,0 +1,99 @@
+{
+  "signal_id": "97bbd7ff-25d1-4df7-9458-cc3ae8844619",
+  "timestamp": "2026-04-18T04:33:28Z",
+  "access_mode_primary": "ID_2",
+  "schema_version": "v0.2-dev",
+  "interaction_type": "enterprise_only",
+  "session_id": "ID2-20260411-1400-qpath-tr008-run",
+  "model": {
+    "model_id": "path2-source-bridge",
+    "parameter_class": "12B-14B",
+    "role": "enterprise",
+    "endpoint_type": "local",
+    "invocation_reason": "source_bridge_structuring",
+    "version": "v10.1-path2-source-bridge"
+  },
+  "source": {
+    "initiator": "id3-freeze-source",
+    "amplifier": null
+  },
+  "source_bridge": {
+    "bridge_type": "path2_source_bridge",
+    "source_root": "path_2_access_mode_canonical\\01_source\\2026-04-11--FREEZE-20260412-000400Z",
+    "source_freeze_name": "2026-04-11--FREEZE-20260412-000400Z",
+    "scenario_label": "timepressure",
+    "session_file": "session_timepressure.canonical.json",
+    "module_file": "module_03_timepressure.canonical.json",
+    "source_access_mode": "ID_3_packaging_of_ID_2_records",
+    "preserves_source_freeze": true,
+    "top_level_final_interpreted_from_id3_freeze": true
+  },
+  "input": {
+    "prompt": "Path 2 source bridge for scenario 'timepressure'. Use frozen canonical session and SAPP Simulation & Stress Testing records as governed runtime inputs. Purpose: Variant run applying intensified time-pressure stressor for comparison against baseline TR-008 Path 2 runtime signal capture.",
+    "context_ref": "session_timepressure.canonical.json"
+  },
+  "signal": {
+    "raw_output": "{\"bridge_type\": \"path2_source_bridge\", \"scenario_label\": \"timepressure\", \"source_freeze_root\": \"path_2_access_mode_canonical\\\\01_source\\\\2026-04-11--FREEZE-20260412-000400Z\", \"session_file\": \"session_timepressure.canonical.json\", \"module_file\": \"module_03_timepressure.canonical.json\", \"session_id\": \"ID2-20260411-1400-qpath-tr008-run\", \"purpose_statement\": \"Variant run applying intensified time-pressure stressor for comparison against baseline TR-008 Path 2 runtime signal capture.\", \"audience\": [\"internal\", \"standards_preparation\"], \"scenario_summary\": \"Time-pressure variant of the TR-008 Path 2 baseline scenario. The session operated under compressed timelines requiring rapid interpretation of runtime signals while maintaining lifecycle containment and non-authoritative posture\", \"source_record_class\": {\"session\": \"non_inspection_session_record\", \"module\": \"non_inspection_module_record\"}, \"source_final_status\": {\"session_inspection_status\": \"frozen_under_ID_3\", \"module_status\": \"final\", \"module_completed_at_utc\": \"2026-04-12T00:04:00Z\"}}",
+    "structured_summary": "Path 2 timepressure bridge signal packages a frozen ID_2 session and Module 03 record into a governed STATE_3 signal for later STATE_2 review. Time-pressure variant of the TR-008 Path 2 baseline scenario. The session operated under compressed timelines requiring rapid interpretation of runtime signals while maintaining lifecycle containment and non-authoritative posture",
+    "tags": [
+      "path2_source_bridge",
+      "id3_freeze",
+      "state3",
+      "governance",
+      "module_03",
+      "timepressure",
+      "shared_session_id",
+      "non_authoritative",
+      "signals_not_decisions",
+      "tr008",
+      "internal",
+      "standards_preparation"
+    ]
+  },
+  "metrics": {
+    "coherence": 0.9143,
+    "novelty": 0.6163,
+    "stability": 1.0,
+    "ambiguity": 0.0
+  },
+  "maturity": "LEVEL_5",
+  "governance_flags": {
+    "provisional": true,
+    "context_bound": true,
+    "requires_validation": true,
+    "promotion_blocked": true,
+    "signals_not_decisions": true,
+    "source_freeze_preserved": true
+  },
+  "authorization": {
+    "state2_candidate_allowed": true,
+    "fine_tuning_allowed": false,
+    "human_review_required": true
+  },
+  "validation": {
+    "candidate_for_validation": true,
+    "validation_requested": true,
+    "validation_reasons": [
+      "candidate_ready_for_state2_review"
+    ],
+    "validation_engine_version": "v10.0"
+  },
+  "lifecycle": {
+    "state": "STATE_3",
+    "eligible_for_state_2": true,
+    "routing_decision": "SEND_TO_STATE_2_REVIEW",
+    "target_state": "STATE_2",
+    "routing_reasons": [
+      "all_state2_review_gates_passed"
+    ]
+  },
+  "routing_trace": {
+    "engine_version": "v10.0",
+    "decision": "SEND_TO_STATE_2_REVIEW",
+    "target_state": "STATE_2",
+    "eligible_for_state_2": true,
+    "reasons": [
+      "all_state2_review_gates_passed"
+    ]
+  }
+}

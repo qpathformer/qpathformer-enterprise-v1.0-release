@@ -1,0 +1,72 @@
+{
+  "onboarding_manifest_version": "v13.2",
+  "generated_at": "2026-04-18T05:04:49Z",
+  "package_id": "CLIENT-DATASET-EXAMPLE-001",
+  "template_family": "client_governance_json",
+  "profile_id": "client_governance_json.default",
+  "profile_version": "v13.2",
+  "profile_path": "C:\\v1.0-qpathformer_enterprise\\shared\\configs\\adapter_profiles\\client_governance_json.profile.json",
+  "input": {
+    "input_root": "C:\\v1.0-qpathformer_enterprise\\path_3_external_custom_adapter\\01_source\\inbound\\CLIENT-DATASET-EXAMPLE-001\\client_governance.json",
+    "source_inventory_file": "C:\\v1.0-qpathformer_enterprise\\path_3_external_custom_adapter\\03_dataset\\normalized\\CLIENT-DATASET-EXAMPLE-001\\source_inventory.json"
+  },
+  "classification": {
+    "classification_version": "v13.2",
+    "package_id": "CLIENT-DATASET-EXAMPLE-001",
+    "artifact_type": "client_governance_json",
+    "record_family": "structured_json",
+    "source_mode_detected": "client_external",
+    "structural_completeness": "complete",
+    "template_family": "client_governance_json",
+    "normalization_strategy": "client_json_to_onboarding_rows",
+    "source_inventory": {
+      "file_count": 1,
+      "files": [
+        {
+          "inventory_order": 1,
+          "file_name": "client_governance.json",
+          "file_type": "json",
+          "path": "C:\\v1.0-qpathformer_enterprise\\path_3_external_custom_adapter\\01_source\\inbound\\CLIENT-DATASET-EXAMPLE-001\\client_governance.json",
+          "sha256": "dc369f96cc4e4d5b33ff744e25a9937f7547db3b71e7be59690aff7378420a65"
+        }
+      ]
+    },
+    "classification_notes": [
+      "Client dataset detected with dataset_id=CLIENT-DATASET-EXAMPLE-001.",
+      "Structured JSON intake contains 4 client records.",
+      "Client-origin dataset remains non-authoritative and lifecycle-contained on intake."
+    ],
+    "classification_timestamp": "2026-04-18T05:04:49Z"
+  },
+  "authorization_posture": {
+    "fine_tuning_allowed_default": false,
+    "external_training_allowed_default": false,
+    "human_review_required_default": true,
+    "authorization_not_modified": true,
+    "authorization_source": "default_restricted_posture"
+  },
+  "lifecycle_initialization": {
+    "state": "STATE_3",
+    "eligible_for_state_2": false,
+    "routing_decision": "HOLD_IN_STATE_3"
+  },
+  "bundle_summary": {
+    "module_record_count": 0,
+    "session_record_count": 0,
+    "freeze_note_count": 0,
+    "hash_manifest_count": 0,
+    "client_governance_record_count": 4,
+    "hash_verification_status": "ok"
+  },
+  "output": {
+    "output_dir": "C:\\v1.0-qpathformer_enterprise\\path_3_external_custom_adapter\\03_dataset\\normalized\\CLIENT-DATASET-EXAMPLE-001",
+    "onboarding_manifest_file": "C:\\v1.0-qpathformer_enterprise\\path_3_external_custom_adapter\\03_dataset\\normalized\\CLIENT-DATASET-EXAMPLE-001\\onboarding_manifest.json",
+    "normalized_onboarding_file": "C:\\v1.0-qpathformer_enterprise\\path_3_external_custom_adapter\\03_dataset\\normalized\\CLIENT-DATASET-EXAMPLE-001\\normalized_onboarding.jsonl",
+    "normalization_report_file": "C:\\v1.0-qpathformer_enterprise\\path_3_external_custom_adapter\\03_dataset\\normalized\\CLIENT-DATASET-EXAMPLE-001\\normalization_report.json",
+    "hash_verification_report_file": "C:\\v1.0-qpathformer_enterprise\\path_3_external_custom_adapter\\03_dataset\\normalized\\CLIENT-DATASET-EXAMPLE-001\\hash_verification_report.json"
+  },
+  "record_counts": {
+    "source_file_count": 1,
+    "normalized_record_count": 4
+  }
+}

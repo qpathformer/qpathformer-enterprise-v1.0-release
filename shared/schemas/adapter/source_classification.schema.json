@@ -1,0 +1,165 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://qpathformer.dev/schemas/adapter/source_classification.schema.json",
+  "title": "Source Classification Record",
+  "description": "Deterministic classification record for external or heterogeneous artifact onboarding in v13.1.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "classification_version",
+    "package_id",
+    "artifact_type",
+    "record_family",
+    "source_mode_detected",
+    "structural_completeness",
+    "template_family",
+    "normalization_strategy",
+    "source_inventory",
+    "classification_notes",
+    "classification_timestamp"
+  ],
+  "properties": {
+    "classification_version": {
+      "type": "string",
+      "const": "v13.1"
+    },
+    "package_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "artifact_type": {
+      "type": "string",
+      "enum": [
+        "id2_module_record",
+        "id2_session_record",
+        "id3_freeze_note",
+        "hash_manifest",
+        "id3_freeze_bundle",
+        "client_governance_json",
+        "execution_dataset_fragment",
+        "mixed_package",
+        "unknown"
+      ]
+    },
+    "record_family": {
+      "type": "string",
+      "enum": [
+        "single_file",
+        "bundle",
+        "mixed_bundle",
+        "structured_json",
+        "text_evidence",
+        "unknown"
+      ]
+    },
+    "source_mode_detected": {
+      "type": "string",
+      "enum": [
+        "ID_1",
+        "ID_2",
+        "ID_3",
+        "ID_2_frozen_under_ID_3",
+        "client_external",
+        "execution_derived",
+        "mixed",
+        "unknown"
+      ]
+    },
+    "structural_completeness": {
+      "type": "string",
+      "enum": [
+        "complete",
+        "partial",
+        "incomplete",
+        "unknown"
+      ]
+    },
+    "template_family": {
+      "type": "string",
+      "enum": [
+        "id2_module_record",
+        "id2_session_record",
+        "id3_freeze_bundle",
+        "client_governance_json",
+        "unknown"
+      ]
+    },
+    "normalization_strategy": {
+      "type": "string",
+      "enum": [
+        "bundle_to_onboarding_rows",
+        "single_record_to_onboarding_row",
+        "json_object_to_onboarding_row",
+        "mixed_bundle_split_normalization",
+        "reject"
+      ]
+    },
+    "source_inventory": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "file_count",
+        "files"
+      ],
+      "properties": {
+        "file_count": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "files": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "inventory_order",
+              "file_name",
+              "file_type",
+              "path",
+              "sha256"
+            ],
+            "properties": {
+              "inventory_order": {
+                "type": "integer",
+                "minimum": 1
+              },
+              "file_name": {
+                "type": "string",
+                "minLength": 1
+              },
+              "file_type": {
+                "type": "string",
+                "enum": [
+                  "json",
+                  "jsonl",
+                  "markdown",
+                  "text",
+                  "unknown"
+                ]
+              },
+              "path": {
+                "type": "string",
+                "minLength": 1
+              },
+              "sha256": {
+                "type": "string",
+                "pattern": "^[0-9a-f]{64}$"
+              }
+            }
+          }
+        }
+      }
+    },
+    "classification_notes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "classification_timestamp": {
+      "type": "string",
+      "format": "date-time"
+    }
+  }
+}

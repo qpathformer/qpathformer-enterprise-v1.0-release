@@ -1,0 +1,221 @@
+{
+  "report_version": "access_pod_csc_scoring_report_v1.0",
+  "generated_at_utc": "2026-04-15T19:25:38Z",
+  "inputs": {
+    "evidence_input_path": "shared/standards/access_pod/generated/evidence_input_drafts/sector-healthcare-v1-sector-healthcare-v1-baseline-2026-04-15t19-25-23z.evidence_input_draft.json",
+    "metric_catalog_path": "shared/standards/access_pod/vendor/access-pod-artifacts-core/v1a/catalogs/csc_metric_catalog_v1a.json",
+    "sector_profiles_path": "shared/standards/access_pod/vendor/access-pod-artifacts-core/v1a/profiles/csc_sector_profiles_v1a.json",
+    "profile_extensions_path": "shared/standards/access_pod/profiles/enterprise_sector_profile_extensions.json",
+    "certificate_schema_path": "shared/standards/access_pod/vendor/access-pod-artifacts-core/v1a/schemas/csc-certificate.schema_v1a.json"
+  },
+  "profile_id": "sector.healthcare.v1",
+  "csc_id": "csc_qpathformer-enterprise-access-mode-healthcare-draft-sector-healthcare-v1-baseline_20260415T192523Z",
+  "observed_metric_count": 12,
+  "catalog_metric_count": 60,
+  "overall_metric_coverage_ratio": 0.2,
+  "factor_coverages": {
+    "f6_1": {
+      "observed_metrics": 2,
+      "total_factor_metrics": 10,
+      "coverage_ratio": 0.2
+    },
+    "f6_2": {
+      "observed_metrics": 2,
+      "total_factor_metrics": 10,
+      "coverage_ratio": 0.2
+    },
+    "f6_3": {
+      "observed_metrics": 2,
+      "total_factor_metrics": 10,
+      "coverage_ratio": 0.2
+    },
+    "f6_4": {
+      "observed_metrics": 2,
+      "total_factor_metrics": 10,
+      "coverage_ratio": 0.2
+    },
+    "f6_5": {
+      "observed_metrics": 2,
+      "total_factor_metrics": 10,
+      "coverage_ratio": 0.2
+    },
+    "f6_6": {
+      "observed_metrics": 2,
+      "total_factor_metrics": 10,
+      "coverage_ratio": 0.2
+    }
+  },
+  "warning_metrics": [],
+  "critical_metrics": [],
+  "gates": {
+    "no_critical_failures": true,
+    "telemetry_minimum_met": true,
+    "f6_1_min_met": true,
+    "f6_4_min_met": true,
+    "all_factors_min_met": true,
+    "sector_validation_met": true
+  },
+  "assessment_summary": {
+    "composite_score": 84.6,
+    "csc_level": 4,
+    "risk_tier": "high"
+  },
+  "factor_scores": {
+    "f6_1": {
+      "score": 95.0,
+      "confidence": 0.5,
+      "telemetry_window": {
+        "start": "2026-04-12T11:00:45Z",
+        "end": "2026-04-13T09:52:08Z"
+      },
+      "top_metrics": [
+        {
+          "metric_id": "SEC_EVIDENCE_INTEGRITY_PASS",
+          "value": 1.0,
+          "unit": "ratio",
+          "weight": 0.5,
+          "normalized": 1.0,
+          "direction": "higher_is_better"
+        },
+        {
+          "metric_id": "SEC_OUTPUT_SAFETY_VIOL_RATE",
+          "value": 0.001,
+          "unit": "ratio",
+          "weight": 0.5,
+          "normalized": 0.9,
+          "direction": "lower_is_better"
+        }
+      ]
+    },
+    "f6_2": {
+      "score": 88.9,
+      "confidence": 0.39,
+      "telemetry_window": {
+        "start": "2026-04-12T11:00:45Z",
+        "end": "2026-04-13T09:52:08Z"
+      },
+      "top_metrics": [
+        {
+          "metric_id": "HARD_TELEMETRY_COMPLETENESS",
+          "value": 1.0,
+          "unit": "ratio",
+          "weight": 0.5,
+          "normalized": 1.0,
+          "direction": "higher_is_better"
+        },
+        {
+          "metric_id": "HARD_PRIVACY_TEST_PASS_RATE",
+          "value": 0.97,
+          "unit": "ratio",
+          "weight": 0.5,
+          "normalized": 0.7778,
+          "direction": "higher_is_better"
+        }
+      ]
+    },
+    "f6_3": {
+      "score": 76.5,
+      "confidence": 0.52,
+      "telemetry_window": {
+        "start": "2026-04-12T11:00:45Z",
+        "end": "2026-04-13T09:52:08Z"
+      },
+      "top_metrics": [
+        {
+          "metric_id": "COMP_POLICY_TRACE_COVERAGE",
+          "value": 0.978,
+          "unit": "ratio",
+          "weight": 0.5,
+          "normalized": 0.78,
+          "direction": "higher_is_better"
+        },
+        {
+          "metric_id": "COMP_MODEL_LINEAGE_COVERAGE",
+          "value": 0.975,
+          "unit": "ratio",
+          "weight": 0.5,
+          "normalized": 0.75,
+          "direction": "higher_is_better"
+        }
+      ]
+    },
+    "f6_4": {
+      "score": 80.1,
+      "confidence": 0.55,
+      "telemetry_window": {
+        "start": "2026-04-12T11:00:45Z",
+        "end": "2026-04-13T09:52:08Z"
+      },
+      "top_metrics": [
+        {
+          "metric_id": "GOV_HIL_REVIEW_COVERAGE",
+          "value": 0.9802,
+          "unit": "ratio",
+          "weight": 0.5,
+          "normalized": 0.802,
+          "direction": "higher_is_better"
+        },
+        {
+          "metric_id": "GOV_AUDIT_EVIDENCE_COVERAGE",
+          "value": 0.98,
+          "unit": "ratio",
+          "weight": 0.5,
+          "normalized": 0.8,
+          "direction": "higher_is_better"
+        }
+      ]
+    },
+    "f6_5": {
+      "score": 72.7,
+      "confidence": 0.37,
+      "telemetry_window": {
+        "start": "2026-04-12T11:00:45Z",
+        "end": "2026-04-13T09:52:08Z"
+      },
+      "top_metrics": [
+        {
+          "metric_id": "TRN_EXPLAIN_COMPLETE",
+          "value": 1.0,
+          "unit": "score",
+          "weight": 0.4545,
+          "normalized": 1.0,
+          "direction": "higher_is_better"
+        },
+        {
+          "metric_id": "TRN_HARM_EVENT_RATE",
+          "value": 0.5,
+          "unit": "per_10k",
+          "weight": 0.5455,
+          "normalized": 0.5,
+          "direction": "lower_is_better"
+        }
+      ]
+    },
+    "f6_6": {
+      "score": 93.2,
+      "confidence": 0.46,
+      "telemetry_window": {
+        "start": "2026-04-12T11:00:45Z",
+        "end": "2026-04-13T09:52:08Z"
+      },
+      "top_metrics": [
+        {
+          "metric_id": "SECTOR_AUDIT_INTEROP_SCORE",
+          "value": 93.5,
+          "unit": "score",
+          "weight": 0.5,
+          "normalized": 0.94,
+          "direction": "higher_is_better"
+        },
+        {
+          "metric_id": "SECTOR_POLICY_PASS_RATE",
+          "value": 0.97,
+          "unit": "ratio",
+          "weight": 0.5,
+          "normalized": 0.9231,
+          "direction": "higher_is_better"
+        }
+      ]
+    }
+  }
+}

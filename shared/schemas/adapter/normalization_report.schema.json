@@ -1,0 +1,115 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://qpathformer.dev/schemas/adapter/normalization_report.schema.json",
+  "title": "Normalization Report",
+  "description": "Summary report for v13.1 external artifact normalization.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "normalization_report_version",
+    "generated_at",
+    "package_id",
+    "source_file_count",
+    "normalized_record_count",
+    "artifact_type_counts",
+    "hash_verification_overall_status",
+    "warnings",
+    "defaults_applied",
+    "non_claims_preserved",
+    "preview_count",
+    "preview_records",
+    "notes"
+  ],
+  "properties": {
+    "normalization_report_version": {
+      "type": "string",
+      "const": "v13.1"
+    },
+    "generated_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "package_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "source_file_count": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "normalized_record_count": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "artifact_type_counts": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "module_record",
+        "session_record",
+        "freeze_note",
+        "hash_manifest"
+      ],
+      "properties": {
+        "module_record": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "session_record": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "freeze_note": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "hash_manifest": {
+          "type": "integer",
+          "minimum": 0
+        }
+      }
+    },
+    "hash_verification_overall_status": {
+      "type": "string",
+      "enum": [
+        "ok",
+        "warning",
+        "error"
+      ]
+    },
+    "warnings": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "defaults_applied": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "non_claims_preserved": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "preview_count": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "preview_records": {
+      "type": "array",
+      "items": {
+        "$ref": "normalized_onboarding_record.schema.json"
+      }
+    },
+    "notes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

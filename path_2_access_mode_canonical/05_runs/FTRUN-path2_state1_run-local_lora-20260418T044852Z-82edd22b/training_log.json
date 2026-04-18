@@ -1,0 +1,71 @@
+{
+  "training_log_version": "v14.3",
+  "run_id": "FTRUN-path2_state1_run-local_lora-20260418T044852Z-82edd22b",
+  "timestamp_started_utc": "2026-04-18T04:48:52Z",
+  "status": "completed",
+  "mode": "execution",
+  "dataset_version": "id2-20260411-1400-qpath-tr008-run__v10-1-path2-source-bridge__20260418T044710Z",
+  "training_package_path": "C:\\v1.0-qpathformer_enterprise\\path_2_access_mode_canonical\\03_dataset\\training_packages\\id2-20260411-1400-qpath-tr008-run__v10-1-path2-source-bridge__20260418T044710Z",
+  "backend": "local_lora",
+  "backend_profile_id": "local_lora_reference",
+  "model_base": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+  "hyperparameters": {
+    "max_steps": 100,
+    "learning_rate": 5e-05,
+    "batch_size": 1
+  },
+  "events": [
+    {
+      "timestamp_utc": "2026-04-18T04:48:52Z",
+      "event": "package_validated",
+      "details": {
+        "manifest_file": "C:\\v1.0-qpathformer_enterprise\\path_2_access_mode_canonical\\03_dataset\\training_packages\\id2-20260411-1400-qpath-tr008-run__v10-1-path2-source-bridge__20260418T044710Z\\state1_training_manifest.json",
+        "train_file": "C:\\v1.0-qpathformer_enterprise\\path_2_access_mode_canonical\\03_dataset\\training_packages\\id2-20260411-1400-qpath-tr008-run__v10-1-path2-source-bridge__20260418T044710Z\\train.sft.jsonl",
+        "backend_profile_file": "C:\\v1.0-qpathformer_enterprise\\path_2_access_mode_canonical\\03_dataset\\training_packages\\id2-20260411-1400-qpath-tr008-run__v10-1-path2-source-bridge__20260418T044710Z\\training_backend_profile.json",
+        "validation_warning_count": 0
+      }
+    },
+    {
+      "timestamp_utc": "2026-04-18T04:49:35Z",
+      "event": "execution_completed",
+      "details": {
+        "status": "completed",
+        "execution_mode": "local_lora",
+        "backend": "local_lora",
+        "trainer_family": "transformers_peft",
+        "trainer_type": "local_lora",
+        "trainable_strategy": "lora",
+        "model_output_path": "C:\\v1.0-qpathformer_enterprise\\path_2_access_mode_canonical\\05_runs\\FTRUN-path2_state1_run-local_lora-20260418T044852Z-82edd22b\\model",
+        "checkpoints_dir": "C:\\v1.0-qpathformer_enterprise\\path_2_access_mode_canonical\\05_runs\\FTRUN-path2_state1_run-local_lora-20260418T044852Z-82edd22b\\checkpoints",
+        "trainer_summary_path": "C:\\v1.0-qpathformer_enterprise\\path_2_access_mode_canonical\\05_runs\\FTRUN-path2_state1_run-local_lora-20260418T044852Z-82edd22b\\trainer_summary.json",
+        "steps_completed": 100,
+        "epochs_completed": 100.0,
+        "records_loaded": 4,
+        "train_loss_final": 3.2854502201080322
+      }
+    }
+  ],
+  "warnings": [],
+  "linkage_validation": {
+    "dataset_version": "id2-20260411-1400-qpath-tr008-run__v10-1-path2-source-bridge__20260418T044710Z",
+    "package_root": "C:\\v1.0-qpathformer_enterprise\\path_2_access_mode_canonical\\03_dataset\\training_packages\\id2-20260411-1400-qpath-tr008-run__v10-1-path2-source-bridge__20260418T044710Z",
+    "manifest_record_count": 4,
+    "actual_record_count": 4,
+    "lifecycle_state": "STATE_1",
+    "backend_profile_id": "local_lora_reference",
+    "backend_format": "sft_jsonl",
+    "prompt_field": "prompt",
+    "completion_field": "completion"
+  },
+  "runtime_environment": {
+    "python_version": "3.11.9",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "cwd": "C:\\v1.0-qpathformer_enterprise"
+  },
+  "run_naming": {
+    "mode_tag": "local_lora",
+    "explicit_run_id_used": false,
+    "run_suffix": null
+  },
+  "timestamp_completed_utc": "2026-04-18T04:49:35Z"
+}

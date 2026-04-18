@@ -1,0 +1,136 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "QPathformer Signal Record",
+  "type": "object",
+  "required": [
+    "signal_id",
+    "timestamp",
+    "session_id",
+    "schema_version",
+    "interaction_type",
+    "model",
+    "source",
+    "input",
+    "signal",
+    "metrics",
+    "maturity",
+    "governance_flags",
+    "authorization",
+    "validation",
+    "lifecycle"
+  ],
+  "properties": {
+    "signal_id": { "type": "string" },
+    "timestamp": { "type": "string" },
+    "session_id": { "type": "string" },
+    "schema_version": { "type": "string", "const": "v0.2-dev" },
+    "interaction_type": {
+      "type": "string",
+      "enum": ["enterprise_only", "cross_tier"]
+    },
+    "model": {
+      "type": "object",
+      "required": ["model_id", "parameter_class", "role", "endpoint_type", "invocation_reason"],
+      "properties": {
+        "model_id": { "type": "string" },
+        "parameter_class": { "type": "string", "enum": ["12B-14B", "24B-30B"] },
+        "role": { "type": "string", "enum": ["enterprise", "strategic"] },
+        "endpoint_type": { "type": "string", "enum": ["local", "remote"] },
+        "invocation_reason": { "type": "string" }
+      },
+      "additionalProperties": false
+    },
+    "source": {
+      "type": "object",
+      "required": ["initiator", "amplifier"],
+      "properties": {
+        "initiator": { "type": "string", "const": "enterprise-tier" },
+        "amplifier": { "type": ["string", "null"] }
+      },
+      "additionalProperties": false
+    },
+    "input": {
+      "type": "object",
+      "required": ["prompt"],
+      "properties": {
+        "prompt": { "type": "string" },
+        "context_ref": { "type": ["string", "null"] }
+      },
+      "additionalProperties": false
+    },
+    "signal": {
+      "type": "object",
+      "required": ["raw_output", "structured_summary", "tags"],
+      "properties": {
+        "raw_output": { "type": "string" },
+        "structured_summary": { "type": "string" },
+        "tags": { "type": "array", "items": { "type": "string" } }
+      },
+      "additionalProperties": false
+    },
+    "metrics": {
+      "type": "object",
+      "required": ["coherence", "novelty", "stability", "ambiguity"],
+      "properties": {
+        "coherence": { "type": "number", "minimum": 0.0, "maximum": 1.0 },
+        "novelty": { "type": "number", "minimum": 0.0, "maximum": 1.0 },
+        "stability": { "type": "number", "minimum": 0.0, "maximum": 1.0 },
+        "ambiguity": { "type": "number", "minimum": 0.0, "maximum": 1.0 }
+      },
+      "additionalProperties": false
+    },
+    "maturity": {
+      "type": "string",
+      "enum": ["LEVEL_0", "LEVEL_1", "LEVEL_2", "LEVEL_3", "LEVEL_4", "LEVEL_5"]
+    },
+    "governance_flags": {
+      "type": "object",
+      "required": ["provisional", "context_bound", "requires_validation", "promotion_blocked"],
+      "properties": {
+        "provisional": { "type": "boolean" },
+        "context_bound": { "type": "boolean" },
+        "requires_validation": { "type": "boolean" },
+        "promotion_blocked": { "type": "boolean" }
+      },
+      "additionalProperties": true
+    },
+    "authorization": {
+      "type": "object",
+      "required": ["state2_candidate_allowed", "fine_tuning_allowed", "human_review_required"],
+      "properties": {
+        "state2_candidate_allowed": { "type": "boolean" },
+        "fine_tuning_allowed": { "type": "boolean" },
+        "human_review_required": { "type": "boolean" }
+      },
+      "additionalProperties": false
+    },
+    "validation": {
+      "type": "object",
+      "required": ["candidate_for_validation", "validation_requested"],
+      "properties": {
+        "candidate_for_validation": { "type": "boolean" },
+        "validation_requested": { "type": "boolean" }
+      },
+      "additionalProperties": false
+    },
+    "lifecycle": {
+      "type": "object",
+      "required": ["state", "eligible_for_state_2", "routing_decision"],
+      "properties": {
+        "state": { "type": "string", "const": "STATE_3" },
+        "eligible_for_state_2": { "type": "boolean" },
+        "routing_decision": {
+          "type": "string",
+          "enum": [
+            "HOLD_IN_STATE_3",
+            "SEND_TO_STATE_2_REVIEW",
+            "RETURN_TO_STATE_3",
+            "REJECT_SIGNAL"
+          ]
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

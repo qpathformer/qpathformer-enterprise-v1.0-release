@@ -1,0 +1,31 @@
+{
+  "scenario_id": "sector.finance.v1.75_25",
+  "scenario_label": "Finance Weighted 75/25",
+  "profile_id": "sector.finance.v1",
+  "description": "Weighted finance scenario. Sector-facing metrics prioritize sector-specific partner or policy evidence at 75% and use market-integrity telemetry as a 25% balancing signal where applicable.",
+  "metric_overrides": {
+    "SECTOR_MARKET_INTEGRITY_SIGNAL": {
+      "source_mix": {
+        "market_integrity": 0.75,
+        "partner_attestations": 0.25
+      }
+    },
+    "SECTOR_POLICY_PASS_RATE": {
+      "source_mix": {
+        "policy_pass": 0.75,
+        "market_integrity": 0.25
+      }
+    },
+    "SECTOR_PARTNER_ATTEST_RATE": {
+      "source_mix": {
+        "partner_attestations": 0.75,
+        "market_integrity": 0.25
+      }
+    },
+    "SECTOR_AUDIT_INTEROP_SCORE": {
+      "source_mix": {
+        "audit_interop": 1.0
+      }
+    }
+  }
+}

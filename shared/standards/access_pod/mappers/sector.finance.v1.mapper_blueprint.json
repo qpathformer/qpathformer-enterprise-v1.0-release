@@ -1,0 +1,165 @@
+{
+  "mapper_version": "access_pod_profile_mapper_blueprint_v1",
+  "profile_id": "sector.finance.v1",
+  "purpose": "Finance-sector scoring with emphasis on policy enforcement, auditability, approval traceability, and market integrity.",
+  "artifact_families": [
+    "path2_runtime_signal",
+    "shared_run_registry",
+    "path2_governance_review",
+    "path2_training_package",
+    "model_evaluation_summary"
+  ],
+  "metric_mapping": [
+    {
+      "metric_id": "SEC_POLICY_ENFORCE_SUCCESS",
+      "priority": "core",
+      "preferred_sources": [
+        "path2_runtime_signal",
+        "shared_run_registry"
+      ],
+      "extraction_hint": "Derive from governed allow-or-block policy enforcement outcomes."
+    },
+    {
+      "metric_id": "SEC_EVIDENCE_INTEGRITY_PASS",
+      "priority": "core",
+      "preferred_sources": [
+        "shared_run_registry",
+        "path2_governance_review"
+      ],
+      "extraction_hint": "Use digest verification and artifact integrity checks across governed files."
+    },
+    {
+      "metric_id": "HARD_SUPPLYCHAIN_ATTEST_COVERAGE",
+      "priority": "secondary",
+      "preferred_sources": [
+        "model_evaluation_summary",
+        "path2_training_package"
+      ],
+      "extraction_hint": "Measure attested components present in the active release chain."
+    },
+    {
+      "metric_id": "HARD_KEY_MGMT_HEALTH",
+      "priority": "secondary",
+      "preferred_sources": [
+        "shared_run_registry",
+        "path2_governance_review"
+      ],
+      "extraction_hint": "Start as a governed control-health proxy until explicit key telemetry exists."
+    },
+    {
+      "metric_id": "HARD_TELEMETRY_COMPLETENESS",
+      "priority": "core",
+      "preferred_sources": [
+        "path2_runtime_signal",
+        "shared_run_registry",
+        "path2_governance_review",
+        "path2_training_package"
+      ],
+      "extraction_hint": "Measure continuity across runtime, routing, review, freeze, and training telemetry artifacts."
+    },
+    {
+      "metric_id": "HARD_PRIVACY_TEST_PASS_RATE",
+      "priority": "core",
+      "preferred_sources": [
+        "path2_runtime_signal",
+        "path2_governance_review",
+        "path2_training_package"
+      ],
+      "extraction_hint": "Use governed privacy-control posture and review-first export constraints as a provisional pass-rate proxy."
+    },
+    {
+      "metric_id": "COMP_CHANGE_APPROVAL_TRACE",
+      "priority": "core",
+      "preferred_sources": [
+        "path2_governance_review",
+        "path2_training_package"
+      ],
+      "extraction_hint": "Use review, promotion, and handoff lineage artifacts to estimate trace coverage."
+    },
+    {
+      "metric_id": "COMP_MODEL_LINEAGE_COVERAGE",
+      "priority": "core",
+      "preferred_sources": [
+        "path2_governance_review",
+        "path2_training_package"
+      ],
+      "extraction_hint": "Measure whether lineage, freeze, and registry links remain complete across the governed package chain."
+    },
+    {
+      "metric_id": "GOV_MODEL_APPROVAL_TRACE",
+      "priority": "core",
+      "preferred_sources": [
+        "path2_governance_review",
+        "path2_training_package"
+      ],
+      "extraction_hint": "Measure whether each promoted model package has explicit approval evidence."
+    },
+    {
+      "metric_id": "GOV_AUDIT_EVIDENCE_COVERAGE",
+      "priority": "core",
+      "preferred_sources": [
+        "path2_governance_review",
+        "shared_run_registry",
+        "path2_training_package"
+      ],
+      "extraction_hint": "Measure whether the runtime, review, promotion, freeze, registry, and training chain exposes reviewable audit evidence."
+    },
+    {
+      "metric_id": "TRN_DECISION_TRACE_RATE",
+      "priority": "secondary",
+      "preferred_sources": [
+        "path2_runtime_signal",
+        "path2_training_package"
+      ],
+      "extraction_hint": "Track whether governed runtime and training decisions retain traceable reasoning lineage."
+    },
+    {
+      "metric_id": "TRN_EXPLAIN_COMPLETE",
+      "priority": "secondary",
+      "preferred_sources": [
+        "path2_runtime_signal",
+        "path2_training_package"
+      ],
+      "extraction_hint": "Use structured summaries and metadata-rich training exports as a provisional explanation-completeness signal."
+    },
+    {
+      "metric_id": "SECTOR_MARKET_INTEGRITY_SIGNAL",
+      "priority": "secondary",
+      "preferred_sources": [
+        "path2_runtime_signal",
+        "shared_run_registry"
+      ],
+      "extraction_hint": "Use reviewed fraud, abuse, or integrity-related runtime findings as a provisional market-integrity proxy."
+    },
+    {
+      "metric_id": "SECTOR_POLICY_PASS_RATE",
+      "priority": "core",
+      "preferred_sources": [
+        "path2_runtime_signal",
+        "path2_governance_review",
+        "shared_run_registry"
+      ],
+      "extraction_hint": "Measure sector policy pass posture from governed finance controls, with configurable weighting between direct policy evidence and sector integrity signals."
+    },
+    {
+      "metric_id": "SECTOR_PARTNER_ATTEST_RATE",
+      "priority": "core",
+      "preferred_sources": [
+        "shared_run_registry",
+        "path2_governance_review",
+        "path2_training_package"
+      ],
+      "extraction_hint": "Measure partner-attestation posture from governed approval and registry continuity, with configurable weighting between attestation and market-integrity signals."
+    },
+    {
+      "metric_id": "SECTOR_AUDIT_INTEROP_SCORE",
+      "priority": "secondary",
+      "preferred_sources": [
+        "shared_run_registry",
+        "path2_governance_review",
+        "path2_training_package"
+      ],
+      "extraction_hint": "Measure how well the governed artifact chain can be exported and reviewed across audit boundaries."
+    }
+  ]
+}

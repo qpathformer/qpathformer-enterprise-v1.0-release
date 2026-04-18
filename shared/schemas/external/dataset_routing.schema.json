@@ -1,0 +1,320 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://policyofdevelopments.org/schemas/dataset_routing.schema.json",
+  "title": "Dataset Routing Record",
+  "description": "Routing decision record defining how a dataset passport is assigned to lifecycle states and promotion controls.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "routing_version",
+    "routing_id",
+    "dataset_passport_id",
+    "current_state",
+    "default_target_state",
+    "routing_decision",
+    "authorization_checks",
+    "promotion_controls",
+    "recorded_at_utc"
+  ],
+  "properties": {
+    "routing_version": {
+      "type": "string",
+      "const": "qpds_routing_v1.0"
+    },
+    "routing_id": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9._:-]{8,128}$"
+    },
+    "dataset_passport_id": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9._:-]{8,128}$"
+    },
+    "current_state": {
+      "type": "string",
+      "enum": [
+        "STATE_1",
+        "STATE_2",
+        "STATE_3",
+        "HOLD",
+        "EXCLUDED"
+      ]
+    },
+    "default_target_state": {
+      "type": "string",
+      "enum": [
+        "STATE_1",
+        "STATE_2",
+        "STATE_3",
+        "HOLD",
+        "EXCLUDED"
+      ]
+    },
+    "routing_decision": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "decision",
+        "reason_code",
+        "reason_text"
+      ],
+      "properties": {
+        "decision": {
+          "type": "string",
+          "enum": [
+            "route_to_state1",
+            "route_to_state2",
+            "route_to_state3",
+            "hold_for_review",
+            "exclude"
+          ]
+        },
+        "reason_code": {
+          "type": "string",
+          "enum": [
+            "authorized_for_finetune",
+            "provisional_runtime_only",
+            "state2_validation_required",
+            "insufficient_authorization",
+            "sensitivity_constraint",
+            "lineage_incomplete",
+            "policy_hold",
+            "manual_override"
+          ]
+        },
+        "reason_text": {
+          "type": "string",
+          "minLength": 3,
+          "maxLength": 2000
+        }
+      }
+    },
+    "authorization_checks": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "runtime_reasoning_allowed",
+        "synthetic_generation_allowed",
+        "fine_tuning_allowed",
+        "external_training_allowed",
+        "human_review_required"
+      ],
+      "properties": {
+        "runtime_reasoning_allowed": {
+          "type": "boolean"
+        },
+        "synthetic_generation_allowed": {
+          "type": "boolean"
+        },
+        "fine_tuning_allowed": {
+          "type": "boolean"
+        },
+        "external_training_allowed": {
+          "type": "boolean"
+        },
+        "human_review_required": {
+          "type": "boolean"
+        },
+        "authorization_basis": {
+          "type": "string",
+          "maxLength": 256
+        }
+      }
+    },
+    "containment_checks": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "dataset_containment_principle_applies": {
+          "type": "boolean",
+          "default": true
+        },
+        "signals_not_decisions": {
+          "type": "boolean"
+        },
+        "sensitive_content_present": {
+          "type": "boolean"
+        },
+        "authorization_filter_required": {
+          "type": "boolean"
+        }
+      }
+    },
+    "teacher_student_convergence": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "evaluated": {
+          "type": "boolean"
+        },
+        "state2_convergence_result": {
+          "type": "string",
+          "enum": [
+            "not_applicable",
+            "pending",
+            "aligned",
+            "partially_aligned",
+            "misaligned"
+          ]
+        },
+        "convergence_note": {
+          "type": "string",
+          "maxLength": 2000
+        }
+      }
+    },
+    "authorization_filtering": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "filter_applied": {
+          "type": "boolean"
+        },
+        "elements_removed_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "filter_reason_summary": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "maxLength": 256
+          },
+          "uniqueItems": true
+        }
+      }
+    },
+    "promotion_controls": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "promotion_to_state1_allowed",
+        "new_version_required"
+      ],
+      "properties": {
+        "promotion_to_state1_allowed": {
+          "type": "boolean"
+        },
+        "new_version_required": {
+          "type": "boolean"
+        },
+        "promotion_event_required": {
+          "type": "boolean",
+          "default": true
+        },
+        "promotion_blockers": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "maxLength": 256
+          },
+          "uniqueItems": true
+        }
+      }
+    },
+    "manual_review": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "review_status": {
+          "type": "string",
+          "enum": [
+            "not_started",
+            "pending",
+            "approved",
+            "rejected",
+            "not_required"
+          ]
+        },
+        "reviewed_by": {
+          "type": "string",
+          "maxLength": 256
+        },
+        "review_note": {
+          "type": "string",
+          "maxLength": 4000
+        }
+      }
+    },
+    "recorded_at_utc": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "updated_at_utc": {
+      "type": "string",
+      "format": "date-time"
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "routing_decision": {
+            "properties": {
+              "decision": {
+                "const": "route_to_state1"
+              }
+            },
+            "required": [
+              "decision"
+            ]
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "authorization_checks": {
+            "properties": {
+              "fine_tuning_allowed": {
+                "const": true
+              }
+            },
+            "required": [
+              "fine_tuning_allowed"
+            ]
+          },
+          "promotion_controls": {
+            "properties": {
+              "promotion_to_state1_allowed": {
+                "const": true
+              }
+            },
+            "required": [
+              "promotion_to_state1_allowed"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "routing_decision": {
+            "properties": {
+              "decision": {
+                "const": "hold_for_review"
+              }
+            },
+            "required": [
+              "decision"
+            ]
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "manual_review": {
+            "properties": {
+              "review_status": {
+                "enum": [
+                  "not_started",
+                  "pending",
+                  "rejected"
+                ]
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+}

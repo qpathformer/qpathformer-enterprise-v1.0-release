@@ -1,0 +1,592 @@
+{
+  "generated_at_utc": "2026-04-18T02:57:34Z",
+  "dataset_version": "checkpoint_v4_strict",
+  "preview_count": 20,
+  "examples": [
+    {
+      "prompt": "Explain why these constraints preserve non-authoritative posture.",
+      "completion": "A.10 Key Differentiator The CSC scoring rubric cannot be satisfied by documentation alone. Page | 35 Informative Note - Further Documentation (Non-Normative)",
+      "metadata": {
+        "dataset_version": "checkpoint_v4_strict",
+        "source_family": "tr_signal",
+        "source_tr": "TR-002",
+        "authority_posture": "unknown",
+        "signal_id": "signal-5f1081ff6186b3d4",
+        "relative_path": "APOD-TR-002_A-WEB-of-Sharing-Trust-Responsibility_Vol2_Version-A_Public-Review.pdf",
+        "source_title": "APOD-TR-002 A-WEB-of-Sharing-Trust-Responsibility Vol2 Version-A Public-Review",
+        "chunk_index": 53,
+        "signal_types": [
+          "rule",
+          "constraint",
+          "naming_or_id"
+        ],
+        "reference_id": "AMGREF-24338EC67245",
+        "reference_record_class": "inspection_reference",
+        "reference_reasoning_posture": "inspection",
+        "reference_primary_mode": "ID_3",
+        "reference_dataset_role": "inspection_signal",
+        "reference_training_stage": "preparation_only",
+        "reference_weight_class": "medium",
+        "reference_signals_not_decisions": true,
+        "reference_non_authoritative": true,
+        "task_type": "boundary_explanation"
+      }
+    },
+    {
+      "prompt": "Explain why these constraints preserve non-authoritative posture.",
+      "completion": "Contemporary AI systems are adaptive, probabilistic, and increasingly composed of multiple models, tools, and services, introducing risks that cannot be adequately managed through point-in-time assessment alone.",
+      "metadata": {
+        "dataset_version": "checkpoint_v4_strict",
+        "source_family": "tr_signal",
+        "source_tr": "TR-002",
+        "authority_posture": "unknown",
+        "signal_id": "signal-ccd56b0e1b1e9c7b",
+        "relative_path": "APOD-TR-002_A-WEB-of-Sharing-Trust-Responsibility_Vol2_Version-A_Public-Review.pdf",
+        "source_title": "APOD-TR-002 A-WEB-of-Sharing-Trust-Responsibility Vol2 Version-A Public-Review",
+        "chunk_index": 5,
+        "signal_types": [
+          "rule",
+          "constraint",
+          "lifecycle_logic",
+          "naming_or_id"
+        ],
+        "reference_id": "AMGREF-7367222A0320",
+        "reference_record_class": "inspection_reference",
+        "reference_reasoning_posture": "inspection",
+        "reference_primary_mode": "ID_3",
+        "reference_dataset_role": "inspection_signal",
+        "reference_training_stage": "preparation_only",
+        "reference_weight_class": "medium",
+        "reference_signals_not_decisions": true,
+        "reference_non_authoritative": true,
+        "task_type": "boundary_explanation"
+      }
+    },
+    {
+      "prompt": "Explain why these constraints preserve non-authoritative posture.",
+      "completion": "The Access PoD Engine 4.1 Policy-as-Code and Runtime Enforcement……………………………………………… … …13 4.2 Internal and External Model Delegation………………………………………………… .……13 4.3 Enforcement Points as Control Objectives……………………………………………….… ..14 4.4 Telemetry Capture and CSC Evidence Alignment…………………………………………..14 4.5 The Six Operational Factors as Governance Domains………………………………… ...14 4.6 Accountability Boundaries and Escalation……………………………………………….… ...15 5.",
+      "metadata": {
+        "dataset_version": "checkpoint_v4_strict",
+        "source_family": "tr_signal",
+        "source_tr": "TR-002",
+        "authority_posture": "unknown",
+        "signal_id": "signal-bd49c208dd30768d",
+        "relative_path": "APOD-TR-002_A-WEB-of-Sharing-Trust-Responsibility_Vol2_Version-A_Public-Review.pdf",
+        "source_title": "APOD-TR-002 A-WEB-of-Sharing-Trust-Responsibility Vol2 Version-A Public-Review",
+        "chunk_index": 2,
+        "signal_types": [
+          "constraint",
+          "lifecycle_logic",
+          "naming_or_id"
+        ],
+        "reference_id": "AMGREF-E122A4F09FC8",
+        "reference_record_class": "inspection_reference",
+        "reference_reasoning_posture": "inspection",
+        "reference_primary_mode": "ID_3",
+        "reference_dataset_role": "inspection_signal",
+        "reference_training_stage": "preparation_only",
+        "reference_weight_class": "medium",
+        "reference_signals_not_decisions": true,
+        "reference_non_authoritative": true,
+        "task_type": "boundary_explanation"
+      }
+    },
+    {
+      "prompt": "Explain why these constraints preserve non-authoritative posture.",
+      "completion": "By shifting governance upstream- into simulation, runtime enforcement, and telemetry-driven assurance- this framework enables: • early identification of latent risk, • timely corrective action as systems evolve, and • sustained accountability across organizational and technical boundaries. Page | 28 This document contributes a reference framework toward that evolution, one that invites scrutiny, refinement, and adoption through use, rather than authority - supporting the development of AI systems that are not only capable, but trustworthy by design and accountable by operation.",
+      "metadata": {
+        "dataset_version": "checkpoint_v4_strict",
+        "source_family": "tr_signal",
+        "source_tr": "TR-002",
+        "authority_posture": "unknown",
+        "signal_id": "signal-086bcd2933c557f2",
+        "relative_path": "APOD-TR-002_A-WEB-of-Sharing-Trust-Responsibility_Vol2_Version-A_Public-Review.pdf",
+        "source_title": "APOD-TR-002 A-WEB-of-Sharing-Trust-Responsibility Vol2 Version-A Public-Review",
+        "chunk_index": 45,
+        "signal_types": [
+          "rule",
+          "constraint"
+        ],
+        "reference_id": "AMGREF-04F3D38B8EFC",
+        "reference_record_class": "inspection_reference",
+        "reference_reasoning_posture": "inspection",
+        "reference_primary_mode": "ID_3",
+        "reference_dataset_role": "inspection_signal",
+        "reference_training_stage": "preparation_only",
+        "reference_weight_class": "medium",
+        "reference_signals_not_decisions": true,
+        "reference_non_authoritative": true,
+        "task_type": "boundary_explanation"
+      }
+    },
+    {
+      "prompt": "Explain why these constraints preserve non-authoritative posture.",
+      "completion": "CSC scoring is first calculated at the factor level, across six operational factors, each representing a distinct and essential governance domain: • 6.1 Industry 4.0 & Security • 6.2 Security & New Best Practice • 6.3 Best Practice & Compliance • 6.4 Compliance & Human-Centric Path • 6.5 Human-Centric & Trust-Transparency • 6.6 Trust-Transparency & Industry / Sector Alignment Each factor shall be scored independently on a normalized 0-100 scale, based only on telemetry metrics relevant to that factor. This structure ensures that: • governance weaknesses cannot be hidden by high aggregate scores, and • CSC ratings reflect balanced, evidence-based governance performance across all critical domains.",
+      "metadata": {
+        "dataset_version": "checkpoint_v4_strict",
+        "source_family": "tr_signal",
+        "source_tr": "TR-002",
+        "authority_posture": "unknown",
+        "signal_id": "signal-ff73eb0d1ddf8130",
+        "relative_path": "APOD-TR-002_A-WEB-of-Sharing-Trust-Responsibility_Vol2_Version-A_Public-Review.pdf",
+        "source_title": "APOD-TR-002 A-WEB-of-Sharing-Trust-Responsibility Vol2 Version-A Public-Review",
+        "chunk_index": 32,
+        "signal_types": [
+          "rule",
+          "constraint",
+          "naming_or_id"
+        ],
+        "reference_id": "AMGREF-AEFAB20EBB14",
+        "reference_record_class": "inspection_reference",
+        "reference_reasoning_posture": "inspection",
+        "reference_primary_mode": "ID_3",
+        "reference_dataset_role": "inspection_signal",
+        "reference_training_stage": "preparation_only",
+        "reference_weight_class": "medium",
+        "reference_signals_not_decisions": true,
+        "reference_non_authoritative": true,
+        "task_type": "boundary_explanation"
+      }
+    },
+    {
+      "prompt": "Explain why these constraints preserve non-authoritative posture.",
+      "completion": "This document contributes a reference framework toward that evolution, one that invites scrutiny, refinement, and adoption through use, rather than authority - supporting the development of AI systems that are not only capable, but trustworthy by design and accountable by operation. C.1 Conformance An organization, system, or governance implementation may claim conformance to this framework if, and only if, the following conditions are met: • Governance controls are implemented as executable mechanisms (e.g., policy-as-code) rather than solely as documented procedures.",
+      "metadata": {
+        "dataset_version": "checkpoint_v4_strict",
+        "source_family": "tr_signal",
+        "source_tr": "TR-002",
+        "authority_posture": "unknown",
+        "signal_id": "signal-b2741b2c67c09463",
+        "relative_path": "APOD-TR-002_A-WEB-of-Sharing-Trust-Responsibility_Vol2_Version-A_Public-Review.pdf",
+        "source_title": "APOD-TR-002 A-WEB-of-Sharing-Trust-Responsibility Vol2 Version-A Public-Review",
+        "chunk_index": 46,
+        "signal_types": [
+          "rule",
+          "constraint",
+          "naming_or_id"
+        ],
+        "reference_id": "AMGREF-525A6EE43C47",
+        "reference_record_class": "inspection_reference",
+        "reference_reasoning_posture": "inspection",
+        "reference_primary_mode": "ID_3",
+        "reference_dataset_role": "inspection_signal",
+        "reference_training_stage": "preparation_only",
+        "reference_weight_class": "medium",
+        "reference_signals_not_decisions": true,
+        "reference_non_authoritative": true,
+        "task_type": "boundary_explanation"
+      }
+    },
+    {
+      "prompt": "Explain why these constraints preserve non-authoritative posture.",
+      "completion": "2.3.1 Under-Defined Systems (Exploratory / High Uncertainty) An under-defined system is one that is novel or emerging and may appear useful, compelling, or innovative, but whose behavior, boundaries, and impacts are not yet well understood.",
+      "metadata": {
+        "dataset_version": "checkpoint_v4_strict",
+        "source_family": "tr_signal",
+        "source_tr": "TR-002",
+        "authority_posture": "unknown",
+        "signal_id": "signal-ffe9636bf5e9f123",
+        "relative_path": "APOD-TR-002_A-WEB-of-Sharing-Trust-Responsibility_Vol2_Version-A_Public-Review.pdf",
+        "source_title": "APOD-TR-002 A-WEB-of-Sharing-Trust-Responsibility Vol2 Version-A Public-Review",
+        "chunk_index": 14,
+        "signal_types": [
+          "rule",
+          "constraint"
+        ],
+        "reference_id": "AMGREF-9F6F613AF397",
+        "reference_record_class": "inspection_reference",
+        "reference_reasoning_posture": "inspection",
+        "reference_primary_mode": "ID_3",
+        "reference_dataset_role": "inspection_signal",
+        "reference_training_stage": "preparation_only",
+        "reference_weight_class": "medium",
+        "reference_signals_not_decisions": true,
+        "reference_non_authoritative": true,
+        "task_type": "boundary_explanation"
+      }
+    },
+    {
+      "prompt": "Explain why these constraints preserve non-authoritative posture.",
+      "completion": "C.4 Emergent Standards and Leading Practice This document does not claim to define a final or exclusive standard. Through consistent application, evidence exchange, and cross-sector collaboration: Page | 30 • common governance patterns may emerge as de facto best practice; • interoperability constraints may inform future standardization efforts; and • regulators, industry, and researchers may converge on shared expectations grounded in runtime evidence.",
+      "metadata": {
+        "dataset_version": "checkpoint_v4_strict",
+        "source_family": "tr_signal",
+        "source_tr": "TR-002",
+        "authority_posture": "unknown",
+        "signal_id": "signal-6ff9d080d20c6432",
+        "relative_path": "APOD-TR-002_A-WEB-of-Sharing-Trust-Responsibility_Vol2_Version-A_Public-Review.pdf",
+        "source_title": "APOD-TR-002 A-WEB-of-Sharing-Trust-Responsibility Vol2 Version-A Public-Review",
+        "chunk_index": 49,
+        "signal_types": [
+          "rule",
+          "constraint",
+          "naming_or_id"
+        ],
+        "reference_id": "AMGREF-86E8B11905FD",
+        "reference_record_class": "inspection_reference",
+        "reference_reasoning_posture": "inspection",
+        "reference_primary_mode": "ID_3",
+        "reference_dataset_role": "inspection_signal",
+        "reference_training_stage": "preparation_only",
+        "reference_weight_class": "medium",
+        "reference_signals_not_decisions": true,
+        "reference_non_authoritative": true,
+        "task_type": "boundary_explanation"
+      }
+    },
+    {
+      "prompt": "Explain why these constraints preserve non-authoritative posture.",
+      "completion": "Trust is not an intrinsic attribute of a model; it is an emergent property resulting from governance controls, system behavior, human oversight, and contextual constraints. Responsibility shall be assignable, traceable, and enforceable across organizational, technical, and operational boundaries, including post- deployment modification, reuse, and integration with external systems.",
+      "metadata": {
+        "dataset_version": "checkpoint_v4_strict",
+        "source_family": "tr_signal",
+        "source_tr": "TR-002",
+        "authority_posture": "unknown",
+        "signal_id": "signal-d8221c76a6bcc38e",
+        "relative_path": "APOD-TR-002_A-WEB-of-Sharing-Trust-Responsibility_Vol2_Version-A_Public-Review.pdf",
+        "source_title": "APOD-TR-002 A-WEB-of-Sharing-Trust-Responsibility Vol2 Version-A Public-Review",
+        "chunk_index": 13,
+        "signal_types": [
+          "definition",
+          "rule",
+          "constraint",
+          "lifecycle_logic"
+        ],
+        "reference_id": "AMGREF-1118EC3A3C41",
+        "reference_record_class": "inspection_reference",
+        "reference_reasoning_posture": "inspection",
+        "reference_primary_mode": "ID_3",
+        "reference_dataset_role": "inspection_signal",
+        "reference_training_stage": "preparation_only",
+        "reference_weight_class": "medium",
+        "reference_signals_not_decisions": true,
+        "reference_non_authoritative": true,
+        "task_type": "boundary_explanation"
+      }
+    },
+    {
+      "prompt": "Explain why these constraints preserve non-authoritative posture.",
+      "completion": "This approach enables regulators to support development and scaling, not merely enforce constraints, by identifying early risk signals and governance gaps across industries and organizational stages.",
+      "metadata": {
+        "dataset_version": "checkpoint_v4_strict",
+        "source_family": "tr_signal",
+        "source_tr": "TR-002",
+        "authority_posture": "unknown",
+        "signal_id": "signal-1ae23f7dc86cf73b",
+        "relative_path": "APOD-TR-002_A-WEB-of-Sharing-Trust-Responsibility_Vol2_Version-A_Public-Review.pdf",
+        "source_title": "APOD-TR-002 A-WEB-of-Sharing-Trust-Responsibility Vol2 Version-A Public-Review",
+        "chunk_index": 40,
+        "signal_types": [
+          "rule",
+          "constraint",
+          "lifecycle_logic",
+          "naming_or_id"
+        ],
+        "reference_id": "AMGREF-86B5772D37DE",
+        "reference_record_class": "inspection_reference",
+        "reference_reasoning_posture": "inspection",
+        "reference_primary_mode": "ID_3",
+        "reference_dataset_role": "inspection_signal",
+        "reference_training_stage": "preparation_only",
+        "reference_weight_class": "medium",
+        "reference_signals_not_decisions": true,
+        "reference_non_authoritative": true,
+        "task_type": "boundary_explanation"
+      }
+    },
+    {
+      "prompt": "Explain why these constraints preserve non-authoritative posture.",
+      "completion": "At this stage, governance shall transition from simulation-only to combined simulation and runtime oversight. 3.4 Over-Defined Systems → Continuous Certification via CSC For over-defined systems (Section 2.3.3), operating boundaries and expected behaviors are well understood.",
+      "metadata": {
+        "dataset_version": "checkpoint_v4_strict",
+        "source_family": "tr_signal",
+        "source_tr": "TR-002",
+        "authority_posture": "unknown",
+        "signal_id": "signal-29457de456fbf695",
+        "relative_path": "APOD-TR-002_A-WEB-of-Sharing-Trust-Responsibility_Vol2_Version-A_Public-Review.pdf",
+        "source_title": "APOD-TR-002 A-WEB-of-Sharing-Trust-Responsibility Vol2 Version-A Public-Review",
+        "chunk_index": 21,
+        "signal_types": [
+          "rule",
+          "constraint",
+          "lifecycle_logic",
+          "naming_or_id"
+        ],
+        "reference_id": "AMGREF-991304C9B099",
+        "reference_record_class": "inspection_reference",
+        "reference_reasoning_posture": "inspection",
+        "reference_primary_mode": "ID_3",
+        "reference_dataset_role": "inspection_signal",
+        "reference_training_stage": "preparation_only",
+        "reference_weight_class": "medium",
+        "reference_signals_not_decisions": true,
+        "reference_non_authoritative": true,
+        "task_type": "boundary_explanation"
+      }
+    },
+    {
+      "prompt": "Explain why these constraints preserve non-authoritative posture.",
+      "completion": "C.1 Conformance An organization, system, or governance implementation may claim conformance to this framework if, and only if, the following conditions are met: • Governance controls are implemented as executable mechanisms (e.g., policy-as-code) rather than solely as documented procedures. Page | 29 C.2 Interoperability Interoperability within this framework refers to the ability of governance mechanisms, evidence, and assurance signals to be interpreted, compared, and validated across organizational and technical boundaries.",
+      "metadata": {
+        "dataset_version": "checkpoint_v4_strict",
+        "source_family": "tr_signal",
+        "source_tr": "TR-002",
+        "authority_posture": "unknown",
+        "signal_id": "signal-50e1b7807f8dcf5d",
+        "relative_path": "APOD-TR-002_A-WEB-of-Sharing-Trust-Responsibility_Vol2_Version-A_Public-Review.pdf",
+        "source_title": "APOD-TR-002 A-WEB-of-Sharing-Trust-Responsibility Vol2 Version-A Public-Review",
+        "chunk_index": 47,
+        "signal_types": [
+          "definition",
+          "rule",
+          "constraint",
+          "naming_or_id"
+        ],
+        "reference_id": "AMGREF-7E1C5098F719",
+        "reference_record_class": "inspection_reference",
+        "reference_reasoning_posture": "inspection",
+        "reference_primary_mode": "ID_3",
+        "reference_dataset_role": "inspection_signal",
+        "reference_training_stage": "preparation_only",
+        "reference_weight_class": "medium",
+        "reference_signals_not_decisions": true,
+        "reference_non_authoritative": true,
+        "task_type": "boundary_explanation"
+      }
+    },
+    {
+      "prompt": "Explain why these constraints preserve non-authoritative posture.",
+      "completion": "6.2 Factor-Level Scoring and Non-Compensatory Structure (Operational Factors 6.1-6.6) CSC scoring is first calculated at the factor level, across six operational factors, each representing a distinct and essential governance domain: • 6.1 Industry 4.0 & Security • 6.2 Security & New Best Practice • 6.3 Best Practice & Compliance • 6.4 Compliance & Human-Centric Path • 6.5 Human-Centric & Trust-Transparency • 6.6 Trust-Transparency & Industry / Sector Alignment Each factor shall be scored independently on a normalized 0-100 scale, based only on telemetry metrics relevant to that factor.",
+      "metadata": {
+        "dataset_version": "checkpoint_v4_strict",
+        "source_family": "tr_signal",
+        "source_tr": "TR-002",
+        "authority_posture": "unknown",
+        "signal_id": "signal-c8e6f3b8426461b3",
+        "relative_path": "APOD-TR-002_A-WEB-of-Sharing-Trust-Responsibility_Vol2_Version-A_Public-Review.pdf",
+        "source_title": "APOD-TR-002 A-WEB-of-Sharing-Trust-Responsibility Vol2 Version-A Public-Review",
+        "chunk_index": 31,
+        "signal_types": [
+          "rule",
+          "constraint",
+          "naming_or_id"
+        ],
+        "reference_id": "AMGREF-A7F601C35F51",
+        "reference_record_class": "inspection_reference",
+        "reference_reasoning_posture": "inspection",
+        "reference_primary_mode": "ID_3",
+        "reference_dataset_role": "inspection_signal",
+        "reference_training_stage": "preparation_only",
+        "reference_weight_class": "medium",
+        "reference_signals_not_decisions": true,
+        "reference_non_authoritative": true,
+        "task_type": "boundary_explanation"
+      }
+    },
+    {
+      "prompt": "Explain why these constraints preserve non-authoritative posture.",
+      "completion": "2.3.3 Over-Defined Systems (Stabilized / Controlled Risk) An over-defined system is one where expectations, boundaries, and behaviors are well understood by stakeholders. Such systems: • have clear operating assumptions and constraints; • provide a reliable overview of expected behavior; • support predictable outcomes within defined bounds; and • enable confident planning regarding future evolution.",
+      "metadata": {
+        "dataset_version": "checkpoint_v4_strict",
+        "source_family": "tr_signal",
+        "source_tr": "TR-002",
+        "authority_posture": "unknown",
+        "signal_id": "signal-b60d5759bd306087",
+        "relative_path": "APOD-TR-002_A-WEB-of-Sharing-Trust-Responsibility_Vol2_Version-A_Public-Review.pdf",
+        "source_title": "APOD-TR-002 A-WEB-of-Sharing-Trust-Responsibility Vol2 Version-A Public-Review",
+        "chunk_index": 16,
+        "signal_types": [
+          "rule",
+          "constraint",
+          "naming_or_id"
+        ],
+        "reference_id": "AMGREF-1C0F10019B6D",
+        "reference_record_class": "inspection_reference",
+        "reference_reasoning_posture": "inspection",
+        "reference_primary_mode": "ID_3",
+        "reference_dataset_role": "inspection_signal",
+        "reference_training_stage": "preparation_only",
+        "reference_weight_class": "medium",
+        "reference_signals_not_decisions": true,
+        "reference_non_authoritative": true,
+        "task_type": "boundary_explanation"
+      }
+    },
+    {
+      "prompt": "Explain why these constraints preserve non-authoritative posture.",
+      "completion": "By shifting governance upstream- into simulation, runtime enforcement, and telemetry-driven assurance- this framework enables: • early identification of latent risk, • timely corrective action as systems evolve, and • sustained accountability across organizational and technical boundaries.",
+      "metadata": {
+        "dataset_version": "checkpoint_v4_strict",
+        "source_family": "tr_signal",
+        "source_tr": "TR-002",
+        "authority_posture": "unknown",
+        "signal_id": "signal-b62d68adbffbcb4a",
+        "relative_path": "APOD-TR-002_A-WEB-of-Sharing-Trust-Responsibility_Vol2_Version-A_Public-Review.pdf",
+        "source_title": "APOD-TR-002 A-WEB-of-Sharing-Trust-Responsibility Vol2 Version-A Public-Review",
+        "chunk_index": 44,
+        "signal_types": [
+          "rule",
+          "constraint",
+          "lifecycle_logic",
+          "naming_or_id"
+        ],
+        "reference_id": "AMGREF-C4013755901C",
+        "reference_record_class": "inspection_reference",
+        "reference_reasoning_posture": "inspection",
+        "reference_primary_mode": "ID_3",
+        "reference_dataset_role": "inspection_signal",
+        "reference_training_stage": "preparation_only",
+        "reference_weight_class": "medium",
+        "reference_signals_not_decisions": true,
+        "reference_non_authoritative": true,
+        "task_type": "boundary_explanation"
+      }
+    },
+    {
+      "prompt": "Explain why these constraints preserve non-authoritative posture.",
+      "completion": "At this stage, governance shall transition from simulation-only to combined simulation and runtime oversight.",
+      "metadata": {
+        "dataset_version": "checkpoint_v4_strict",
+        "source_family": "tr_signal",
+        "source_tr": "TR-002",
+        "authority_posture": "unknown",
+        "signal_id": "signal-d2e7661ecfd6ee20",
+        "relative_path": "APOD-TR-002_A-WEB-of-Sharing-Trust-Responsibility_Vol2_Version-A_Public-Review.pdf",
+        "source_title": "APOD-TR-002 A-WEB-of-Sharing-Trust-Responsibility Vol2 Version-A Public-Review",
+        "chunk_index": 20,
+        "signal_types": [
+          "rule",
+          "constraint",
+          "lifecycle_logic",
+          "naming_or_id"
+        ],
+        "reference_id": "AMGREF-C10129EEBEFD",
+        "reference_record_class": "inspection_reference",
+        "reference_reasoning_posture": "inspection",
+        "reference_primary_mode": "ID_3",
+        "reference_dataset_role": "inspection_signal",
+        "reference_training_stage": "preparation_only",
+        "reference_weight_class": "medium",
+        "reference_signals_not_decisions": true,
+        "reference_non_authoritative": true,
+        "task_type": "boundary_explanation"
+      }
+    },
+    {
+      "prompt": "Explain why these constraints preserve non-authoritative posture.",
+      "completion": "Trust as shared infrastructure implies that: • governance signals shall be machine-readable and interoperable; • assurance shall persist across organizational boundaries, subject to scope; • trust shall degrade consistently when evidence degrades, regardless of provider; and • no single actor shall unilaterally define trust standards.",
+      "metadata": {
+        "dataset_version": "checkpoint_v4_strict",
+        "source_family": "tr_signal",
+        "source_tr": "TR-002",
+        "authority_posture": "unknown",
+        "signal_id": "signal-d63cd52666671b67",
+        "relative_path": "APOD-TR-002_A-WEB-of-Sharing-Trust-Responsibility_Vol2_Version-A_Public-Review.pdf",
+        "source_title": "APOD-TR-002 A-WEB-of-Sharing-Trust-Responsibility Vol2 Version-A Public-Review",
+        "chunk_index": 38,
+        "signal_types": [
+          "rule",
+          "constraint",
+          "naming_or_id"
+        ],
+        "reference_id": "AMGREF-F132E7ABDD98",
+        "reference_record_class": "inspection_reference",
+        "reference_reasoning_posture": "inspection",
+        "reference_primary_mode": "ID_3",
+        "reference_dataset_role": "inspection_signal",
+        "reference_training_stage": "preparation_only",
+        "reference_weight_class": "medium",
+        "reference_signals_not_decisions": true,
+        "reference_non_authoritative": true,
+        "task_type": "boundary_explanation"
+      }
+    },
+    {
+      "prompt": "Explain why these constraints preserve non-authoritative posture.",
+      "completion": "Scores shall be comparable across systems only within the same declared sector profile and scope.",
+      "metadata": {
+        "dataset_version": "checkpoint_v4_strict",
+        "source_family": "tr_signal",
+        "source_tr": "TR-002",
+        "authority_posture": "unknown",
+        "signal_id": "signal-498ade07b4ca3bea",
+        "relative_path": "APOD-TR-002_A-WEB-of-Sharing-Trust-Responsibility_Vol2_Version-A_Public-Review.pdf",
+        "source_title": "APOD-TR-002 A-WEB-of-Sharing-Trust-Responsibility Vol2 Version-A Public-Review",
+        "chunk_index": 51,
+        "signal_types": [
+          "rule",
+          "constraint",
+          "naming_or_id"
+        ],
+        "reference_id": "AMGREF-F15E4D648A8F",
+        "reference_record_class": "inspection_reference",
+        "reference_reasoning_posture": "inspection",
+        "reference_primary_mode": "ID_3",
+        "reference_dataset_role": "inspection_signal",
+        "reference_training_stage": "preparation_only",
+        "reference_weight_class": "medium",
+        "reference_signals_not_decisions": true,
+        "reference_non_authoritative": true,
+        "task_type": "boundary_explanation"
+      }
+    },
+    {
+      "prompt": "Explain why these constraints preserve non-authoritative posture.",
+      "completion": "3.4 Over-Defined Systems → Continuous Certification via CSC For over-defined systems (Section 2.3.3), operating boundaries and expected behaviors are well understood.",
+      "metadata": {
+        "dataset_version": "checkpoint_v4_strict",
+        "source_family": "tr_signal",
+        "source_tr": "TR-002",
+        "authority_posture": "unknown",
+        "signal_id": "signal-0d9ae5dbbf99c4e5",
+        "relative_path": "APOD-TR-002_A-WEB-of-Sharing-Trust-Responsibility_Vol2_Version-A_Public-Review.pdf",
+        "source_title": "APOD-TR-002 A-WEB-of-Sharing-Trust-Responsibility Vol2 Version-A Public-Review",
+        "chunk_index": 22,
+        "signal_types": [
+          "rule",
+          "constraint",
+          "lifecycle_logic",
+          "naming_or_id"
+        ],
+        "reference_id": "AMGREF-F2A79F25C20A",
+        "reference_record_class": "inspection_reference",
+        "reference_reasoning_posture": "inspection",
+        "reference_primary_mode": "ID_3",
+        "reference_dataset_role": "inspection_signal",
+        "reference_training_stage": "preparation_only",
+        "reference_weight_class": "medium",
+        "reference_signals_not_decisions": true,
+        "reference_non_authoritative": true,
+        "task_type": "boundary_explanation"
+      }
+    },
+    {
+      "prompt": "Explain why these constraints preserve non-authoritative posture.",
+      "completion": "An under-defined system is one that is novel or emerging and may appear useful, compelling, or innovative, but whose behavior, boundaries, and impacts are not yet well understood.",
+      "metadata": {
+        "dataset_version": "checkpoint_v4_strict",
+        "source_family": "tr_signal",
+        "source_tr": "TR-002",
+        "authority_posture": "unknown",
+        "signal_id": "signal-a449f9db4d86d45a",
+        "relative_path": "APOD-TR-002_A-WEB-of-Sharing-Trust-Responsibility_Vol2_Version-A_Public-Review.pdf",
+        "source_title": "APOD-TR-002 A-WEB-of-Sharing-Trust-Responsibility Vol2 Version-A Public-Review",
+        "chunk_index": 15,
+        "signal_types": [
+          "rule",
+          "constraint"
+        ],
+        "reference_id": "AMGREF-25C166153499",
+        "reference_record_class": "inspection_reference",
+        "reference_reasoning_posture": "inspection",
+        "reference_primary_mode": "ID_3",
+        "reference_dataset_role": "inspection_signal",
+        "reference_training_stage": "preparation_only",
+        "reference_weight_class": "medium",
+        "reference_signals_not_decisions": true,
+        "reference_non_authoritative": true,
+        "task_type": "boundary_explanation"
+      }
+    }
+  ]
+}

@@ -1,0 +1,66 @@
+{
+  "promotion_decision_version": "qpds_promotion_decision_v0.1",
+  "decision_id": "PROMO-DECISION-001",
+  "timestamp_utc": "2026-03-24T02:20:00Z",
+  "package_id": "QPDS-PACKAGE-007",
+  "source_stage": "inbox_human_review",
+  "source_paths": {
+    "prepared_freeze_manifest": "C:\\qpathformer_enterprise\\datasets\\inbox\\QPDS-PACKAGE-007\\prepared_freeze_manifest.json",
+    "package_manifest": "C:\\qpathformer_enterprise\\datasets\\inbox\\QPDS-PACKAGE-007\\package\\package_manifest.generated.json",
+    "authorization_report": "C:\\qpathformer_enterprise\\datasets\\inbox\\QPDS-PACKAGE-007\\normalized_governance\\authorization_report.json",
+    "dataset_passport": "C:\\qpathformer_enterprise\\datasets\\inbox\\QPDS-PACKAGE-007\\normalized_governance\\dataset_passport.json",
+    "dataset_routing": "C:\\qpathformer_enterprise\\datasets\\inbox\\QPDS-PACKAGE-007\\normalized_governance\\dataset_routing.json",
+    "dataset_lineage": "C:\\qpathformer_enterprise\\datasets\\inbox\\QPDS-PACKAGE-007\\normalized_governance\\dataset_lineage.json"
+  },
+  "review": {
+    "review_type": "manual",
+    "review_required": true,
+    "review_scope": [
+      "authorization",
+      "routing",
+      "lineage",
+      "package_integrity",
+      "lifecycle_state"
+    ]
+  },
+  "evaluation": {
+    "authorization_valid": true,
+    "governance_complete": true,
+    "lineage_valid": true,
+    "hashes_present": true,
+    "current_state": "STATE_3",
+    "state2_eligible": true,
+    "state1_eligible": false,
+    "findings": [
+      {
+        "severity": "warning",
+        "code": "PASSPORT_NON_CERTIFYING_SET",
+        "message": "Maintain non-certifying governance posture."
+      }
+    ]
+  },
+  "decision": {
+    "outcome": "APPROVE_STATE_2",
+    "target_state": "STATE_2",
+    "rationale": "Package is governance-complete, provenance-bound, hash-backed, and explicitly requires human-reviewed controlled promotion. Authorization does not permit fine-tuning or external training, so approval is limited to controlled STATE_2 handling only."
+  },
+  "constraints": {
+    "allowed_uses": [
+      "runtime_reasoning",
+      "synthetic_generation",
+      "controlled_review",
+      "evaluation"
+    ],
+    "blocked_uses": [
+      "fine_tuning",
+      "external_training",
+      "state1_promotion"
+    ]
+  },
+  "posture": {
+    "human_reviewed": true,
+    "signals_not_decisions": true,
+    "non_certifying": true,
+    "approval_implied": false
+  }
+}

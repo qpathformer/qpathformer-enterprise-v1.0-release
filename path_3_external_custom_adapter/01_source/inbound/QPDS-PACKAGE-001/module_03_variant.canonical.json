@@ -1,0 +1,138 @@
+{
+  "schema_version": "id2_records_v0.1",
+  "record_class": "non_inspection_module_record",
+  "access_mode_primary": "ID_2",
+  "inspection_status": "frozen_under_ID_3",
+  "intended_use": "Operational reasoning capture; signals not decisions; non-inspection.",
+  "human_decision_required": true,
+  "module": {
+    "module_id": "03",
+    "module_title": "Q-Pathformer Dataset Lifecycle Packaging Variant",
+    "source_module_path": "docs/modules-v2/module_03_signal_capture_runtime_pipeline.md",
+    "source_exemplar_path": "docs/modules-v2/module_03_signal_capture_runtime_pipeline.md"
+  },
+  "inputs": {
+    "references": [
+      "datasets/QPDS-PACKAGE-001/datasets/dataset.jsonl",
+      "datasets/QPDS-PACKAGE-001/datasets/manifest.json",
+      "datasets/pre_freeze/QPDS-PACKAGE-001/normalized_governance/"
+    ],
+    "scenario_seeds": [
+      "Normalized governance files become authoritative freeze inputs",
+      "Prepared freeze manifest is used as the source of truth for freeze"
+    ],
+    "stressors": [
+      "Prepared manifest integrity",
+      "Normalized governance path fidelity",
+      "Canonical hash verification"
+    ],
+    "context_notes": "Variant canonical record emphasizing the normalized governance surface as the true freeze input."
+  },
+  "captures": {
+    "objective": "Capture the variant package posture where normalized governance files are explicitly used as the freeze surface.",
+    "scope_in": [
+      "Prepared freeze manifest interpretation",
+      "Normalized governance freeze inputs",
+      "Canonical hash anchoring"
+    ],
+    "scope_out": [
+      "Compliance determination",
+      "Certification or approval",
+      "External enforcement decision",
+      "Training authorization"
+    ],
+    "assumptions": [
+      "Prepared freeze manifest points to normalized governance artifacts",
+      "Source hashes are generated from the same normalized artifacts"
+    ],
+    "definitions": {},
+    "evidence_to_capture": [
+      "Prepared manifest artifact paths",
+      "Prepared manifest source hashes",
+      "Normalized governance assertions"
+    ],
+    "method_steps": [],
+    "controls_guardrails": [
+      "No silent artifact-path drift",
+      "No ambiguity between original and normalized governance sources",
+      "No approval language"
+    ]
+  },
+  "simulation_runs": [
+    {
+      "run_id": "RUN-VARIANT-01",
+      "scenario_summary": "Variant freeze-readiness capture using normalized governance files as the explicit freeze inputs for QPDS-PACKAGE-001.",
+      "stress_conditions": [
+        "Artifact path verification",
+        "Hash-target verification",
+        "Governance normalization verification"
+      ],
+      "branch_points": [
+        "Whether source_hashes align to normalized files",
+        "Whether freeze consumes prepared manifest or original package files",
+        "Whether governance normalization changes byte content"
+      ],
+      "signals_observed": [
+        "Prepared freeze manifest points to normalized governance paths",
+        "Prepared freeze source_hashes point to normalized governance paths",
+        "Freeze surface is internally consistent"
+      ],
+      "fragility_points": [
+        "Possible confusion between normalized and original governance files in later automation",
+        "Possible reporting inconsistencies outside freeze-critical path"
+      ],
+      "authority_drift_flags": [],
+      "uncertainty_notes": [
+        "Matching hashes between original and normalized files do not imply path equivalence",
+        "Freeze remains archive/fixity oriented, not certifying"
+      ],
+      "escalation_triggers": [
+        "Prepared manifest path/hash mismatch",
+        "Canonical artifact hash mismatch"
+      ],
+      "stop_or_reset_events": [
+        "No stop or reset required",
+        "variant surface remained freeze-ready"
+      ],
+      "ethical_constructs": {
+        "tensions": [
+          "Normalization clarity vs minimal intervention",
+          "Automation convenience vs provenance explicitness"
+        ],
+        "affected_parties": [
+          "Package maintainer",
+          "Inspection reviewer"
+        ],
+        "potential_harms": [
+          "Ambiguous freeze provenance if normalized files are not treated as the true source"
+        ],
+        "tradeoffs_noted": [
+          "Explicitness vs compactness"
+        ]
+      },
+      "stress_category_tags": [
+        "traceability",
+        "containment",
+        "fixity"
+      ]
+    }
+  ],
+  "observations": null,
+  "uncertainty_notes": null,
+  "escalation_triggers": null,
+  "validation": {
+    "misalignment_tests_run": [],
+    "verification_questions": [],
+    "human_review_notes": ""
+  },
+  "outputs": {
+    "generated_artifacts": [],
+    "links": []
+  },
+  "completion": {
+    "status": "draft",
+    "completed_at_utc": ""
+  },
+  "status": "final",
+  "completed_at_utc": "2026-03-22T06:30:00Z"
+}

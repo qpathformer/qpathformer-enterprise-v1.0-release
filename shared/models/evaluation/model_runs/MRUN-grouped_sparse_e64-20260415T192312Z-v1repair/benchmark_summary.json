@@ -1,0 +1,185 @@
+{
+  "benchmark_summary_version": "qpath_variant_benchmark_v1.2",
+  "created_at_utc": "2026-04-15T19:23:59Z",
+  "status": "completed",
+  "benchmark_mode": "timed_forward",
+  "execution_surface": "safe_wrapper",
+  "model_run_id": "MRUN-grouped_sparse_e64-20260415T192312Z-v1repair",
+  "manifest_path": "shared/models/evaluation/model_runs/MRUN-grouped_sparse_e64-20260415T192312Z-v1repair/model_run_manifest.json",
+  "model": {
+    "variant": "grouped_sparse_e64",
+    "role": "enterprise_target",
+    "source_file": "shared/models/qpathformer/enterprise/qpathformer_v0_9_grouped_sparse_e64.py",
+    "parameter_profile": "e64"
+  },
+  "run": {
+    "kind": "benchmark",
+    "device": "cpu",
+    "dtype": "float32",
+    "seed": 42,
+    "dataset_ref": "reduced_forward_validation",
+    "notes": "live v1.0 validation manifest after benchmark runner repair"
+  },
+  "configuration": {
+    "seq_len": 64,
+    "batch_size": 2,
+    "micro_batch_size": null,
+    "epochs": null,
+    "steps": 5,
+    "lr": null,
+    "weight_decay": null,
+    "top_k": 2,
+    "num_experts": 64
+  },
+  "environment": {
+    "repo_root": "C:\\v1.0-qpathformer_enterprise",
+    "manifest_repo_root": "C:\\v1.0-qpathformer_enterprise",
+    "manifest_repo_root_matches_current": true,
+    "python_executable": "C:\\Users\\Alnotrea\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+    "resolved_device": "cpu"
+  },
+  "python_surface": {
+    "classes": [
+      "AgentRegistry",
+      "FeedForward",
+      "GroupedGEMMSuperpositionGate",
+      "QPathformer",
+      "QPathformerBlock",
+      "ThreeStateScheduler"
+    ],
+    "functions": [
+      "__init__",
+      "_build_positional_encoding",
+      "forward",
+      "get",
+      "register",
+      "router_aux_loss",
+      "save_manifest",
+      "train_qpathformer"
+    ],
+    "has_main_guard": true,
+    "imports_torch": true,
+    "imports_argparse": false
+  },
+  "command": [
+    "C:\\Users\\Alnotrea\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+    "C:\\v1.0-qpathformer_enterprise\\scripts\\qpathformer_safe_entry_wrapper.py",
+    "--manifest",
+    "C:\\v1.0-qpathformer_enterprise\\shared\\models\\evaluation\\model_runs\\MRUN-grouped_sparse_e64-20260415T192312Z-v1repair\\model_run_manifest.json",
+    "--probe-mode",
+    "timed_forward",
+    "--summary-out",
+    "C:\\v1.0-qpathformer_enterprise\\shared\\models\\evaluation\\model_runs\\MRUN-grouped_sparse_e64-20260415T192312Z-v1repair\\wrapper_summary.json",
+    "--target-class",
+    "QPathformer",
+    "--target-train-fn",
+    "train_qpathformer",
+    "--constructor-json",
+    "{\"vocab_size\":5000,\"embed_dim\":160,\"num_heads\":4,\"num_layers\":2,\"num_experts\":64,\"k\":2,\"max_seq_len\":128,\"num_classes\":null}",
+    "--forward-input-shape",
+    "2,64",
+    "--dtype",
+    "int64",
+    "--device",
+    "cpu",
+    "--warmup-runs",
+    "2",
+    "--timed-runs",
+    "5"
+  ],
+  "execution": {
+    "started_at_utc": "2026-04-15T19:23:56Z",
+    "completed_at_utc": "2026-04-15T19:23:59Z",
+    "duration_seconds": 2.920913,
+    "timed_out": false,
+    "return_code": 0,
+    "stdout_lines": [
+      "{",
+      "  \"status\": \"completed\",",
+      "  \"probe_mode\": \"timed_forward\",",
+      "  \"model_run_id\": \"MRUN-grouped_sparse_e64-20260415T192312Z-v1repair\",",
+      "  \"summary_path\": \"C:\\\\v1.0-qpathformer_enterprise\\\\shared\\\\models\\\\evaluation\\\\model_runs\\\\MRUN-grouped_sparse_e64-20260415T192312Z-v1repair\\\\wrapper_summary.json\",",
+      "  \"duration_seconds\": 2.389573,",
+      "  \"target_class_found\": true,",
+      "  \"timed_forward_avg_seconds\": 0.020223,",
+      "  \"timed_forward_min_seconds\": 0.017294,",
+      "  \"timed_forward_max_seconds\": 0.029379",
+      "}"
+    ],
+    "stderr_lines": []
+  },
+  "artifacts": {
+    "summary_path": "shared/models/evaluation/model_runs/MRUN-grouped_sparse_e64-20260415T192312Z-v1repair/benchmark_summary.json",
+    "wrapper_summary_path": "shared/models/evaluation/model_runs/MRUN-grouped_sparse_e64-20260415T192312Z-v1repair/wrapper_summary.json"
+  },
+  "notes": [
+    "Benchmark executed from model run manifest.",
+    "Use ast_check first for dependency-free structural triage.",
+    "Use import_check after the Python environment is prepared.",
+    "Use help_check only when CLI compatibility is expected or under test.",
+    "Use timed_forward for prototype variants that do not expose a stable CLI benchmark entry.",
+    "Use timed_run only after variant CLI/runtime expectations are confirmed."
+  ],
+  "wrapper_probe": {
+    "summary_path": "shared/models/evaluation/model_runs/MRUN-grouped_sparse_e64-20260415T192312Z-v1repair/wrapper_summary.json",
+    "probe_mode": "timed_forward",
+    "forward_request": {
+      "input_shape": [
+        2,
+        64
+      ],
+      "dtype": "int64",
+      "device": "cpu",
+      "warmup_runs": 2,
+      "timed_runs": 5
+    },
+    "targets": {
+      "target_class": "QPathformer",
+      "target_class_found": true,
+      "target_class_signature": "(vocab_size: 'int', embed_dim: 'int', num_heads: 'int', num_layers: 'int', num_experts: 'int', k: 'int', max_seq_len: 'int', num_classes: 'Optional[int]' = None, agent_name: 'str' = 'default')",
+      "target_train_fn": "train_qpathformer",
+      "target_train_fn_found": true,
+      "target_train_fn_signature": "(model: 'QPathformer', data_loader: 'torch.utils.data.DataLoader', optimizer: 'torch.optim.Optimizer', criterion: 'nn.Module', device: 'torch.device', epochs: 'int' = 1, alpha_path: 'float' = 0.01, alpha_expert: 'float' = 0.01, run_id: 'str' = 'default_run') -> 'dict'"
+    },
+    "execution": {
+      "status": "completed",
+      "input_shape": [
+        2,
+        64
+      ],
+      "warmup_runs": 2,
+      "timed_runs": 5,
+      "warmup_total_seconds": 0.060355,
+      "timed_total_seconds": 0.10115,
+      "latency_seconds": {
+        "avg": 0.020223,
+        "min": 0.017294,
+        "max": 0.029379,
+        "runs": [
+          0.019168,
+          0.017554,
+          0.017294,
+          0.017721,
+          0.029379
+        ]
+      },
+      "output_type": "tuple",
+      "output_shape": null,
+      "output_length": 3,
+      "item_types": [
+        "Tensor",
+        "list",
+        "list"
+      ],
+      "item_shapes": [
+        [
+          2,
+          64,
+          5000
+        ],
+        null,
+        null
+      ]
+    }
+  }
+}

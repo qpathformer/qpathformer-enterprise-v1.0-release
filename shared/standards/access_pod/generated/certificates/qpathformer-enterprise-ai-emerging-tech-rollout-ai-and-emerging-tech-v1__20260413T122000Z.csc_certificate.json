@@ -1,0 +1,354 @@
+{
+  "schema_version": "1.0.0",
+  "csc_id": "csc_qpathformer_enterprise_ai_emerging_tech_demo_20260413",
+  "issued_at": "2026-04-13T12:20:00Z",
+  "expires_at": "2026-10-10T12:20:00Z",
+  "status": "active",
+  "issuer": {
+    "org_id": "policyofdevelopments.qpathformer",
+    "name": "Policy of Developments - Q-Pathformer Enterprise",
+    "key_id": "kid-qpathformer-enterprise-demo-001",
+    "contact": {
+      "email": "registry@policyofdevelopments.org",
+      "web": "https://policyofdevelopments.org"
+    },
+    "jurisdiction": "AU"
+  },
+  "subject": {
+    "subject_id": "qpathformer_enterprise_ai_emerging_tech_rollout",
+    "name": "Q-Pathformer Enterprise AI And Emerging Tech Rollout",
+    "type": "platform",
+    "owner": {
+      "org_id": "policyofdevelopments",
+      "name": "Policy of Developments"
+    },
+    "version": "v1.0"
+  },
+  "scope": {
+    "ai_types": [
+      "LLM",
+      "agentic",
+      "other"
+    ],
+    "deployment": "hybrid",
+    "jurisdictions": [
+      "AU"
+    ],
+    "sectors": [
+      "enterprise",
+      "ai_and_emerging_technology"
+    ],
+    "risk_tier_declared": "high",
+    "use_constraints": [
+      "New capability rollout must remain staged, governed, and reversible until internal approvals complete.",
+      "Regulatory and policy adaptation checks are required before broader enterprise release."
+    ]
+  },
+  "assessment": {
+    "sapp": {
+      "maturity_level": 4,
+      "run_id": "RTRUN-llm-runtime-registration-check-20260413T095208Z-77a538bc",
+      "run_at": "2026-04-13T09:52:08Z",
+      "environment": "preprod"
+    },
+    "factor_scores": {
+      "f6_1": {
+        "score": 76.8,
+        "confidence": 0.58,
+        "telemetry_window": {
+          "start": "2026-04-12T09:00:00Z",
+          "end": "2026-04-13T09:52:08Z"
+        },
+        "top_metrics": [
+          {
+            "metric_id": "SEC_TOOL_CALL_VIOL_RATE",
+            "value": 0.001,
+            "unit": "ratio",
+            "weight": 0.5,
+            "normalized": 0.8,
+            "direction": "lower_is_better"
+          },
+          {
+            "metric_id": "SEC_POLICY_ENFORCE_SUCCESS",
+            "value": 0.994,
+            "unit": "ratio",
+            "weight": 0.5,
+            "normalized": 0.7368,
+            "direction": "higher_is_better"
+          }
+        ]
+      },
+      "f6_2": {
+        "score": 80.3,
+        "confidence": 0.56,
+        "telemetry_window": {
+          "start": "2026-04-12T09:00:00Z",
+          "end": "2026-04-13T09:52:08Z"
+        },
+        "top_metrics": [
+          {
+            "metric_id": "HARD_PATCH_LATENCY",
+            "value": 48.0,
+            "unit": "hours",
+            "weight": 0.5,
+            "normalized": 0.8721,
+            "direction": "lower_is_better"
+          },
+          {
+            "metric_id": "HARD_TELEMETRY_COMPLETENESS",
+            "value": 0.96,
+            "unit": "ratio",
+            "weight": 0.5,
+            "normalized": 0.7333,
+            "direction": "higher_is_better"
+          }
+        ]
+      },
+      "f6_3": {
+        "score": 82.6,
+        "confidence": 0.6,
+        "telemetry_window": {
+          "start": "2026-04-12T09:00:00Z",
+          "end": "2026-04-13T09:52:08Z"
+        },
+        "top_metrics": [
+          {
+            "metric_id": "COMP_TIME_TO_ADAPT",
+            "value": 18.0,
+            "unit": "hours",
+            "weight": 0.5,
+            "normalized": 0.9526,
+            "direction": "lower_is_better"
+          },
+          {
+            "metric_id": "COMP_CHANGE_APPROVAL_TRACE",
+            "value": 0.97,
+            "unit": "ratio",
+            "weight": 0.5,
+            "normalized": 0.7,
+            "direction": "higher_is_better"
+          }
+        ]
+      },
+      "f6_4": {
+        "score": 100.0,
+        "confidence": 0.61,
+        "telemetry_window": {
+          "start": "2026-04-12T09:00:00Z",
+          "end": "2026-04-13T09:52:08Z"
+        },
+        "top_metrics": [
+          {
+            "metric_id": "GOV_HIL_REVIEW_COVERAGE",
+            "value": 1.0,
+            "unit": "ratio",
+            "weight": 0.5,
+            "normalized": 1.0,
+            "direction": "higher_is_better"
+          },
+          {
+            "metric_id": "GOV_MODEL_APPROVAL_TRACE",
+            "value": 1.0,
+            "unit": "ratio",
+            "weight": 0.5,
+            "normalized": 1.0,
+            "direction": "higher_is_better"
+          }
+        ]
+      },
+      "f6_5": {
+        "score": 84.2,
+        "confidence": 0.55,
+        "telemetry_window": {
+          "start": "2026-04-12T09:00:00Z",
+          "end": "2026-04-13T09:52:08Z"
+        },
+        "top_metrics": [
+          {
+            "metric_id": "TRN_EXPLAIN_COMPLETE",
+            "value": 0.94,
+            "unit": "score",
+            "weight": 0.5,
+            "normalized": 0.95,
+            "direction": "higher_is_better"
+          },
+          {
+            "metric_id": "TRN_MODEL_LIMITS_DISCLOSED",
+            "value": 0.96,
+            "unit": "ratio",
+            "weight": 0.5,
+            "normalized": 0.7333,
+            "direction": "higher_is_better"
+          }
+        ]
+      },
+      "f6_6": {
+        "score": 62.8,
+        "confidence": 0.53,
+        "telemetry_window": {
+          "start": "2026-04-12T09:00:00Z",
+          "end": "2026-04-13T09:52:08Z"
+        },
+        "top_metrics": [
+          {
+            "metric_id": "SECTOR_AUDIT_INTEROP_SCORE",
+            "value": 86.0,
+            "unit": "score",
+            "weight": 0.5,
+            "normalized": 0.64,
+            "direction": "higher_is_better"
+          },
+          {
+            "metric_id": "SECTOR_POLICY_PASS_RATE",
+            "value": 0.93,
+            "unit": "ratio",
+            "weight": 0.5,
+            "normalized": 0.6154,
+            "direction": "higher_is_better"
+          }
+        ]
+      }
+    },
+    "weights": {
+      "profile_id": "ai.and.emerging_tech.v1",
+      "f6_1": 0.16,
+      "f6_2": 0.14,
+      "f6_3": 0.2,
+      "f6_4": 0.24,
+      "f6_5": 0.12,
+      "f6_6": 0.14
+    },
+    "composite_score": 82.9,
+    "csc_level": 4,
+    "risk_tier": "high",
+    "gates": {
+      "no_critical_failures": true,
+      "telemetry_minimum_met": true,
+      "f6_1_min_met": true,
+      "f6_4_min_met": true,
+      "all_factors_min_met": true,
+      "sector_validation_met": false
+    },
+    "iso_alignment": {
+      "iso_iec_42001": {
+        "status": "partial",
+        "notes": "Enterprise rollout controls, staged approvals, and governance checkpoints are in place, but a formal external management-system certification is not yet complete.",
+        "controls_mapped": [
+          "AIMS-governance",
+          "AIMS-deployment-control",
+          "AIMS-improvement-loop"
+        ]
+      },
+      "iso_iec_23894": {
+        "status": "aligned",
+        "notes": "Risk escalation, rollout gating, and policy adaptation traces are present for controlled introduction of new capability.",
+        "controls_mapped": [
+          "risk-identify",
+          "risk-analyze",
+          "risk-treat",
+          "risk-monitor"
+        ]
+      },
+      "iso_iec_22989": {
+        "status": "aligned",
+        "notes": "Enterprise capability, model, training, and runtime terminology is kept consistent across the governed platform and Access-PoD bridge artifacts.",
+        "controls_mapped": [
+          "ai-system",
+          "ai-model",
+          "training",
+          "deployment"
+        ]
+      }
+    }
+  },
+  "evidence": {
+    "bundle_id": "bundle_qpathformer_enterprise_ai_emerging_tech_20260413",
+    "digest_alg": "sha256",
+    "digest": "f958c1fe2fd7aa6a8680b06950789e9dd5fca9ceeb67dc938f56141264c7589f",
+    "items": [
+      {
+        "type": "telemetry_export",
+        "uri": "file:///C:/v1.0-qpathformer_enterprise/path_2_access_mode_canonical/02_signals/runtime_generated/signal_runtime_20260413T095208Z_77a538bc.json",
+        "digest_alg": "sha256",
+        "digest": "becf24024037d079897a9e7a26ad266230ec88ad7000112645126389d552825f",
+        "content_type": "application/json",
+        "created_at": "2026-04-13T09:52:08Z"
+      },
+      {
+        "type": "attestation",
+        "uri": "file:///C:/v1.0-qpathformer_enterprise/shared/registry/run_references/RTRUN-llm-runtime-registration-check-20260413T095208Z-77a538bc.runtime_signal_run_reference.json",
+        "digest_alg": "sha256",
+        "digest": "8673eadde39ff02dc0000b1d7718765f1df02575f59921cbcc2f448876aaa18d",
+        "content_type": "application/json",
+        "created_at": "2026-04-13T09:52:08Z"
+      },
+      {
+        "type": "policy_bundle",
+        "uri": "file:///C:/v1.0-qpathformer_enterprise/shared/registry/run_registry.json",
+        "digest_alg": "sha256",
+        "digest": "74912a0991f069cb9e63d011cd281560ceb818a4f7043cf3e046184b5bd8813f",
+        "content_type": "application/json",
+        "created_at": "2026-04-13T09:52:08Z"
+      },
+      {
+        "type": "human_review_log",
+        "uri": "file:///C:/v1.0-qpathformer_enterprise/path_2_access_mode_canonical/03_dataset/candidates/session-run-id2-20260411-1400-qpath-tr008-run/QPDS-PACKAGE-ID2_PREP/id2-20260411-1400-qpath-tr008-run__v10-1-path2-source-bridge__20260412T104656Z/state2_review.json",
+        "digest_alg": "sha256",
+        "digest": "87bf11e70b0d6f0627e19af0ed1a09f2722f6cb1bd6c2f15b8ae9c8aab533e9a",
+        "content_type": "application/json",
+        "created_at": "2026-04-12T11:00:45Z"
+      },
+      {
+        "type": "attestation",
+        "uri": "file:///C:/v1.0-qpathformer_enterprise/path_2_access_mode_canonical/03_dataset/candidates/session-run-id2-20260411-1400-qpath-tr008-run/QPDS-PACKAGE-ID2_PREP/id2-20260411-1400-qpath-tr008-run__v10-1-path2-source-bridge__20260412T104656Z/state2_promotion_decision.json",
+        "digest_alg": "sha256",
+        "digest": "0606c9abac99d9448c4abae0acecc23d075aaeb9214398cd8114ab0f8367cb30",
+        "content_type": "application/json",
+        "created_at": "2026-04-12T11:00:45Z"
+      },
+      {
+        "type": "dataset_card",
+        "uri": "file:///C:/v1.0-qpathformer_enterprise/path_2_access_mode_canonical/03_dataset/training_packages/id2-20260411-1400-qpath-tr008-run__v10-1-path2-source-bridge__20260412T104656Z/state1_training_manifest.json",
+        "digest_alg": "sha256",
+        "digest": "bfd5d423e7bc45690272edc2deda4f82d3ecea5cf7d0fb1d4eac2abd602ad701",
+        "content_type": "application/json",
+        "created_at": "2026-04-12T11:00:45Z"
+      },
+      {
+        "type": "simulation_report",
+        "uri": "file:///C:/v1.0-qpathformer_enterprise/shared/models/evaluation/model_runs/MRUN-grouped_sparse_e64-20260327T110302Z-cb039d3b/benchmark_summary.json",
+        "digest_alg": "sha256",
+        "digest": "cc1d42de2c79ef704f497def6afa3e6989b0ff361e6f1d8747e4d5e03fa80ef6",
+        "content_type": "application/json",
+        "created_at": "2026-03-27T20:22:22Z"
+      },
+      {
+        "type": "model_card",
+        "uri": "file:///C:/v1.0-qpathformer_enterprise/shared/models/evaluation/model_runs/MRUN-grouped_sparse_e64-20260327T110302Z-cb039d3b/model_run_manifest.json",
+        "digest_alg": "sha256",
+        "digest": "af5ef9451e9829c087c3d7cbc4071232a3070898b15113fb35503b4dce4cbb00",
+        "content_type": "application/json",
+        "created_at": "2026-03-27T12:03:02Z"
+      },
+      {
+        "type": "other",
+        "uri": "file:///C:/v1.0-qpathformer_enterprise/path_2_access_mode_canonical/05_runs/FTRUN-path2_state1_run-local_lora-20260412T110045Z-def4af09/finetune_run_manifest.json",
+        "digest_alg": "sha256",
+        "digest": "23b466c02e1cc3d540a88c3685ee59fbad64c0f05e6b9e72305142c5b577bf92",
+        "content_type": "application/json",
+        "created_at": "2026-04-12T11:01:48Z"
+      }
+    ]
+  },
+  "signature": {
+    "alg": "EdDSA",
+    "kid": "kid-qpathformer-enterprise-demo-001",
+    "canonicalization": "JCS",
+    "signed_payload_digest": {
+      "digest_alg": "sha256",
+      "digest": "9cd07e8d164c6c2989a7ea19e939a9e31268f8649329de0895de8e32b6bf5fb0"
+    },
+    "signature": "UNSIGNED_PENDING_ENTERPRISE_REVIEW",
+    "signed_at": "2026-04-13T12:20:00Z"
+  }
+}

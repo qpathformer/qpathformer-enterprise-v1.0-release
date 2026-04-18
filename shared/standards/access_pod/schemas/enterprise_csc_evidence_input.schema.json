@@ -1,0 +1,240 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://qpathformer.dev/schemas/access_pod/enterprise_csc_evidence_input.schema.json",
+  "title": "Enterprise CSC Evidence Input",
+  "description": "Enterprise-side input contract for generating Access-PoD CSC certificates from vendored v1a artifacts.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "evidence_input_version",
+    "profile_id",
+    "issuer",
+    "subject",
+    "scope",
+    "telemetry_window",
+    "sapp",
+    "evidence",
+    "metric_observations"
+  ],
+  "properties": {
+    "evidence_input_version": {
+      "type": "string",
+      "const": "access_pod_enterprise_evidence_input_v1.0"
+    },
+    "csc_id": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "active",
+        "suspended",
+        "revoked",
+        "expired",
+        "superseded"
+      ]
+    },
+    "issued_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "expires_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "expires_in_days": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "profile_id": {
+      "type": "string"
+    },
+    "issuer": {
+      "type": "object"
+    },
+    "subject": {
+      "type": "object"
+    },
+    "scope": {
+      "type": "object"
+    },
+    "telemetry_window": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "start",
+        "end"
+      ],
+      "properties": {
+        "start": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "end": {
+          "type": "string",
+          "format": "date-time"
+        }
+      }
+    },
+    "sapp": {
+      "type": "object"
+    },
+    "evidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "bundle_id",
+        "items"
+      ],
+      "properties": {
+        "bundle_id": {
+          "type": "string"
+        },
+        "digest_alg": {
+          "type": "string",
+          "enum": [
+            "sha256"
+          ]
+        },
+        "digest": {
+          "type": "string"
+        },
+        "items": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "type"
+            ],
+            "properties": {
+              "type": {
+                "type": "string"
+              },
+              "uri": {
+                "type": "string"
+              },
+              "path": {
+                "type": "string"
+              },
+              "digest_alg": {
+                "type": "string",
+                "enum": [
+                  "sha256"
+                ]
+              },
+              "digest": {
+                "type": "string"
+              },
+              "content_type": {
+                "type": "string"
+              },
+              "created_at": {
+                "type": "string",
+                "format": "date-time"
+              }
+            },
+            "anyOf": [
+              {
+                "required": [
+                  "uri",
+                  "digest"
+                ]
+              },
+              {
+                "required": [
+                  "path"
+                ]
+              }
+            ]
+          }
+        }
+      }
+    },
+    "metric_observations": {
+      "type": "array",
+      "minItems": 6,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "metric_id",
+          "value"
+        ],
+        "properties": {
+          "metric_id": {
+            "type": "string"
+          },
+          "value": {
+            "type": "number"
+          },
+          "confidence": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1
+          },
+          "weight": {
+            "type": "number",
+            "minimum": 0
+          },
+          "telemetry_start": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "telemetry_end": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "notes": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "iso_alignment": {
+      "type": "object"
+    },
+    "links": {
+      "type": "object"
+    },
+    "revocation": {
+      "type": "object"
+    },
+    "risk_tier": {
+      "type": "string"
+    },
+    "scoring_policy": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "top_metrics_per_factor": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "min_overall_metric_coverage_ratio": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "min_metrics_per_factor": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "min_factor_score": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "level_thresholds": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 100
+          }
+        }
+      }
+    }
+  }
+}

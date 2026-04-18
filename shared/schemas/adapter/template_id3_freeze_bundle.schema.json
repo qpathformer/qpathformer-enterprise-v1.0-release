@@ -1,0 +1,236 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://qpathformer.dev/schemas/adapter/template_id3_freeze_bundle.schema.json",
+  "title": "ID3 Freeze Bundle Template",
+  "description": "Validation contract for onboarding a project-local ID_3 freeze bundle containing canonical ID_2 records, a freeze note, and a hash manifest.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "template_version",
+    "template_family",
+    "package_id",
+    "bundle_root",
+    "expected_files",
+    "bundle_components",
+    "freeze_context",
+    "validation_rules",
+    "normalization_targets",
+    "default_authorization_context",
+    "default_lifecycle_initialization"
+  ],
+  "properties": {
+    "template_version": {
+      "type": "string",
+      "const": "v13.1"
+    },
+    "template_family": {
+      "type": "string",
+      "const": "id3_freeze_bundle"
+    },
+    "package_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "bundle_root": {
+      "type": "string",
+      "minLength": 1
+    },
+    "expected_files": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "module_records",
+        "session_records",
+        "freeze_note",
+        "hash_manifest"
+      ],
+      "properties": {
+        "module_records": {
+          "type": "array",
+          "minItems": 2,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "session_records": {
+          "type": "array",
+          "minItems": 2,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "freeze_note": {
+          "type": "string",
+          "minLength": 1
+        },
+        "hash_manifest": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "bundle_components": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "canonical_json_required",
+        "freeze_note_required",
+        "hash_manifest_required"
+      ],
+      "properties": {
+        "canonical_json_required": {
+          "type": "boolean",
+          "const": true
+        },
+        "freeze_note_required": {
+          "type": "boolean",
+          "const": true
+        },
+        "hash_manifest_required": {
+          "type": "boolean",
+          "const": true
+        }
+      }
+    },
+    "freeze_context": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "source_mode_detected",
+        "inspection_status_required",
+        "freeze_semantics"
+      ],
+      "properties": {
+        "source_mode_detected": {
+          "type": "string",
+          "const": "ID_2_frozen_under_ID_3"
+        },
+        "inspection_status_required": {
+          "type": "string",
+          "const": "frozen_under_ID_3"
+        },
+        "freeze_semantics": {
+          "type": "array",
+          "minItems": 3,
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "validation_rules": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "require_module_record_class",
+        "require_session_record_class",
+        "require_hash_entries_for_canonical_files",
+        "require_freeze_note_package_id",
+        "fail_closed_on_missing_required_file"
+      ],
+      "properties": {
+        "require_module_record_class": {
+          "type": "string",
+          "const": "non_inspection_module_record"
+        },
+        "require_session_record_class": {
+          "type": "string",
+          "const": "non_inspection_session_record"
+        },
+        "require_hash_entries_for_canonical_files": {
+          "type": "boolean",
+          "const": true
+        },
+        "require_freeze_note_package_id": {
+          "type": "boolean",
+          "const": true
+        },
+        "fail_closed_on_missing_required_file": {
+          "type": "boolean",
+          "const": true
+        }
+      }
+    },
+    "normalization_targets": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "emit_one_row_per_source_artifact",
+        "emit_bundle_manifest",
+        "emit_hash_verification_report"
+      ],
+      "properties": {
+        "emit_one_row_per_source_artifact": {
+          "type": "boolean",
+          "const": true
+        },
+        "emit_bundle_manifest": {
+          "type": "boolean",
+          "const": true
+        },
+        "emit_hash_verification_report": {
+          "type": "boolean",
+          "const": true
+        }
+      }
+    },
+    "default_authorization_context": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "fine_tuning_allowed",
+        "external_training_allowed",
+        "human_review_required",
+        "authorization_inherited",
+        "authorization_source"
+      ],
+      "properties": {
+        "fine_tuning_allowed": {
+          "type": "boolean",
+          "const": false
+        },
+        "external_training_allowed": {
+          "type": "boolean",
+          "const": false
+        },
+        "human_review_required": {
+          "type": "boolean",
+          "const": true
+        },
+        "authorization_inherited": {
+          "type": "boolean",
+          "const": false
+        },
+        "authorization_source": {
+          "type": "string",
+          "const": "default_restricted_posture"
+        }
+      }
+    },
+    "default_lifecycle_initialization": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "state",
+        "eligible_for_state_2",
+        "routing_decision"
+      ],
+      "properties": {
+        "state": {
+          "type": "string",
+          "const": "STATE_3"
+        },
+        "eligible_for_state_2": {
+          "type": "boolean",
+          "const": false
+        },
+        "routing_decision": {
+          "type": "string",
+          "const": "HOLD_IN_STATE_3"
+        }
+      }
+    }
+  }
+}

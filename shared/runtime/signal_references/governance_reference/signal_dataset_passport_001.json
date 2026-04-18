@@ -1,0 +1,49 @@
+{
+  "signal_id": "SIG-001",
+  "timestamp": "2026-03-20T12:00:00Z",
+  "session_id": "SESSION-001",
+  "interaction_type": "13B_only",
+  "source": {
+    "initiator": "13B",
+    "amplifier": null
+  },
+  "input": {
+    "prompt": "ID_3 dataset lifecycle execution",
+    "context_ref": "dataset_passport"
+  },
+  "signal": {
+    "raw_output": "Dataset passport processed from ID_3 freeze",
+    "structured_summary": "STATE_3 dataset derived from ID_3 freeze with containment and authorization restrictions",
+    "tags": [
+      "dataset_passport",
+      "id3",
+      "state3",
+      "governance"
+    ]
+  },
+  "metrics": {
+    "coherence": 0.85,
+    "novelty": 0.4,
+    "stability": 0.9,
+    "ambiguity": 0.3
+  },
+  "maturity": "LEVEL_3",
+  "governance_flags": {
+    "provisional": true,
+    "context_bound": true,
+    "requires_validation": true,
+    "promotion_blocked": true,
+    "signals_not_decisions": true,
+    "dataset_containment_principle_applies": true
+  },
+  "lifecycle": {
+    "state": "STATE_3",
+    "eligible_for_state_2": true
+  },
+  "dataset_id": "QPDS-EXAMPLE-001",
+  "dataset_passport_ref": "QPDS-EXAMPLE-001",
+  "routing_ref": "QPDS-ROUTE-001",
+  "authorization_ref": "authorization_report.generated.json",
+  "dataset_passport_id": "QPDS-EXAMPLE-001",
+  "signals_not_decisions": true
+}

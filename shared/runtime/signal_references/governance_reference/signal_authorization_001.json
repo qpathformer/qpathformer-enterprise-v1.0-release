@@ -1,0 +1,58 @@
+{
+  "signal_id": "SIG-003",
+  "timestamp": "2026-03-20T12:10:00Z",
+  "session_id": "SESSION-001",
+  "interaction_type": "13B_only",
+  "source": {
+    "initiator": "13B",
+    "amplifier": null
+  },
+  "input": {
+    "prompt": "Evaluate authorization scope for governed dataset lifecycle artifact",
+    "context_ref": "authorization_report.generated.json"
+  },
+  "signal": {
+    "raw_output": "Authorization permits runtime reasoning and synthetic generation only",
+    "structured_summary": "Authorization control blocks fine-tuning and external training, keeps the dataset non-authoritative, and recommends STATE_2 review before any durable promotion.",
+    "tags": [
+      "authorization",
+      "runtime_reasoning",
+      "synthetic_generation",
+      "fine_tuning_blocked"
+    ]
+  },
+  "metrics": {
+    "coherence": 0.92,
+    "novelty": 0.28,
+    "stability": 0.94,
+    "ambiguity": 0.18
+  },
+  "maturity": "LEVEL_4",
+  "governance_flags": {
+    "provisional": true,
+    "context_bound": true,
+    "requires_validation": true,
+    "promotion_blocked": true
+  },
+  "lifecycle": {
+    "state": "STATE_3",
+    "eligible_for_state_2": true
+  },
+  "dataset_passport_ref": "QPDS-EXAMPLE-001",
+  "routing_ref": "QPDS-ROUTE-001",
+  "authorization_ref": "authorization_report.generated.json",
+  "dataset_passport_id": "QPDS-EXAMPLE-001",
+  "input_state": "STATE_3",
+  "next_recommended_state": "STATE_2",
+  "authorization_status": {
+    "runtime_reasoning": true,
+    "synthetic_generation": true,
+    "fine_tuning": false,
+    "external_training": false,
+    "human_review_required": true
+  },
+  "filtering_outcome": {
+    "filter_applied": true,
+    "state1_eligible": false
+  }
+}

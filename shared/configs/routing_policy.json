@@ -1,0 +1,6 @@
+{
+  "maturity_review_thresholds": ["LEVEL_4", "LEVEL_5"],
+  "max_ambiguity_for_state2": 0.45,
+  "min_stability_for_state2": 0.60,
+  "default_decision": "HOLD_IN_STATE_3"
+}

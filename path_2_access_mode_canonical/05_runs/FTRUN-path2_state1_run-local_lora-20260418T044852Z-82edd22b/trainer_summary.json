@@ -1,0 +1,41 @@
+{
+  "trainer_family": "transformers_peft",
+  "trainer_type": "local_lora",
+  "dataset_version": "id2-20260411-1400-qpath-tr008-run__v10-1-path2-source-bridge__20260418T044710Z",
+  "training_package_path": "C:\\v1.0-qpathformer_enterprise\\path_2_access_mode_canonical\\03_dataset\\training_packages\\id2-20260411-1400-qpath-tr008-run__v10-1-path2-source-bridge__20260418T044710Z",
+  "model_base": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+  "device": "cuda",
+  "records_loaded": 4,
+  "tokenized_records": 4,
+  "effective_hyperparameters": {
+    "max_steps": 100,
+    "learning_rate": 5e-05,
+    "per_device_train_batch_size": 1,
+    "gradient_accumulation_steps": 4,
+    "num_train_epochs": 1.0,
+    "max_seq_len": 512
+  },
+  "lora": {
+    "r": 8,
+    "alpha": 16,
+    "dropout": 0.05,
+    "target_modules": [
+      "q_proj",
+      "v_proj"
+    ]
+  },
+  "train_metrics": {
+    "train_runtime": 31.0892,
+    "train_samples_per_second": 12.866,
+    "train_steps_per_second": 3.217,
+    "total_flos": 536253762355200.0,
+    "train_loss": 3.7577120208740236,
+    "epoch": 100.0
+  },
+  "global_steps": 100,
+  "epochs_completed": 100.0,
+  "train_loss_final": 3.2854502201080322,
+  "saved_model_dir": "C:\\v1.0-qpathformer_enterprise\\path_2_access_mode_canonical\\05_runs\\FTRUN-path2_state1_run-local_lora-20260418T044852Z-82edd22b\\model",
+  "checkpoints_dir": "C:\\v1.0-qpathformer_enterprise\\path_2_access_mode_canonical\\05_runs\\FTRUN-path2_state1_run-local_lora-20260418T044852Z-82edd22b\\checkpoints",
+  "recorded_at_utc": "2026-04-18T04:49:35Z"
+}

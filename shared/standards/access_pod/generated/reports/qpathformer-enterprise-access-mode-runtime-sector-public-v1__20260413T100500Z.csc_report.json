@@ -1,0 +1,220 @@
+{
+  "report_version": "access_pod_csc_scoring_report_v1.0",
+  "generated_at_utc": "2026-04-13T10:27:02Z",
+  "inputs": {
+    "evidence_input_path": "shared/standards/access_pod/examples/enterprise_csc_evidence_input.example.json",
+    "metric_catalog_path": "shared/standards/access_pod/vendor/access-pod-artifacts-core/v1a/catalogs/csc_metric_catalog_v1a.json",
+    "sector_profiles_path": "shared/standards/access_pod/vendor/access-pod-artifacts-core/v1a/profiles/csc_sector_profiles_v1a.json",
+    "certificate_schema_path": "shared/standards/access_pod/vendor/access-pod-artifacts-core/v1a/schemas/csc-certificate.schema_v1a.json"
+  },
+  "profile_id": "sector.public.v1",
+  "csc_id": "csc_qpathformer_enterprise_access_mode_runtime_demo_20260413",
+  "observed_metric_count": 12,
+  "catalog_metric_count": 60,
+  "overall_metric_coverage_ratio": 0.2,
+  "factor_coverages": {
+    "f6_1": {
+      "observed_metrics": 2,
+      "total_factor_metrics": 10,
+      "coverage_ratio": 0.2
+    },
+    "f6_2": {
+      "observed_metrics": 2,
+      "total_factor_metrics": 10,
+      "coverage_ratio": 0.2
+    },
+    "f6_3": {
+      "observed_metrics": 2,
+      "total_factor_metrics": 10,
+      "coverage_ratio": 0.2
+    },
+    "f6_4": {
+      "observed_metrics": 2,
+      "total_factor_metrics": 10,
+      "coverage_ratio": 0.2
+    },
+    "f6_5": {
+      "observed_metrics": 2,
+      "total_factor_metrics": 10,
+      "coverage_ratio": 0.2
+    },
+    "f6_6": {
+      "observed_metrics": 2,
+      "total_factor_metrics": 10,
+      "coverage_ratio": 0.2
+    }
+  },
+  "warning_metrics": [],
+  "critical_metrics": [],
+  "gates": {
+    "no_critical_failures": true,
+    "telemetry_minimum_met": true,
+    "f6_1_min_met": true,
+    "f6_4_min_met": true,
+    "all_factors_min_met": true,
+    "sector_validation_met": true
+  },
+  "assessment_summary": {
+    "composite_score": 93.0,
+    "csc_level": 5,
+    "risk_tier": "medium"
+  },
+  "factor_scores": {
+    "f6_1": {
+      "score": 89.7,
+      "confidence": 0.57,
+      "telemetry_window": {
+        "start": "2026-04-12T09:00:00Z",
+        "end": "2026-04-13T09:52:08Z"
+      },
+      "top_metrics": [
+        {
+          "metric_id": "SEC_FALSE_NEG_RATE",
+          "value": 0.005,
+          "unit": "ratio",
+          "weight": 0.5,
+          "normalized": 0.9,
+          "direction": "lower_is_better"
+        },
+        {
+          "metric_id": "SEC_ATTACK_DETECT_RATE",
+          "value": 0.985,
+          "unit": "ratio",
+          "weight": 0.5,
+          "normalized": 0.8947,
+          "direction": "higher_is_better"
+        }
+      ]
+    },
+    "f6_2": {
+      "score": 93.5,
+      "confidence": 0.54,
+      "telemetry_window": {
+        "start": "2026-04-12T09:00:00Z",
+        "end": "2026-04-13T09:52:08Z"
+      },
+      "top_metrics": [
+        {
+          "metric_id": "HARD_PATCH_LATENCY",
+          "value": 36.0,
+          "unit": "hours",
+          "weight": 0.5,
+          "normalized": 0.9468,
+          "direction": "lower_is_better"
+        },
+        {
+          "metric_id": "HARD_REDTEAM_PASS_RATE",
+          "value": 0.97,
+          "unit": "ratio",
+          "weight": 0.5,
+          "normalized": 0.9231,
+          "direction": "higher_is_better"
+        }
+      ]
+    },
+    "f6_3": {
+      "score": 90.8,
+      "confidence": 0.57,
+      "telemetry_window": {
+        "start": "2026-04-12T09:00:00Z",
+        "end": "2026-04-13T09:52:08Z"
+      },
+      "top_metrics": [
+        {
+          "metric_id": "COMP_TIME_TO_ADAPT",
+          "value": 24.0,
+          "unit": "hours",
+          "weight": 0.5,
+          "normalized": 0.9168,
+          "direction": "lower_is_better"
+        },
+        {
+          "metric_id": "COMP_POLICY_TRACE_COVERAGE",
+          "value": 0.99,
+          "unit": "ratio",
+          "weight": 0.5,
+          "normalized": 0.9,
+          "direction": "higher_is_better"
+        }
+      ]
+    },
+    "f6_4": {
+      "score": 95.0,
+      "confidence": 0.55,
+      "telemetry_window": {
+        "start": "2026-04-12T09:00:00Z",
+        "end": "2026-04-13T09:52:08Z"
+      },
+      "top_metrics": [
+        {
+          "metric_id": "GOV_HUMAN_LOAD_INDEX",
+          "value": 0.6,
+          "unit": "score",
+          "weight": 0.5,
+          "normalized": 1.0,
+          "direction": "target_is_best"
+        },
+        {
+          "metric_id": "GOV_HIL_REVIEW_COVERAGE",
+          "value": 0.99,
+          "unit": "ratio",
+          "weight": 0.5,
+          "normalized": 0.9,
+          "direction": "higher_is_better"
+        }
+      ]
+    },
+    "f6_5": {
+      "score": 95.0,
+      "confidence": 0.53,
+      "telemetry_window": {
+        "start": "2026-04-12T09:00:00Z",
+        "end": "2026-04-13T09:52:08Z"
+      },
+      "top_metrics": [
+        {
+          "metric_id": "TRN_EXPLAIN_COMPLETE",
+          "value": 0.94,
+          "unit": "score",
+          "weight": 0.5,
+          "normalized": 0.95,
+          "direction": "higher_is_better"
+        },
+        {
+          "metric_id": "TRN_USER_COMPREHENSION",
+          "value": 0.89,
+          "unit": "score",
+          "weight": 0.5,
+          "normalized": 0.95,
+          "direction": "higher_is_better"
+        }
+      ]
+    },
+    "f6_6": {
+      "score": 93.7,
+      "confidence": 0.52,
+      "telemetry_window": {
+        "start": "2026-04-12T09:00:00Z",
+        "end": "2026-04-13T09:52:08Z"
+      },
+      "top_metrics": [
+        {
+          "metric_id": "SECTOR_REPUTATION_STABILITY",
+          "value": 0.71,
+          "unit": "score",
+          "weight": 0.5,
+          "normalized": 0.95,
+          "direction": "target_is_best"
+        },
+        {
+          "metric_id": "SECTOR_POLICY_PASS_RATE",
+          "value": 0.97,
+          "unit": "ratio",
+          "weight": 0.5,
+          "normalized": 0.9231,
+          "direction": "higher_is_better"
+        }
+      ]
+    }
+  }
+}

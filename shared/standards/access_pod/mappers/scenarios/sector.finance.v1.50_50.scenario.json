@@ -1,0 +1,31 @@
+{
+  "scenario_id": "sector.finance.v1.50_50",
+  "scenario_label": "Finance Balanced 50/50",
+  "profile_id": "sector.finance.v1",
+  "description": "Balanced finance scenario. Sector-facing metrics use an even split between their primary source and market-integrity telemetry where applicable.",
+  "metric_overrides": {
+    "SECTOR_MARKET_INTEGRITY_SIGNAL": {
+      "source_mix": {
+        "market_integrity": 0.5,
+        "partner_attestations": 0.5
+      }
+    },
+    "SECTOR_POLICY_PASS_RATE": {
+      "source_mix": {
+        "policy_pass": 0.5,
+        "market_integrity": 0.5
+      }
+    },
+    "SECTOR_PARTNER_ATTEST_RATE": {
+      "source_mix": {
+        "partner_attestations": 0.5,
+        "market_integrity": 0.5
+      }
+    },
+    "SECTOR_AUDIT_INTEROP_SCORE": {
+      "source_mix": {
+        "audit_interop": 1.0
+      }
+    }
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "signal_id": "SIG-002",
+  "timestamp": "2026-03-20T12:05:00Z",
+  "session_id": "SESSION-001",
+  "interaction_type": "13B_only",
+  "source": {
+    "initiator": "13B",
+    "amplifier": null
+  },
+  "input": {
+    "prompt": "Route governed dataset passport through lifecycle controls",
+    "context_ref": "dataset_routing.generated.json"
+  },
+  "signal": {
+    "raw_output": "Dataset routed to STATE_3 under provisional containment",
+    "structured_summary": "Routing logic held the dataset in STATE_3 because it remains provisional, requires authorization filtering, and awaits manual review.",
+    "tags": [
+      "routing",
+      "state_3",
+      "containment",
+      "manual_review"
+    ]
+  },
+  "metrics": {
+    "coherence": 0.88,
+    "novelty": 0.35,
+    "stability": 0.91,
+    "ambiguity": 0.22
+  },
+  "maturity": "LEVEL_3",
+  "governance_flags": {
+    "provisional": true,
+    "context_bound": true,
+    "requires_validation": true,
+    "promotion_blocked": true
+  },
+  "lifecycle": {
+    "state": "STATE_3",
+    "eligible_for_state_2": true
+  },
+  "dataset_passport_ref": "QPDS-EXAMPLE-001",
+  "routing_ref": "QPDS-ROUTE-001",
+  "authorization_ref": "authorization_report.generated.json",
+  "dataset_passport_id": "QPDS-EXAMPLE-001",
+  "current_state": "STATE_3",
+  "default_target_state": "STATE_3",
+  "dataset_containment_principle_applies": true,
+  "containment_checks": {
+    "dataset_containment_principle_applies": true,
+    "signals_not_decisions": true,
+    "authorization_filter_required": true
+  }
+}

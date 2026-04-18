@@ -1,0 +1,71 @@
+{
+  "training_log_version": "v14.3",
+  "run_id": "FTRUN-tr_v14_tinyllama_run-local_lora-20260418T030626Z-e9e168a1",
+  "timestamp_started_utc": "2026-04-18T03:06:26Z",
+  "status": "completed",
+  "mode": "execution",
+  "dataset_version": "checkpoint_v4_strict",
+  "training_package_path": "C:\\v1.0-qpathformer_enterprise\\path_1_tr_corpus_reference\\04_state1_package\\QPDS-TR-STRICT-ID3-001",
+  "backend": "local_lora",
+  "backend_profile_id": "local_lora_reference",
+  "model_base": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+  "hyperparameters": {
+    "max_steps": 100,
+    "learning_rate": 5e-05,
+    "batch_size": 1
+  },
+  "events": [
+    {
+      "timestamp_utc": "2026-04-18T03:06:26Z",
+      "event": "package_validated",
+      "details": {
+        "manifest_file": "C:\\v1.0-qpathformer_enterprise\\path_1_tr_corpus_reference\\04_state1_package\\QPDS-TR-STRICT-ID3-001\\state1_training_manifest.json",
+        "train_file": "C:\\v1.0-qpathformer_enterprise\\path_1_tr_corpus_reference\\04_state1_package\\QPDS-TR-STRICT-ID3-001\\train.sft.jsonl",
+        "backend_profile_file": "C:\\v1.0-qpathformer_enterprise\\path_1_tr_corpus_reference\\04_state1_package\\QPDS-TR-STRICT-ID3-001\\training_backend_profile.json",
+        "validation_warning_count": 0
+      }
+    },
+    {
+      "timestamp_utc": "2026-04-18T03:07:08Z",
+      "event": "execution_completed",
+      "details": {
+        "status": "completed",
+        "execution_mode": "local_lora",
+        "backend": "local_lora",
+        "trainer_family": "transformers_peft",
+        "trainer_type": "local_lora",
+        "trainable_strategy": "lora",
+        "model_output_path": "C:\\v1.0-qpathformer_enterprise\\path_1_tr_corpus_reference\\05_runs\\FTRUN-tr_v14_tinyllama_run-local_lora-20260418T030626Z-e9e168a1\\model",
+        "checkpoints_dir": "C:\\v1.0-qpathformer_enterprise\\path_1_tr_corpus_reference\\05_runs\\FTRUN-tr_v14_tinyllama_run-local_lora-20260418T030626Z-e9e168a1\\checkpoints",
+        "trainer_summary_path": "C:\\v1.0-qpathformer_enterprise\\path_1_tr_corpus_reference\\05_runs\\FTRUN-tr_v14_tinyllama_run-local_lora-20260418T030626Z-e9e168a1\\trainer_summary.json",
+        "steps_completed": 100,
+        "epochs_completed": 0.35810205908683973,
+        "records_loaded": 1117,
+        "train_loss_final": 3.413478374481201
+      }
+    }
+  ],
+  "warnings": [],
+  "linkage_validation": {
+    "dataset_version": "checkpoint_v4_strict",
+    "package_root": "C:\\v1.0-qpathformer_enterprise\\path_1_tr_corpus_reference\\04_state1_package\\QPDS-TR-STRICT-ID3-001",
+    "manifest_record_count": 1117,
+    "actual_record_count": 1117,
+    "lifecycle_state": "STATE_1",
+    "backend_profile_id": "local_lora_reference",
+    "backend_format": "sft_jsonl",
+    "prompt_field": "prompt",
+    "completion_field": "completion"
+  },
+  "runtime_environment": {
+    "python_version": "3.11.9",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "cwd": "C:\\v1.0-qpathformer_enterprise"
+  },
+  "run_naming": {
+    "mode_tag": "local_lora",
+    "explicit_run_id_used": false,
+    "run_suffix": null
+  },
+  "timestamp_completed_utc": "2026-04-18T03:07:08Z"
+}

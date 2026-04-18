@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "qpath_execution_profile.schema.json",
+  "title": "Q-Pathformer Execution Profile",
+  "description": "Optional Q-Pathformer execution metadata attached to a governed dataset passport.",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "execution_environment": {
+      "type": "string",
+      "const": "Q-Pathformer"
+    },
+    "profile_version": {
+      "type": "string"
+    },
+    "dataset_cluster_id": {
+      "type": "string"
+    },
+    "capsule_id": {
+      "type": "string"
+    },
+    "training_stage": {
+      "type": "string",
+      "enum": [
+        "runtime",
+        "synthetic_generation",
+        "validation",
+        "fine_tuning",
+        "durable_training"
+      ]
+    },
+    "execution_notes": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "execution_environment",
+    "profile_version"
+  ]
+}

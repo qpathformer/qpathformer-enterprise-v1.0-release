@@ -1,0 +1,64 @@
+{
+  "profile_version": "v13.2",
+  "profile_id": "client_governance_json.default",
+  "template_family": "client_governance_json",
+  "description": "Default adapter profile for structured client-origin governance datasets supplied as JSON.",
+  "source_detection": {
+    "artifact_type": "client_governance_json",
+    "record_family": "structured_json",
+    "source_mode_detected": "client_external",
+    "structural_completeness_rule": "complete_when_dataset_id_and_records_present"
+  },
+  "validation_rules": {
+    "require_dataset_id": true,
+    "require_records_array": true,
+    "minimum_record_count": 1,
+    "required_record_fields": [
+      "record_id",
+      "input",
+      "output"
+    ],
+    "allow_optional_metadata": true,
+    "allow_optional_source_context": true,
+    "fail_closed_on_missing_required_fields": true
+  },
+  "normalization_strategy": {
+    "strategy_name": "client_json_to_onboarding_rows",
+    "emit_one_row_per_client_record": true,
+    "artifact_role": "client_dataset",
+    "record_class_mapping": {
+      "client_dataset": "client_governance_record"
+    }
+  },
+  "default_authorization_context": {
+    "fine_tuning_allowed": false,
+    "external_training_allowed": false,
+    "human_review_required": true,
+    "authorization_inherited": false,
+    "authorization_source": "default_restricted_posture"
+  },
+  "default_governance_flags": {
+    "signals_not_decisions": true,
+    "non_certifying": true,
+    "context_bound": true,
+    "containment_required": true,
+    "human_decision_required_default": true
+  },
+  "default_lifecycle_initialization": {
+    "state": "STATE_3",
+    "eligible_for_state_2": false,
+    "routing_decision": "HOLD_IN_STATE_3"
+  },
+  "output_contract": {
+    "emit_onboarding_manifest": true,
+    "emit_source_inventory": true,
+    "emit_normalized_onboarding_jsonl": true,
+    "emit_normalization_report": true,
+    "emit_hash_verification_report": false
+  },
+  "notes": [
+    "Client-origin datasets are onboarded under restricted containment by default.",
+    "Structured JSON intake does not imply validation, authorization, or training eligibility.",
+    "All normalized rows remain provisional until downstream lifecycle handling occurs."
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "enabled": true,
+  "loaded_records": 730,
+  "matched_signal_records": 668,
+  "matched_doc_chunks": 0,
+  "reference_allowed_rows": 1752,
+  "reference_blocked_rows": 532,
+  "require_reference_match": true,
+  "allowed_reference_postures": [
+    "inspection",
+    "learning",
+    "mixed_controlled",
+    "operational"
+  ],
+  "reference_min_weight": "low",
+  "index_report": {
+    "loaded_records": 730,
+    "by_dataset_role": {
+      "teacher_signal": 159,
+      "inspection_signal": 499,
+      "constraint_signal": 72
+    },
+    "by_reasoning_posture": {
+      "learning": 51,
+      "inspection": 499,
+      "operational": 180
+    },
+    "by_source_family": {
+      "tr_signal": 730
+    }
+  }
+}

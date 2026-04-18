@@ -1,0 +1,15 @@
+{
+  "inventory_version": "v13.2",
+  "root_path": "C:\\v1.0-qpathformer_enterprise\\path_3_external_custom_adapter\\01_source\\inbound\\CLIENT-DATASET-EXAMPLE-001",
+  "file_count": 1,
+  "files": [
+    {
+      "inventory_order": 1,
+      "file_name": "client_governance.json",
+      "file_type": "json",
+      "path": "C:\\v1.0-qpathformer_enterprise\\path_3_external_custom_adapter\\01_source\\inbound\\CLIENT-DATASET-EXAMPLE-001\\client_governance.json",
+      "size_bytes": 3409,
+      "sha256": "dc369f96cc4e4d5b33ff744e25a9937f7547db3b71e7be59690aff7378420a65"
+    }
+  ]
+}

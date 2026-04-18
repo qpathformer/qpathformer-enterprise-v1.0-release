@@ -1,0 +1,454 @@
+"""
+Q-Pathformer v0.9-3S (sparse, shard-aware) — audit-ready prototype for 64–144 experts.
+"""
+
+from __future__ import annotations
+import math
+from typing import Callable, Dict, Optional
+
+import torch
+import torch.nn as nn
+import torch.nn.functional as F
+import json
+from pathlib import Path
+
+# -----------------------------------------------------------------------------
+# Agent Registry
+# -----------------------------------------------------------------------------
+class AgentRegistry:
+    """Registry for agent functions (multimodal handlers)."""
+    _registry: Dict[str, Callable[[torch.Tensor], torch.Tensor]] = {}
+
+    @classmethod
+    def register(cls, name: str, fn: Callable[[torch.Tensor], torch.Tensor]) -> None:
+        cls._registry[name] = fn
+
+    @classmethod
+    def get(cls, name: str) -> Callable[[torch.Tensor], torch.Tensor]:
+        if name not in cls._registry:
+            raise KeyError(f"Agent '{name}' is not registered")
+        return cls._registry[name]
+
+
+# -----------------------------------------------------------------------------
+# Three-State Scheduler
+# -----------------------------------------------------------------------------
+class ThreeStateScheduler(nn.Module):
+    """Produces per-token path probabilities (dense, superposition, agent)."""
+
+    def __init__(self, embed_dim: int, temperature: float = 1.0, min_agent_p: float = 0.0):
+        super().__init__()
+        self.linear = nn.Linear(embed_dim, 3)
+        self.temperature = temperature
+        self.min_agent_p = min_agent_p
+
+    def forward(self, x: torch.Tensor) -> torch.Tensor:
+        logits = self.linear(x) / self.temperature
+        probs = F.softmax(logits, dim=-1)
+
+        if self.min_agent_p > 0:
+            agent = probs[..., 2]
+            floor = torch.full_like(agent, self.min_agent_p)
+            agent = torch.maximum(agent, floor)
+            other = probs[..., :2]
+            s = agent + other.sum(dim=-1)
+            probs = torch.cat(
+                [other / s.unsqueeze(-1), agent.unsqueeze(-1) / s.unsqueeze(-1)],
+                dim=-1
+            )
+        return probs
+
+    def router_aux_loss(self, probs: torch.Tensor, target_dist: torch.Tensor = None) -> torch.Tensor:
+        avg_usage = probs.mean(dim=(0, 1))
+        if target_dist is None:
+            target_dist = torch.full_like(avg_usage, 1.0 / avg_usage.numel())
+        eps = 1e-8
+        avg_usage = avg_usage + eps
+        target_dist = target_dist + eps
+        return F.kl_div(avg_usage.log(), target_dist, reduction="batchmean")
+
+
+# -----------------------------------------------------------------------------
+# Feed-Forward (Dense Path)
+# -----------------------------------------------------------------------------
+class FeedForward(nn.Module):
+    def __init__(self, embed_dim: int, hidden_dim: Optional[int] = None):
+        super().__init__()
+        hidden_dim = hidden_dim or 4 * embed_dim
+        self.linear1 = nn.Linear(embed_dim, hidden_dim)
+        self.linear2 = nn.Linear(hidden_dim, embed_dim)
+
+    def forward(self, x: torch.Tensor) -> torch.Tensor:
+        return self.linear2(F.gelu(self.linear1(x)))
+
+
+# -----------------------------------------------------------------------------
+# Grouped GEMM Superposition Gate (64–144 experts)
+# -----------------------------------------------------------------------------
+class GroupedGEMMSuperpositionGate(nn.Module):
+    def __init__(self, embed_dim: int, num_experts: int = 64, k: int = 2, hidden_dim: Optional[int] = None):
+        super().__init__()
+        self.embed_dim = embed_dim
+        self.hidden_dim = hidden_dim or 4 * embed_dim
+        self.num_experts = num_experts
+        self.k = k
+
+        self.w1 = nn.Parameter(torch.empty(num_experts, self.hidden_dim, embed_dim))
+        self.b1 = nn.Parameter(torch.empty(num_experts, self.hidden_dim))
+        self.w2 = nn.Parameter(torch.empty(num_experts, embed_dim, self.hidden_dim))
+        self.b2 = nn.Parameter(torch.empty(num_experts, embed_dim))
+
+        nn.init.xavier_uniform_(self.w1)
+        nn.init.zeros_(self.b1)
+        nn.init.xavier_uniform_(self.w2)
+        nn.init.zeros_(self.b2)
+
+    def forward(self, x: torch.Tensor, gate_weights: torch.Tensor) -> torch.Tensor:
+        """
+        Forward pass through grouped experts.
+
+        Note:
+            At 64 experts this Python loop is manageable, but at 144 experts
+            performance may degrade. A fused Triton/CUDA grouped GEMM kernel
+            should replace this loop in production for efficiency.
+        """
+        B, T, D = x.shape
+        E = gate_weights.size(-1)
+        if E != self.num_experts:
+            raise ValueError(f"Expected {self.num_experts} experts, got {E}")
+
+        topk_vals, topk_idx = torch.topk(gate_weights, self.k, dim=-1)
+        topk_w = F.softmax(topk_vals, dim=-1)
+
+        BT = B * T
+        x_flat = x.reshape(BT, D)
+        idx_flat = topk_idx.reshape(BT, self.k)
+        w_flat = topk_w.reshape(BT, self.k)
+
+        exp_positions = [[] for _ in range(E)]
+        exp_weights = [[] for _ in range(E)]
+
+        for slot in range(self.k):
+            expert_ids_slot = idx_flat[:, slot]
+            weights_slot = w_flat[:, slot]
+            for e in range(E):
+                mask = (expert_ids_slot == e)
+                if mask.any():
+                    pos_e = torch.nonzero(mask, as_tuple=False).squeeze(-1)
+                    exp_positions[e].append(pos_e)
+                    exp_weights[e].append(weights_slot[pos_e])
+
+        out_flat = torch.zeros(BT, D, device=x.device, dtype=x.dtype)
+        for e in range(E):
+            if not exp_positions[e]:
+                continue
+            pos_e = torch.cat(exp_positions[e], dim=0)
+            w_e = torch.cat(exp_weights[e], dim=0).unsqueeze(-1)
+            x_e = x_flat.index_select(0, pos_e)
+            h_e = F.linear(x_e, self.w1[e], self.b1[e])
+            h_e = F.gelu(h_e)
+            y_e = F.linear(h_e, self.w2[e], self.b2[e])
+            out_flat.index_add_(0, pos_e, y_e * w_e)
+
+        return out_flat.view(B, T, D)
+
+    def router_aux_loss(self, expert_logits: torch.Tensor, target_util: torch.Tensor = None) -> torch.Tensor:
+        probs = torch.softmax(expert_logits, dim=-1)
+        avg_util = probs.mean(dim=(0, 1))
+        if target_util is None:
+            target_util = torch.full_like(avg_util, 1.0 / avg_util.numel())
+        eps = 1e-8
+        avg_util = avg_util + eps
+        target_util = target_util + eps
+        return F.kl_div(avg_util.log(), target_util, reduction="batchmean")
+
+
+# -----------------------------------------------------------------------------
+# QPathformer Block
+# -----------------------------------------------------------------------------
+class QPathformerBlock(nn.Module):
+    def __init__(self, embed_dim: int, num_heads: int, num_experts: int, k: int, agent_name: str = "default"):
+        super().__init__()
+        self.attention = nn.MultiheadAttention(embed_dim, num_heads, batch_first=True)
+        self.attn_norm = nn.LayerNorm(embed_dim)
+        self.dense_ff = FeedForward(embed_dim)
+        self.super_ff = GroupedGEMMSuperpositionGate(embed_dim, num_experts=num_experts, k=k)
+
+        # Register the default agent as a real submodule so model.to(device) moves it.
+        self.default_agent = nn.Linear(embed_dim, embed_dim)
+        if agent_name == "default":
+            self.agent = self.default_agent
+        else:
+            raise ValueError(f"Unsupported agent_name for this runtime-safe build: {agent_name}")
+
+        self.agent_name = agent_name
+        AgentRegistry.register("default", self.default_agent)
+
+        self.scheduler = ThreeStateScheduler(embed_dim)
+        self.expert_gate = nn.Linear(embed_dim, num_experts)
+        self.ff_norm = nn.LayerNorm(embed_dim)
+
+    def forward(self, x: torch.Tensor):
+        attn_out, _ = self.attention(x, x, x)
+        x = self.attn_norm(x + attn_out)
+
+        path_probs = self.scheduler(x)
+        dense_prob = path_probs[..., 0].unsqueeze(-1)
+        super_prob = path_probs[..., 1].unsqueeze(-1)
+        agent_prob = path_probs[..., 2].unsqueeze(-1)
+
+        dense_out = self.dense_ff(x)
+        expert_logits = self.expert_gate(x)
+        expert_weights = F.softmax(expert_logits, dim=-1)
+        super_out = self.super_ff(x, expert_weights)
+
+        # Use the registered submodule directly.
+        agent_out = self.agent(x)
+
+        ff_out = dense_prob * dense_out + super_prob * super_out + agent_prob * agent_out
+        out = self.ff_norm(x + ff_out)
+
+        return out, path_probs, expert_logits
+
+
+# -----------------------------------------------------------------------------
+# QPathformer Model
+# -----------------------------------------------------------------------------
+class QPathformer(nn.Module):
+    """
+    Q-Pathformer model for 64–144 experts with grouped GEMM superposition gate.
+
+    Args:
+        vocab_size: size of the input vocabulary
+        embed_dim: embedding dimension
+        num_heads: number of attention heads
+        num_layers: number of QPathformer blocks to stack
+        num_experts: number of feed-forward experts in the superposition gate
+        k: number of experts to select per token
+        max_seq_len: maximum sequence length; used for positional embeddings
+        num_classes: number of output classes (for classification). If None,
+                     the model returns logits over the vocabulary size.
+        agent_name: name of the registered agent function
+    """
+
+    def __init__(
+        self,
+        vocab_size: int,
+        embed_dim: int,
+        num_heads: int,
+        num_layers: int,
+        num_experts: int,
+        k: int,
+        max_seq_len: int,
+        num_classes: Optional[int] = None,
+        agent_name: str = "default",
+    ):
+        super().__init__()
+        self.token_embed = nn.Embedding(vocab_size, embed_dim)
+
+        # Register positional encoding as a buffer so it moves cleanly with .to(device)
+        pe = self._build_positional_encoding(max_seq_len, embed_dim)
+        self.register_buffer("pos_embed", pe, persistent=True)
+
+        self.layers = nn.ModuleList([
+            QPathformerBlock(embed_dim, num_heads, num_experts, k, agent_name=agent_name)
+            for _ in range(num_layers)
+        ])
+
+        self.num_classes = num_classes
+        self.out_proj = nn.Linear(embed_dim, num_classes if num_classes is not None else vocab_size)
+
+    def _build_positional_encoding(self, max_len: int, d_model: int) -> torch.Tensor:
+        pe = torch.zeros(max_len, d_model)
+        position = torch.arange(0, max_len, dtype=torch.float32).unsqueeze(1)
+        div_term = torch.exp(torch.arange(0, d_model, 2, dtype=torch.float32) * (-math.log(10000.0) / d_model))
+        pe[:, 0::2] = torch.sin(position * div_term)
+        pe[:, 1::2] = torch.cos(position * div_term)
+        return pe
+
+    def forward(self, input_ids: torch.Tensor):
+        seq_len = input_ids.size(1)
+        if seq_len > self.pos_embed.size(0):
+            raise ValueError(f"Sequence length {seq_len} exceeds maximum {self.pos_embed.size(0)}")
+
+        pos_embed = self.pos_embed[:seq_len, :]
+        x = self.token_embed(input_ids) + pos_embed.unsqueeze(0)
+
+        all_path_probs, all_expert_logits = [], []
+        for layer in self.layers:
+            x, path_probs, expert_logits = layer(x)
+            all_path_probs.append(path_probs)
+            all_expert_logits.append(expert_logits)
+
+        logits = self.out_proj(x)
+        return logits, all_path_probs, all_expert_logits
+
+
+# -----------------------------------------------------------------------------
+# Training utilities
+# -----------------------------------------------------------------------------
+def train_qpathformer(
+    model: QPathformer,
+    data_loader: torch.utils.data.DataLoader,
+    optimizer: torch.optim.Optimizer,
+    criterion: nn.Module,
+    device: torch.device,
+    epochs: int = 1,
+    alpha_path: float = 0.01,
+    alpha_expert: float = 0.01,
+    run_id: str = "default_run"
+) -> dict:
+    model.to(device)
+    model.train()
+
+    manifest = {"run_id": run_id, "epochs": []}
+
+    for epoch in range(epochs):
+        total_main_loss, total_tokens = 0.0, 0
+        total_path_loss, total_expert_loss = 0.0, 0.0
+        last_path_probs, last_expert_logits = None, None
+
+        for input_ids, labels in data_loader:
+            input_ids, labels = input_ids.to(device), labels.to(device)
+            optimizer.zero_grad()
+
+            logits, all_path_probs, all_expert_logits = model(input_ids)
+            last_path_probs, last_expert_logits = all_path_probs, all_expert_logits
+
+            vocab_size = logits.size(-1)
+            loss_main = criterion(logits.view(-1, vocab_size), labels.view(-1))
+
+            num_layers = len(model.layers)
+            loss_path_router = sum(
+                layer.scheduler.router_aux_loss(p)
+                for layer, p in zip(model.layers, all_path_probs)
+            ) / num_layers
+            loss_expert_router = sum(
+                layer.super_ff.router_aux_loss(e)
+                for layer, e in zip(model.layers, all_expert_logits)
+            ) / num_layers
+
+            loss = loss_main + alpha_path * loss_path_router + alpha_expert * loss_expert_router
+            loss.backward()
+            optimizer.step()
+
+            total_main_loss += loss_main.item() * input_ids.numel()
+            total_tokens += input_ids.numel()
+            total_path_loss += loss_path_router.item()
+            total_expert_loss += loss_expert_router.item()
+
+        avg_main_loss = total_main_loss / total_tokens if total_tokens > 0 else float("nan")
+        print(
+            f"Epoch {epoch+1}/{epochs} "
+            f"- main loss: {avg_main_loss:.4f} "
+            f"- path KL: {total_path_loss:.4f} "
+            f"- expert KL: {total_expert_loss:.4f}"
+        )
+
+        if last_path_probs is not None and last_expert_logits is not None:
+            epoch_entry = {
+                "epoch": epoch + 1,
+                "loss_main": avg_main_loss,
+                "loss_path": total_path_loss,
+                "loss_expert": total_expert_loss,
+                "path_usage": {},
+                "expert_usage": {}
+            }
+            for i, path_probs in enumerate(last_path_probs):
+                avg_usage = path_probs.mean(dim=(0, 1)).detach().cpu().tolist()
+                epoch_entry["path_usage"][f"block_{i}"] = {
+                    "dense": avg_usage[0],
+                    "super": avg_usage[1],
+                    "agent": avg_usage[2],
+                }
+            for i, expert_logits in enumerate(last_expert_logits):
+                probs = torch.softmax(expert_logits, dim=-1)
+                avg_util = probs.mean(dim=(0, 1)).detach().cpu().tolist()
+                epoch_entry["expert_usage"][f"block_{i}"] = {
+                    f"expert_{j}": avg_util[j] for j in range(len(avg_util))
+                }
+            manifest["epochs"].append(epoch_entry)
+
+    return manifest
+
+
+# -----------------------------------------------------------------------------
+# JSON save helper
+# -----------------------------------------------------------------------------
+def save_manifest(manifest: dict, out_dir: str = "manifests"):
+    Path(out_dir).mkdir(parents=True, exist_ok=True)
+    run_id = manifest.get("run_id", "default_run")
+    out_path = Path(out_dir) / f"{run_id}_utilization.json"
+    with open(out_path, "w") as f:
+        json.dump(manifest, f, indent=2)
+    print(f"[Audit] Saved cumulative utilization manifest to {out_path}")
+
+
+# -----------------------------------------------------------------------------
+# __main__ block
+# -----------------------------------------------------------------------------
+if __name__ == "__main__":
+    vocab_size = 5000
+    embed_dim = 256
+    num_heads = 8
+    num_layers = 4
+    num_experts = 64
+    k = 2
+    max_seq_len = 256
+    num_classes = None
+
+    model = QPathformer(
+        vocab_size=vocab_size,
+        embed_dim=embed_dim,
+        num_heads=num_heads,
+        num_layers=num_layers,
+        num_experts=num_experts,
+        k=k,
+        max_seq_len=max_seq_len,
+        num_classes=num_classes,
+    )
+
+    dataset_size = 512
+    seq_len = 128
+    data = torch.randint(0, vocab_size, (dataset_size, seq_len))
+    input_sequences = data[:, :-1]
+    target_sequences = data[:, 1:]
+    dataset = torch.utils.data.TensorDataset(input_sequences, target_sequences)
+    loader = torch.utils.data.DataLoader(dataset, batch_size=8, shuffle=True)
+
+    optimizer = torch.optim.Adam(model.parameters(), lr=1e-3)
+    criterion = nn.CrossEntropyLoss()
+
+    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+    manifest = train_qpathformer(
+        model, loader, optimizer, criterion, device,
+        epochs=3, alpha_path=0.01, alpha_expert=0.01, run_id="trial64"
+    )
+
+    manifest["config"] = {
+        "vocab_size": vocab_size,
+        "embed_dim": embed_dim,
+        "hidden_dim": 4 * embed_dim,
+        "num_heads": num_heads,
+        "num_layers": num_layers,
+        "num_experts": num_experts,
+        "k": k,
+        "k_top": k,
+        "max_seq_len": max_seq_len,
+        "batch_size": 8,
+        "learning_rate": 1e-3,
+        "alpha_path": 0.01,
+        "alpha_expert": 0.01,
+        "epochs": 3,
+        "dataset_size": dataset_size,
+        "seq_len": seq_len,
+        "device": str(device),
+        "grouped_gate": True,
+        "scheduler_temperature": 1.0,
+        "scheduler_min_agent_p": 0.0,
+        "optimizer": "Adam",
+        "loss_function": "CrossEntropyLoss",
+        "run_id": "trial64"
+    }
+
+    save_manifest(manifest)

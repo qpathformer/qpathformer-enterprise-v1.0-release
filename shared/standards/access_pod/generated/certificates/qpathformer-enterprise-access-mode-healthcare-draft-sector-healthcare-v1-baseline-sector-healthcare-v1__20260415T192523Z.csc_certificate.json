@@ -1,0 +1,360 @@
+{
+  "schema_version": "1.0.0",
+  "csc_id": "csc_qpathformer-enterprise-access-mode-healthcare-draft-sector-healthcare-v1-baseline_20260415T192523Z",
+  "issued_at": "2026-04-15T19:25:23Z",
+  "expires_at": "2026-10-12T19:25:23Z",
+  "status": "active",
+  "issuer": {
+    "org_id": "policyofdevelopments.qpathformer",
+    "name": "Policy of Developments - Q-Pathformer Enterprise",
+    "key_id": "kid-qpathformer-enterprise-demo-001",
+    "contact": {
+      "email": "registry@policyofdevelopments.org",
+      "web": "https://policyofdevelopments.org"
+    },
+    "jurisdiction": "AU"
+  },
+  "subject": {
+    "subject_id": "qpathformer_enterprise_access_mode_healthcare_draft__sector-healthcare-v1-baseline",
+    "name": "Q-Pathformer Enterprise Access-Mode Healthcare Draft (Healthcare Baseline)",
+    "type": "platform",
+    "owner": {
+      "org_id": "policyofdevelopments",
+      "name": "Policy of Developments"
+    },
+    "version": "v1.0"
+  },
+  "scope": {
+    "ai_types": [
+      "LLM",
+      "agentic"
+    ],
+    "deployment": "hybrid",
+    "jurisdictions": [
+      "AU"
+    ],
+    "sectors": [
+      "healthcare"
+    ],
+    "risk_tier_declared": "high",
+    "use_constraints": [
+      "No patient-impacting action without qualified human oversight.",
+      "Healthcare adoption remains governed until evidence review is complete."
+    ]
+  },
+  "assessment": {
+    "sapp": {
+      "maturity_level": 5,
+      "run_id": "RTRUN-llm-runtime-registration-check-20260413T095208Z-77a538bc",
+      "run_at": "2026-04-13T09:52:08Z",
+      "environment": "preprod"
+    },
+    "factor_scores": {
+      "f6_1": {
+        "score": 95.0,
+        "confidence": 0.5,
+        "telemetry_window": {
+          "start": "2026-04-12T11:00:45Z",
+          "end": "2026-04-13T09:52:08Z"
+        },
+        "top_metrics": [
+          {
+            "metric_id": "SEC_EVIDENCE_INTEGRITY_PASS",
+            "value": 1.0,
+            "unit": "ratio",
+            "weight": 0.5,
+            "normalized": 1.0,
+            "direction": "higher_is_better"
+          },
+          {
+            "metric_id": "SEC_OUTPUT_SAFETY_VIOL_RATE",
+            "value": 0.001,
+            "unit": "ratio",
+            "weight": 0.5,
+            "normalized": 0.9,
+            "direction": "lower_is_better"
+          }
+        ]
+      },
+      "f6_2": {
+        "score": 88.9,
+        "confidence": 0.39,
+        "telemetry_window": {
+          "start": "2026-04-12T11:00:45Z",
+          "end": "2026-04-13T09:52:08Z"
+        },
+        "top_metrics": [
+          {
+            "metric_id": "HARD_TELEMETRY_COMPLETENESS",
+            "value": 1.0,
+            "unit": "ratio",
+            "weight": 0.5,
+            "normalized": 1.0,
+            "direction": "higher_is_better"
+          },
+          {
+            "metric_id": "HARD_PRIVACY_TEST_PASS_RATE",
+            "value": 0.97,
+            "unit": "ratio",
+            "weight": 0.5,
+            "normalized": 0.7778,
+            "direction": "higher_is_better"
+          }
+        ]
+      },
+      "f6_3": {
+        "score": 76.5,
+        "confidence": 0.52,
+        "telemetry_window": {
+          "start": "2026-04-12T11:00:45Z",
+          "end": "2026-04-13T09:52:08Z"
+        },
+        "top_metrics": [
+          {
+            "metric_id": "COMP_POLICY_TRACE_COVERAGE",
+            "value": 0.978,
+            "unit": "ratio",
+            "weight": 0.5,
+            "normalized": 0.78,
+            "direction": "higher_is_better"
+          },
+          {
+            "metric_id": "COMP_MODEL_LINEAGE_COVERAGE",
+            "value": 0.975,
+            "unit": "ratio",
+            "weight": 0.5,
+            "normalized": 0.75,
+            "direction": "higher_is_better"
+          }
+        ]
+      },
+      "f6_4": {
+        "score": 80.1,
+        "confidence": 0.55,
+        "telemetry_window": {
+          "start": "2026-04-12T11:00:45Z",
+          "end": "2026-04-13T09:52:08Z"
+        },
+        "top_metrics": [
+          {
+            "metric_id": "GOV_HIL_REVIEW_COVERAGE",
+            "value": 0.9802,
+            "unit": "ratio",
+            "weight": 0.5,
+            "normalized": 0.802,
+            "direction": "higher_is_better"
+          },
+          {
+            "metric_id": "GOV_AUDIT_EVIDENCE_COVERAGE",
+            "value": 0.98,
+            "unit": "ratio",
+            "weight": 0.5,
+            "normalized": 0.8,
+            "direction": "higher_is_better"
+          }
+        ]
+      },
+      "f6_5": {
+        "score": 72.7,
+        "confidence": 0.37,
+        "telemetry_window": {
+          "start": "2026-04-12T11:00:45Z",
+          "end": "2026-04-13T09:52:08Z"
+        },
+        "top_metrics": [
+          {
+            "metric_id": "TRN_EXPLAIN_COMPLETE",
+            "value": 1.0,
+            "unit": "score",
+            "weight": 0.4545,
+            "normalized": 1.0,
+            "direction": "higher_is_better"
+          },
+          {
+            "metric_id": "TRN_HARM_EVENT_RATE",
+            "value": 0.5,
+            "unit": "per_10k",
+            "weight": 0.5455,
+            "normalized": 0.5,
+            "direction": "lower_is_better"
+          }
+        ]
+      },
+      "f6_6": {
+        "score": 93.2,
+        "confidence": 0.46,
+        "telemetry_window": {
+          "start": "2026-04-12T11:00:45Z",
+          "end": "2026-04-13T09:52:08Z"
+        },
+        "top_metrics": [
+          {
+            "metric_id": "SECTOR_AUDIT_INTEROP_SCORE",
+            "value": 93.5,
+            "unit": "score",
+            "weight": 0.5,
+            "normalized": 0.94,
+            "direction": "higher_is_better"
+          },
+          {
+            "metric_id": "SECTOR_POLICY_PASS_RATE",
+            "value": 0.97,
+            "unit": "ratio",
+            "weight": 0.5,
+            "normalized": 0.9231,
+            "direction": "higher_is_better"
+          }
+        ]
+      }
+    },
+    "weights": {
+      "profile_id": "sector.healthcare.v1",
+      "f6_1": 0.22,
+      "f6_2": 0.14,
+      "f6_3": 0.12,
+      "f6_4": 0.24,
+      "f6_5": 0.16,
+      "f6_6": 0.12
+    },
+    "composite_score": 84.6,
+    "csc_level": 4,
+    "risk_tier": "high",
+    "gates": {
+      "no_critical_failures": true,
+      "telemetry_minimum_met": true,
+      "f6_1_min_met": true,
+      "f6_4_min_met": true,
+      "all_factors_min_met": true,
+      "sector_validation_met": true
+    },
+    "iso_alignment": {
+      "iso_iec_42001": {
+        "status": "partial",
+        "notes": "Healthcare-oriented oversight and governance traces are present, but external certification is still pending.",
+        "controls_mapped": [
+          "AIMS-governance",
+          "AIMS-assurance",
+          "AIMS-improvement-loop"
+        ]
+      },
+      "iso_iec_23894": {
+        "status": "aligned",
+        "notes": "Risk review, human review coverage, and freeze readiness are present in the controlled healthcare flow.",
+        "controls_mapped": [
+          "risk-identify",
+          "risk-analyze",
+          "risk-treat",
+          "risk-monitor"
+        ]
+      },
+      "iso_iec_22989": {
+        "status": "aligned",
+        "notes": "Healthcare bridge artifacts preserve consistent terminology for system, model, training, and runtime oversight.",
+        "controls_mapped": [
+          "ai-system",
+          "ai-model",
+          "training",
+          "inference"
+        ]
+      }
+    }
+  },
+  "evidence": {
+    "bundle_id": "bundle_qpathformer-enterprise-access-mode-healthcare-draft-sector-healthcare-v1-baseline_20260415T192523Z",
+    "digest_alg": "sha256",
+    "digest": "5d36bf8809225daf42c8c437d4aed5e1a8f0c655a7974f89b56650e618c8252b",
+    "items": [
+      {
+        "type": "telemetry_export",
+        "uri": "file:///C:/v1.0-qpathformer_enterprise/path_2_access_mode_canonical/02_signals/runtime_generated/signal_runtime_20260413T095208Z_77a538bc.json",
+        "digest_alg": "sha256",
+        "digest": "becf24024037d079897a9e7a26ad266230ec88ad7000112645126389d552825f",
+        "content_type": "application/json",
+        "created_at": "2026-04-13T09:52:08Z"
+      },
+      {
+        "type": "attestation",
+        "uri": "file:///C:/v1.0-qpathformer_enterprise/shared/registry/run_references/RTRUN-llm-runtime-registration-check-20260413T095208Z-77a538bc.runtime_signal_run_reference.json",
+        "digest_alg": "sha256",
+        "digest": "8673eadde39ff02dc0000b1d7718765f1df02575f59921cbcc2f448876aaa18d",
+        "content_type": "application/json",
+        "created_at": "2026-04-13T09:52:08Z"
+      },
+      {
+        "type": "policy_bundle",
+        "uri": "file:///C:/v1.0-qpathformer_enterprise/shared/registry/run_registry.json",
+        "digest_alg": "sha256",
+        "digest": "74912a0991f069cb9e63d011cd281560ceb818a4f7043cf3e046184b5bd8813f",
+        "content_type": "application/json",
+        "created_at": "2026-04-13T09:52:08Z"
+      },
+      {
+        "type": "human_review_log",
+        "uri": "file:///C:/v1.0-qpathformer_enterprise/path_2_access_mode_canonical/03_dataset/candidates/session-run-id2-20260411-1400-qpath-tr008-run/QPDS-PACKAGE-ID2_PREP/id2-20260411-1400-qpath-tr008-run__v10-1-path2-source-bridge__20260412T104656Z/state2_review.json",
+        "digest_alg": "sha256",
+        "digest": "87bf11e70b0d6f0627e19af0ed1a09f2722f6cb1bd6c2f15b8ae9c8aab533e9a",
+        "content_type": "application/json",
+        "created_at": "2026-04-12T11:00:45Z"
+      },
+      {
+        "type": "attestation",
+        "uri": "file:///C:/v1.0-qpathformer_enterprise/path_2_access_mode_canonical/03_dataset/candidates/session-run-id2-20260411-1400-qpath-tr008-run/QPDS-PACKAGE-ID2_PREP/id2-20260411-1400-qpath-tr008-run__v10-1-path2-source-bridge__20260412T104656Z/state2_promotion_decision.json",
+        "digest_alg": "sha256",
+        "digest": "0606c9abac99d9448c4abae0acecc23d075aaeb9214398cd8114ab0f8367cb30",
+        "content_type": "application/json",
+        "created_at": "2026-04-12T11:00:45Z"
+      },
+      {
+        "type": "attestation",
+        "uri": "file:///C:/v1.0-qpathformer_enterprise/path_2_access_mode_canonical/03_dataset/candidates/session-run-id2-20260411-1400-qpath-tr008-run/QPDS-PACKAGE-ID2_PREP/id2-20260411-1400-qpath-tr008-run__v10-1-path2-source-bridge__20260412T104656Z/state1_handoff.json",
+        "digest_alg": "sha256",
+        "digest": "9c3e5b2eff9fa41eb95c587fa8937918857ad9c8c6316c951149f082ec4a9461",
+        "content_type": "application/json",
+        "created_at": "2026-04-12T11:00:45Z"
+      },
+      {
+        "type": "attestation",
+        "uri": "file:///C:/v1.0-qpathformer_enterprise/path_2_access_mode_canonical/03_dataset/candidates/session-run-id2-20260411-1400-qpath-tr008-run/QPDS-PACKAGE-ID2_PREP/id2-20260411-1400-qpath-tr008-run__v10-1-path2-source-bridge__20260412T104656Z/freeze/state1_freeze.json",
+        "digest_alg": "sha256",
+        "digest": "416e59fc3081c45eaee6700a70b58efb4caad11f70d2f10172d09dc15179a8e8",
+        "content_type": "application/json",
+        "created_at": "2026-04-12T11:00:45Z"
+      },
+      {
+        "type": "dataset_card",
+        "uri": "file:///C:/v1.0-qpathformer_enterprise/path_2_access_mode_canonical/03_dataset/training_packages/id2-20260411-1400-qpath-tr008-run__v10-1-path2-source-bridge__20260412T104656Z/state1_training_manifest.json",
+        "digest_alg": "sha256",
+        "digest": "bfd5d423e7bc45690272edc2deda4f82d3ecea5cf7d0fb1d4eac2abd602ad701",
+        "content_type": "application/json",
+        "created_at": "2026-04-12T11:00:45Z"
+      },
+      {
+        "type": "simulation_report",
+        "uri": "file:///C:/v1.0-qpathformer_enterprise/shared/models/evaluation/model_runs/MRUN-grouped_sparse_e64-20260415T192312Z-v1repair/benchmark_summary.json",
+        "digest_alg": "sha256",
+        "digest": "825884b9e3d3939633f243320fb1133ef585981512605697033ecc52cf1c2c78",
+        "content_type": "application/json",
+        "created_at": "2026-04-15T19:23:59Z"
+      },
+      {
+        "type": "model_card",
+        "uri": "file:///C:/v1.0-qpathformer_enterprise/shared/models/evaluation/model_runs/MRUN-grouped_sparse_e64-20260415T192312Z-v1repair/model_run_manifest.json",
+        "digest_alg": "sha256",
+        "digest": "5a567fe09efea2baccc546140a8aa0dff94d0e7657b7c00c8df2d17dbd5b1e18",
+        "content_type": "application/json",
+        "created_at": "2026-04-15T19:23:12Z"
+      }
+    ]
+  },
+  "signature": {
+    "alg": "EdDSA",
+    "kid": "kid-qpathformer-enterprise-demo-001",
+    "canonicalization": "JCS",
+    "signed_payload_digest": {
+      "digest_alg": "sha256",
+      "digest": "e8d71bba60a4c3c30e8e9f8c23babad5e0fa83293c94ddc6c7b531aa840346b6"
+    },
+    "signature": "UNSIGNED_PENDING_ENTERPRISE_REVIEW",
+    "signed_at": "2026-04-15T19:25:23Z"
+  }
+}

@@ -1,0 +1,79 @@
+{
+  "handoff_id": "783ea5e1-29d5-4aa4-89a9-42b38784793e",
+  "handoff_timestamp": "2026-04-18T04:05:30Z",
+  "handoff_scope": "STATE_1",
+  "package_dir": "C:\\v1.0-qpathformer_enterprise\\path_2_access_mode_canonical\\03_dataset\\candidates\\session-run-llm-runtime-session\\QPDS-PACKAGE-ID2_PREP\\llm-runtime-session__v10-0-runtime-routing-validation__20260418T040324Z",
+  "dataset_path": "C:\\v1.0-qpathformer_enterprise\\path_2_access_mode_canonical\\03_dataset\\candidates\\session-run-llm-runtime-session\\QPDS-PACKAGE-ID2_PREP\\llm-runtime-session__v10-0-runtime-routing-validation__20260418T040324Z\\dataset.jsonl",
+  "manifest_path": "C:\\v1.0-qpathformer_enterprise\\path_2_access_mode_canonical\\03_dataset\\candidates\\session-run-llm-runtime-session\\QPDS-PACKAGE-ID2_PREP\\llm-runtime-session__v10-0-runtime-routing-validation__20260418T040324Z\\manifest.json",
+  "review_path": "C:\\v1.0-qpathformer_enterprise\\path_2_access_mode_canonical\\03_dataset\\candidates\\session-run-llm-runtime-session\\QPDS-PACKAGE-ID2_PREP\\llm-runtime-session__v10-0-runtime-routing-validation__20260418T040324Z\\state2_review.json",
+  "promotion_path": "C:\\v1.0-qpathformer_enterprise\\path_2_access_mode_canonical\\03_dataset\\candidates\\session-run-llm-runtime-session\\QPDS-PACKAGE-ID2_PREP\\llm-runtime-session__v10-0-runtime-routing-validation__20260418T040324Z\\state2_promotion_decision.json",
+  "posture": {
+    "access_mode": "ID_2",
+    "non_authoritative": true,
+    "governance_first": true,
+    "automatic_state1_freeze": false,
+    "automatic_registry_mutation": false
+  },
+  "package_summary": {
+    "dataset_version": "llm-runtime-session__v10-0-runtime-routing-validation__20260418T040324Z",
+    "candidate_count": 2,
+    "source_record_count": 2,
+    "target_model": {
+      "parameter_class": "20B",
+      "role": "enterprise"
+    },
+    "routing_profile": {
+      "routing_decisions": [
+        "SEND_TO_STATE_2_REVIEW"
+      ],
+      "target_states": [
+        "STATE_2"
+      ],
+      "all_candidates_state2_review_ready": true
+    }
+  },
+  "review_summary": {
+    "review_id": "23ba3b6d-4e58-4479-8d5d-c37bf68a30b9",
+    "review_decision": "APPROVE_STATE_2_REVIEW_PACKAGE",
+    "review_approved": true
+  },
+  "promotion_summary": {
+    "promotion_id": "3d22c40e-09a3-492a-a551-51ff4d868ca9",
+    "promotion_decision": "HOLD_STATE2_PACKAGE",
+    "promotion_approved": false
+  },
+  "thresholds": {
+    "min_candidates": 4,
+    "require_approved_review": true,
+    "require_approved_promotion": true,
+    "max_routing_mismatches": 0,
+    "max_missing_content": 0
+  },
+  "handoff_metrics": {
+    "candidate_count": 2,
+    "review_ready_ratio": 1.0,
+    "routing_mismatch_count": 0,
+    "missing_content_count": 0
+  },
+  "decision": {
+    "approved": false,
+    "decision": "HOLD_STATE2_PACKAGE_FOR_HANDOFF",
+    "reasons": [
+      "candidate_count_below_threshold:2<4",
+      "state2_promotion_not_approved"
+    ]
+  },
+  "exceptions": {
+    "routing_mismatches": [],
+    "missing_content_candidate_ids": []
+  },
+  "notes": "Path 2 STATE_1 handoff from the three-path root",
+  "written": true,
+  "attempted_packages": [
+    {
+      "package_dir": "C:\\v1.0-qpathformer_enterprise\\path_2_access_mode_canonical\\03_dataset\\candidates\\session-run-llm-runtime-session\\QPDS-PACKAGE-ID2_PREP\\llm-runtime-session__v10-0-runtime-routing-validation__20260418T040324Z",
+      "status": "selected",
+      "reason": "first_handoff_candidate"
+    }
+  ]
+}

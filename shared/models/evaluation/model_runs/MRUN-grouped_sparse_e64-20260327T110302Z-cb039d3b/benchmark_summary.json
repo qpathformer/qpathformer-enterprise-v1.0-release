@@ -1,0 +1,89 @@
+{
+  "benchmark_summary_version": "qpath_variant_benchmark_v1.1",
+  "created_at_utc": "2026-03-27T19:22:22Z",
+  "status": "failed",
+  "benchmark_mode": "timed_run",
+  "model_run_id": "MRUN-grouped_sparse_e64-20260327T110302Z-cb039d3b",
+  "manifest_path": "evaluation/model_runs/MRUN-grouped_sparse_e64-20260327T110302Z-cb039d3b/model_run_manifest.json",
+  "model": {
+    "variant": "grouped_sparse_e64",
+    "role": "enterprise_target",
+    "source_file": "models/qpathformer/enterprise/qpathformer_v0_9_grouped_sparse_e64.py",
+    "parameter_profile": "e64"
+  },
+  "run": {
+    "kind": "benchmark",
+    "device": "unknown",
+    "dtype": "float32",
+    "seed": 42,
+    "dataset_ref": null,
+    "notes": null
+  },
+  "configuration": {
+    "seq_len": null,
+    "batch_size": null,
+    "micro_batch_size": null,
+    "epochs": null,
+    "steps": null,
+    "lr": null,
+    "weight_decay": null,
+    "top_k": null,
+    "num_experts": null
+  },
+  "python_surface": {
+    "classes": [
+      "AgentRegistry",
+      "FeedForward",
+      "GroupedGEMMSuperpositionGate",
+      "QPathformer",
+      "QPathformerBlock",
+      "ThreeStateScheduler"
+    ],
+    "functions": [
+      "__init__",
+      "_init_positional_encoding",
+      "forward",
+      "get",
+      "register",
+      "router_aux_loss",
+      "save_manifest",
+      "train_qpathformer"
+    ],
+    "has_main_guard": true,
+    "imports_torch": true,
+    "imports_argparse": false
+  },
+  "command": [
+    "C:\\Users\\Alnotrea\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+    "C:\\qpathformer_enterprise\\models\\qpathformer\\enterprise\\qpathformer_v0_9_grouped_sparse_e64.py"
+  ],
+  "execution": {
+    "started_at_utc": "2026-03-27T19:21:22Z",
+    "completed_at_utc": "2026-03-27T19:22:22Z",
+    "duration_seconds": 60.128897,
+    "timed_out": true,
+    "return_code": null,
+    "stdout_lines": [],
+    "stderr_lines": [
+      "C:\\Users\\Alnotrea\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\torch\\_subclasses\\functional_tensor.py:307: UserWarning: Failed to initialize NumPy: No module named 'numpy' (Triggered internally at C:\\actions-runner\\_work\\pytorch\\pytorch\\pytorch\\torch\\csrc\\utils\\tensor_numpy.cpp:84.)",
+      "  cpu = _conversion_method_template(device=torch.device(\"cpu\"))",
+      "",
+      "[TIMEOUT] Exceeded 60 seconds."
+    ]
+  },
+  "artifacts": {
+    "summary_path": "evaluation/model_runs/MRUN-grouped_sparse_e64-20260327T110302Z-cb039d3b/benchmark_summary.json"
+  },
+  "notes": [
+    "Benchmark executed from model run manifest.",
+    "Use ast_check first for dependency-free structural triage.",
+    "Use import_check after the Python environment is prepared.",
+    "Use help_check only when CLI compatibility is expected or under test.",
+    "Use timed_run only after variant CLI/runtime expectations are confirmed."
+  ],
+  "diagnosis": {
+    "failure_class": "timeout",
+    "likely_cause": "execution_exceeded_timeout",
+    "recommended_next_step": "Increase timeout or reduce workload before rerunning."
+  }
+}

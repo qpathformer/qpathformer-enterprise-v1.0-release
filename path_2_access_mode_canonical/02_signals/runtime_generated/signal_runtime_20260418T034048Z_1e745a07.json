@@ -1,0 +1,81 @@
+{
+  "signal_id": "1e745a07-d08c-401c-9b4c-465598f8f7d5",
+  "timestamp": "2026-04-18T03:40:48Z",
+  "access_mode_primary": "ID_2",
+  "schema_version": "v0.2-dev",
+  "interaction_type": "enterprise_only",
+  "session_id": "llm-runtime-session",
+  "model": {
+    "model_id": "gpt-oss:20b",
+    "parameter_class": "20B",
+    "role": "enterprise",
+    "endpoint_type": "local",
+    "invocation_reason": "runtime_structuring",
+    "version": "v10.0-runtime-routing-validation"
+  },
+  "source": {
+    "initiator": "enterprise-tier",
+    "amplifier": null
+  },
+  "input": {
+    "prompt": "Summarize runtime governance signals for the current Access-Mode session."
+  },
+  "signal": {
+    "raw_output": "{\"role\": \"Q_PATHFORMER_ENTERPRISE_TIER\", \"primary_function\": \"Summarizes and structures runtime governance signals for the current Access-Mode session.\", \"governance_flags\": [\"CONTEXT_BOUND\", \"REQUIRES_VALIDATION\"], \"lifecycle_entry_state\": \"STATE_3\", \"evaluation_focus\": [\"signal integrity\", \"access mode compliance\", \"structuring quality\"]}",
+    "structured_summary": "Summarizes and structures runtime governance signals for the current Access-Mode session. Evaluation focus: signal integrity, access mode compliance, structuring quality. Lifecycle entry remains STATE_3 under provisional runtime containment.",
+    "tags": [
+      "llm_generated",
+      "enum_locked",
+      "runtime_emitted",
+      "context_bound",
+      "requires_validation",
+      "signal_integrity",
+      "access_mode_compliance",
+      "structuring_quality"
+    ]
+  },
+  "metrics": {
+    "coherence": 0.8914,
+    "novelty": 0.613,
+    "stability": 0.846,
+    "ambiguity": 0.0
+  },
+  "maturity": "LEVEL_5",
+  "governance_flags": {
+    "provisional": true,
+    "context_bound": true,
+    "requires_validation": true,
+    "promotion_blocked": true
+  },
+  "authorization": {
+    "state2_candidate_allowed": true,
+    "fine_tuning_allowed": false,
+    "human_review_required": true
+  },
+  "validation": {
+    "candidate_for_validation": true,
+    "validation_requested": true,
+    "validation_reasons": [
+      "candidate_ready_for_state2_review"
+    ],
+    "validation_engine_version": "v10.0"
+  },
+  "lifecycle": {
+    "state": "STATE_3",
+    "eligible_for_state_2": true,
+    "routing_decision": "SEND_TO_STATE_2_REVIEW",
+    "target_state": "STATE_2",
+    "routing_reasons": [
+      "all_state2_review_gates_passed"
+    ]
+  },
+  "routing_trace": {
+    "engine_version": "v10.0",
+    "decision": "SEND_TO_STATE_2_REVIEW",
+    "target_state": "STATE_2",
+    "eligible_for_state_2": true,
+    "reasons": [
+      "all_state2_review_gates_passed"
+    ]
+  }
+}

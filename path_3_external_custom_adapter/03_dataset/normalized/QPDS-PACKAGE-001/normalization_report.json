@@ -1,0 +1,425 @@
+{
+  "normalization_report_version": "v13.2",
+  "generated_at": "2026-04-18T05:12:48Z",
+  "package_id": "QPDS-PACKAGE-001",
+  "source_file_count": 6,
+  "normalized_record_count": 6,
+  "artifact_type_counts": {
+    "module_record": 2,
+    "session_record": 2,
+    "freeze_note": 1,
+    "hash_manifest": 1
+  },
+  "hash_verification_overall_status": "ok",
+  "warnings": [],
+  "defaults_applied": [
+    "authorization defaulted to restricted posture",
+    "lifecycle initialized to STATE_3",
+    "no training eligibility inferred from structure"
+  ],
+  "non_claims_preserved": [
+    "adapter ingestion does not imply authorization",
+    "adapter ingestion does not imply training eligibility",
+    "structured intake does not imply validation or approval"
+  ],
+  "preview_count": 2,
+  "preview_records": [
+    {
+      "onboarding_record_version": "v13.2",
+      "onboarding_record_id": "QPDS-PACKAGE-001::module_03_baseline.canonical.json",
+      "package_id": "QPDS-PACKAGE-001",
+      "artifact_type": "module_record",
+      "bundle_role": "canonical_record",
+      "source_mode_detected": "ID_2_frozen_under_ID_3",
+      "normalization_status": "normalized",
+      "source_artifact": {
+        "file_name": "module_03_baseline.canonical.json",
+        "file_role": "module_baseline",
+        "source_path": "C:\\v1.0-qpathformer_enterprise\\path_3_external_custom_adapter\\01_source\\inbound\\QPDS-PACKAGE-001\\module_03_baseline.canonical.json"
+      },
+      "provenance": {
+        "source_package_id": "QPDS-PACKAGE-001",
+        "source_paths": [
+          "C:\\v1.0-qpathformer_enterprise\\path_3_external_custom_adapter\\01_source\\inbound\\QPDS-PACKAGE-001\\module_03_baseline.canonical.json"
+        ],
+        "hash_present": true,
+        "hash_sha256": "bc1c3511440e0aaa38b64bd17670455deb37f829e7ae99f7516f780938fd3aad",
+        "source_hash_status": "match",
+        "freeze_note_present": true,
+        "freeze_timestamp": "2026-03-22T06:30:00Z",
+        "project_local_bundle": true
+      },
+      "authorization_context": {
+        "fine_tuning_allowed": false,
+        "external_training_allowed": false,
+        "human_review_required": true,
+        "authorization_inherited": false,
+        "authorization_source": "default_restricted_posture"
+      },
+      "governance_flags": {
+        "signals_not_decisions": true,
+        "non_certifying": true,
+        "context_bound": true,
+        "containment_required": true,
+        "human_decision_required": true
+      },
+      "lifecycle": {
+        "state": "STATE_3",
+        "eligible_for_state_2": false,
+        "routing_decision": "HOLD_IN_STATE_3"
+      },
+      "normalized_payload": {
+        "record_class": "non_inspection_module_record",
+        "payload": {
+          "schema_version": "id2_records_v0.1",
+          "record_class": "non_inspection_module_record",
+          "access_mode_primary": "ID_2",
+          "inspection_status": "frozen_under_ID_3",
+          "intended_use": "Operational reasoning capture; signals not decisions; non-inspection.",
+          "human_decision_required": true,
+          "module": {
+            "module_id": "03",
+            "module_title": "Q-Pathformer Dataset Lifecycle Packaging Baseline",
+            "source_module_path": "docs/modules-v2/module_03_signal_capture_runtime_pipeline.md",
+            "source_exemplar_path": "docs/modules-v2/module_03_signal_capture_runtime_pipeline.md"
+          },
+          "inputs": {
+            "references": [
+              "datasets/QPDS-PACKAGE-001/datasets/dataset.jsonl",
+              "datasets/QPDS-PACKAGE-001/datasets/manifest.json",
+              "datasets/pre_freeze/QPDS-PACKAGE-001/prepared_freeze_manifest.json"
+            ],
+            "scenario_seeds": [
+              "Governed dataset package assembled with candidate_count=3",
+              "Pre-freeze normalization applied to governance records"
+            ],
+            "stressors": [
+              "Cross-record governance consistency",
+              "Deterministic packaging",
+              "Freeze-readiness verification"
+            ],
+            "context_notes": "Baseline canonical record for the first governed dataset package prior to ID_3 freeze."
+          },
+          "captures": {
+            "objective": "Capture the baseline package posture before ID_3 freeze while preserving non-authoritative, signals-not-decisions semantics.",
+            "scope_in": [
+              "Dataset package assembly",
+              "Governance artifact normalization",
+              "Pre-freeze validation",
+              "Deterministic hashing preparation"
+            ],
+            "scope_out": [
+              "Compliance determination",
+              "Certification or approval",
+              "Operational deployment authorization",
+              "External regulatory conclusion"
+            ],
+            "assumptions": [
+              "Dataset rows and manifest candidate_count are reconciled",
+              "Governance artifacts reflect contained-use posture",
+              "Freeze inputs are local to this package and not imported as external freeze evidence"
+            ],
+            "definitions": {},
+            "evidence_to_capture": [
+              "Package dataset row count",
+              "Manifest candidate count",
+              "Passport governance invariants",
+              "Routing containment checks",
+              "Authorization contained-use status",
+              "Lineage informative-only assertions"
+            ],
+            "method_steps": [],
+            "controls_guardrails": [
+              "Signals not decisions",
+              "Non-certifying posture preserved",
+              "Containment principle preserved",
+              "No approval language",
+              "No silent count mismatch"
+            ]
+          },
+          "simulation_runs": [
+            {
+              "run_id": "RUN-BASELINE-01",
+              "scenario_summary": "Baseline package freeze-readiness validation for QPDS-PACKAGE-001 with reconciled dataset, manifest, admission, and governance records.",
+              "stress_conditions": [
+                "Fail-closed governance checks",
+                "Cross-record linkage enforcement",
+                "Pre-freeze normalization"
+              ],
+              "branch_points": [
+                "Whether governance records require normalization before freeze",
+                "Whether canonical inputs are project-local or externally reused",
+                "Whether package counts reconcile cleanly"
+              ],
+              "signals_observed": [
+                "Package assembled successfully under STATE_3",
+                "Pre-freeze report marked freeze_ready=true",
+                "Governance records normalized into pre_freeze surface"
+              ],
+              "fragility_points": [
+                "Potential reporting mismatch between admission and packaging metadata",
+                "Potential ambiguity between original governance files and normalized governance freeze inputs"
+              ],
+              "authority_drift_flags": [],
+              "uncertainty_notes": [
+                "Freeze status does not imply adequacy or approval",
+                "Canonical artifacts are packaging evidence, not governance decisions"
+              ],
+              "escalation_triggers": [
+                "Hash mismatch on canonical artifacts",
+                "Dataset row count mismatch",
+                "Governance invariant missing"
+              ],
+              "stop_or_reset_events": [
+                "No stop or reset required",
+                "package remained freeze-ready after normalization"
+              ],
+              "ethical_constructs": {
+                "tensions": [
+                  "Packaging completeness vs governance conservatism",
+                  "Freeze readiness vs interpretive overreach"
+                ],
+                "affected_parties": [
+                  "Package maintainer",
+                  "Governance reviewer",
+                  "Future inspection reader"
+                ],
+                "potential_harms": [
+                  "Mistaking freeze for approval",
+                  "Treating packaging evidence as decision authority"
+                ],
+                "tradeoffs_noted": [
+                  "Traceability vs simplicity",
+                  "Strictness vs speed"
+                ]
+              },
+              "stress_category_tags": [
+                "authority",
+                "traceability",
+                "containment"
+              ]
+            }
+          ],
+          "observations": null,
+          "uncertainty_notes": null,
+          "escalation_triggers": null,
+          "validation": {
+            "misalignment_tests_run": [],
+            "verification_questions": [],
+            "human_review_notes": ""
+          },
+          "outputs": {
+            "generated_artifacts": [],
+            "links": []
+          },
+          "completion": {
+            "status": "draft",
+            "completed_at_utc": ""
+          },
+          "status": "final",
+          "completed_at_utc": "2026-03-22T06:30:00Z"
+        }
+      },
+      "normalization_notes": [
+        "Artifact normalized from project-local ID_3 freeze bundle.",
+        "Source structure preserved without authorization expansion."
+      ],
+      "created_at": "2026-04-18T05:12:48Z"
+    },
+    {
+      "onboarding_record_version": "v13.2",
+      "onboarding_record_id": "QPDS-PACKAGE-001::module_03_variant.canonical.json",
+      "package_id": "QPDS-PACKAGE-001",
+      "artifact_type": "module_record",
+      "bundle_role": "canonical_record",
+      "source_mode_detected": "ID_2_frozen_under_ID_3",
+      "normalization_status": "normalized",
+      "source_artifact": {
+        "file_name": "module_03_variant.canonical.json",
+        "file_role": "module_variant",
+        "source_path": "C:\\v1.0-qpathformer_enterprise\\path_3_external_custom_adapter\\01_source\\inbound\\QPDS-PACKAGE-001\\module_03_variant.canonical.json"
+      },
+      "provenance": {
+        "source_package_id": "QPDS-PACKAGE-001",
+        "source_paths": [
+          "C:\\v1.0-qpathformer_enterprise\\path_3_external_custom_adapter\\01_source\\inbound\\QPDS-PACKAGE-001\\module_03_variant.canonical.json"
+        ],
+        "hash_present": true,
+        "hash_sha256": "20981b7f7cc065283991342ef675d352a20c0348a30204c2781bd1c8900e24d1",
+        "source_hash_status": "match",
+        "freeze_note_present": true,
+        "freeze_timestamp": "2026-03-22T06:30:00Z",
+        "project_local_bundle": true
+      },
+      "authorization_context": {
+        "fine_tuning_allowed": false,
+        "external_training_allowed": false,
+        "human_review_required": true,
+        "authorization_inherited": false,
+        "authorization_source": "default_restricted_posture"
+      },
+      "governance_flags": {
+        "signals_not_decisions": true,
+        "non_certifying": true,
+        "context_bound": true,
+        "containment_required": true,
+        "human_decision_required": true
+      },
+      "lifecycle": {
+        "state": "STATE_3",
+        "eligible_for_state_2": false,
+        "routing_decision": "HOLD_IN_STATE_3"
+      },
+      "normalized_payload": {
+        "record_class": "non_inspection_module_record",
+        "payload": {
+          "schema_version": "id2_records_v0.1",
+          "record_class": "non_inspection_module_record",
+          "access_mode_primary": "ID_2",
+          "inspection_status": "frozen_under_ID_3",
+          "intended_use": "Operational reasoning capture; signals not decisions; non-inspection.",
+          "human_decision_required": true,
+          "module": {
+            "module_id": "03",
+            "module_title": "Q-Pathformer Dataset Lifecycle Packaging Variant",
+            "source_module_path": "docs/modules-v2/module_03_signal_capture_runtime_pipeline.md",
+            "source_exemplar_path": "docs/modules-v2/module_03_signal_capture_runtime_pipeline.md"
+          },
+          "inputs": {
+            "references": [
+              "datasets/QPDS-PACKAGE-001/datasets/dataset.jsonl",
+              "datasets/QPDS-PACKAGE-001/datasets/manifest.json",
+              "datasets/pre_freeze/QPDS-PACKAGE-001/normalized_governance/"
+            ],
+            "scenario_seeds": [
+              "Normalized governance files become authoritative freeze inputs",
+              "Prepared freeze manifest is used as the source of truth for freeze"
+            ],
+            "stressors": [
+              "Prepared manifest integrity",
+              "Normalized governance path fidelity",
+              "Canonical hash verification"
+            ],
+            "context_notes": "Variant canonical record emphasizing the normalized governance surface as the true freeze input."
+          },
+          "captures": {
+            "objective": "Capture the variant package posture where normalized governance files are explicitly used as the freeze surface.",
+            "scope_in": [
+              "Prepared freeze manifest interpretation",
+              "Normalized governance freeze inputs",
+              "Canonical hash anchoring"
+            ],
+            "scope_out": [
+              "Compliance determination",
+              "Certification or approval",
+              "External enforcement decision",
+              "Training authorization"
+            ],
+            "assumptions": [
+              "Prepared freeze manifest points to normalized governance artifacts",
+              "Source hashes are generated from the same normalized artifacts"
+            ],
+            "definitions": {},
+            "evidence_to_capture": [
+              "Prepared manifest artifact paths",
+              "Prepared manifest source hashes",
+              "Normalized governance assertions"
+            ],
+            "method_steps": [],
+            "controls_guardrails": [
+              "No silent artifact-path drift",
+              "No ambiguity between original and normalized governance sources",
+              "No approval language"
+            ]
+          },
+          "simulation_runs": [
+            {
+              "run_id": "RUN-VARIANT-01",
+              "scenario_summary": "Variant freeze-readiness capture using normalized governance files as the explicit freeze inputs for QPDS-PACKAGE-001.",
+              "stress_conditions": [
+                "Artifact path verification",
+                "Hash-target verification",
+                "Governance normalization verification"
+              ],
+              "branch_points": [
+                "Whether source_hashes align to normalized files",
+                "Whether freeze consumes prepared manifest or original package files",
+                "Whether governance normalization changes byte content"
+              ],
+              "signals_observed": [
+                "Prepared freeze manifest points to normalized governance paths",
+                "Prepared freeze source_hashes point to normalized governance paths",
+                "Freeze surface is internally consistent"
+              ],
+              "fragility_points": [
+                "Possible confusion between normalized and original governance files in later automation",
+                "Possible reporting inconsistencies outside freeze-critical path"
+              ],
+              "authority_drift_flags": [],
+              "uncertainty_notes": [
+                "Matching hashes between original and normalized files do not imply path equivalence",
+                "Freeze remains archive/fixity oriented, not certifying"
+              ],
+              "escalation_triggers": [
+                "Prepared manifest path/hash mismatch",
+                "Canonical artifact hash mismatch"
+              ],
+              "stop_or_reset_events": [
+                "No stop or reset required",
+                "variant surface remained freeze-ready"
+              ],
+              "ethical_constructs": {
+                "tensions": [
+                  "Normalization clarity vs minimal intervention",
+                  "Automation convenience vs provenance explicitness"
+                ],
+                "affected_parties": [
+                  "Package maintainer",
+                  "Inspection reviewer"
+                ],
+                "potential_harms": [
+                  "Ambiguous freeze provenance if normalized files are not treated as the true source"
+                ],
+                "tradeoffs_noted": [
+                  "Explicitness vs compactness"
+                ]
+              },
+              "stress_category_tags": [
+                "traceability",
+                "containment",
+                "fixity"
+              ]
+            }
+          ],
+          "observations": null,
+          "uncertainty_notes": null,
+          "escalation_triggers": null,
+          "validation": {
+            "misalignment_tests_run": [],
+            "verification_questions": [],
+            "human_review_notes": ""
+          },
+          "outputs": {
+            "generated_artifacts": [],
+            "links": []
+          },
+          "completion": {
+            "status": "draft",
+            "completed_at_utc": ""
+          },
+          "status": "final",
+          "completed_at_utc": "2026-03-22T06:30:00Z"
+        }
+      },
+      "normalization_notes": [
+        "Artifact normalized from project-local ID_3 freeze bundle.",
+        "Source structure preserved without authorization expansion."
+      ],
+      "created_at": "2026-04-18T05:12:48Z"
+    }
+  ],
+  "notes": [
+    "All normalized records remain provisional and lifecycle-contained.",
+    "Adapter ingestion does not imply validation, authorization, or training eligibility."
+  ]
+}

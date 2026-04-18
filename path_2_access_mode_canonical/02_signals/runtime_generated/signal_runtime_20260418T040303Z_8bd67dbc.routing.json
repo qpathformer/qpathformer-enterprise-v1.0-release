@@ -1,0 +1,27 @@
+{
+  "signal_id": "8bd67dbc-15ff-4c74-ae92-9b515d0d5002",
+  "timestamp": "2026-04-18T04:03:03Z",
+  "source_state": "STATE_3",
+  "target_state": "STATE_2",
+  "decision": "SEND_TO_STATE_2_REVIEW",
+  "eligible_for_state_2": true,
+  "reasons": [
+    "all_state2_review_gates_passed"
+  ],
+  "metrics": {
+    "coherence": 0.9875,
+    "novelty": 0.5757,
+    "stability": 0.93,
+    "ambiguity": 0.0
+  },
+  "maturity": "LEVEL_5",
+  "model": {
+    "model_id": "gpt-oss:20b",
+    "parameter_class": "20B",
+    "role": "enterprise",
+    "endpoint_type": "local",
+    "invocation_reason": "runtime_structuring",
+    "version": "v10.0-runtime-routing-validation"
+  },
+  "interaction_type": "enterprise_only"
+}

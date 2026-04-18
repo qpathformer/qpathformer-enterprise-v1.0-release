@@ -1,0 +1,215 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "qpds_run_reference.schema.json",
+  "title": "Q-Pathformer Run Reference",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "run_reference_version",
+    "package_id",
+    "freeze_id",
+    "status",
+    "lifecycle_state",
+    "dataset_passport_id",
+    "source_session",
+    "counts",
+    "paths",
+    "lineage_propagation",
+    "evidence",
+    "timestamps"
+  ],
+  "properties": {
+    "run_reference_version": {
+      "type": "string"
+    },
+    "package_id": {
+      "type": "string"
+    },
+    "freeze_id": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "sealed",
+        "frozen",
+        "frozen_with_findings"
+      ]
+    },
+    "lifecycle_state": {
+      "type": "string"
+    },
+    "dataset_passport_id": {
+      "type": "string"
+    },
+    "source_session": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "session_id",
+        "source_signal_ids",
+        "source_record_count"
+      ],
+      "properties": {
+        "session_id": {
+          "type": "string"
+        },
+        "source_signal_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1
+        },
+        "source_record_count": {
+          "type": "integer",
+          "minimum": 0
+        }
+      }
+    },
+    "counts": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "dataset_row_count",
+        "manifest_candidate_count",
+        "manifest_extracted_candidate_count",
+        "manifest_source_record_count"
+      ],
+      "properties": {
+        "dataset_row_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "manifest_candidate_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "manifest_extracted_candidate_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "manifest_source_record_count": {
+          "type": "integer",
+          "minimum": 0
+        }
+      }
+    },
+    "paths": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "candidate_dataset",
+        "candidate_manifest",
+        "candidate_lineage",
+        "build_manifest",
+        "package_root",
+        "package_manifest",
+        "pre_freeze_root",
+        "prepared_manifest",
+        "inbox_root",
+        "outbox_freeze_root",
+        "freeze_manifest"
+      ],
+      "properties": {
+        "candidate_dataset": {
+          "type": "string"
+        },
+        "candidate_manifest": {
+          "type": "string"
+        },
+        "candidate_lineage": {
+          "type": "string"
+        },
+        "build_manifest": {
+          "type": "string"
+        },
+        "package_root": {
+          "type": "string"
+        },
+        "package_manifest": {
+          "type": "string"
+        },
+        "pre_freeze_root": {
+          "type": "string"
+        },
+        "prepared_manifest": {
+          "type": "string"
+        },
+        "inbox_root": {
+          "type": "string"
+        },
+        "outbox_freeze_root": {
+          "type": "string"
+        },
+        "freeze_manifest": {
+          "type": "string"
+        }
+      }
+    },
+    "lineage_propagation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "export_lineage_path",
+        "packaged_lineage_path",
+        "normalized_lineage_path",
+        "freeze_input_mode"
+      ],
+      "properties": {
+        "export_lineage_path": {
+          "type": "string"
+        },
+        "packaged_lineage_path": {
+          "type": "string"
+        },
+        "normalized_lineage_path": {
+          "type": "string"
+        },
+        "freeze_input_mode": {
+          "type": "string"
+        }
+      }
+    },
+    "evidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "freeze_inputs_template",
+        "expected_hashes_file",
+        "freeze_hash_manifest",
+        "freeze_note"
+      ],
+      "properties": {
+        "freeze_inputs_template": {
+          "type": "string"
+        },
+        "expected_hashes_file": {
+          "type": "string"
+        },
+        "freeze_hash_manifest": {
+          "type": "string"
+        },
+        "freeze_note": {
+          "type": "string"
+        }
+      }
+    },
+    "timestamps": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "packaged_at_utc",
+        "frozen_at_utc"
+      ],
+      "properties": {
+        "packaged_at_utc": {
+          "type": "string"
+        },
+        "frozen_at_utc": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

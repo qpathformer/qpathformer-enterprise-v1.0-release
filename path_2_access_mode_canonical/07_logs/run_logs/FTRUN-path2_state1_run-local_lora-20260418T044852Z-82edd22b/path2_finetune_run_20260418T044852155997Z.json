@@ -1,0 +1,43 @@
+{
+  "path2_run_log_version": "v1",
+  "path_id": "path_2_access_mode_canonical",
+  "run_id": "FTRUN-path2_state1_run-local_lora-20260418T044852Z-82edd22b",
+  "run_label": "path2_state1_run",
+  "status": "completed",
+  "dry_run": false,
+  "execution_mode": "local_lora",
+  "dataset_version": "id2-20260411-1400-qpath-tr008-run__v10-1-path2-source-bridge__20260418T044710Z",
+  "record_count": 4,
+  "backend": "local_lora",
+  "backend_profile_id": "local_lora_reference",
+  "model_base": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+  "training_package": {
+    "package_dir": "C:\\v1.0-qpathformer_enterprise\\path_2_access_mode_canonical\\03_dataset\\training_packages\\id2-20260411-1400-qpath-tr008-run__v10-1-path2-source-bridge__20260418T044710Z",
+    "manifest_file": "C:\\v1.0-qpathformer_enterprise\\path_2_access_mode_canonical\\03_dataset\\training_packages\\id2-20260411-1400-qpath-tr008-run__v10-1-path2-source-bridge__20260418T044710Z\\state1_training_manifest.json",
+    "backend_profile_file": "C:\\v1.0-qpathformer_enterprise\\path_2_access_mode_canonical\\03_dataset\\training_packages\\id2-20260411-1400-qpath-tr008-run__v10-1-path2-source-bridge__20260418T044710Z\\training_backend_profile.json",
+    "train_file": "C:\\v1.0-qpathformer_enterprise\\path_2_access_mode_canonical\\03_dataset\\training_packages\\id2-20260411-1400-qpath-tr008-run__v10-1-path2-source-bridge__20260418T044710Z\\train.sft.jsonl"
+  },
+  "outputs": {
+    "run_dir": "C:\\v1.0-qpathformer_enterprise\\path_2_access_mode_canonical\\05_runs\\FTRUN-path2_state1_run-local_lora-20260418T044852Z-82edd22b",
+    "training_log": "C:\\v1.0-qpathformer_enterprise\\path_2_access_mode_canonical\\05_runs\\FTRUN-path2_state1_run-local_lora-20260418T044852Z-82edd22b\\training_log.json",
+    "finetune_run_manifest": "C:\\v1.0-qpathformer_enterprise\\path_2_access_mode_canonical\\05_runs\\FTRUN-path2_state1_run-local_lora-20260418T044852Z-82edd22b\\finetune_run_manifest.json",
+    "top_level_run_log": "C:\\v1.0-qpathformer_enterprise\\path_2_access_mode_canonical\\07_logs\\run_logs\\FTRUN-path2_state1_run-local_lora-20260418T044852Z-82edd22b\\path2_finetune_run_20260418T044852155997Z.json",
+    "path2_run_log": "C:\\v1.0-qpathformer_enterprise\\path_2_access_mode_canonical\\07_logs\\run_logs\\FTRUN-path2_state1_run-local_lora-20260418T044852Z-82edd22b\\path2_finetune_run_20260418T044852155997Z.json",
+    "model_output_path": "C:\\v1.0-qpathformer_enterprise\\path_2_access_mode_canonical\\05_runs\\FTRUN-path2_state1_run-local_lora-20260418T044852Z-82edd22b\\model",
+    "trainer_summary": "C:\\v1.0-qpathformer_enterprise\\path_2_access_mode_canonical\\05_runs\\FTRUN-path2_state1_run-local_lora-20260418T044852Z-82edd22b\\trainer_summary.json"
+  },
+  "lineage": {
+    "source_dataset_version": "id2-20260411-1400-qpath-tr008-run__v10-1-path2-source-bridge__20260418T044710Z",
+    "source_registry_state": "STATE_1",
+    "source_registry_entry_id": "137cd382-103f-414b-b578-d8424abf4cc7",
+    "dataset_passport_id": null
+  },
+  "recorded_manifest": {
+    "finetune_run_manifest_version": "v14.3",
+    "run_id": "FTRUN-path2_state1_run-local_lora-20260418T044852Z-82edd22b",
+    "status": "completed"
+  },
+  "timestamps": {
+    "recorded_at_utc": "2026-04-18T04:49:35Z"
+  }
+}

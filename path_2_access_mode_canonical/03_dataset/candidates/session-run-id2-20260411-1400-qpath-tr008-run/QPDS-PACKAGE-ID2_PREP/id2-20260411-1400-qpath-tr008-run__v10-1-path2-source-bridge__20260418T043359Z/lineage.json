@@ -1,0 +1,15 @@
+{
+  "transformation_id": "4f86a3cb-237f-4fbb-95ea-dc3b9009b62e",
+  "source_signal_id": "0c379203-ecad-4824-9af3-5478070ac627",
+  "dataset_id": "QPDS-EXAMPLE-001",
+  "transformation_type": "enterprise_structuring",
+  "performed_by": "export_candidates_v2.py",
+  "timestamp": "2026-04-18T04:33:59Z",
+  "notes": "Grouped ID_2 candidate export with manifest-bound dataset emission.",
+  "lineage_assertions": {
+    "informative_only": true,
+    "non_authoritative": true,
+    "preserves_provenance": true,
+    "non_certifying": true
+  }
+}

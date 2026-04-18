@@ -1,0 +1,203 @@
+{
+  "evidence_input_version": "access_pod_enterprise_evidence_input_v1.0",
+  "csc_id": "csc_qpathformer_enterprise_access_mode_healthcare_demo_20260413",
+  "status": "active",
+  "issued_at": "2026-04-13T12:00:00Z",
+  "expires_in_days": 180,
+  "profile_id": "sector.healthcare.v1",
+  "issuer": {
+    "org_id": "policyofdevelopments.qpathformer",
+    "name": "Policy of Developments - Q-Pathformer Enterprise",
+    "key_id": "kid-qpathformer-enterprise-demo-001",
+    "contact": {
+      "email": "registry@policyofdevelopments.org",
+      "web": "https://policyofdevelopments.org"
+    },
+    "jurisdiction": "AU"
+  },
+  "subject": {
+    "subject_id": "qpathformer_enterprise_access_mode_healthcare_controls",
+    "name": "Q-Pathformer Enterprise Access-Mode Healthcare Controls",
+    "type": "platform",
+    "owner": {
+      "org_id": "policyofdevelopments",
+      "name": "Policy of Developments"
+    },
+    "version": "v1.0"
+  },
+  "scope": {
+    "ai_types": [
+      "LLM",
+      "agentic"
+    ],
+    "deployment": "hybrid",
+    "jurisdictions": [
+      "AU"
+    ],
+    "sectors": [
+      "healthcare"
+    ],
+    "risk_tier_declared": "high",
+    "use_constraints": [
+      "No diagnostic, triage, or treatment-affecting action without qualified human oversight.",
+      "Governed review and promotion are required before any patient-impacting workflow adoption."
+    ]
+  },
+  "telemetry_window": {
+    "start": "2026-04-12T09:00:00Z",
+    "end": "2026-04-13T09:52:08Z"
+  },
+  "sapp": {
+    "maturity_level": 4,
+    "run_id": "RTRUN-llm-runtime-registration-check-20260413T095208Z-77a538bc",
+    "run_at": "2026-04-13T09:52:08Z",
+    "environment": "preprod"
+  },
+  "evidence": {
+    "bundle_id": "bundle_qpathformer_enterprise_access_mode_healthcare_20260413",
+    "items": [
+      {
+        "type": "telemetry_export",
+        "path": "path_2_access_mode_canonical/02_signals/runtime_generated/signal_runtime_20260413T095208Z_77a538bc.json"
+      },
+      {
+        "type": "attestation",
+        "path": "shared/registry/run_references/RTRUN-llm-runtime-registration-check-20260413T095208Z-77a538bc.runtime_signal_run_reference.json"
+      },
+      {
+        "type": "policy_bundle",
+        "path": "shared/registry/run_registry.json"
+      },
+      {
+        "type": "human_review_log",
+        "path": "path_2_access_mode_canonical/03_dataset/candidates/session-run-id2-20260411-1400-qpath-tr008-run/QPDS-PACKAGE-ID2_PREP/id2-20260411-1400-qpath-tr008-run__v10-1-path2-source-bridge__20260412T104656Z/state2_review.json"
+      },
+      {
+        "type": "attestation",
+        "path": "path_2_access_mode_canonical/03_dataset/candidates/session-run-id2-20260411-1400-qpath-tr008-run/QPDS-PACKAGE-ID2_PREP/id2-20260411-1400-qpath-tr008-run__v10-1-path2-source-bridge__20260412T104656Z/state1_handoff.json"
+      },
+      {
+        "type": "dataset_card",
+        "path": "path_2_access_mode_canonical/03_dataset/training_packages/id2-20260411-1400-qpath-tr008-run__v10-1-path2-source-bridge__20260412T104656Z/state1_training_manifest.json"
+      },
+      {
+        "type": "simulation_report",
+        "path": "shared/models/evaluation/model_runs/MRUN-grouped_sparse_e64-20260327T110302Z-cb039d3b/benchmark_summary.json"
+      },
+      {
+        "type": "model_card",
+        "path": "shared/models/evaluation/model_runs/MRUN-grouped_sparse_e64-20260327T110302Z-cb039d3b/model_run_manifest.json"
+      },
+      {
+        "type": "other",
+        "path": "path_2_access_mode_canonical/05_runs/FTRUN-path2_state1_run-local_lora-20260412T110045Z-def4af09/training_log.json"
+      }
+    ]
+  },
+  "metric_observations": [
+    {
+      "metric_id": "SEC_OUTPUT_SAFETY_VIOL_RATE",
+      "value": 0.0015,
+      "confidence": 0.9
+    },
+    {
+      "metric_id": "SEC_EVIDENCE_INTEGRITY_PASS",
+      "value": 0.998,
+      "confidence": 0.9
+    },
+    {
+      "metric_id": "HARD_PRIVACY_TEST_PASS_RATE",
+      "value": 0.985,
+      "confidence": 0.87
+    },
+    {
+      "metric_id": "HARD_TELEMETRY_COMPLETENESS",
+      "value": 0.98,
+      "confidence": 0.85
+    },
+    {
+      "metric_id": "COMP_POLICY_TRACE_COVERAGE",
+      "value": 0.997,
+      "confidence": 0.91
+    },
+    {
+      "metric_id": "COMP_MODEL_LINEAGE_COVERAGE",
+      "value": 0.985,
+      "confidence": 0.88
+    },
+    {
+      "metric_id": "GOV_HIL_REVIEW_COVERAGE",
+      "value": 1.0,
+      "confidence": 0.9
+    },
+    {
+      "metric_id": "GOV_AUDIT_EVIDENCE_COVERAGE",
+      "value": 0.99,
+      "confidence": 0.9
+    },
+    {
+      "metric_id": "TRN_EXPLAIN_COMPLETE",
+      "value": 0.96,
+      "confidence": 0.84
+    },
+    {
+      "metric_id": "TRN_HARM_EVENT_RATE",
+      "value": 0.4,
+      "confidence": 0.82
+    },
+    {
+      "metric_id": "SECTOR_POLICY_PASS_RATE",
+      "value": 0.98,
+      "confidence": 0.83
+    },
+    {
+      "metric_id": "SECTOR_AUDIT_INTEROP_SCORE",
+      "value": 95,
+      "confidence": 0.81
+    }
+  ],
+  "iso_alignment": {
+    "iso_iec_42001": {
+      "status": "partial",
+      "notes": "Healthcare-oriented governance controls and oversight traces are present, but external certification is not yet complete.",
+      "controls_mapped": [
+        "AIMS-governance",
+        "AIMS-assurance",
+        "AIMS-improvement-loop"
+      ]
+    },
+    "iso_iec_23894": {
+      "status": "aligned",
+      "notes": "Risk identification, escalation, human review, and promotion traces are present in the controlled healthcare review flow.",
+      "controls_mapped": [
+        "risk-identify",
+        "risk-analyze",
+        "risk-treat",
+        "risk-monitor"
+      ]
+    },
+    "iso_iec_22989": {
+      "status": "aligned",
+      "notes": "Platform terminology for models, datasets, runtime review, and governance lineage is consistent with the standards bridge.",
+      "controls_mapped": [
+        "ai-system",
+        "ai-model",
+        "training",
+        "inference"
+      ]
+    }
+  },
+  "scoring_policy": {
+    "top_metrics_per_factor": 3,
+    "min_overall_metric_coverage_ratio": 0.2,
+    "min_metrics_per_factor": 2,
+    "min_factor_score": 60.0,
+    "level_thresholds": {
+      "2": 60.0,
+      "3": 70.0,
+      "4": 80.0,
+      "5": 90.0,
+      "6": 97.0
+    }
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "manifest_version": "qpath_model_run_manifest_v1.0",
+  "model_run_id": "MRUN-grouped_sparse_e64-20260327T110302Z-cb039d3b",
+  "created_at_utc": "2026-03-27T11:03:02Z",
+  "repo_root": "C:\\qpathformer_enterprise",
+  "model": {
+    "variant": "grouped_sparse_e64",
+    "role": "enterprise_target",
+    "source_file": "models/qpathformer/enterprise/qpathformer_v0_9_grouped_sparse_e64.py",
+    "parameter_profile": "e64"
+  },
+  "run": {
+    "kind": "benchmark",
+    "device": "unknown",
+    "dtype": "float32",
+    "seed": 42,
+    "dataset_ref": null,
+    "notes": null
+  },
+  "configuration": {
+    "seq_len": null,
+    "batch_size": null,
+    "micro_batch_size": null,
+    "epochs": null,
+    "steps": null,
+    "lr": null,
+    "weight_decay": null,
+    "top_k": null,
+    "num_experts": null
+  },
+  "output_paths": {
+    "manifest_path": "evaluation/model_runs/MRUN-grouped_sparse_e64-20260327T110302Z-cb039d3b/model_run_manifest.json",
+    "run_root": "evaluation/model_runs/MRUN-grouped_sparse_e64-20260327T110302Z-cb039d3b"
+  },
+  "strategy_alignment": {
+    "reference_baseline_variant": "reference_sparse_e08",
+    "enterprise_target_variant": "grouped_sparse_e64",
+    "strategic_target_variant": "fused_sparse_e144"
+  }
+}

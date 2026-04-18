@@ -1,0 +1,60 @@
+{
+  "run_reference_version": "qpds_runtime_signal_run_reference_v1.0",
+  "run_id": "RTRUN-llm-runtime-session-20260418-codex-20260417T204412Z-8d961a1c",
+  "run_type": "runtime_signal_emitter",
+  "workflow_id": "path2_runtime_signal_emitter",
+  "path_id": "path_2_access_mode_canonical",
+  "signal_id": "8d961a1c-ecac-4cc0-96f9-310d9e2e8331",
+  "session_id": "llm-runtime-session-20260418-codex",
+  "dataset_passport_id": "QPDS-EXAMPLE-001",
+  "routing_ids": [
+    "QPDS-ROUTE-001"
+  ],
+  "lifecycle_state": "STATE_3",
+  "target_state": "STATE_2",
+  "run_status": "success",
+  "recorded_at_utc": "2026-04-17T20:44:12Z",
+  "model": {
+    "model_id": "gpt-oss:20b",
+    "model_version": "v10.0-runtime-routing-validation",
+    "parameter_class": "20B",
+    "endpoint_type": "local"
+  },
+  "source_context": {
+    "dataset_passport_ref": "QPDS-EXAMPLE-001",
+    "routing_ref": "QPDS-ROUTE-001",
+    "authorization_ref": "authorization_report.generated.json"
+  },
+  "routing": {
+    "decision": "SEND_TO_STATE_2_REVIEW",
+    "eligible_for_state_2": true,
+    "reasons": [
+      "all_state2_review_gates_passed"
+    ]
+  },
+  "validation": {
+    "candidate_for_validation": true,
+    "validation_requested": true,
+    "validation_reasons": [
+      "candidate_ready_for_state2_review"
+    ],
+    "validation_engine_version": "v10.0"
+  },
+  "maturity": "LEVEL_5",
+  "metrics": {
+    "coherence": 0.8475,
+    "novelty": 0.6333,
+    "stability": 0.818,
+    "ambiguity": 0.0
+  },
+  "outputs": {
+    "signal_path": "C:\\v1.0-qpathformer_enterprise\\path_2_access_mode_canonical\\02_signals\\runtime_generated\\signal_runtime_20260417T204412Z_8d961a1c.json",
+    "routing_log_path": "C:\\v1.0-qpathformer_enterprise\\path_2_access_mode_canonical\\02_signals\\runtime_generated\\signal_runtime_20260417T204412Z_8d961a1c.routing.json"
+  },
+  "inspection_ready": true,
+  "frozen_output_queryable": false,
+  "notes": [
+    "Live v1.0 Path 2 runtime signal registration.",
+    "Signal remains non-authoritative and enters STATE_3 first."
+  ]
+}

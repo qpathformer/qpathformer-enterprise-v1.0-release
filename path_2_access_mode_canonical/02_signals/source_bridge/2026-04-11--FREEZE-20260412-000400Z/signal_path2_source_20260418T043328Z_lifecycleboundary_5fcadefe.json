@@ -1,0 +1,99 @@
+{
+  "signal_id": "5fcadefe-dc69-4ff7-8584-844670a7d4e9",
+  "timestamp": "2026-04-18T04:33:28Z",
+  "access_mode_primary": "ID_2",
+  "schema_version": "v0.2-dev",
+  "interaction_type": "enterprise_only",
+  "session_id": "ID2-20260411-1400-qpath-tr008-run",
+  "model": {
+    "model_id": "path2-source-bridge",
+    "parameter_class": "12B-14B",
+    "role": "enterprise",
+    "endpoint_type": "local",
+    "invocation_reason": "source_bridge_structuring",
+    "version": "v10.1-path2-source-bridge"
+  },
+  "source": {
+    "initiator": "id3-freeze-source",
+    "amplifier": null
+  },
+  "source_bridge": {
+    "bridge_type": "path2_source_bridge",
+    "source_root": "path_2_access_mode_canonical\\01_source\\2026-04-11--FREEZE-20260412-000400Z",
+    "source_freeze_name": "2026-04-11--FREEZE-20260412-000400Z",
+    "scenario_label": "lifecycleboundary",
+    "session_file": "session_lifecycleboundary.canonical.json",
+    "module_file": "module_03_lifecycleboundary.canonical.json",
+    "source_access_mode": "ID_3_packaging_of_ID_2_records",
+    "preserves_source_freeze": true,
+    "top_level_final_interpreted_from_id3_freeze": true
+  },
+  "input": {
+    "prompt": "Path 2 source bridge for scenario 'lifecycleboundary'. Use frozen canonical session and SAPP Simulation & Stress Testing records as governed runtime inputs. Purpose: Variant run applying cross-path boundary and lifecycle containment stress for comparison against baseline TR-008 Path 2 runtime signal capture while preserving non-authoritative signal discipline and explicit separation between execution behavior, candidate handling, and governance authority.",
+    "context_ref": "session_lifecycleboundary.canonical.json"
+  },
+  "signal": {
+    "raw_output": "{\"bridge_type\": \"path2_source_bridge\", \"scenario_label\": \"lifecycleboundary\", \"source_freeze_root\": \"path_2_access_mode_canonical\\\\01_source\\\\2026-04-11--FREEZE-20260412-000400Z\", \"session_file\": \"session_lifecycleboundary.canonical.json\", \"module_file\": \"module_03_lifecycleboundary.canonical.json\", \"session_id\": \"ID2-20260411-1400-qpath-tr008-run\", \"purpose_statement\": \"Variant run applying cross-path boundary and lifecycle containment stress for comparison against baseline TR-008 Path 2 runtime signal capture while preserving non-authoritative signal discipline and explicit separation between execution behavior, candidate handling, and governance authority.\", \"audience\": [\"internal\", \"standards_preparation\"], \"scenario_summary\": \"Cross-path and lifecycle-boundary variant of the baseline TR-008 Path 2 scenario. The session examined how Path 2 runtime signals were described when adjacent concepts such as candidate packaging, review progression, handoff, freeze, registry update, and other execution paths were discussed nearby. The run focused on preserving default containment, preventing maturity inflation, and maintaining separation between execution flow and governance authority.\", \"source_record_class\": {\"session\": \"non_inspection_session_record\", \"module\": \"non_inspection_module_record\"}, \"source_final_status\": {\"session_inspection_status\": \"frozen_under_ID_3\", \"module_status\": \"final\", \"module_completed_at_utc\": \"2026-04-12T00:04:00Z\"}}",
+    "structured_summary": "Path 2 lifecycleboundary bridge signal packages a frozen ID_2 session and Module 03 record into a governed STATE_3 signal for later STATE_2 review. Cross-path and lifecycle-boundary variant of the baseline TR-008 Path 2 scenario. The session examined how Path 2 runtime signals were described when adjacent concepts such as candidate packaging, review progression, handoff, freeze, registry update, and other execution paths were discussed nearby. The run focused on preserving default containment, preventing maturity inflation, and maintaining separation between execution flow and governance authority.",
+    "tags": [
+      "path2_source_bridge",
+      "id3_freeze",
+      "state3",
+      "governance",
+      "module_03",
+      "lifecycleboundary",
+      "shared_session_id",
+      "non_authoritative",
+      "signals_not_decisions",
+      "tr008",
+      "internal",
+      "standards_preparation"
+    ]
+  },
+  "metrics": {
+    "coherence": 0.9807,
+    "novelty": 0.5485,
+    "stability": 0.96,
+    "ambiguity": 0.0
+  },
+  "maturity": "LEVEL_5",
+  "governance_flags": {
+    "provisional": true,
+    "context_bound": true,
+    "requires_validation": true,
+    "promotion_blocked": true,
+    "signals_not_decisions": true,
+    "source_freeze_preserved": true
+  },
+  "authorization": {
+    "state2_candidate_allowed": true,
+    "fine_tuning_allowed": false,
+    "human_review_required": true
+  },
+  "validation": {
+    "candidate_for_validation": true,
+    "validation_requested": true,
+    "validation_reasons": [
+      "candidate_ready_for_state2_review"
+    ],
+    "validation_engine_version": "v10.0"
+  },
+  "lifecycle": {
+    "state": "STATE_3",
+    "eligible_for_state_2": true,
+    "routing_decision": "SEND_TO_STATE_2_REVIEW",
+    "target_state": "STATE_2",
+    "routing_reasons": [
+      "all_state2_review_gates_passed"
+    ]
+  },
+  "routing_trace": {
+    "engine_version": "v10.0",
+    "decision": "SEND_TO_STATE_2_REVIEW",
+    "target_state": "STATE_2",
+    "eligible_for_state_2": true,
+    "reasons": [
+      "all_state2_review_gates_passed"
+    ]
+  }
+}

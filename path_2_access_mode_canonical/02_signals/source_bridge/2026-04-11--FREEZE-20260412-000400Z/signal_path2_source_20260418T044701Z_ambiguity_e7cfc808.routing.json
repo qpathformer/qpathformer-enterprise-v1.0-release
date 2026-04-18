@@ -1,0 +1,28 @@
+{
+  "signal_id": "e7cfc808-3829-4e11-b803-12f2b4de4a10",
+  "timestamp": "2026-04-18T04:47:01Z",
+  "source_state": "STATE_3",
+  "target_state": "STATE_2",
+  "decision": "SEND_TO_STATE_2_REVIEW",
+  "eligible_for_state_2": true,
+  "reasons": [
+    "all_state2_review_gates_passed"
+  ],
+  "metrics": {
+    "coherence": 0.9841,
+    "novelty": 0.5638,
+    "stability": 0.96,
+    "ambiguity": 0.0
+  },
+  "maturity": "LEVEL_5",
+  "model": {
+    "model_id": "path2-source-bridge",
+    "parameter_class": "12B-14B",
+    "role": "enterprise",
+    "endpoint_type": "local",
+    "invocation_reason": "source_bridge_structuring",
+    "version": "v10.1-path2-source-bridge"
+  },
+  "scenario_label": "ambiguity",
+  "source_freeze_name": "2026-04-11--FREEZE-20260412-000400Z"
+}

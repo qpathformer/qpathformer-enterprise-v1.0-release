@@ -1,0 +1,200 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://q-pathformer.dev/schemas/datasets/frozen_dataset_record.schema.json",
+  "title": "Q-Pathformer Frozen Dataset Record",
+  "description": "Deterministic JSONL record contract for governed frozen dataset ingestion, aligned to the real STATE_1 freeze package.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "candidate_id",
+    "source_signal_id",
+    "source_state",
+    "target_model",
+    "transformation_type",
+    "content",
+    "authorization",
+    "review",
+    "routing",
+    "validation",
+    "lineage",
+    "timestamp"
+  ],
+  "properties": {
+    "candidate_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "source_signal_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "source_state": {
+      "type": "string",
+      "enum": [
+        "STATE_3",
+        "STATE_2",
+        "STATE_1"
+      ]
+    },
+    "target_model": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "parameter_class",
+        "role"
+      ],
+      "properties": {
+        "parameter_class": {
+          "type": "string",
+          "minLength": 1
+        },
+        "role": {
+          "type": "string",
+          "enum": [
+            "enterprise",
+            "strategic"
+          ]
+        }
+      }
+    },
+    "transformation_type": {
+      "type": "string",
+      "minLength": 1
+    },
+    "content": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "input",
+        "output"
+      ],
+      "properties": {
+        "input": {
+          "type": "string",
+          "minLength": 1
+        },
+        "output": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "authorization": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "fine_tuning_allowed",
+        "status"
+      ],
+      "properties": {
+        "fine_tuning_allowed": {
+          "type": "boolean"
+        },
+        "status": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "review": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "review_required",
+        "status"
+      ],
+      "properties": {
+        "review_required": {
+          "type": "boolean"
+        },
+        "status": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "routing": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "eligible_for_state_2",
+        "routing_decision",
+        "routing_reasons",
+        "target_state"
+      ],
+      "properties": {
+        "eligible_for_state_2": {
+          "type": "boolean"
+        },
+        "routing_decision": {
+          "type": "string",
+          "minLength": 1
+        },
+        "routing_reasons": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "target_state": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "validation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "candidate_for_validation",
+        "validation_engine_version",
+        "validation_requested",
+        "validation_reasons"
+      ],
+      "properties": {
+        "candidate_for_validation": {
+          "type": "boolean"
+        },
+        "validation_engine_version": {
+          "type": "string",
+          "minLength": 1
+        },
+        "validation_requested": {
+          "type": "boolean"
+        },
+        "validation_reasons": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "lineage": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "source_signal_ref",
+        "transformation_id"
+      ],
+      "properties": {
+        "source_signal_ref": {
+          "type": "string",
+          "minLength": 1
+        },
+        "transformation_id": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "timestamp": {
+      "type": "string",
+      "minLength": 1
+    }
+  }
+}

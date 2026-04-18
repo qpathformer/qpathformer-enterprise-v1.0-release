@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "ugccmt_extension.schema.json",
+  "title": "UGCCMT Extension",
+  "description": "Optional UGCCMT metadata for Q-Pathformer-compatible dataset handling.",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "unit_id": {
+      "type": "string"
+    },
+    "group_id": {
+      "type": "string"
+    },
+    "colour_class": {
+      "type": "string"
+    },
+    "code_id": {
+      "type": "string"
+    },
+    "measure_profile": {
+      "type": "string"
+    },
+    "train_path": {
+      "type": "string"
+    },
+    "extension_notes": {
+      "type": "string"
+    }
+  }
+}

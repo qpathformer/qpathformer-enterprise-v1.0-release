@@ -1,0 +1,25 @@
+{
+  "promotion_id": "PROMO-3d5a811d-4c40-4ac3-b763-a4926b7ecb15",
+  "promotion_timestamp": "2026-04-18T02:58:44Z",
+  "promotion_scope": "STATE_1",
+  "package_id": "QPDS-TR-STRICT-ID3-001",
+  "dataset_version": "checkpoint_v4_strict",
+  "decision": {
+    "approved": true,
+    "decision": "APPROVE_STATE_1",
+    "reasons": [
+      "tr_dataset_wrapper_promotion",
+      "governance_reference_enforced",
+      "state1_candidate_prepared"
+    ]
+  },
+  "promotion_metrics": {
+    "review_ready_ratio": 1.0
+  },
+  "package_summary": {
+    "target_model": {},
+    "routing_profile": {}
+  },
+  "notes": "Path 1 TR strict wrapper run from the three-path root",
+  "written": true
+}

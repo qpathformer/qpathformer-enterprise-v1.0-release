@@ -1,0 +1,33 @@
+{
+  "profiles_version": "1.0.0-enterprise-extension",
+  "issued_at": "2026-04-13T10:50:00Z",
+  "origin": {
+    "type": "enterprise-local-extension",
+    "based_on": "Access-PoD v1a sector profile model",
+    "notes": "These profiles extend the preserved upstream Access-PoD v1a release without modifying the vendored standards snapshot."
+  },
+  "profiles": [
+    {
+      "profile_id": "ai.and.emerging_tech.v1",
+      "description": "Enterprise introduction of AI and emerging technologies with emphasis on staged internal rollout, change governance, regulatory readiness, and approval traceability.",
+      "weights": {
+        "f6_1": 0.16,
+        "f6_2": 0.14,
+        "f6_3": 0.2,
+        "f6_4": 0.24,
+        "f6_5": 0.12,
+        "f6_6": 0.14
+      },
+      "gates": {
+        "f6_1_min_for_4star": 72,
+        "f6_4_min_for_4star": 82,
+        "f6_6_min_for_6star": 88
+      },
+      "notes": [
+        "Intended for enterprise rollout of novel AI or emerging technical capability inside an organization.",
+        "Prioritizes approval traceability, policy adaptation, workforce review, and regulatory handling over sector-specific external interoperability."
+      ]
+    }
+  ],
+  "status": "Enterprise Extension Draft"
+}

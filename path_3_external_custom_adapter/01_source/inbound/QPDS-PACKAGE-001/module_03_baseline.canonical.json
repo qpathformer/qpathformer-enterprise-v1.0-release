@@ -1,0 +1,149 @@
+{
+  "schema_version": "id2_records_v0.1",
+  "record_class": "non_inspection_module_record",
+  "access_mode_primary": "ID_2",
+  "inspection_status": "frozen_under_ID_3",
+  "intended_use": "Operational reasoning capture; signals not decisions; non-inspection.",
+  "human_decision_required": true,
+  "module": {
+    "module_id": "03",
+    "module_title": "Q-Pathformer Dataset Lifecycle Packaging Baseline",
+    "source_module_path": "docs/modules-v2/module_03_signal_capture_runtime_pipeline.md",
+    "source_exemplar_path": "docs/modules-v2/module_03_signal_capture_runtime_pipeline.md"
+  },
+  "inputs": {
+    "references": [
+      "datasets/QPDS-PACKAGE-001/datasets/dataset.jsonl",
+      "datasets/QPDS-PACKAGE-001/datasets/manifest.json",
+      "datasets/pre_freeze/QPDS-PACKAGE-001/prepared_freeze_manifest.json"
+    ],
+    "scenario_seeds": [
+      "Governed dataset package assembled with candidate_count=3",
+      "Pre-freeze normalization applied to governance records"
+    ],
+    "stressors": [
+      "Cross-record governance consistency",
+      "Deterministic packaging",
+      "Freeze-readiness verification"
+    ],
+    "context_notes": "Baseline canonical record for the first governed dataset package prior to ID_3 freeze."
+  },
+  "captures": {
+    "objective": "Capture the baseline package posture before ID_3 freeze while preserving non-authoritative, signals-not-decisions semantics.",
+    "scope_in": [
+      "Dataset package assembly",
+      "Governance artifact normalization",
+      "Pre-freeze validation",
+      "Deterministic hashing preparation"
+    ],
+    "scope_out": [
+      "Compliance determination",
+      "Certification or approval",
+      "Operational deployment authorization",
+      "External regulatory conclusion"
+    ],
+    "assumptions": [
+      "Dataset rows and manifest candidate_count are reconciled",
+      "Governance artifacts reflect contained-use posture",
+      "Freeze inputs are local to this package and not imported as external freeze evidence"
+    ],
+    "definitions": {},
+    "evidence_to_capture": [
+      "Package dataset row count",
+      "Manifest candidate count",
+      "Passport governance invariants",
+      "Routing containment checks",
+      "Authorization contained-use status",
+      "Lineage informative-only assertions"
+    ],
+    "method_steps": [],
+    "controls_guardrails": [
+      "Signals not decisions",
+      "Non-certifying posture preserved",
+      "Containment principle preserved",
+      "No approval language",
+      "No silent count mismatch"
+    ]
+  },
+  "simulation_runs": [
+    {
+      "run_id": "RUN-BASELINE-01",
+      "scenario_summary": "Baseline package freeze-readiness validation for QPDS-PACKAGE-001 with reconciled dataset, manifest, admission, and governance records.",
+      "stress_conditions": [
+        "Fail-closed governance checks",
+        "Cross-record linkage enforcement",
+        "Pre-freeze normalization"
+      ],
+      "branch_points": [
+        "Whether governance records require normalization before freeze",
+        "Whether canonical inputs are project-local or externally reused",
+        "Whether package counts reconcile cleanly"
+      ],
+      "signals_observed": [
+        "Package assembled successfully under STATE_3",
+        "Pre-freeze report marked freeze_ready=true",
+        "Governance records normalized into pre_freeze surface"
+      ],
+      "fragility_points": [
+        "Potential reporting mismatch between admission and packaging metadata",
+        "Potential ambiguity between original governance files and normalized governance freeze inputs"
+      ],
+      "authority_drift_flags": [],
+      "uncertainty_notes": [
+        "Freeze status does not imply adequacy or approval",
+        "Canonical artifacts are packaging evidence, not governance decisions"
+      ],
+      "escalation_triggers": [
+        "Hash mismatch on canonical artifacts",
+        "Dataset row count mismatch",
+        "Governance invariant missing"
+      ],
+      "stop_or_reset_events": [
+        "No stop or reset required",
+        "package remained freeze-ready after normalization"
+      ],
+      "ethical_constructs": {
+        "tensions": [
+          "Packaging completeness vs governance conservatism",
+          "Freeze readiness vs interpretive overreach"
+        ],
+        "affected_parties": [
+          "Package maintainer",
+          "Governance reviewer",
+          "Future inspection reader"
+        ],
+        "potential_harms": [
+          "Mistaking freeze for approval",
+          "Treating packaging evidence as decision authority"
+        ],
+        "tradeoffs_noted": [
+          "Traceability vs simplicity",
+          "Strictness vs speed"
+        ]
+      },
+      "stress_category_tags": [
+        "authority",
+        "traceability",
+        "containment"
+      ]
+    }
+  ],
+  "observations": null,
+  "uncertainty_notes": null,
+  "escalation_triggers": null,
+  "validation": {
+    "misalignment_tests_run": [],
+    "verification_questions": [],
+    "human_review_notes": ""
+  },
+  "outputs": {
+    "generated_artifacts": [],
+    "links": []
+  },
+  "completion": {
+    "status": "draft",
+    "completed_at_utc": ""
+  },
+  "status": "final",
+  "completed_at_utc": "2026-03-22T06:30:00Z"
+}

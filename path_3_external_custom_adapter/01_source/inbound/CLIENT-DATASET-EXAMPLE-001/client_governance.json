@@ -1,0 +1,81 @@
+{
+  "dataset_id": "CLIENT-DATASET-EXAMPLE-001",
+  "dataset_version": "v1.0-example",
+  "source_type": "client_governance_json",
+  "source_organization": "Example Client (Access-Mode aligned reference)",
+  "policy_context": "path3_custom_governance_example",
+  "authorization_hint": {
+    "fine_tuning_allowed": false,
+    "human_review_required": true,
+    "notes": "Provided for controlled onboarding, review, and containment only."
+  },
+  "records": [
+    {
+      "record_id": "row-001",
+      "input": "Describe the default lifecycle entry posture for a newly onboarded external governance dataset.",
+      "output": "A newly onboarded external governance dataset enters under STATE_3 containment by default and remains provisional until later review and authorization handling occur.",
+      "metadata": {
+        "topic": "lifecycle_entry",
+        "priority": "high",
+        "access_mode_reference": "ID_2_to_ID_3_governance_alignment",
+        "reasoning_posture_hint": "operational_to_inspection_boundary"
+      },
+      "source": {
+        "document_id": "client-policy-note-001",
+        "section": "lifecycle-entry",
+        "uri": "client://governance/example/lifecycle-entry"
+      }
+    },
+    {
+      "record_id": "row-002",
+      "input": "Explain why structured onboarding does not by itself authorize fine-tuning.",
+      "output": "Structured onboarding establishes intake, traceability, and containment only. It does not by itself authorize fine-tuning, external training, or durable training use.",
+      "metadata": {
+        "topic": "authorization_boundary",
+        "priority": "high",
+        "dataset_role_hint": "constraint_signal",
+        "authorization_scope_hint": "restricted_default"
+      },
+      "source": {
+        "document_id": "client-policy-note-001",
+        "section": "authorization-boundary",
+        "uri": "client://governance/example/authorization-boundary"
+      }
+    },
+    {
+      "record_id": "row-003",
+      "input": "What governance rule should apply to runtime signals derived from external client artifacts?",
+      "output": "Runtime signals derived from external client artifacts must remain non-authoritative, context-bound, and treated as signals rather than decisions until downstream validation occurs.",
+      "metadata": {
+        "topic": "signals_not_decisions",
+        "priority": "normal",
+        "governance_flags_hint": [
+          "signals_not_decisions",
+          "context_bound",
+          "human_decision_required_default"
+        ]
+      },
+      "source": {
+        "document_id": "client-policy-note-001",
+        "section": "signal-governance",
+        "uri": "client://governance/example/signal-governance"
+      }
+    },
+    {
+      "record_id": "row-004",
+      "input": "When can a contained external dataset proceed beyond STATE_3?",
+      "output": "A contained external dataset may proceed beyond STATE_3 only after explicit review, governance checks, and later lifecycle handling determine that controlled progression is appropriate.",
+      "metadata": {
+        "topic": "state_progression",
+        "priority": "normal",
+        "human_review_required": true,
+        "next_state_hint": "STATE_2_only_if_reviewed"
+      },
+      "source": {
+        "document_id": "client-policy-note-001",
+        "section": "state-progression",
+        "uri": "client://governance/example/state-progression"
+      }
+    }
+  ]
+}
