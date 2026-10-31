@@ -4,35 +4,35 @@
 
 ---
 
+Q-Pathformer Enterprise v1.0 is a three-path reference release for governed dataset preparation, runtime signal routing and execution-bound evidence. It includes recorded outputs that can be inspected before running any pipeline, with separate guides for source-first lifecycle processing, runtime signals and external-data containment. The release records what each route reached and the controls that limited further progression.
+
+## Start here
+
+| Goal | Reading destination |
+| --- | --- |
+| Find architecture, execution guides and papers | [Documentation index](docs/README.md) |
+| Inspect the recorded route outcomes | [QPATH-RUN-001 — Path 1, 2 and 3 results](<docs/orientation/results_docs/QPATH-RUN-001 — Path 1,2 & 3 Run Results.md>) |
+| Interpret CSC evidence and its limits | [QPATH-CSC-001 — CSC results](<docs/orientation/results_docs/QPATH-CSC-001 - Q-Pathformer Enterprise Run Results.md>) |
+| Download the preserved snapshot | [Published v1.0 release](https://github.com/qpathformer/qpathformer-enterprise-v1.0-release/releases/tag/v1.0-qpathformer-enterprise) |
+
+## Recorded routes
+
+| Route | Recorded scope | Execution guide |
+| --- | --- | --- |
+| Path 1, deterministic corpus | STATE_1 package and controlled local validation. | [Path 1](docs/execution/path_1_tr_corpus_reference_commands.md) |
+| Path 2, source-first | Review, promotion, handoff, freeze, registry and controlled local validation; documented release default. | [Source-first route](docs/execution/path_2_access_mode_canonical_source_first_commands.md) |
+| Path 2, runtime | STATE_2 review with a promotion hold: one candidate in the recorded session, below the grouped threshold of four. | [Runtime route](docs/execution/path_2_access_mode_canonical_runtime_signal_commands.md) |
+| Path 3, external input | STATE_3 containment and normalisation; no promotion or training run in v1.0. | [External-input route](docs/execution/path_3_external_custom_adapter_commands.md) |
+
+These are historical outcomes reported in QPATH-RUN-001, not reruns performed for this README update. Use the [Path 2 route selector](docs/execution/path_2_access_mode_canonical_commands.md) to choose the source-first or runtime commands.
+
+The CSC results identify Path 2 as their evidence source; no CSC session output in this release is derived from Path 1 or Path 3. The record separates mapper-driven finance/healthcare baselines, curated public/AI examples and historical comparisons. Their interpretation limits and the standards-review status below remain applicable.
+
 ## System Mental Model
 
-Q-Pathformer is a **governed data lifecycle system**, not a model.
+This enterprise release provides dataset lifecycle and execution references. Signals are contained in STATE_3, candidate datasets are reviewed in STATE_2, and approved preparation routes can produce STATE_1 packages. The routes have distinct recorded outcomes and do not automatically progress through every stage.
 
-It operates as a layered pipeline where:
-
-- **signals are generated** (runtime or deterministic)  
-- **signals are contained** in `STATE_3` (non-authoritative)  
-- **datasets are formed and reviewed** in `STATE_2`  
-- **datasets are prepared for training** in `STATE_1`  
-
-The system is structured across three distinct paths:
-
-- **Path 1** — deterministic corpus → dataset pipeline (no runtime model)  
-- **Path 2** — runtime signal generation → lifecycle routing → CSC evidence (core system)  
-- **Path 3** — external data ingestion → normalization → containment (no promotion in v1.0)  
-
-Key principles:
-
-- lifecycle state ≠ authority  
-- execution ≠ validation  
-- validation ≠ authorization  
-- outputs are **evidence, not decisions**  
-
-The result is a system where:
-
-> data moves through controlled states,  
-> signals remain non-authoritative,  
-> and evidence emerges from execution without transferring governance authority.
+Lifecycle readiness, execution, validation and authorisation remain separate. Outputs are evidence for external review and do not transfer governance authority into the system.
 
 ---
 
@@ -43,7 +43,7 @@ This repository is the **v1.0 enterprise reference release** of the Q-Pathformer
 It provides a **fully populated, reviewable artifact set** demonstrating:
 
 - deterministic dataset construction (Path 1)  
-- runtime signal generation and lifecycle routing (Path 2)  
+- source-first processing and a separate runtime signal route (Path 2)
 - external dataset onboarding and containment (Path 3)  
 - execution-bound CSC evidence outputs
 
@@ -122,14 +122,10 @@ The repository is organized around three governed dataset pathways:
 ---
 
 ### Path 2 — Access-Mode Lifecycle
-- canonical `ID_2 → ID_3` lifecycle execution  
-- runtime signal generation and routing  
-- produces candidate datasets and CSC evidence  
 
-**Runtime notes:**
-- signals generated under `02_signals/runtime_generated/`  
-- `01_source` is not consumed by runtime  
-- promotion requires grouped candidates (`min_candidates = 4`)  
+The [source-first route](docs/execution/path_2_access_mode_canonical_source_first_commands.md) starts from the populated `01_source` ID_3 freeze bundle and is the documented release default. Its recorded run passed review, promotion, handoff, freeze, registry and controlled local validation.
+
+The [runtime route](docs/execution/path_2_access_mode_canonical_runtime_signal_commands.md) generates signals under `02_signals/runtime_generated/` and does not consume that `01_source` bundle. Its recorded session passed STATE_2 review with one candidate, then held before STATE_1 because promotion required four grouped candidates (`min_candidates = 4`). Review success alone did not establish promotion eligibility.
 
 ---
 
@@ -148,7 +144,7 @@ Each path operates independently but follows the same governed lifecycle.
 
 ## Lifecycle Model
 
-All paths operate under a shared lifecycle:
+The paths share lifecycle vocabulary; their recorded outcomes do not all reach STATE_1:
 
 - **STATE_3** — containment  
 - **STATE_2** — validation  
@@ -212,7 +208,7 @@ The `docs/` folder is the **reviewer-facing entry point**.
 
 ## Execution
 
-All paths can be executed from::
+Execution entry points are under:
 
 ```
 scripts/
@@ -239,7 +235,7 @@ This release is **pre-populated with reviewed artifacts**.
 This means:
 
 * `path_1` contains corpus, dataset, package, and validation outputs
-* `path_2` contains lifecycle, routing, promotion, and runtime outputs
+* `path_2` contains source-first lifecycle/promotion outputs and separately identified runtime review/hold outputs
 * `path_3` contains onboarding and normalization outputs (STATE_3 containment only in v1.0)
 
 Reviewers can:
@@ -363,7 +359,7 @@ without transferring authority into the system.
 
 ## Notes
 
-* this repository reflects the live release tree
+* the published tag identifies the preserved release snapshot; `main` may include later documentation maintenance
 * example inputs are included for reproducibility
 * execution paths are independently runnable
 
@@ -388,7 +384,7 @@ docs/README.md
 
 It is not a model distribution, but a **controlled system snapshot** showing how governed datasets, signals, and evidence are produced.
 
-This repository represents a **sealed reference state**, not an evolving workspace.
+The published tag and release assets preserve the **sealed reference state**. Later README and maintenance updates on `main` do not revise that snapshot, its papers or its recorded results.
 
 CSC in this release is **execution-bound and evolving**.  
 Outputs are **bounded evidence artifacts within a continuous assurance model**, not final or fixed certification states.
